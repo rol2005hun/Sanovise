@@ -1,0 +1,23 @@
+# MAIN IGNORES
+node_modules
+
+# CLIENT IGNORES
+client/node_modules
+client/.output
+client/.data
+client/.nuxt
+client/.nitro
+client/.cache
+client/dist
+client/logs
+client/*.log
+client/.DS_Store
+client/.fleet
+client/.idea
+client/.env
+client/.env.*
+client/!.env.example
+
+# SERVER IGNORES
+server/node_modules
+server/.env

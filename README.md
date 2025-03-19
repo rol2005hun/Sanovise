@@ -1,0 +1,1 @@
+This project requires a globally installed nodemon package: npm install -g nodemon
