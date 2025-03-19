@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    font-size: 1rem;
+    background: url('https://wallpapercave.com/wp/wp6938410.jpg');
+}
+
+.app-container, .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
