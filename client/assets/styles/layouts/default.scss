@@ -9,7 +9,8 @@
 
 body {
     position: relative;
-    min-height: 100vh;
+    min-height: calc(100vh - 8rem);
+    margin-top: 8rem;
     font-size: 1rem;
     background: url('https://wallpapercave.com/wp/wp6938410.jpg');
 }
@@ -19,4 +20,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.main-container {
+    margin-bottom: 5rem;
 }

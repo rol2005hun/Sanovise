@@ -4,7 +4,18 @@
     padding: 1.5rem 0.5rem;
     margin: 1.5rem;
     border-radius: 1rem;
-    width: 95%;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &.scrolled {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        margin: 0;
+        border-radius: 0 0 1rem 1rem;
+    }
 
     .header-content {
         display: flex;
@@ -18,14 +29,42 @@
         font-size: 1.7rem;
         font-weight: bold;
         color: white;
-        letter-spacing: 1px;
         text-decoration: none;
+    }
+
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .bar {
+        width: 30px;
+        height: 4px;
+        background: white;
+        transition: all 0.3s ease;
+    }
+
+    .bar.open:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 5px);
+    }
+
+    .bar.open:nth-child(2) {
+        opacity: 0;
+    }
+
+    .bar.open:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .nav-menu {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
     }
 
     .nav-list {
         list-style: none;
-        padding: 0;
-        margin: 0;
         display: flex;
         gap: 1.5rem;
 
@@ -40,6 +79,44 @@
                 color: #cce7ff;
                 transform: scale(1.05);
             }
+        }
+    }
+
+    .nav-menu.open {
+        transform: translateY(0);
+    }
+
+    @media (max-width: 500px) {
+        .menu-toggle {
+            display: flex;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background: #004488;
+            padding: 1rem;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        .nav-menu.open {
+            display: flex;
+            transform: translateY(2rem);
+            opacity: 1;
+
+            &.scrolled {
+                transform: translateY(0.5rem);
+            }
+        }
+
+        .nav-list {
+            flex-direction: column;
+            text-align: right;
         }
     }
 }

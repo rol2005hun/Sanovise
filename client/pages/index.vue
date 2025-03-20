@@ -4,7 +4,7 @@
       <div class="hero-content container">
         <h2>Digitális egészségügyi asszisztens</h2>
         <p>Fedezd fel részletes egészségügyi adataid és ajánlásaink segítségével hozd meg a legjobb döntéseket!</p>
-        <NuxtLink to="/get-started" class="btn-primary">Kezdd el</NuxtLink>
+        <NuxtLink to="/myself" class="btn-primary">Kezdd el</NuxtLink>
       </div>
     </section>
     
