@@ -2,11 +2,10 @@
     <div class="about">
         <div class="description">
             <p>
-                Üdvözlünk az egészségügyi tanácsadás új dimenziójában! Célunk, hogy egy digitális egészségügyi
+                Üdvözöljük az egészségügyi tanácsadás új dimenziójában! Célunk, hogy egy digitális egészségügyi
                 asszisztens segítségével támogassuk
                 felhasználóinkat az egészségtudatosságuk növelésében. Az alkalmazásunk mesterséges intelligenciára épül,
-                és lehetővé teszi a személyre
-                szabott egészségügyi elemzést.
+                és lehetővé teszi a személyre szabott egészségügyi elemzést.
             </p>
         </div>
 
@@ -17,9 +16,8 @@
                 információkat nyújt. Az asszisztensünk átlagos
                 pulzusszám, vérnyomás, jelenlegi gyógyszerek, orvosi leletek, születési dátum, súly, magasság és egyéb
                 adatok alapján segít megérteni az
-                egészségi állapotát, és előre jelezheti a lehetséges egészségügyi problémákat. <span color="red">Fontos,
-                    hogy ez az eszköz nem helyettesíti
-                    az orvosi konzultációt</span>.
+                egészségi állapotát, és előre jelezheti a lehetséges egészségügyi problémákat.
+                <span style="color: red;">Fontos, hogy ez az alkalmazás nem helyettesíti az orvosi konzultációt</span>.
             </p>
         </div>
 
@@ -57,8 +55,7 @@
             </p>
 
             <p>
-                Köszönjük, hogy minket választott, és lehetőséget ad arra, hogy támogassuk Önt az egészségtudatos
-                életmód felé vezető úton!
+                Köszönjük, hogy minket választott, és lehetőséget ad arra, hogy támogassuk Önt az egészségtudatos életmód felé vezető úton!
             </p>
         </div>
     </div>
