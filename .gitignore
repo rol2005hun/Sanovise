@@ -2,21 +2,21 @@
 node_modules
 
 # CLIENT IGNORES
-client/node_modules
-client/.output
-client/.data
-client/.nuxt
-client/.nitro
-client/.cache
-client/dist
-client/logs
-client/*.log
-client/.DS_Store
-client/.fleet
-client/.idea
-client/.env
-client/.env.*
-client/!.env.example
+landing/node_modules
+landing/.output
+landing/.data
+landing/.nuxt
+landing/.nitro
+landing/.cache
+landing/dist
+landing/logs
+landing/*.log
+landing/.DS_Store
+landing/.fleet
+landing/.idea
+landing/.env
+landing/.env.*
+landing/!.env.example
 
 # APP IGNORES
 app/node_modules
