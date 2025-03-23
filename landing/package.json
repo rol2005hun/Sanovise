@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "landing",
   "version": "1.0.0",
   "description": "The landing (frontend) of Sanovise.",
   "type": "module",

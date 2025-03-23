@@ -18,6 +18,23 @@ client/.env
 client/.env.*
 client/!.env.example
 
+# APP IGNORES
+app/node_modules
+app/.output
+app/.data
+app/.nuxt
+app/.nitro
+app/.cache
+app/dist
+app/logs
+app/*.log
+app/.DS_Store
+app/.fleet
+app/.idea
+app/.env
+app/.env.*
+app/!.env.example
+
 # SERVER IGNORES
 server/node_modules
 server/.env
