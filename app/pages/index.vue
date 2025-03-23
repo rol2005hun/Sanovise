@@ -1,6 +1,6 @@
 <template>
   <div class="form-card">
-    <h2>Egészségügyi Adatok</h2>
+    <h2>Töltse fel adatait:</h2>
 
     <div class="file-upload" @dragover.prevent @drop="handleDrop">
       <input type="file" id="fileInput" @change="importData" accept="application/json" hidden />
@@ -8,38 +8,39 @@
       <p v-if="fileName">Adatok: {{ fileName }}</p>
     </div>
 
-    <button @click="exportData">Exportálás JSON-be</button>
-
     <form @submit.prevent="submitData">
-      <label for="birthDate">Születési dátum:</label>
+      <label for="birthDate">Születési dátum<span class="required">*</span></label>
       <input type="date" id="birthDate" v-model="userData.birthDate" required />
 
-      <label for="gender">Nem:</label>
+      <label for="gender">Nem<span class="required">*</span></label>
       <select id="gender" v-model="userData.gender" required>
         <option value="male">Férfi</option>
         <option value="female">Nő</option>
-        <option value="other">Egyéb</option>
       </select>
 
-      <label for="height">Magasság (cm):</label>
-      <input type="number" id="height" v-model="userData.height" required />
+      <label for="height">Magasság (cm)<span class="required">*</span></label>
+      <input type="number" id="height" v-model="userData.height" min="50" max="250" required />
 
-      <label for="weight">Súly (kg):</label>
-      <input type="number" id="weight" v-model="userData.weight" required />
+      <label for="weight">Súly (kg)<span class="required">*</span></label>
+      <input type="number" id="weight" v-model="userData.weight" min="1" max="500" required />
 
-      <label for="heartRate">Átlagos pulzus:</label>
-      <input type="number" id="heartRate" v-model="userData.heartRate" required />
+      <label for="heartRate">Átlagos pulzus</label>
+      <input type="number" id="heartRate" v-model="userData.heartRate" min="30" max="200" />
 
-      <label for="bloodPressure">Vérnyomás:</label>
-      <input type="text" id="bloodPressure" v-model="userData.bloodPressure" required />
+      <label for="bloodPressure">Vérnyomás (systole/diastole)</label>
+      <input type="text" id="bloodPressure" v-model="userData.bloodPressure"
+        pattern="\b(8[0-9]|9[0-9]|1[0-9]{2}|200)\/(4[0-9]|[5-9][0-9]|1[0-4][0-9]|150)\b" />
 
-      <label for="medicalRecords">Orvosi leletek:</label>
-      <textarea id="medicalRecords" v-model="userData.medicalRecords"></textarea>
+      <label for="medicalRecords">Orvosi leletek</label>
+      <textarea id="medicalRecords" v-model="userData.medicalRecords" minlength="30"></textarea>
 
-      <label for="medicalHistory">Betegéletút:</label>
-      <textarea id="medicalHistory" v-model="userData.medicalHistory"></textarea>
+      <label for="medicalHistory">Betegéletút</label>
+      <textarea id="medicalHistory" v-model="userData.medicalHistory" minlength="30"></textarea>
 
-      <button type="submit">Adatok beküldése</button>
+      <div class="buttons">
+        <button type="submit" class="submit">Adatok beküldése</button>
+        <button type="button" @click="exportData" class="export">Exportálás JSON-be</button>
+      </div>
     </form>
 
     <div v-if="serverResponse" class="response">

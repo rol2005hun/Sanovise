@@ -16,39 +16,41 @@ form {
 
     label {
         margin-top: 0.5rem;
+
+        .required {
+            color: red;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
     }
 
     input,
     select,
     textarea {
         margin-top: 0.3125rem;
-        padding: 0.5rem;
-        border: 0.0625rem solid #ccc;
-        border-radius: 0.3125rem;
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
     }
 }
 
 button {
-    margin-top: 0.9375rem;
-    padding: 0.625rem;
-    background: #007bff;
-    color: white;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
     border: none;
-    border-radius: 0.3125rem;
+    border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
-
-    &:hover {
-        background: #0056b3;
-    }
 }
 
 .response {
     margin-top: 1.25rem;
-    padding: 0.625rem;
+    padding: 0.5rem;
     background: #d4edda;
-    border-left: 0.3125rem solid #155724;
-    border-radius: 0.3125rem;
+    border-left: 3px solid #155724;
+    border-radius: 5px;
 }
 
 .file-upload {
@@ -67,6 +69,22 @@ button {
         font-weight: bold;
         color: #007bff;
         cursor: pointer;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .submit {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .export {
+        background-color: yellow;
+        color: black;
     }
 }
 

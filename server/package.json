@@ -2,7 +2,6 @@
   "name": "server",
   "version": "1.0.0",
   "description": "The server (backend) of Sanovise.",
-  "type": "module",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

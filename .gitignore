@@ -1,7 +1,7 @@
 # MAIN IGNORES
 node_modules
 
-# CLIENT IGNORES
+# LANDING IGNORES
 landing/node_modules
 landing/.output
 landing/.data
