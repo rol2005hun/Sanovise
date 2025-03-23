@@ -1,0 +1,26 @@
+{
+  "name": "sanovise",
+  "version": "1.0.0",
+  "description": "The full app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:all": "cd landing && npm install && cd ../app && npm install && cd ../server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rol2005hun/Sanovise.git"
+  },
+  "keywords": [
+    "sanovise",
+    "medical",
+    "app",
+    "ai"
+  ],
+  "author": "ranzak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rol2005hun/Sanovise/issues"
+  },
+  "homepage": "https://github.com/rol2005hun/Sanovise#readme"
+}
