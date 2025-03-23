@@ -3,7 +3,7 @@
     width: 40rem;
     margin: auto;
     padding: 1rem;
-    background: #f8f9fa;
+    background: #fbe9e7;
     border-radius: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -21,6 +21,7 @@
 
     .info-card {
         background: white;
+        border: 1px solid #00796b;
         padding: 1rem;
         border-radius: 10px;
         text-align: center;
@@ -30,6 +31,7 @@
 
         &:hover {
             transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(198, 40, 40, 0.4);
         }
 
         h3 {

@@ -6,8 +6,8 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #0a9396, #005f73);
-  color: #fff;
+  background: linear-gradient(to bottom, #e8f5e9, #ffebee);
+  color: #004d40;
   padding: 4rem 1rem;
   text-align: center;
   border-radius: 0.5rem;
@@ -50,10 +50,11 @@
 
   .feature-card {
     flex: 1 1 300px;
-    background: #fff;
+    background: #e0f7fa;
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
     text-align: center;
 
     h3 {
@@ -64,6 +65,10 @@
 
     p {
       color: #555;
+    }
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 }

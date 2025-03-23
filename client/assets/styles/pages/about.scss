@@ -1,7 +1,7 @@
 .about {
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
+    color: #004d40;;
+    background: linear-gradient(to bottom, #e8f5e9, #ffebee);
     padding: 1.25rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
@@ -32,6 +32,17 @@
 
         &:hover {
             text-decoration: underline;
+        }
+    }
+
+    .side-note {
+        color: gray;
+        font-size: 0.875rem;
+        margin-left: 1rem;
+
+        &::before {
+            content: '- ';
+            font-weight: bold;
         }
     }
 }

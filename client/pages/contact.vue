@@ -21,10 +21,10 @@
 
                 <form action="https://formsubmit.co/botpingie@gmail.com" method="POST">
                     <label for="name">Név<span class="required">*</span></label>
-                    <input id="name" name="name" type="text" placeholder="Dr. Sanovise Mi" required />
+                    <input id="name" name="name" type="text" placeholder="pl.: Dr. Sanovise Mi" required />
 
                     <label for="email">Email<span class="required">*</span></label>
-                    <input id="email" type="email" name="email" placeholder="pl.:info@sanovise.hu" required />
+                    <input id="email" type="email" name="email" placeholder="pl.: info@sanovise.hu" required />
 
                     <label for="message">Üzenet<span class="required">*</span></label>
                     <textarea id="message" name="description" placeholder="pl.: Hiba van a rendszerrel!"

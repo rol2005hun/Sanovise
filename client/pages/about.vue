@@ -24,10 +24,22 @@
         <div class="functions">
             <h2>Fő funkciók</h2>
             <ul>
-                <li>Felhasználói egészségügyi adatok elemzése</li>
-                <li>Személyre szabott egészségügyi tanácsadás</li>
-                <li>Adatok exportálása és importálása JSON formátumban</li>
-                <li>Intuitív és reszponzív felhasználói felület</li>
+                <li>Felhasználói egészségügyi adatok elemzése
+                    <br>
+                    <span class="side-note">Egészségügyi állapotát folyamatosan figyelemmel kísérheti. 📈</span>
+                </li>
+                <li>Személyre szabott egészségügyi tanácsadás
+                    <br>
+                    <span class="side-note">A digitális asszisztensünk mindenre megpróbál válaszolni. ↩️</span>
+                </li>
+                <li>Adatok exportálása és importálása JSON formátumban
+                    <br>
+                    <span class="side-note">Így nem kell minden egyes alkalommal újra begépelni az adatokat. 🙈</span>
+                </li>
+                <li>Intuitív és reszponzív felhasználói felület
+                    <br>
+                    <span class="side-note">Mivel már 2025-t írunk. 🎊</span>
+                </li>
             </ul>
         </div>
 
@@ -55,7 +67,8 @@
             </p>
 
             <p>
-                Köszönjük, hogy minket választott, és lehetőséget ad arra, hogy támogassuk Önt az egészségtudatos életmód felé vezető úton!
+                Köszönjük, hogy minket választott, és lehetőséget ad arra, hogy támogassuk Önt az egészségtudatos
+                életmód felé vezető úton!
             </p>
         </div>
     </div>

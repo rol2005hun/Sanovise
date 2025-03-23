@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "description": "The client (frontend) of Sanovise.",
+  "description": "The landing (frontend) of Sanovise.",
   "type": "module",
   "scripts": {
     "build": "nuxt build",

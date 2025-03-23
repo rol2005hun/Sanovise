@@ -27,17 +27,18 @@ const isScrolled = ref(false);
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
-};
+}
 
 const closeMenu = () => {
   isOpen.value = false;
-};
+}
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
-};
+}
 
 onMounted(() => {
+  handleScroll();
   window.addEventListener('scroll', handleScroll);
 });
 
