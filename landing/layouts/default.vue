@@ -1,16 +1,14 @@
 <template>
   <div class="app-container">
-    <AppHeader />
+    <Header />
     <main class="main-container">
       <NuxtPage />
     </main>
-    <AppFooter />
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
-import AppHeader from '@/components/header.vue';
-import AppFooter from '@/components/footer.vue';
 </script>
 
 <style lang="scss">

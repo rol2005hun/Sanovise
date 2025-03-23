@@ -9,7 +9,7 @@
 
 body {
     position: relative;
-    min-height: calc(100vh - 8rem);
+    min-height: 100vh;
     font-size: 1rem;
     background: linear-gradient(to bottom right, #152935, #961107);
 }
@@ -18,13 +18,5 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.app-container {
-    margin-top: 8rem;
-}
-
-.main-container {
-    margin-bottom: 5rem;
+    width: 100%;
 }

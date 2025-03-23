@@ -8,8 +8,10 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
     position: relative;
-    min-height: calc(100vh - 8rem);
+    min-height: 100vh;
     font-size: 1rem;
     background: linear-gradient(to bottom right, #152935, #961107);
 }
@@ -18,8 +20,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    width: 100%;
 }
+
+// position: fixed; miatt kell legyen
 
 .app-container {
     margin-top: 8rem;

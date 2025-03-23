@@ -1,8 +1,112 @@
 <template>
-    <h1>this will be the app :)))</h1>
+  <div class="form-card">
+    <h2>Egészségügyi Adatok</h2>
+
+    <div class="file-upload" @dragover.prevent @drop="handleDrop">
+      <input type="file" id="fileInput" @change="importData" accept="application/json" hidden />
+      <label for="fileInput" class="upload-label">Válassz fájlt vagy húzd ide</label>
+      <p v-if="fileName">Adatok: {{ fileName }}</p>
+    </div>
+
+    <button @click="exportData">Exportálás JSON-be</button>
+
+    <form @submit.prevent="submitData">
+      <label for="birthDate">Születési dátum:</label>
+      <input type="date" id="birthDate" v-model="userData.birthDate" required />
+
+      <label for="gender">Nem:</label>
+      <select id="gender" v-model="userData.gender" required>
+        <option value="male">Férfi</option>
+        <option value="female">Nő</option>
+        <option value="other">Egyéb</option>
+      </select>
+
+      <label for="height">Magasság (cm):</label>
+      <input type="number" id="height" v-model="userData.height" required />
+
+      <label for="weight">Súly (kg):</label>
+      <input type="number" id="weight" v-model="userData.weight" required />
+
+      <label for="heartRate">Átlagos pulzus:</label>
+      <input type="number" id="heartRate" v-model="userData.heartRate" required />
+
+      <label for="bloodPressure">Vérnyomás:</label>
+      <input type="text" id="bloodPressure" v-model="userData.bloodPressure" required />
+
+      <label for="medicalRecords">Orvosi leletek:</label>
+      <textarea id="medicalRecords" v-model="userData.medicalRecords"></textarea>
+
+      <label for="medicalHistory">Betegéletút:</label>
+      <textarea id="medicalHistory" v-model="userData.medicalHistory"></textarea>
+
+      <button type="submit">Adatok beküldése</button>
+    </form>
+
+    <div v-if="serverResponse" class="response">
+      <h3>Szerver válasza:</h3>
+      <p>{{ serverResponse }}</p>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
+const userData = ref({
+  birthDate: '',
+  gender: '',
+  height: '',
+  weight: '',
+  heartRate: '',
+  bloodPressure: '',
+  medicalRecords: '',
+  medicalHistory: '',
+})
+
+const serverResponse = ref<string | null>(null);
+const fileName = ref<string | null>(null);
+
+const submitData = async () => {
+  try {
+    const response = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(userData.value),
+    });
+    serverResponse.value = await response.text();
+  } catch (error) {
+    serverResponse.value = 'Hiba történt az adatok küldése közben.';
+  }
+}
+
+const importData = (event: Event) => {
+  const file = (event.target as HTMLInputElement).files?.[0];
+  if (file) {
+    fileName.value = file.name;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        userData.value = JSON.parse(e.target?.result as string);
+      } catch (error) {
+        alert('Hibás JSON fájl!');
+      }
+    };
+    reader.readAsText(file);
+  }
+}
+
+const handleDrop = (event: DragEvent) => {
+  event.preventDefault();
+  if (event.dataTransfer?.files.length) {
+    importData({ target: { files: event.dataTransfer.files } } as unknown as Event);
+  }
+}
+
+const exportData = () => {
+  const blob = new Blob([JSON.stringify(userData.value, null, 2)], { type: 'application/json' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'user_data.json';
+  link.click();
+}
 </script>
 
 <style scoped lang="scss">

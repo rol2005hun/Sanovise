@@ -1,3 +1,77 @@
-h1 {
-    border: 3px solid red;
+.form-card {
+    width: 40rem;
+    margin: 1.25rem auto;
+    padding: 1.25rem;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-top: 0.5rem;
+    }
+
+    input,
+    select,
+    textarea {
+        margin-top: 0.3125rem;
+        padding: 0.5rem;
+        border: 0.0625rem solid #ccc;
+        border-radius: 0.3125rem;
+    }
+}
+
+button {
+    margin-top: 0.9375rem;
+    padding: 0.625rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+        background: #0056b3;
+    }
+}
+
+.response {
+    margin-top: 1.25rem;
+    padding: 0.625rem;
+    background: #d4edda;
+    border-left: 0.3125rem solid #155724;
+    border-radius: 0.3125rem;
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: 2px dashed #007bff;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+    .upload-label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #007bff;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 700px) {
+    .form-card {
+        width: 100%;
+    }
 }
