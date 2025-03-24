@@ -31,8 +31,8 @@
       <input type="text" id="bloodPressure" v-model="userData.bloodPressure"
         pattern="\b(8[0-9]|9[0-9]|1[0-9]{2}|200)\/(4[0-9]|[5-9][0-9]|1[0-4][0-9]|150)\b" />
 
-      <label for="medicalRecords">Orvosi leletek</label>
-      <textarea id="medicalRecords" v-model="userData.medicalRecords" minlength="30"></textarea>
+      <label for="medicalRecords">Panaszok / tünetek</label>
+      <textarea id="medicalRecords" v-model="userData.symptoms" minlength="30"></textarea>
 
       <label for="medicalHistory">Betegéletút</label>
       <textarea id="medicalHistory" v-model="userData.medicalHistory" minlength="30"></textarea>
@@ -44,7 +44,7 @@
     </form>
 
     <div v-if="serverResponse" class="response">
-      <h3>Szerver válasza:</h3>
+      <h3>Dr. Sanovise Mi válasza:</h3>
       <p>{{ serverResponse }}</p>
     </div>
   </div>
@@ -58,21 +58,21 @@ const userData = ref({
   weight: '',
   heartRate: '',
   bloodPressure: '',
-  medicalRecords: '',
+  symptoms: '',
   medicalHistory: '',
-})
+});
 
 const serverResponse = ref<string | null>(null);
 const fileName = ref<string | null>(null);
 
 const submitData = async () => {
   try {
-    const response = await fetch('/api/submit', {
+    const response = await fetch('http://localhost:2999/api/advice', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData.value),
     });
-    serverResponse.value = await response.text();
+    serverResponse.value = await response.json().then(data => data.response);
   } catch (error) {
     serverResponse.value = 'Hiba történt az adatok küldése közben.';
   }
