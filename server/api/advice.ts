@@ -67,11 +67,10 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
             skip_prompt: true,
             callback_function: (token: string) => {
                 res.write(token);
-                console.log(token);
             },
         });
 
-        await pipe(messages, { max_new_tokens: 32, do_sample: false, streamer });
+        await pipe(messages, { max_new_tokens: 512, temperature: 0.7, top_k: 50, top_p: 0.9, do_sample: false, streamer });
 
         res.end();
 
