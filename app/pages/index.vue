@@ -141,7 +141,7 @@ const showPrivacyModal = ref(false);
 
 const submitData = async () => {
   try {
-    const response = await fetch('http://138.68.77.184:3000/api/advice', {
+    const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData.value),
