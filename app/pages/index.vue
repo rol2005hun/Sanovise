@@ -141,7 +141,7 @@ const showPrivacyModal = ref(false);
 
 const submitData = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/advice', {
+    const response = await fetch('https://sanovise.onrender.com/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData.value),
