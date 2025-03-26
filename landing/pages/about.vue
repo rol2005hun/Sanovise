@@ -49,7 +49,7 @@
                 Az alkalmazásunk egyszerűen használható:
             </p>
             <ol>
-                <li>Látogasson el a <NuxtLink to="myself">Sanovite Myself</NuxtLink> oldalára.</li>
+                <li>Látogasson el a <a href="https://app.sanovise.ranzak.site/" target="_blank">Sanovite Myself</a> oldalára.</li>
                 <li>Adja meg egészségügyi adatait, mint például pulzusszám, vérnyomás, magasság, súly stb.</li>
                 <li>Az alkalmazás mesterséges intelligencia segítségével elemzi az adatokat.</li>
                 <li>Kapjon visszajelzést egészségi állapotáról, és tájékozódjon a lehetséges betegségekről.</li>

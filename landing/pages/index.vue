@@ -4,7 +4,7 @@
       <div class="hero-content container">
         <h2>Digitális egészségügyi asszisztens</h2>
         <p>Fedezd fel részletesen egészségügyi adataid és ajánlásaink segítségével hozd meg a legjobb döntéseket!</p>
-        <NuxtLink to="/myself" class="btn-primary">Kezdd el</NuxtLink>
+        <a href="https://app.sanovise.ranzak.site/" class="btn-primary">Kezdd el</a>
       </div>
     </section>
     
