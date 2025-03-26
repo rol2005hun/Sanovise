@@ -143,7 +143,10 @@ const submitData = async () => {
   try {
     const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       body: JSON.stringify(userData.value),
     });
 
@@ -164,7 +167,7 @@ const submitData = async () => {
   } catch (error) {
     serverResponse.value = 'Hiba történt az adatok küldése közben.';
   }
-};
+}
 
 const importData = (event: Event) => {
   const file = (event.target as HTMLInputElement).files?.[0];
