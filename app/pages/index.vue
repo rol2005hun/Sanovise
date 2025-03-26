@@ -141,16 +141,30 @@ const showPrivacyModal = ref(false);
 
 const submitData = async () => {
   try {
-    const response = await fetch('http://localhost:2999/api/advice', {
+    const response = await fetch('http://localhost:3000/api/advice', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData.value),
     });
-    serverResponse.value = await response.json().then(data => data.response);
+
+    if (!response.body) {
+      throw new Error('A válasz üres.');
+    }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder('utf-8');
+    serverResponse.value = '';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      serverResponse.value += decoder.decode(value, { stream: true });
+    }
   } catch (error) {
     serverResponse.value = 'Hiba történt az adatok küldése közben.';
   }
-}
+};
 
 const importData = (event: Event) => {
   const file = (event.target as HTMLInputElement).files?.[0];

@@ -1,13 +1,14 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { pipeline } from '@xenova/transformers';
+import { pipeline, env, TextStreamer } from '@huggingface/transformers';
 
 const router = express.Router();
 
 let pipe: any;
 (async () => {
     try {
-        pipe = await pipeline('text2text-generation', 'Xenova/LaMini-Flan-T5-783M');
-        console.log('[Sanovise - Siker] AI modell sikeresen betöltve.');
+        env.cacheDir = './.cache';
+        pipe = await pipeline('text-generation', 'HuggingFaceTB/SmolLM2-1.7B-Instruct', { dtype: 'q4', device: 'cpu',  });
+        console.log('[Sanovise - Siker] A modell sikeresen betöltve.');
     } catch (error) {
         console.error('[Sanovise - Hiba] Hiba a modell betöltésekor: ', error);
     }
@@ -34,38 +35,53 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
             });
         }
 
-        const message = `
-        Based on the following medical data, please provide a brief medical recommendation.
-        Patient details:
-        - Birthdate: ${birthDate}
-        - Gender: ${gender}
-        - Height: ${height} cm
-        - Weight: ${weight} kg
-        - Usual heart rate: ${heartRate}
-        - Usual blood pressure: ${bloodPressure}
-        - Symptoms: ${symptoms}
-        - Medical history: ${medicalHistory}
-        
-        Please keep the response short and focused on potential health concerns or next steps.
-        `;
+        const messages = [
+            {
+                role: 'system',
+                content: 'You are a professional and courteous doctor. Always address the patient directly in a respectful and formal manner.'
+            },
+            {
+                role: 'user',
+                content: `
+                    Based on the following medical data, please provide a brief and professional health recommendation.
+                    
+                    **Patient Details:**
+                    - Date of Birth: ${birthDate}
+                    - Gender: ${gender}
+                    - Height: ${height} cm
+                    - Weight: ${weight} kg
+                    - Average Heart Rate: ${heartRate}
+                    - Blood Pressure: ${bloodPressure}
+                    - Symptoms: ${symptoms}
+                    - Medical History: ${medicalHistory}
+                    
+                    Please address the patient directly, keep the response concise, and focus on potential health concerns or recommended next steps.
+                `
+            }
+        ];
 
-        const output = await pipe(message);
+        res.setHeader('Content-Type', 'text/plain');
+        res.setHeader('Transfer-Encoding', 'chunked');  
 
-        return res.status(200).json({
-            success: true,
-            message: 'Sikeres AI válasz generálás.',
-            response: output[0]?.generated_text || 'Nincs válasz.',
+        const streamer = new TextStreamer(pipe.tokenizer, {
+            skip_prompt: true,
+            callback_function: (token: string) => {
+                res.write(token);
+                console.log(token);
+            },
         });
+
+        await pipe(messages, { max_new_tokens: 32, do_sample: false, streamer });
+
+        res.end();
 
     } catch (error: Error | any) {
-        console.error('Hiba a válasz generálása közben:', error);
-        return res.status(500).json({
-            success: false,
-            error: 'Belső szerver hiba.',
-            details: error.message
-        });
+        console.error('Hiba a válasz generálása közben: ', error);
+        res.write('Hiba történt a folyamat során.\n');
+        res.write(`Hibakód: ${error.message}\n`);
+        res.end();
     }
-};
+}
 
 router.post('/advice', (req, res, next) => {
     advice(req, res, next).catch(next);

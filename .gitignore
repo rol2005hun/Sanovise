@@ -38,3 +38,4 @@ app/!.env.example
 # SERVER IGNORES
 server/node_modules
 server/.env
+server/.cache
