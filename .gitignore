@@ -39,3 +39,4 @@ app/!.env.example
 server/node_modules
 server/.env
 server/.cache
+server/dist

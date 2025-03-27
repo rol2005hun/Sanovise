@@ -141,6 +141,8 @@ const showPrivacyModal = ref(false);
 
 const submitData = async () => {
   try {
+    serverResponse.value = 'Gondolkodik...';
+
     const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice', {
       method: 'POST',
       headers: {

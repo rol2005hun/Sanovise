@@ -7,7 +7,7 @@ let pipe: any;
 (async () => {
     try {
         env.cacheDir = './.cache';
-        pipe = await pipeline('text-generation', 'HuggingFaceTB/SmolLM2-1.7B-Instruct', { dtype: 'q4', device: 'cpu',  });
+        pipe = await pipeline('text-generation', 'HuggingFaceTB/SmolLM2-1.7B-Instruct', { dtype: 'q4', device: 'cpu', });
         console.log('[Sanovise - Siker] A modell sikeresen betöltve.');
     } catch (error) {
         console.error('[Sanovise - Hiba] Hiba a modell betöltésekor: ', error);
@@ -38,7 +38,9 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
         const messages = [
             {
                 role: 'system',
-                content: 'You are a professional and courteous doctor. Always address the patient directly in a respectful and formal manner.'
+                content: `You are a professional and courteous doctor. Always address the patient directly in a respectful and formal manner.
+                Speak as though you are in a face-to-face conversation, focusing on creating trust and clarity in your response. Avoid using farewells,
+                as if the conversation were ongoing in person.`
             },
             {
                 role: 'user',
@@ -55,13 +57,13 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
                     - Symptoms: ${symptoms}
                     - Medical History: ${medicalHistory}
                     
-                    Please address the patient directly, keep the response concise, and focus on potential health concerns or recommended next steps.
+                   Your response should be concise and spoken in a respectful and polite tone, focusing on potential health concerns or next steps to consider.
                 `
             }
         ];
 
         res.setHeader('Content-Type', 'text/plain');
-        res.setHeader('Transfer-Encoding', 'chunked');  
+        res.setHeader('Transfer-Encoding', 'chunked');
 
         const streamer = new TextStreamer(pipe.tokenizer, {
             skip_prompt: true,
@@ -70,7 +72,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
             },
         });
 
-        await pipe(messages, { max_new_tokens: 512, temperature: 0.7, top_k: 50, top_p: 0.9, do_sample: false, streamer });
+        await pipe(messages, { max_new_tokens: 512, temperature: 1.0, top_k: 50, top_p: 0.9, do_sample: true, streamer });
 
         res.end();
 
