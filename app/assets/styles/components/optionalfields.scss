@@ -1,0 +1,18 @@
+.optional-fields {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-top: 0.5rem;
+  }
+
+  input,
+  select,
+  textarea {
+    margin-top: 0.3rem;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+}

@@ -5,7 +5,7 @@
             <span>Sanovise</span>
         </div>
         <nav class="nav">
-            <button @click="toggleSettings">⚙ Beállítások</button>
+            <button>⚙ Beállítások</button>
         </nav>
     </header>
 </template>

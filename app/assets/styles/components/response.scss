@@ -1,0 +1,33 @@
+.response-container {
+    padding-bottom: 1rem;
+}
+
+.response {
+    margin-top: 1.25rem;
+    padding: 0.5rem;
+    border-left: 3px solid #155724;
+    border-radius: 5px;
+
+    p {
+        margin-top: 0.5rem;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.thinking-anim {
+    margin-top: 1rem;
+    animation: blink 1.5s infinite;
+}
