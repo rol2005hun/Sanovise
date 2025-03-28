@@ -18,7 +18,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { birthDate, gender, height, weight, heartRate, bloodPressure, symptoms, medicalHistory } = req.body;
 
-        if (!birthDate || !gender || !height || !weight || !heartRate || !bloodPressure || !symptoms || !medicalHistory) {
+        if (!birthDate || !gender || !height || !weight) {
             return res.status(400).json({
                 success: false,
                 error: 'Hiányzó mezők! Kérlek, add meg az összes szükséges adatot.',
@@ -26,11 +26,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
                     birthDate: !!birthDate,
                     gender: !!gender,
                     height: !!height,
-                    weight: !!weight,
-                    heartRate: !!heartRate,
-                    bloodPressure: !!bloodPressure,
-                    symptoms: !!symptoms,
-                    medicalHistory: !!medicalHistory,
+                    weight: !!weight
                 }
             });
         }

@@ -104,9 +104,10 @@
 
     <Privacymodal v-if="showPrivacyModal" :isOpen="showPrivacyModal" @close="showPrivacyModal = false" />
 
-    <div v-if="serverResponse" class="response">
+    <div v-if="serverResponse || thinking" class="response">
       <h3>Dr. Sanovise Mi válasza:</h3>
-      <p>{{ serverResponse }}</p>
+      <p v-if="serverResponse">{{ serverResponse }}</p>
+      <p v-if="thinking" class="thinking-anim">Gondolkodom 🤔</p>
     </div>
   </div>
 </template>
@@ -134,6 +135,7 @@ const userData = ref({
 });
 
 const serverResponse = ref<string | null>(null);
+const thinking = ref(false);
 const fileName = ref<string | null>(null);
 const showExtraFields = ref(false);
 const privacyAccepted = ref(false);
@@ -141,7 +143,7 @@ const showPrivacyModal = ref(false);
 
 const submitData = async () => {
   try {
-    serverResponse.value = 'Gondolkodik...';
+    thinking.value = true;
 
     const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice', {
       method: 'POST',
@@ -162,7 +164,10 @@ const submitData = async () => {
 
     while (true) {
       const { done, value } = await reader.read();
-      if (done) break;
+      if (done) {
+        thinking.value = false;
+        break;
+      }
 
       serverResponse.value += decoder.decode(value, { stream: true });
     }
@@ -182,7 +187,7 @@ const importData = (event: Event) => {
       } catch (error) {
         alert('Hibás JSON fájl!');
       }
-    };
+    }
     reader.readAsText(file);
   }
 }
