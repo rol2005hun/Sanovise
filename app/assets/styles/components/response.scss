@@ -10,7 +10,36 @@
 
     p {
         margin-top: 0.5rem;
+        line-height: 1.5;
     }
+
+    .word {
+        display: inline-block;
+        animation: fadeIn 3s forwards;
+    }
+
+    .line {
+        display: block;
+    }
+
+    .space {
+        display: inline-block;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.thinking-anim {
+    margin-top: 1rem;
+    animation: blink 1.5s infinite;
 }
 
 @keyframes blink {
@@ -25,9 +54,4 @@
     100% {
         opacity: 1;
     }
-}
-
-.thinking-anim {
-    margin-top: 1rem;
-    animation: blink 1.5s infinite;
 }

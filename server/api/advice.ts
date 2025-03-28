@@ -42,9 +42,9 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
                             - Symptoms: High blood pressure, fatigue
                             - Medical history: Hypertension
                         Ideal doctor response:
-                        "Your blood pressure readings suggest hypertension, which increases the risk of cardiovascular issues.
+                        Your blood pressure readings suggest hypertension, which increases the risk of cardiovascular issues.
                         It would be advisable to monitor your BP regularly and consult a doctor if it remains elevated. Lifestyle changes
-                        like reducing sodium intake and increasing physical activity can help."`
+                        like reducing sodium intake and increasing physical activity can help.`
             },
             {
                 role: 'user',

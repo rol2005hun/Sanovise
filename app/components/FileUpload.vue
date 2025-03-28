@@ -2,7 +2,7 @@
     <div class="file-upload" @dragover.prevent @drop="handleDrop">
         <input type="file" id="fileInput" @change="importData" accept="application/json" hidden />
         <label for="fileInput" class="upload-label">Válasszon fájlt vagy húzza ide</label>
-        <p v-if="fileName">Adatok: {{ fileName }}</p>
+        <p v-if="fileName">Betöltve: {{ fileName }}</p>
     </div>
 </template>
 
