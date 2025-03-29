@@ -1,4 +1,11 @@
-.app-footer {    
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.app-footer {
     background-color: #e0f7fa;
     border-top: 1px solid #eaeaea;
     padding: 1rem 0;
@@ -9,9 +16,23 @@
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 
-    p {
-        margin: 0;
-        font-size: 0.875rem;
+    .tos {
+        margin-left: 2rem;
+        font-size: 1rem;
         color: #00796b;
+    }
+
+    .copy {
+        margin: 0;
+        font-size: 1rem;
+        color: #00796b;
+    }
+
+    select {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        margin-right: 2rem;
     }
 }

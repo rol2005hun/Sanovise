@@ -1,6 +1,6 @@
 <template>
   <div class="form-card">
-    <h2>Töltse fel adatait:</h2>
+    <h2>{{ $t("pages.index.title") }}:</h2>
 
     <FileUpload />
 

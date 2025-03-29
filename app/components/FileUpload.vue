@@ -1,8 +1,8 @@
 <template>
     <div class="file-upload" @dragover.prevent @drop="handleDrop">
         <input type="file" id="fileInput" @change="importData" accept="application/json" hidden />
-        <label for="fileInput" class="upload-label">Válasszon fájlt vagy húzza ide</label>
-        <p v-if="fileName">Betöltve: {{ fileName }}</p>
+        <label for="fileInput" class="upload-label">{{ $t('components.fileUpload.upload') }}</label>
+        <p v-if="fileName">{{ $t('components.fileUpload.loaded') }}: {{ fileName }}</p>
     </div>
 </template>
 

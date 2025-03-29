@@ -1,7 +1,7 @@
 <template>
   <header :class="['app-header', { 'scrolled': isScrolled }]">
     <div class="container header-content">
-      <NuxtLink to="/" class="logo">Főoldal</NuxtLink>
+      <NuxtLink to="/" class="logo">{{ $t('components.header.home') }}</NuxtLink>
       <div class="menu-toggle" @click="toggleMenu">
         <div :class="['bar', { 'open': isOpen }]"></div>
         <div :class="['bar', { 'open': isOpen }]"></div>
@@ -10,10 +10,10 @@
       <nav :class="['nav-menu', { 'open': isOpen, 'scrolled': isScrolled }]">
         <ul class="nav-list">
           <li>
-            <NuxtLink to="/about" @click="closeMenu">Rólunk</NuxtLink>
+            <NuxtLink to="/about" @click="closeMenu">{{ $t('components.header.about') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/contact" @click="closeMenu">Kapcsolat</NuxtLink>
+            <NuxtLink to="/contact" @click="closeMenu">{{ $t('components.header.contact') }}</NuxtLink>
           </li>
         </ul>
       </nav>

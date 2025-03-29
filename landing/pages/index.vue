@@ -2,12 +2,12 @@
   <div class="container">
     <section class="hero">
       <div class="hero-content container">
-        <h2>Digitális egészségügyi asszisztens</h2>
-        <p>Fedezd fel részletesen egészségügyi adataid és ajánlásaink segítségével hozd meg a legjobb döntéseket!</p>
-        <a href="https://app.sanovise.ranzak.site/" class="btn-primary">Kezdd el</a>
+        <h2>{{ $t('pages.index.heroTitle') }}</h2>
+        <p>{{ $t('pages.index.heroDescription') }}</p>
+        <a href="https://app.sanovise.ranzak.site/" class="btn-primary">{{ $t('pages.index.getStarted') }}</a>
       </div>
     </section>
-    
+
     <section class="features container">
       <div class="feature-card" v-for="(feature, index) in features" :key="index">
         <h3>{{ feature.title }}</h3>
@@ -18,10 +18,12 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n();
+
 const features = ref([
-  { title: 'Részletes elemzés', description: 'Személyre szabott egészségügyi tanácsadás a te adataid alapján.' },
-  { title: 'Adatbiztonság', description: 'Adatvédelmi protokollok és titkosítás minden szinten.' },
-  { title: 'Multi-platform', description: 'Webes, asztali és mobil eszközökön egyaránt elérhető.' },
+  { title: t('pages.index.features.analysis.title'), description: t('pages.index.features.analysis.description') },
+  { title: t('pages.index.features.security.title'), description: t('pages.index.features.security.description') },
+  { title: t('pages.index.features.multiPlatform.title'), description: t('pages.index.features.multiPlatform.description') },
 ]);
 </script>
 

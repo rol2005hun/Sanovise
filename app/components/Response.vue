@@ -1,7 +1,7 @@
 <template>
     <div ref="responseContainer" class="response-container">
         <div v-if="dataStore.serverResponse || dataStore.thinking" class="response">
-            <h3>Dr. Sanovise Mi válasza:</h3>
+            <h3>{{ $t('components.response.title') }}</h3>
             <p v-if="dataStore.serverResponse" class="response-text">
                 <span v-for="(line, lineIndex) in wordsList" :key="lineIndex" class="line">
                     <span v-for="(word, wordIndex) in line" :key="wordIndex" class="word">
@@ -11,11 +11,10 @@
                     <br />
                 </span>
             </p>
-            <p v-if="dataStore.thinking" class="thinking-anim">Gondolkodom 🤔</p>
+            <p v-if="dataStore.thinking" class="thinking-anim">{{ $t('components.response.thinking') }}</p>
         </div>
     </div>
 </template>
-
 
 <script setup lang="ts">
 import { dataStore } from '@/store';

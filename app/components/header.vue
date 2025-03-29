@@ -5,12 +5,14 @@
             <span>Sanovise</span>
         </div>
         <nav class="nav">
-            <button>⚙ Beállítások</button>
+            <button @click="showSettingsModal = true">⚙ {{ $t('components.header.settings') }}</button>
         </nav>
     </header>
+    <SettingsModal v-if="showSettingsModal" @close="showSettingsModal = false" />
 </template>
 
 <script setup lang="ts">
+const showSettingsModal = ref(false);
 </script>
 
 <style scoped lang="scss">

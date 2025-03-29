@@ -1,65 +1,68 @@
 <template>
     <div v-if="dataStore.showOptionalFields" class="optional-fields">
-        <label for="heartRate">Átlagos pulzus</label>
+        <label for="heartRate">{{ $t('components.optionalFields.heartRate') }}</label>
         <input type="number" id="heartRate" v-model="dataStore.userData.heartRate" min="30" max="200"
-            placeholder="pl.: 72" />
+            :placeholder="$t('components.optionalFields.placeholderHeartRate')" />
 
-        <label for="bloodPressure">Vérnyomás (systole/diastole)</label>
-        <input type="text" id="bloodPressure" v-model="dataStore.userData.bloodPressure" placeholder="pl.: 120/80" />
+        <label for="bloodPressure">{{ $t('components.optionalFields.bloodPressure') }}</label>
+        <input type="text" id="bloodPressure" v-model="dataStore.userData.bloodPressure"
+            :placeholder="$t('components.optionalFields.placeholderBloodPressure')" />
 
-        <label for="sports">Sporttevékenységek</label>
-        <input type="text" id="sports" v-model="dataStore.userData.sports" placeholder="pl.: futás, úszás, edzőterem" />
+        <label for="sports">{{ $t('components.optionalFields.sports') }}</label>
+        <input type="text" id="sports" v-model="dataStore.userData.sports"
+            :placeholder="$t('components.optionalFields.placeholderSports')" />
 
-        <label for="medications">Rendszeresen szedett gyógyszerek</label>
+        <label for="medications">{{ $t('components.optionalFields.medications') }}</label>
         <input type="text" id="medications" v-model="dataStore.userData.medications"
-            placeholder="pl.: Aspirin, L-thyroxin" />
+            :placeholder="$t('components.optionalFields.placeholderMedications')" />
 
-        <label for="chronicDiseases">Krónikus betegségek</label>
+        <label for="chronicDiseases">{{ $t('components.optionalFields.chronicDiseases') }}</label>
         <input type="text" id="chronicDiseases" v-model="dataStore.userData.chronicDiseases"
-            placeholder="pl.: cukorbetegség" />
+            :placeholder="$t('components.optionalFields.placeholderChronicDiseases')" />
 
-        <label for="allergies">Allergiák</label>
+        <label for="allergies">{{ $t('components.optionalFields.allergies') }}</label>
         <input type="text" id="allergies" v-model="dataStore.userData.allergies"
-            placeholder="pl.: penicillin, pollen" />
+            :placeholder="$t('components.optionalFields.placeholderAllergies')" />
 
-        <label for="diet">Táplálkozási szokások</label>
-        <input type="text" id="diet" v-model="dataStore.userData.diet" placeholder="pl.: vegetáriánus, keto" />
+        <label for="diet">{{ $t('components.optionalFields.diet') }}</label>
+        <input type="text" id="diet" v-model="dataStore.userData.diet"
+            :placeholder="$t('components.optionalFields.placeholderDiet')" />
 
-        <label for="waterIntake">Napi vízfogyasztás (liter)</label>
+        <label for="waterIntake">{{ $t('components.optionalFields.waterIntake') }}</label>
         <input type="number" id="waterIntake" v-model="dataStore.userData.waterIntake" min="0" max="10" step="0.1"
-            placeholder="pl.: 2.5" />
+            :placeholder="$t('components.optionalFields.placeholderWaterIntake')" />
 
-        <label for="familyHistory">Családi kórtörténet</label>
+        <label for="familyHistory">{{ $t('components.optionalFields.familyHistory') }}</label>
         <input type="text" id="familyHistory" v-model="dataStore.userData.familyHistory"
-            placeholder="pl.: szívbetegségek" />
+            :placeholder="$t('components.optionalFields.placeholderFamilyHistory')" />
 
-        <label for="smoking">Dohányzás</label>
+        <label for="smoking">{{ $t('components.optionalFields.smoking') }}</label>
         <select id="smoking" v-model="dataStore.userData.smoking">
-            <option value="" disabled selected>Nincs megadva</option>
-            <option value="never">Soha</option>
-            <option value="occasionally">Alkalmanként</option>
-            <option value="regularly">Rendszeresen</option>
+            <option value="" disabled selected>{{ $t('components.optionalFields.selectPlaceholder') }}</option>
+            <option value="never">{{ $t('components.optionalFields.smokingOptions.never') }}</option>
+            <option value="occasionally">{{ $t('components.optionalFields.smokingOptions.occasionally') }}</option>
+            <option value="regularly">{{ $t('components.optionalFields.smokingOptions.regularly') }}</option>
         </select>
 
-        <label for="alcohol">Alkoholfogyasztás</label>
+        <label for="alcohol">{{ $t('components.optionalFields.alcohol') }}</label>
         <select id="alcohol" v-model="dataStore.userData.alcohol">
-            <option value="" disabled selected>Nincs megadva</option>
-            <option value="never">Soha</option>
-            <option value="occasionally">Alkalmanként</option>
-            <option value="regularly">Rendszeresen</option>
+            <option value="" disabled selected>{{ $t('components.optionalFields.selectPlaceholder') }}</option>
+            <option value="never">{{ $t('components.optionalFields.alcoholOptions.never') }}</option>
+            <option value="occasionally">{{ $t('components.optionalFields.alcoholOptions.occasionally') }}</option>
+            <option value="regularly">{{ $t('components.optionalFields.alcoholOptions.regularly') }}</option>
         </select>
 
-        <label for="sleep">Napi alvásidő (óra)</label>
+        <label for="sleep">{{ $t('components.optionalFields.sleep') }}</label>
         <input type="number" id="sleep" v-model="dataStore.userData.sleep" min="0" max="24" step="0.5"
-            placeholder="pl.: 7.5" />
+            :placeholder="$t('components.optionalFields.placeholderSleep')" />
 
-        <label for="medicalRecords">Panaszok / tünetek</label>
+        <label for="medicalRecords">{{ $t('components.optionalFields.medicalRecords') }}</label>
         <textarea id="medicalRecords" v-model="dataStore.userData.symptoms"
-            placeholder="pl.: gyakori fejfájás"></textarea>
+            :placeholder="$t('components.optionalFields.placeholderMedicalRecords')"></textarea>
 
-        <label for="medicalHistory">Betegéletút</label>
+        <label for="medicalHistory">{{ $t('components.optionalFields.medicalHistory') }}</label>
         <textarea id="medicalHistory" v-model="dataStore.userData.medicalHistory"
-            placeholder="Korábbi betegségek"></textarea>
+            :placeholder="$t('components.optionalFields.placeholderMedicalHistory')"></textarea>
     </div>
 </template>
 

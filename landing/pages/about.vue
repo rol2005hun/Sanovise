@@ -1,75 +1,32 @@
 <template>
     <div class="about">
         <div class="description">
-            <p>
-                Üdvözöljük az egészségügyi tanácsadás új dimenziójában! Célunk, hogy egy digitális egészségügyi
-                asszisztens segítségével támogassuk
-                felhasználóinkat az egészségtudatosságuk növelésében. Az alkalmazásunk mesterséges intelligenciára épül,
-                és lehetővé teszi a személyre szabott egészségügyi elemzést.
-            </p>
+            <p>{{ $t('pages.about.description') }}</p>
         </div>
 
         <div class="goal">
-            <h2>Célunk</h2>
-            <p>
-                Egy olyan innovatív platform létrehozása, amely az Ön egészségügyi adatait elemezve hasznos
-                információkat nyújt. Az asszisztensünk átlagos
-                pulzusszám, vérnyomás, jelenlegi gyógyszerek, orvosi leletek, születési dátum, súly, magasság és egyéb
-                adatok alapján segít megérteni az
-                egészségi állapotát, és előre jelezheti a lehetséges egészségügyi problémákat.
-                <span style="color: red;">Fontos, hogy ez az alkalmazás nem helyettesíti az orvosi konzultációt</span>.
-            </p>
+            <h2>{{ $t('pages.about.goal') }}</h2>
+            <p>{{ $t('pages.about.goalText') }}</p>
         </div>
 
         <div class="functions">
-            <h2>Fő funkciók</h2>
+            <h2>{{ $t('pages.about.features') }}</h2>
             <ul>
-                <li>Felhasználói egészségügyi adatok elemzése
-                    <br>
-                    <span class="side-note">Egészségügyi állapotát folyamatosan figyelemmel kísérheti. 📈</span>
-                </li>
-                <li>Személyre szabott egészségügyi tanácsadás
-                    <br>
-                    <span class="side-note">A digitális asszisztensünk mindenre megpróbál válaszolni. ↩️</span>
-                </li>
-                <li>Adatok exportálása és importálása JSON formátumban
-                    <br>
-                    <span class="side-note">Így nem kell minden egyes alkalommal újra begépelni az adatokat. 🙈</span>
-                </li>
-                <li>Intuitív és reszponzív felhasználói felület
-                    <br>
-                    <span class="side-note">Mivel már 2025-t írunk. 🎊</span>
-                </li>
+                <li v-for="index in 4" :key="index">{{ $t(`pages.about.featuresList[${index - 1}]`) }}</li>
             </ul>
         </div>
 
         <div class="how-to">
-            <h2>Hogyan működik?</h2>
-            <p>
-                Az alkalmazásunk egyszerűen használható:
-            </p>
+            <h2>{{ $t('pages.about.howItWorks') }}</h2>
             <ol>
-                <li>Látogasson el a <a href="https://app.sanovise.ranzak.site/" target="_blank">Sanovite Myself</a> oldalára.</li>
-                <li>Adja meg egészségügyi adatait, mint például pulzusszám, vérnyomás, magasság, súly stb.</li>
-                <li>Az alkalmazás mesterséges intelligencia segítségével elemzi az adatokat.</li>
-                <li>Kapjon visszajelzést egészségi állapotáról, és tájékozódjon a lehetséges betegségekről.</li>
+                <li v-for="index in 4" :key="index">{{ $t(`pages.about.howItWorksSteps[${index - 1}]`) }}</li>
             </ol>
         </div>
 
         <div class="why-us">
-            <h2>Miért válassza ezt az alkalmazást?</h2>
-            <p>
-                Az egészségügyi tanácsadó rendszerünk modern technológiára épül, amely egyszerűsíti az egészségügyi
-                adatainak kezelését és elemzését.
-                Az intuitív felhasználói felület és a mesterséges intelligencia integrációja segítségével átfogó képet
-                kaphat az egészségi állapotáról.
-                Ideális választás mindenkinek, aki aktívan szeretné figyelemmel kísérni és javítani az egészségét.
-            </p>
-
-            <p>
-                Köszönjük, hogy minket választott, és lehetőséget ad arra, hogy támogassuk Önt az egészségtudatos
-                életmód felé vezető úton!
-            </p>
+            <h2>{{ $t('pages.about.whyChooseUs') }}</h2>
+            <p>{{ $t('pages.about.whyChooseUsText') }}</p>
+            <p>{{ $t('pages.about.thankYou') }}</p>
         </div>
     </div>
 </template>

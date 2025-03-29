@@ -1,0 +1,88 @@
+{
+    "pages": {
+        "index": {
+            "title": "Upload Your Data"
+        }
+    },
+    "components": {
+        "fileUpload": {
+            "upload": "Select a file or drag it here",
+            "loaded": "Loaded"
+        },
+        "header": {
+            "settings": "Settings"
+        },
+        "optionalFields": {
+            "heartRate": "Average Heart Rate",
+            "bloodPressure": "Blood Pressure (systole/diastole)",
+            "sports": "Sports Activities",
+            "medications": "Regular Medications",
+            "chronicDiseases": "Chronic Diseases",
+            "allergies": "Allergies",
+            "diet": "Dietary Habits",
+            "waterIntake": "Daily Water Intake (liters)",
+            "familyHistory": "Family Medical History",
+            "smoking": "Smoking",
+            "alcohol": "Alcohol Consumption",
+            "sleep": "Daily Sleep Duration (hours)",
+            "medicalRecords": "Symptoms / Complaints",
+            "medicalHistory": "Medical History",
+            "smokingOptions": {
+                "never": "Never",
+                "occasionally": "Occasionally",
+                "regularly": "Regularly"
+            },
+            "alcoholOptions": {
+                "never": "Never",
+                "occasionally": "Occasionally",
+                "regularly": "Regularly"
+            },
+            "selectPlaceholder": "Not Provided",
+            "placeholderHeartRate": "e.g.: 72",
+            "placeholderBloodPressure": "e.g.: 120/80",
+            "placeholderSports": "e.g.: running, swimming, gym",
+            "placeholderMedications": "e.g.: Aspirin, L-thyroxine",
+            "placeholderChronicDiseases": "e.g.: diabetes",
+            "placeholderAllergies": "e.g.: penicillin, pollen",
+            "placeholderDiet": "e.g.: vegetarian, keto",
+            "placeholderWaterIntake": "e.g.: 2.5",
+            "placeholderFamilyHistory": "e.g.: heart diseases",
+            "placeholderSleep": "e.g.: 7.5",
+            "placeholderMedicalRecords": "e.g.: frequent headaches",
+            "placeholderMedicalHistory": "Previous diseases"
+        },
+        "privacyModal": {
+            "title": "Our Privacy Policy",
+            "text1": "The data you provide will only be used by the healthcare advisory system and will not be shared with third parties. The system does not store your data, and you can manage and save it to your own device.",
+            "text2": "By accepting the privacy terms, you consent to the system providing advice based on the information you provide."
+        },
+        "response": {
+            "title": "Dr. Sanovise Mi's Response:",
+            "thinking": "Thinking 🤔"
+        },
+        "settingsModal": {
+            "title": "Settings",
+            "text": "Choose your desired language:"
+        },
+        "userForm": {
+            "requiredInfo1": "The fields marked with a",
+            "requiredInfo2": "are mandatory!",
+            "birthDate": "Date of Birth",
+            "gender": "Gender",
+            "selectGender": "Select Gender",
+            "male": "Male",
+            "female": "Female",
+            "height": "Height",
+            "weight": "Weight",
+            "placeholderHeight": "e.g.: 175",
+            "placeholderWeight": "e.g.: 70",
+            "showExtra": "Provide Additional Information",
+            "hideExtra": "Hide Additional Information",
+            "acceptPrivacy": "I accept the",
+            "privacyLink": "privacy policy",
+            "submitData": "Submit Data",
+            "abort": "Do not respond",
+            "exportData": "Export Data"
+        }
+    }
+}

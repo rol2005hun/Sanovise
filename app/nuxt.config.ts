@@ -2,9 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+
   typescript: {
     strict: true,
   },
+
   app: {
     head: {
       title: 'Sanovise - App',
@@ -16,5 +18,24 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/logo.png' }
       ]
     }
+  },
+
+  modules: ['@nuxtjs/i18n'],
+
+  i18n: {
+    locales: [
+      { code: 'en-US', name: 'English (United States)', iso: 'en-US', file: 'en-US.json' },
+      { code: 'hu-HU', name: 'Magyar', iso: 'hu-HU', file: 'hu-HU.json' }
+    ],
+    defaultLocale: 'en-US',
+    lazy: true,
+    langDir: '../locales',
+    strategy: 'no_prefix',
+    bundle: {
+      optimizeTranslationDirective: false
+    },
+    detectBrowserLanguage: {
+      redirectOn: 'all'
+    },
   }
 });

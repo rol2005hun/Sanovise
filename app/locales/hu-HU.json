@@ -1,0 +1,88 @@
+{
+    "pages": {
+        "index": {
+            "title": "Töltse fel adatait"
+        }
+    },
+    "components": {
+        "fileUpload": {
+            "upload": "Válasszon fájlt vagy húzza ide",
+            "loaded": "Betöltve"
+        },
+        "header": {
+            "settings": "Beállítások"
+        },
+        "optionalFields": {
+            "heartRate": "Átlagos pulzus",
+            "bloodPressure": "Vérnyomás (systole/diastole)",
+            "sports": "Sporttevékenyégek",
+            "medications": "Rendszeresen szedett gyógyszerek",
+            "chronicDiseases": "Krónikus betegségek",
+            "allergies": "Allergiák",
+            "diet": "Táplálkozási szokások",
+            "waterIntake": "Napi vízfogyasztás (liter)",
+            "familyHistory": "Családi kórtörténet",
+            "smoking": "Dohányzás",
+            "alcohol": "Alkoholfogyasztás",
+            "sleep": "Napi alvásidő (óra)",
+            "medicalRecords": "Panaszok / tünetek",
+            "medicalHistory": "Betegéletút",
+            "smokingOptions": {
+                "never": "Soha",
+                "occasionally": "Alkalmanként",
+                "regularly": "Rendszeresen"
+            },
+            "alcoholOptions": {
+                "never": "Soha",
+                "occasionally": "Alkalmanként",
+                "regularly": "Rendszeresen"
+            },
+            "selectPlaceholder": "Nincs megadva",
+            "placeholderHeartRate": "pl.: 72",
+            "placeholderBloodPressure": "pl.: 120/80",
+            "placeholderSports": "pl.: futás, úszás, edzőterem",
+            "placeholderMedications": "pl.: Aspirin, L-thyroxin",
+            "placeholderChronicDiseases": "pl.: cukorbetegség",
+            "placeholderAllergies": "pl.: penicillin, pollen",
+            "placeholderDiet": "pl.: vegetáriánus, keto",
+            "placeholderWaterIntake": "pl.: 2.5",
+            "placeholderFamilyHistory": "pl.: szívbetegségek",
+            "placeholderSleep": "pl.: 7.5",
+            "placeholderMedicalRecords": "pl.: gyakori fejfájás",
+            "placeholderMedicalHistory": "Korábbi betegségek"
+        },
+        "privacyModal": {
+            "title": "Adatvédelmi tájékoztatónk",
+            "text1": "Az Ön által megadott adatokat kizárólag az egészségügyi tanácsadó rendszer használja fel, és harmadik fél számára nem kerülnek továbbításra. Az adatait a rendszer nem tárolja, Ön kezelheti azokat, és mentheti le saját készülékére.",
+            "text2": "Az adatvédelmi feltételek elfogadásával hozzájárul ahhoz, hogy rendszerünk az Ön által megadott információk alapján tanácsokat adjon."
+        },
+        "response": {
+            "title": "Dr. Sanovise Mi válasza:",
+            "thinking": "Gondolkodom 🤔"
+        },
+        "settingsModal": {
+            "title": "Beállítások",
+            "text": "Válaszd ki a kívánt nyelvet:"
+        },
+        "userForm": {
+            "requiredInfo1": "A",
+            "requiredInfo2": "-gal jelölt mezők kitöltése kötelező!",
+            "birthDate": "Születési dátum",
+            "gender": "Nem",
+            "selectGender": "Válasszon nemet",
+            "male": "Férfi",
+            "female": "Nő",
+            "height": "Magasság",
+            "weight": "Súly",
+            "placeholderHeight": "pl.: 175",
+            "placeholderWeight": "pl.: 70",
+            "showExtra": "További adatok megadása",
+            "hideExtra": "További adatok elrejtése",
+            "acceptPrivacy": "Elfogadom az",
+            "privacyLink": "adatvédelmi irányelveket",
+            "submitData": "Adatok beküldése",
+            "abort": "Ne válaszolj",
+            "exportData": "Exportálás"
+        }
+    }
+}
