@@ -84,6 +84,11 @@
                 color: white;
             }
 
+            &.abort {
+                background-color: red;
+                color: white;
+            }
+
             &.export {
                 background-color: yellow;
                 color: black;

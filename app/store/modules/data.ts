@@ -25,7 +25,8 @@ export const useData = defineStore('data', {
         serverResponse: null as any,
         thinking: false,
         showOptionalFields: false,
-        showPrivacyModal: false
+        showPrivacyModal: false,
+        controller: <AbortController | null>(null),
     }),
 
     actions: {

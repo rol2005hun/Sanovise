@@ -37,9 +37,10 @@
         </div>
 
         <div class="buttons">
-            <button type="submit" :class="['submit', { 'disabled': !privacyAccepted }]"
-                :disabled="!privacyAccepted">Adatok
+            <button v-if="!dataStore.thinking" type="submit" :class="['submit', { 'disabled': !privacyAccepted || dataStore.thinking }]"
+                :disabled="!privacyAccepted || dataStore.thinking">Adatok
                 beküldése</button>
+            <button v-else type="button" @click="stopAnswering" class="abort">Ne válaszolj</button> 
             <button type="button" @click="exportData" class="export">Exportálás</button>
         </div>
     </form>
@@ -52,9 +53,15 @@ const privacyAccepted = ref(false);
 
 const submitData = async () => {
     try {
+        const controller = new AbortController();
+        const { signal } = controller;
+        dataStore.controller = controller;
         dataStore.thinking = true;
+        dataStore.serverResponse = '';
+
         const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice', {
             method: 'POST',
+            signal,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
@@ -65,7 +72,7 @@ const submitData = async () => {
         if (!response.body) {
             throw new Error('A válasz üres.');
         }
-
+        
         const reader = response.body.getReader();
         const decoder = new TextDecoder('utf-8');
         dataStore.serverResponse = '';
@@ -78,8 +85,18 @@ const submitData = async () => {
             }
             dataStore.serverResponse += decoder.decode(value, { stream: true });
         }
-    } catch (error) {
-        dataStore.serverResponse = 'Hiba történt az adatok küldése közben.';
+    } catch (error: any) {
+        dataStore.thinking = false;
+        if (error.name !== 'AbortError') {
+            dataStore.serverResponse = 'Hiba történt az adatok küldése közben: ' + error.message;
+        }
+    }
+}
+
+const stopAnswering = () => {
+    if (dataStore.controller) {
+        dataStore.controller.abort();
+        dataStore.thinking = false;
     }
 }
 
