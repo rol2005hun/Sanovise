@@ -45,7 +45,7 @@ The application processes this data and provides information about the user's he
 ## 💡 Ideas
 
 - [ ] 🔄 Automatic app updates when new code changes are deployed
-- [ ] 🗺️ Google Maps integration for the contact section on the landing page
+- [x] 🗺️ Google Maps integration for the contact section on the landing page
 - [ ] 📰 News section on the homepage of the landing page
 - [ ] 📖 More detailed and interactive "About Us" page
 - [ ] ✅ Real-time form validation
