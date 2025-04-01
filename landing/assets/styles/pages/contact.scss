@@ -185,7 +185,6 @@
     }
 
     .send-btn {
-        flex-direction: column-reverse;
-        gap: 1rem;
+        gap: 1rem!important;
     }
 }

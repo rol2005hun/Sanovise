@@ -11,10 +11,14 @@
                     <a :href="'mailto:' + $t('pages.contact.emailAddress', { dot: '@' })">{{
                         $t('pages.contact.emailAddress', { dot: '@' }) }}</a>
                 </div>
+                <div class="info-card">
+                    <h3>{{ $t('pages.contact.address') }}</h3>
+                    <p>{{ $t('pages.contact.addressDetails') }}</p>
+                </div>
             </section>
 
             <section class="maps-form">
-                <iframe style="border:0" loading="lazy" allowfullscreen
+                <iframe style="border: 0;" loading="lazy" allowfullscreen
                     src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJz2N7xdwNR0cRa7C8gsfrJoQ&key=AIzaSyBvm-ltijTAkX-Ov1WH-TxtpJDzyKUrQi4"></iframe>
 
                 <section class="contact-form">

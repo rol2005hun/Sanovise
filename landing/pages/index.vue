@@ -9,22 +9,15 @@
     </section>
 
     <section class="features container">
-      <div class="feature-card" v-for="(feature, index) in features" :key="index">
-        <h3>{{ feature.title }}</h3>
-        <p>{{ feature.description }}</p>
+      <div class="feature-card" v-for="index in 3" :key="index">
+        <h3>{{ $t(`pages.index.features.titles[${index - 1}]`) }}</h3>
+        <p>{{ $t(`pages.index.features.descriptions[${index - 1}]`) }}</p>
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n();
-
-const features = ref([
-  { title: t('pages.index.features.analysis.title'), description: t('pages.index.features.analysis.description') },
-  { title: t('pages.index.features.security.title'), description: t('pages.index.features.security.description') },
-  { title: t('pages.index.features.multiPlatform.title'), description: t('pages.index.features.multiPlatform.description') },
-]);
 </script>
 
 <style scoped lang="scss">

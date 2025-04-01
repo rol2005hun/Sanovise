@@ -51,7 +51,7 @@ The application processes this data and provides information about the user's he
 - [ ] ✅ Real-time form validation
 - [ ] 🎨 Theme and language selection options in the settings
 - [ ] 💬 Implementing a chat-based consultation feature
-- [ ] 🚀 Building a brand identity around "Dr. Sanovise AI"
+- [ ] 🚀 Building a brand identity around "Dr. Sanovise"
 
 ---
 

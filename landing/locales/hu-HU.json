@@ -1,37 +1,37 @@
 {
     "pages": {
         "about": {
-            "description": "Üdvözöljük az egészségügyi tanácsadás új dimenziójában! Célunk, hogy egy digitális egészségügyi asszisztens segítségével támogassuk felhasználóinkat az egészségtudatosságuk növelésében. Az alkalmazásunk mesterséges intelligenciára épül, és lehetővé teszi a személyre szabott egészségügyi elemzést.",
-            "goal": "Célunk",
+            "description": "👋 Üdvözöljük az egészségügyi tanácsadás új dimenziójában! Célunk, hogy egy digitális egészségügyi asszisztens segítségével támogassuk felhasználóinkat az egészségtudatosságuk növelésében. Az alkalmazásunk mesterséges intelligenciára épül, és lehetővé teszi a személyre szabott egészségügyi elemzést.",
+            "goal": "🎯 Célunk",
             "goalText": "Egy olyan innovatív platform létrehozása, amely az Ön egészségügyi adatait elemezve hasznos információkat nyújt. Az asszisztensünk átlagos pulzusszám, vérnyomás, jelenlegi gyógyszerek, orvosi leletek, születési dátum, súly, magasság és egyéb adatok alapján segít megérteni az egészségi állapotát, és előre jelezheti a lehetséges egészségügyi problémákat.",
-            "features": "Fő funkciók",
+            "features": "👀 Fő funkciók",
             "featuresList": [
                 "Felhasználói egészségügyi adatok elemzése 📈",
                 "Személyre szabott egészségi tanácsadás ↩️",
                 "Adatok exportálása és importálása JSON formátumban 🙈",
                 "Intuitív és reszponzív felhasználói felület 🎊"
             ],
-            "howItWorks": "Hogyan működik?",
+            "howItWorks": "🛠️ Hogyan működik?",
             "howItWorksSteps": [
                 "Látogasson el a {link} oldalára.",
                 "Adja meg egészségügyi adatait, mint például pulzusszám, vérnyomás, magasság, súly stb.",
                 "Az alkalmazás mesterséges intelligencia segítségével elemzi az adatokat.",
                 "Kapjon visszajelzést egészségi állapotáról, és tájékozódjon a lehetséges betegségekről."
             ],
-            "whyChooseUs": "Miért válassza ezt az alkalmazást?",
+            "whyChooseUs": "👉 Miért válassza ezt az alkalmazást?",
             "whyChooseUsText": "Az egészségügyi tanácsadó rendszerünk modern technológiára épül, amely egyszerűsíti az egészségügyi adatainak kezelését és elemzését. Az intuitív felhasználói felület és a mesterséges intelligencia integrációja segítségével átfogó képet kaphat az egészségi állapotáról. Ideális választás mindenkinek, aki aktívan szeretné figyelemmel kísérni és javítani az egészségét.",
             "thankYou": "Köszönjük, hogy minket választott, és lehetőséget ad arra, hogy támogassuk Önt az egészségtudatos életmód felé vezető úton!"
         },
         "contact": {
-            "phone": "Telefon",
+            "phone": "📞 Telefon",
             "phoneNumber": "+36 123 456 789",
-            "email": "Email",
+            "email": "📧 Email",
             "emailAddress": "info{dot}sanovise.com",
-            "address": "Cím",
+            "address": "📍 Cím",
             "addressDetails": "Debrecen, Kassai út 1.",
-            "contactFormTitle": "Írj nekünk",
+            "contactFormTitle": "📝 Írj nekünk",
             "nameLabel": "Név",
-            "namePlaceholder": "pl.: Dr. Sanovise Mi",
+            "namePlaceholder": "pl.: Dr. Sanovise",
             "emailLabel": "Email",
             "emailPlaceholder": "pl.: info{dot}sanovise.hu",
             "messageLabel": "Üzenet",
@@ -40,22 +40,20 @@
             "agreeLabel": "Elfogadom az üzenetküldési feltételeket."
         },
         "index": {
-            "heroTitle": "Digitális egészségügyi asszisztens",
+            "heroTitle": "🤖 Digitális egészségügyi asszisztens",
             "heroDescription": "Fedezd fel részletesen egészségügyi adataid és ajánlásaink segítségével hozd meg a legjobb döntéseket!",
             "getStarted": "Kezdd el",
             "features": {
-                "analysis": {
-                    "title": "Részletes elemzés",
-                    "description": "Személyre szabott egészségügyi tanácsadás a te adataid alapján."
-                },
-                "security": {
-                    "title": "Adatbiztonság",
-                    "description": "Adatvédelmi protokollok és titkosítás minden szinten."
-                },
-                "multiPlatform": {
-                    "title": "Multi-platform",
-                    "description": "Webes, asztali és mobil eszközökön egyaránt elérhető."
-                }
+                "titles": [
+                    "📊 Részletes elemzés",
+                    "🛡️ Adatbiztonság",
+                    "🌐 Multi-platform"
+                ],
+                "descriptions": [
+                    "Személyre szabott egészségügyi tanácsadás a te adataid alapján.",
+                    "Adatvédelmi protokollok és titkosítás minden szinten.",
+                    "Webes, asztali és mobil eszközökön egyaránt elérhető."
+                ]
             }
         }
     },

@@ -1,37 +1,37 @@
 {
     "pages": {
         "about": {
-            "description": "Welcome to the new dimension of healthcare consulting! Our goal is to support our users in increasing their health awareness with the help of a digital health assistant. Our application is based on artificial intelligence and enables personalized health analysis.",
-            "goal": "Our Goal",
+            "description": "👋 Welcome to the new dimension of healthcare consulting! Our goal is to support our users in increasing their health awareness with the help of a digital health assistant. Our application is based on artificial intelligence and enables personalized health analysis.",
+            "goal": "🎯 Our Goal",
             "goalText": "To create an innovative platform that analyzes your health data and provides useful insights. Our assistant helps you understand your health status based on average heart rate, blood pressure, current medications, medical records, date of birth, weight, height, and other data, and can even predict potential health issues.",
-            "features": "Key Features",
+            "features": "👀 Key Features",
             "featuresList": [
                 "User health data analysis 📈",
                 "Personalized health advice ↩️",
                 "Data export and import in JSON format 🙈",
                 "Intuitive and responsive user interface 🎊"
             ],
-            "howItWorks": "How It Works?",
+            "howItWorks": "🛠️ How It Works?",
             "howItWorksSteps": [
                 "Visit the {link} page.",
                 "Enter your health data, such as heart rate, blood pressure, height, weight, etc.",
                 "The application analyzes the data using artificial intelligence.",
                 "Receive feedback on your health status and learn about potential health risks."
             ],
-            "whyChooseUs": "Why Choose This Application?",
+            "whyChooseUs": "👉 Why Choose This Application?",
             "whyChooseUsText": "Our health advisory system is built on modern technology, simplifying the management and analysis of your health data. With an intuitive user interface and artificial intelligence integration, you can get a comprehensive view of your health. It's an ideal choice for anyone who wants to actively monitor and improve their health.",
             "thankYou": "Thank you for choosing us and giving us the opportunity to support you on your journey toward a healthier lifestyle!"
         },
         "contact": {
-            "phone": "Phone",
+            "phone": "📞 Phone",
             "phoneNumber": "+36 123 456 789",
-            "email": "Email",
+            "email": "📧 Email",
             "emailAddress": "info{dot}sanovise.com",
-            "address": "Address",
+            "address": "📍 Address",
             "addressDetails": "Debrecen, Kassai út 1.",
-            "contactFormTitle": "Write to us",
+            "contactFormTitle": "📝 Write to us",
             "nameLabel": "Name",
-            "namePlaceholder": "e.g., Dr. Sanovise Mi",
+            "namePlaceholder": "e.g., Dr. Sanovise",
             "emailLabel": "Email",
             "emailPlaceholder": "e.g., info{dot}sanovise.hu",
             "messageLabel": "Message",
@@ -40,22 +40,20 @@
             "agreeLabel": "I accept the terms of sending messages."
         },
         "index": {
-            "heroTitle": "Digital Health Assistant",
+            "heroTitle": "🤖 Digital Health Assistant",
             "heroDescription": "Explore your health data in detail and make the best decisions with our recommendations!",
             "getStarted": "Get Started",
             "features": {
-                "analysis": {
-                    "title": "Detailed Analysis",
-                    "description": "Personalized health advice based on your data."
-                },
-                "security": {
-                    "title": "Data Security",
-                    "description": "Privacy protocols and encryption at all levels."
-                },
-                "multiPlatform": {
-                    "title": "Multi-Platform",
-                    "description": "Available on web, desktop, and mobile devices."
-                }
+                "titles": [
+                    "📊 Detailed Analysis",
+                    "🛡️ Data Security",
+                    "🌐 Multi-Platform"
+                ],
+                "descriptions": [
+                    "Personalized health advice based on your data.",
+                    "Privacy protocols and encryption at all levels.",
+                    "Available on web, desktop, and mobile devices."
+                ]
             }
         }
     },
