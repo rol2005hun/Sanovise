@@ -1,6 +1,6 @@
 <template>
     <div ref="responseContainer" class="response-container">
-        <div v-if="dataStore.serverResponse || dataStore.thinking" class="response">
+        <div v-if="dataStore.serverResponse || dataStore.responseType" class="response">
             <h3>{{ $t('components.response.title') }}</h3>
             <p v-if="dataStore.serverResponse" class="response-text">
                 <span v-for="(line, lineIndex) in wordsList" :key="lineIndex" class="line">
@@ -11,7 +11,8 @@
                     <br />
                 </span>
             </p>
-            <p v-if="dataStore.thinking" class="thinking-anim">{{ $t('components.response.thinking') }}</p>
+            <p v-if="dataStore.responseType" class="thinking-anim">{{
+                $t(`components.response.${dataStore.responseType}`) }}</p>
         </div>
     </div>
 </template>
@@ -19,19 +20,57 @@
 <script setup lang="ts">
 import { dataStore } from '@/store';
 
+const userScrolled = ref(false);
+const isAutoScrolling = ref(false);
 const responseContainer = ref<HTMLElement | null>(null);
+
 const wordsList = computed(() => {
     if (!dataStore.serverResponse) return [];
     return dataStore.serverResponse.split('\n').map((line: string) => line.split(' '));
 });
 
-watch([() => dataStore.serverResponse, () => dataStore.thinking], async () => {
-    await nextTick();
+const onScroll = () => {
+    if (isAutoScrolling.value) return;
+
     if (responseContainer.value) {
-        responseContainer.value.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        const isAtBottom = scrollTop + clientHeight >= scrollHeight - 10;
+        userScrolled.value = !isAtBottom;
+    }
+}
+
+const onUserScrollEnd = () => {
+    if (responseContainer.value) {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        if (scrollTop + clientHeight >= scrollHeight - 10) {
+            userScrolled.value = false;
+        }
+    }
+}
+
+watch([() => dataStore.serverResponse, () => dataStore.responseType], async () => {
+    await nextTick();
+    if (!userScrolled.value) {
+        isAutoScrolling.value = true;
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+
+        setTimeout(() => {
+            isAutoScrolling.value = false;
+        }, 500);
     }
 });
+
+onMounted(() => {
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('wheel', onUserScrollEnd);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('wheel', onUserScrollEnd);
+});
 </script>
+
 
 <style scoped lang="scss">
 @use '@/assets/styles/components/response.scss';

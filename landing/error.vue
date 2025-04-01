@@ -22,7 +22,6 @@
 
 <script setup lang="ts">
 import type { NuxtError } from '#app';
-import Header from '@/components/header.vue';
 
 const props = defineProps({
     error: Object as () => NuxtError

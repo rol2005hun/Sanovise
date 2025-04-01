@@ -38,11 +38,12 @@
         </div>
 
         <div class="buttons">
-            <button v-if="!dataStore.thinking" type="submit"
-                :class="['submit', { 'disabled': !privacyAccepted || dataStore.thinking }]"
-                :disabled="!privacyAccepted || dataStore.thinking">{{ $t('components.userForm.submitData') }}</button>
-            <button v-else type="button" @click="stopAnswering" class="abort">{{ $t('components.userForm.abort')
-            }}</button>
+            <button v-if="!dataStore.responseType" type="submit"
+                :class="['submit', { 'disabled': !privacyAccepted || dataStore.responseType }]"
+                :disabled="!privacyAccepted || dataStore.responseType != null">{{ $t('components.userForm.submitData')
+                }}</button>
+            <button v-else type="button" @click="stopAnswering()" class="abort">{{ $t('components.userForm.abort')
+                }}</button>
             <button type="button" @click="exportData" class="export">{{ $t('components.userForm.exportData') }}</button>
         </div>
     </form>
@@ -53,13 +54,13 @@ import { dataStore } from '@/store';
 
 const privacyAccepted = ref(false);
 
-const submitData = async () => {
+async function submitData() {
     try {
+        dataStore.responseType = 'analyzing';
+        dataStore.serverResponse = '';
         const controller = new AbortController();
         const { signal } = controller;
         dataStore.controller = controller;
-        dataStore.thinking = true;
-        dataStore.serverResponse = '';
 
         const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice', {
             method: 'POST',
@@ -82,27 +83,28 @@ const submitData = async () => {
         while (true) {
             const { done, value } = await reader.read();
             if (done) {
-                dataStore.thinking = false;
+                dataStore.responseType = null;
                 break;
             }
             dataStore.serverResponse += decoder.decode(value, { stream: true });
+            dataStore.responseType = 'thinking';
         }
     } catch (error: any) {
-        dataStore.thinking = false;
+        dataStore.responseType = null;
         if (error.name !== 'AbortError') {
             dataStore.serverResponse = 'Hiba történt az adatok küldése közben: ' + error.message;
         }
     }
 }
 
-const stopAnswering = () => {
+function stopAnswering() {
     if (dataStore.controller) {
         dataStore.controller.abort();
-        dataStore.thinking = false;
+        dataStore.responseType = null;
     }
 }
 
-const exportData = () => {
+function exportData() {
     const blob = new Blob([JSON.stringify(dataStore.userData, null, 2)], { type: 'application/json' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);

@@ -25,15 +25,15 @@
 const isOpen = ref(false);
 const isScrolled = ref(false);
 
-const toggleMenu = () => {
+function toggleMenu() {
   isOpen.value = !isOpen.value;
 }
 
-const closeMenu = () => {
+function closeMenu() {
   isOpen.value = false;
 }
 
-const handleScroll = () => {
+function handleScroll() {
   isScrolled.value = window.scrollY > 50;
 }
 

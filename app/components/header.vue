@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <div class="logo">
+        <div class="logo" @click="resetAll()">
             <img src="/logo.png" alt="App Logo" />
             <span>Sanovise</span>
         </div>
@@ -13,6 +13,10 @@
 
 <script setup lang="ts">
 const showSettingsModal = ref(false);
+
+function resetAll() {
+    useRouter().go(0);
+}
 </script>
 
 <style scoped lang="scss">

@@ -22,14 +22,14 @@ export const useData = defineStore('data', {
             symptoms: '',
             medicalHistory: '',
         },
-        serverResponse: null as any,
-        thinking: false,
+        serverResponse: null as string | null,
+        responseType: null as string | null,
         showOptionalFields: false,
         showPrivacyModal: false,
         controller: <AbortController | null>(null),
     }),
 
     actions: {
-
+        
     }
 });

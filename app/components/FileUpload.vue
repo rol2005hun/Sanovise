@@ -11,7 +11,7 @@ import { dataStore } from '@/store';
 
 const fileName = ref<string>('');
 
-const importData = (event: Event) => {
+function importData(event: Event) {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (file) {
         fileName.value = file.name;
@@ -27,7 +27,7 @@ const importData = (event: Event) => {
     }
 }
 
-const handleDrop = (event: DragEvent) => {
+function handleDrop(event: DragEvent) {
     event.preventDefault();
     if (event.dataTransfer?.files.length) {
         importData({ target: { files: event.dataTransfer.files } } as unknown as Event);
