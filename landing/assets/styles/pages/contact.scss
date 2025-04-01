@@ -1,6 +1,6 @@
 .contact-container {
-    max-width: 900px;
-    width: 40rem;
+    max-width: 800px;
+    width: 50rem;
     margin: auto;
     padding: 1rem;
     background: #fbe9e7;
@@ -39,10 +39,16 @@
             font-size: 1.3rem;
         }
 
-        p {
+        a {
             margin: 0;
             font-size: 1rem;
             color: #555;
+            text-decoration: none;
+        }
+
+        iframe {
+            width: 10rem;
+            height: 5rem;
         }
     }
 }

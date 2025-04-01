@@ -19,7 +19,7 @@
         <div class="how-to">
             <h2>{{ $t('pages.about.howItWorks') }}</h2>
             <ol>
-                <li v-for="index in 4" :key="index">{{ $t(`pages.about.howItWorksSteps[${index - 1}]`) }}</li>
+                <li v-for="index in 4" :key="index" v-html="$t(`pages.about.howItWorksSteps[${index - 1}]`, { link: myselfLink })"></li>
             </ol>
         </div>
 
@@ -32,6 +32,7 @@
 </template>
 
 <script setup lang="ts">
+const myselfLink = ref<string>(`<a href='https://app.sanovise.ranzak.site' target='_blank'>Sanovise Myself</a>`);
 </script>
 
 <style scoped lang="scss">

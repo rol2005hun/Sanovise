@@ -13,7 +13,7 @@
             ],
             "howItWorks": "How It Works?",
             "howItWorksSteps": [
-                "Visit the Sanovise Myself page.",
+                "Visit the {link} page.",
                 "Enter your health data, such as heart rate, blood pressure, height, weight, etc.",
                 "The application analyzes the data using artificial intelligence.",
                 "Receive feedback on your health status and learn about potential health risks."

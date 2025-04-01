@@ -13,7 +13,7 @@
             ],
             "howItWorks": "Hogyan működik?",
             "howItWorksSteps": [
-                "Látogasson el a Sanovite Myself oldalára.",
+                "Látogasson el a {link} oldalára.",
                 "Adja meg egészségügyi adatait, mint például pulzusszám, vérnyomás, magasság, súly stb.",
                 "Az alkalmazás mesterséges intelligencia segítségével elemzi az adatokat.",
                 "Kapjon visszajelzést egészségi állapotáról, és tájékozódjon a lehetséges betegségekről."

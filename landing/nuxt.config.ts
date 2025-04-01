@@ -37,5 +37,8 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       redirectOn: 'all'
     },
+    compilation: {
+      strictMessage: false
+    }
   }
 });

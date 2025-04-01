@@ -4,15 +4,16 @@
             <section class="contact-info">
                 <div class="info-card">
                     <h3>{{ $t('pages.contact.phone') }}</h3>
-                    <p>{{ $t('pages.contact.phoneNumber') }}</p>
-                </div>
-                <div class="info-card">
-                    <h3>{{ $t('pages.contact.email') }}</h3>
-                    <p>{{ $t('pages.contact.emailAddress', { dot: '@' }) }}</p>
+                    <a :href="'tel:' + $t('pages.contact.phoneNumber')">{{ $t('pages.contact.phoneNumber') }}</a>
                 </div>
                 <div class="info-card">
                     <h3>{{ $t('pages.contact.address') }}</h3>
-                    <p>{{ $t('pages.contact.addressDetails') }}</p>
+                    <iframe style="border:0" loading="lazy" allowfullscreen
+                        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJz2N7xdwNR0cRa7C8gsfrJoQ&key=AIzaSyBvm-ltijTAkX-Ov1WH-TxtpJDzyKUrQi4"></iframe>
+                </div>
+                <div class="info-card">
+                    <h3>{{ $t('pages.contact.email') }}</h3>
+                    <a :href="'mailto:' + $t('pages.contact.emailAddress', { dot: '@' })">{{ $t('pages.contact.emailAddress', { dot: '@' }) }}</a>
                 </div>
             </section>
 
@@ -25,8 +26,8 @@
                         required />
 
                     <label for="email">{{ $t('pages.contact.emailLabel') }}<span class="required">*</span></label>
-                    <input id="email" type="email" name="email" :placeholder="$t('pages.contact.emailPlaceholder', { dot: '@' })"
-                        required />
+                    <input id="email" type="email" name="email"
+                        :placeholder="$t('pages.contact.emailPlaceholder', { dot: '@' })" required />
 
                     <label for="message">{{ $t('pages.contact.messageLabel') }}<span class="required">*</span></label>
                     <textarea id="message" name="description" :placeholder="$t('pages.contact.messagePlaceholder')"
