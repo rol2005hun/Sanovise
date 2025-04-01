@@ -7,7 +7,7 @@
         margin-bottom: 1rem;
     }
 
-    .required {
+    :deep(.required) {
         color: red;
         font-weight: bold;
     }

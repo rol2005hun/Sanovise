@@ -1,9 +1,6 @@
 <template>
     <form @submit.prevent="submitData" class="data-form">
-        <p class="required-info">
-            {{ $t('components.userForm.requiredInfo1') }}&nbsp; <span class="required">*</span>&nbsp; {{
-                $t('components.userForm.requiredInfo2') }}
-        </p>
+        <p class="required-info" v-html="$t('components.userForm.requiredInfo')"></p>
         <label for="birthDate">{{ $t('components.userForm.birthDate') }}<span class="required">*</span></label>
         <input type="date" id="birthDate" v-model="dataStore.userData.birthDate" required />
 

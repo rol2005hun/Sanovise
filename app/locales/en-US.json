@@ -65,8 +65,7 @@
             "text": "Choose your desired language:"
         },
         "userForm": {
-            "requiredInfo1": "The fields marked with a",
-            "requiredInfo2": "are mandatory!",
+            "requiredInfo": "The fields marked with a <span class='required'>*</span> are mandatory!",
             "birthDate": "Date of Birth",
             "gender": "Gender",
             "selectGender": "Select Gender",

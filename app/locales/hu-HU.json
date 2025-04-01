@@ -65,8 +65,7 @@
             "text": "Válaszd ki a kívánt nyelvet:"
         },
         "userForm": {
-            "requiredInfo1": "A",
-            "requiredInfo2": "-gal jelölt mezők kitöltése kötelező!",
+            "requiredInfo": "A <span class='required'>*</span>-gal jelölt mezők kitöltése kötelező!",
             "birthDate": "Születési dátum",
             "gender": "Nem",
             "selectGender": "Válasszon nemet",
