@@ -18,6 +18,11 @@ let pipe: any;
 })();
 
 const advice = async (req: Request, res: Response, next: NextFunction) => {
+    let cancelled =  false;
+    res.on('close', () => {
+        cancelled = true;
+    });
+
     try {
         const { birthDate, gender, height, weight, heartRate, bloodPressure, sports, medications, chronicDiseases, allergies, diet, waterIntake, familyHistory, smoking, alcohol, sleep, symptoms, medicalHistory } = req.body;
 
@@ -35,7 +40,8 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
                 content: `You are an experienced doctor with years of clinical practice. You always communicate clearly and empathetically,
                         just as you would during a real consultation. Your advice is practical, professional, and medically sound.
                         You do not introduce yourself, and you do not use excessive pleasantries—just give clear, structured, and medically
-                        relevant information. Do not use any name parameter in your answer.
+                        relevant information. Do not use any name parameter in your answer. Today's date is: ${new Date().getFullYear()}-
+                        ${String(new Date().getMonth() + 1).padStart(2, '0')}-${String(new Date().getDate()).padStart(2, '0')}.
                         Example patient data:
                             - Age: 45
                             - Gender: Male
@@ -82,6 +88,12 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
             skip_prompt: true,
             callback_function: (token: string) => {
                 res.write(token);
+
+                if (cancelled) {
+                    streamer.end();
+                    res.end();
+                    return;
+                }
             },
         });
 
