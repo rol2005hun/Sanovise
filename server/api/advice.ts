@@ -7,10 +7,7 @@ let pipe: any;
 (async () => {
     try {
         env.cacheDir = './.cache';
-        pipe = await pipeline('text-generation', 'HuggingFaceTB/SmolLM2-1.7B-Instruct', {
-            dtype: 'q4',
-            device: 'cpu',
-        });
+        pipe = await pipeline('text-generation', 'HuggingFaceTB/SmolLM2-1.7B-Instruct');
         console.log('[Sanovise - Siker] A modell sikeresen betöltve.');
     } catch (error) {
         console.error('[Sanovise - Hiba] Hiba a modell betöltésekor: ', error);
@@ -18,7 +15,7 @@ let pipe: any;
 })();
 
 const advice = async (req: Request, res: Response, next: NextFunction) => {
-    let cancelled =  false;
+    let cancelled = false;
     res.on('close', () => {
         cancelled = true;
     });

@@ -9,6 +9,9 @@
       </div>
       <nav :class="['nav-menu', { 'open': isOpen, 'scrolled': isScrolled }]">
         <ul class="nav-list">
+          <li class="download-button">
+            <NuxtLink to="/download" @click="closeMenu">{{ $t('components.header.download') }}</NuxtLink>
+          </li>
           <li>
             <NuxtLink to="/about" @click="closeMenu">{{ $t('components.header.about') }}</NuxtLink>
           </li>

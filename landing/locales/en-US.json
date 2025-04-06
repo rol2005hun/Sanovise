@@ -39,6 +39,46 @@
             "submitButton": "Send",
             "agreeLabel": "I accept the terms of sending messages."
         },
+        "download": {
+            "title": "Download the Application",
+            "subtitle": "Choose the platform that suits you or simply use the web version.",
+            "mobile": {
+                "title": " Mobile Applications",
+                "description": "Take your health assistant with you wherever you go.",
+                "android": {
+                    "title": "Android",
+                    "description": "Available for Android 6.0 and later.",
+                    "button": "Download from Google Play"
+                },
+                "ios": {
+                    "title": "iOS (iPhone/iPad)",
+                    "description": "Compatible with iOS 14 and later.",
+                    "button": "Download from the App Store"
+                }
+            },
+            "web": {
+                "title": "✨ Web Application",
+                "emphasis": "✨ The easiest and most convenient way to use the application!",
+                "description": "No installation required, instantly accessible from any modern browser.",
+                "launchButton": "🚀 Launch Web App",
+                "benefits": "Always up-to-date version, accessible from anywhere."
+            },
+            "desktop": {
+                "title": "️🖥️Desktop Applications",
+                "description": "Install the application directly on your computer for a seamless experience.",
+                "windows": {
+                    "title": "Windows"
+                },
+                "macos": {
+                    "title": "macOS"
+                },
+                "linux": {
+                    "title": "Linux (.deb / .AppImage)"
+                },
+                "downloadButton": "Download",
+                "note": "Select the version that matches your operating system."
+            }
+        },
         "index": {
             "heroTitle": "🤖 Digital Health Assistant",
             "heroDescription": "Explore your health data in detail and make the best decisions with our recommendations!",
@@ -64,6 +104,7 @@
         },
         "header": {
             "home": "Home",
+            "download": "Download",
             "about": "About",
             "contact": "Contact"
         }

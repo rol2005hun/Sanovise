@@ -39,6 +39,46 @@
             "submitButton": "Küldés",
             "agreeLabel": "Elfogadom az üzenetküldési feltételeket."
         },
+        "download": {
+            "title": "Töltse le az alkalmazást",
+            "subtitle": "Válassza ki az Önnek megfelelő platformot, vagy használja egyszerűen a webes verziót.",
+            "mobile": {
+                "title": "📱 Mobil alkalmazások",
+                "description": "Vigye magával egészségügyi asszisztensét bárhová.",
+                "android": {
+                    "title": "Android",
+                    "description": "Elérhető Android 6.0 és újabb verziókra.",
+                    "button": "Letöltés a Google Play-ből"
+                },
+                "ios": {
+                    "title": "iOS (iPhone/iPad)",
+                    "description": "Kompatibilis iOS 14 és újabb rendszerekkel.",
+                    "button": "Letöltés az App Store-ból"
+                }
+            },
+            "web": {
+                "title": "✨ Webes alkalmazás",
+                "emphasis": "✨ A legegyszerűbb és legkényelmesebb módja az alkalmazás használatának!",
+                "description": "Nincs szükség telepítésre, azonnal elérhető bármely modern böngészőből.",
+                "launchButton": "🚀 Web app indítása",
+                "benefits": "Mindig naprakész verzió, bárhonnan elérhető."
+            },
+            "desktop": {
+                "title": "🖥️ Asztali alkalmazások",
+                "description": "Telepítse az alkalmazást közvetlenül számítógépére a zökkenőmentes élményért.",
+                "windows": {
+                    "title": "Windows"
+                },
+                "macos": {
+                    "title": "macOS"
+                },
+                "linux": {
+                    "title": "Linux (.deb / .AppImage)"
+                },
+                "downloadButton": "Letöltés",
+                "note": "Válassza ki az operációs rendszerének megfelelő verziót."
+            }
+        },
         "index": {
             "heroTitle": "🤖 Digitális egészségügyi asszisztens",
             "heroDescription": "Fedezd fel részletesen egészségügyi adataid és ajánlásaink segítségével hozd meg a legjobb döntéseket!",
@@ -64,6 +104,7 @@
         },
         "header": {
             "home": "Főoldal",
+            "download": "Letöltés",
             "about": "Rólunk",
             "contact": "Kapcsolat"
         }
