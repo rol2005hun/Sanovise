@@ -15,10 +15,10 @@
                 <div class="app-download-card">
                     <h3><span role="img" aria-label="Robot emoji"><i class="fa-brands fa-android"></i></span> {{
                         $t('pages.download.mobile.android.title')
-                        }}</h3>
+                    }}</h3>
                     <p>{{ $t('pages.download.mobile.android.description') }}</p>
-                    <a href="YOUR_GOOGLE_PLAY_LINK_HERE" target="_blank" rel="noopener noreferrer"
-                        class="btn-download store-link">
+                    <a href="https://web.unideb.hu/rol2005hun/szakdoga/sanovise.apk" target="_blank"
+                        rel="noopener noreferrer" class="btn-download store-link">
                         {{ $t('pages.download.mobile.android.button') }}
                     </a>
                 </div>
@@ -27,8 +27,8 @@
                     <h3><span role="img" aria-label="Mobile phone emoji"><i class="fa-brands fa-apple"></i></span> {{
                         $t('pages.download.mobile.ios.title') }}</h3>
                     <p>{{ $t('pages.download.mobile.ios.description') }}</p>
-                    <a href="YOUR_APP_STORE_LINK_HERE" target="_blank" rel="noopener noreferrer"
-                        class="btn-download store-link">
+                    <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer"
+                        class="btn-download store-link not-available" @click.prevent>
                         {{ $t('pages.download.mobile.ios.button') }}
                     </a>
                 </div>
@@ -62,7 +62,7 @@
                         <span class="emoji-os" role="img" aria-label="Laptop computer emoji"><i
                                 class="fa-brands fa-microsoft"></i></span>
                         <span class="os-name">{{ $t('pages.download.desktop.windows.title') }}</span>
-                        <a href="YOUR_WINDOWS_DOWNLOAD_LINK.exe" class="btn-secondary download-link" download>
+                        <a href="javascript:void(0);" class="btn-secondary download-link not-available" @click.prevent download>
                             {{ $t('pages.download.desktop.downloadButton') }} <span role="img"
                                 aria-label="Download symbol">📥</span>
                         </a>
@@ -71,7 +71,7 @@
                         <span class="emoji-os" role="img" aria-label="Desktop computer emoji"><i
                                 class="fa-brands fa-apple"></i></span>
                         <span class="os-name">{{ $t('pages.download.desktop.macos.title') }}</span>
-                        <a href="YOUR_MACOS_DOWNLOAD_LINK.dmg" class="btn-secondary download-link" download>
+                        <a href="javascript:void(0);" class="btn-secondary download-link not-available" @click.prevent download>
                             {{ $t('pages.download.desktop.downloadButton') }} <span role="img"
                                 aria-label="Download symbol">📥</span>
                         </a>
@@ -79,7 +79,7 @@
                     <div class="desktop-option">
                         <span class="emoji-os" role="img" aria-label="Penguin emoji">🐧</span>
                         <span class="os-name">{{ $t('pages.download.desktop.linux.title') }}</span>
-                        <a href="YOUR_LINUX_DOWNLOAD_LINK.deb_or_AppImage" class="btn-secondary download-link" download>
+                        <a href="javascript:void(0);" class="btn-secondary download-link not-available" @click.prevent download>
                             {{ $t('pages.download.desktop.downloadButton') }} <span role="img"
                                 aria-label="Download symbol">📥</span>
                         </a>
