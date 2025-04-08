@@ -12,14 +12,16 @@
         <div class="functions">
             <h2>{{ $t('pages.about.features') }}</h2>
             <ul>
-                <li v-for="index in 4" :key="index">{{ $t(`pages.about.featuresList[${index - 1}]`) }}</li>
+                <li v-for="(item, index) in $tm('pages.about.featuresList')" :key="index">{{
+                    $t(`pages.about.featuresList[${index}]`) }}</li>
             </ul>
         </div>
 
         <div class="how-to">
             <h2>{{ $t('pages.about.howItWorks') }}</h2>
             <ol>
-                <li v-for="index in 4" :key="index" v-html="$t(`pages.about.howItWorksSteps[${index - 1}]`)"></li>
+                <li v-for="(item, index) in $tm('pages.about.howItWorksSteps')" :key="index"
+                    v-html="$t(`pages.about.howItWorksSteps[${index}]`)"></li>
             </ol>
         </div>
 

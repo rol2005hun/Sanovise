@@ -126,6 +126,10 @@
             &.scrolled {
                 transform: translateY(0.5rem);
             }
+
+            .download-button {
+                margin-bottom: -0.5rem;
+            }
         }
 
         .nav-list {

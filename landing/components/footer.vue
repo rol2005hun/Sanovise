@@ -1,7 +1,7 @@
 <template>
   <footer class="app-footer">
     <div class="container">
-      <a class="tos">{{ $t('components.footer.tos') }}</a>
+      <NuxtLink class="terms" to="/terms">{{ $t('components.footer.terms') }}</NuxtLink>
       <p class="copy">{{ $t('components.footer.copyright') }}</p>
       <select id="language" v-model="language" class="language-select" title="language selector">
         <option v-for="locale in locales" :key="locale.code" :value="locale.code">

@@ -9,9 +9,9 @@
     </section>
 
     <section class="features container">
-      <div class="feature-card" v-for="index in 3" :key="index">
-        <h3>{{ $t(`pages.index.features.titles[${index - 1}]`) }}</h3>
-        <p>{{ $t(`pages.index.features.descriptions[${index - 1}]`) }}</p>
+      <div class="feature-card" v-for="(item, index) in $tm('pages.index.features.titles')" :key="index">
+        <h3>{{ $t(`pages.index.features.titles[${index}]`) }}</h3>
+        <p>{{ $t(`pages.index.features.descriptions[${index}]`) }}</p>
       </div>
     </section>
   </div>

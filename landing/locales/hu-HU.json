@@ -95,12 +95,82 @@
                     "Webes, asztali és mobil eszközökön egyaránt elérhető."
                 ]
             }
+        },
+        "terms": {
+            "title": "Felhasználási feltételek",
+            "lastUpdated": "Utoljára frissítve: {date}",
+            "acceptanceText": [
+                "A szolgáltatás használatával Ön elfogadja a jelen Felhasználási feltételeket.",
+                "Ha bármilyen kérdése van a feltételekkel kapcsolatban, kérjük, vegye fel velünk a kapcsolatot."
+            ],
+            "sections": [
+                {
+                    "title": "1. A feltételek elfogadása",
+                    "content": [
+                        "Üdvözöljük a Sanovise weboldalon. A weboldal elérésével Ön elfogadja a jelen Felhasználási feltételeket, minden vonatkozó jogszabályt és előírást, és elfogadja, hogy felelős az alkalmazandó helyi törvények betartásáért.",
+                        "Amennyiben nem ért egyet ezekkel a feltételekkel, tilos a weboldal használata."
+                    ]
+                },
+                {
+                    "title": "2. Használati engedély",
+                    "content": [
+                        "Engedélyezett a Sanovise weboldal anyagainak ideiglenes letöltése személyes, nem kereskedelmi célú átmeneti megtekintésre. Ez egy licenc engedély, nem pedig tulajdonjog átruházása, és ezen licenc alapján Ön nem jogosult:",
+                        "- az anyagok módosítására vagy másolására",
+                        "- az anyagok kereskedelmi célú felhasználására",
+                        "- a weboldalon található szoftver visszafejtésére vagy dekódolására",
+                        "- szerzői jogi vagy tulajdonjogi jelzések eltávolítására",
+                        "- az anyagok továbbítására más személynek vagy más szerveren való tükrözésére",
+                        "Ez a licenc automatikusan megszűnik, ha megsérti ezen korlátozásokat, és a Sanovise bármikor visszavonhatja azt."
+                    ]
+                },
+                {
+                    "title": "3. Jogi nyilatkozat",
+                    "content": [
+                        "A Sanovise weboldalán található anyagokat 'ahogy van' alapon nyújtjuk. A Sanovise semmilyen kifejezett vagy hallgatólagos garanciát nem vállal, és ezennel minden egyéb garanciát kizár, beleértve, de nem kizárólagosan, az eladhatóságra, adott célra való alkalmasságra vagy szellemi tulajdon megsértésének hiányára vonatkozó garanciákat.",
+                        "Továbbá a Sanovise nem garantálja az anyagok pontosságát, eredményességét vagy megbízhatóságát, valamint nem vállal felelősséget más webhelyek tartalmáért, amelyek linkként szerepelhetnek."
+                    ]
+                },
+                {
+                    "title": "4. Korlátozások",
+                    "content": [
+                        "A Sanovise vagy beszállítói semmilyen esetben nem felelősek semmilyen kárért (beleértve, de nem kizárólagosan, adatvesztésből vagy üzleti megszakításból eredő károk), amelyek a weboldal használatából vagy használatra való képtelenségből erednek, még akkor sem, ha a Sanovise képviselőjét értesítették a kár lehetőségéről.",
+                        "Mivel egyes joghatóságok nem engedélyezik a hallgatólagos garanciák korlátozását vagy a következményi károkért való felelősség korlátozását, ezek a korlátozások Önre esetleg nem vonatkoznak."
+                    ]
+                },
+                {
+                    "title": "5. Az anyagok pontossága",
+                    "content": [
+                        "A Sanovise weboldalán megjelenő anyagok technikai, nyomdai vagy fényképezési hibákat tartalmazhatnak. A Sanovise nem garantálja, hogy a weboldalon található anyagok pontosak, teljesek vagy aktuálisak.",
+                        "A Sanovise bármikor előzetes értesítés nélkül módosíthatja a weboldal tartalmát, de nem vállal kötelezettséget annak frissítésére."
+                    ]
+                },
+                {
+                    "title": "6. Hivatkozások",
+                    "content": [
+                        "A Sanovise nem vizsgálta felül az összes, weboldaláról hivatkozott oldalt, és nem vállal felelősséget azok tartalmáért. A linkek szerepeltetése nem jelenti azok jóváhagyását.",
+                        "Az ilyen linkelt weboldalak használata a felhasználó saját felelősségére történik."
+                    ]
+                },
+                {
+                    "title": "7. Módosítások",
+                    "content": [
+                        "A Sanovise a weboldal felhasználási feltételeit bármikor módosíthatja előzetes értesítés nélkül.",
+                        "A weboldal használatával Ön elfogadja az aktuális feltételeket."
+                    ]
+                },
+                {
+                    "title": "8. Irányadó jog",
+                    "content": [
+                        "A jelen feltételekre az alkalmazandó jog az irányadó, és Ön visszavonhatatlanul elfogadja az adott területen működő bíróságok kizárólagos illetékességét."
+                    ]
+                }
+            ]
         }
     },
     "components": {
         "footer": {
-            "tos": "Felhasználási feltételek",
-            "copyright": "© 2025 Sanovise - minden jog fenntartva."
+            "terms": "Felhasználási feltételek",
+            "copyright": "© 2025 Sanovise - Minden jog fenntartva."
         },
         "header": {
             "home": "Főoldal",
