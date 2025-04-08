@@ -54,6 +54,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
                 content: `
                     Patient Details:
                     - Date of Birth: ${birthDate}
+                    - Age: ${new Date().getFullYear() - new Date(birthDate).getFullYear()}
                     - Gender: ${gender}
                     - Height: ${height} cm
                     - Weight: ${weight} kg
