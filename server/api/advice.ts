@@ -99,7 +99,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
         res.end();
 
     } catch (error: Error | any) {
-        console.error('Hiba a válasz generálása közben: ', error);
+        console.error('[Sanovise - Hiba] Hiba a streamelés során: ', error);
         res.write('Hiba történt a folyamat során. Kérlek, próbáld újra.\n');
         res.write(`Hibakód: ${error.message}\n`);
         res.end();

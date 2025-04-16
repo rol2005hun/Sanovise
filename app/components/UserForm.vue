@@ -54,17 +54,19 @@ import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { Capacitor } from '@capacitor/core';
 import { dataStore } from '@/store';
 
+const { locale } = useI18n();
 const privacyAccepted = ref(false);
 
 async function submitData() {
     try {
         dataStore.responseType = 'analyzing';
         dataStore.serverResponse = '';
+        dataStore.userData.language = locale.value;
         const controller = new AbortController();
         const { signal } = controller;
         dataStore.controller = controller;
 
-        const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice', {
+        const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice2', {
             method: 'POST',
             signal,
             headers: {

@@ -21,6 +21,7 @@ export const useData = defineStore('data', {
             sleep: '',
             symptoms: '',
             medicalHistory: '',
+            language: ''
         },
         serverResponse: null as string | null,
         responseType: null as string | null,
