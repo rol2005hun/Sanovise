@@ -5,6 +5,9 @@
         }
     },
     "components": {
+        "chatInterface": {
+            "placeholder": "Írja be üzenetét..."
+        },
         "fileUpload": {
             "upload": "Válasszon fájlt vagy húzza ide",
             "loaded": "Betöltve"

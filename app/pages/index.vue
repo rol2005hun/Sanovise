@@ -9,6 +9,8 @@
     <PrivacyModal />
 
     <Response />
+
+    <ChatInterface />
   </div>
 </template>
 

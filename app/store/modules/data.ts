@@ -23,7 +23,8 @@ export const useData = defineStore('data', {
             medicalHistory: '',
             language: ''
         },
-        serverResponse: null as string | null,
+        messages: [] as { role: string, content: string }[],
+        currentResponse: null as string | null,
         responseType: null as string | null,
         showOptionalFields: false,
         showPrivacyModal: false,

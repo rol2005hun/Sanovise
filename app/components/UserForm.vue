@@ -43,7 +43,7 @@
                 :disabled="!privacyAccepted || dataStore.responseType != null">{{ $t('components.userForm.submitData')
                 }}</button>
             <button v-else type="button" @click="stopAnswering()" class="abort">{{ $t('components.userForm.abort')
-                }}</button>
+            }}</button>
             <button type="button" @click="exportData" class="export">{{ $t('components.userForm.exportData') }}</button>
         </div>
     </form>
@@ -60,13 +60,13 @@ const privacyAccepted = ref(false);
 async function submitData() {
     try {
         dataStore.responseType = 'analyzing';
-        dataStore.serverResponse = '';
+        dataStore.currentResponse = '';
         dataStore.userData.language = locale.value;
         const controller = new AbortController();
         const { signal } = controller;
         dataStore.controller = controller;
 
-        const response = await fetch('http://localhost:2999/api/advice2', {
+        const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice2', {
             method: 'POST',
             signal,
             headers: {
@@ -82,22 +82,36 @@ async function submitData() {
 
         const reader = response.body.getReader();
         const decoder = new TextDecoder('utf-8');
-        dataStore.serverResponse = '';
+        dataStore.currentResponse = '';
 
         while (true) {
             const { done, value } = await reader.read();
             if (done) {
                 dataStore.responseType = null;
+
+                if (dataStore.currentResponse.trim()) {
+                    dataStore.messages.push({
+                        role: 'assistant',
+                        content: dataStore.currentResponse.trim()
+                    });
+                }
+                dataStore.currentResponse = '';
                 break;
             }
-            dataStore.serverResponse += decoder.decode(value, { stream: true });
+
+            dataStore.currentResponse += decoder.decode(value, { stream: true });
             dataStore.responseType = 'thinking';
         }
     } catch (error: any) {
         dataStore.responseType = null;
         if (error.name !== 'AbortError') {
-            dataStore.serverResponse = 'Hiba történt az adatok küldése közben: ' + error.message;
+            const errorMsg = 'Hiba történt az adatok küldése közben: ' + error.message;
+            dataStore.messages.push({
+                role: 'assistant',
+                content: errorMsg
+            });
         }
+        dataStore.currentResponse = '';
     }
 }
 
@@ -105,6 +119,15 @@ function stopAnswering() {
     if (dataStore.controller) {
         dataStore.controller.abort();
         dataStore.responseType = null;
+        
+        if (dataStore.currentResponse && dataStore.currentResponse.trim()) {
+            dataStore.messages.push({
+                role: 'assistant',
+                content: dataStore.currentResponse.trim()
+            });
+        }
+
+        dataStore.currentResponse = '';
     }
 }
 

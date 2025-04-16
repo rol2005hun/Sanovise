@@ -1,0 +1,37 @@
+.chat-box {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.input-area {
+    display: flex;
+
+    .chat-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 0.75rem;
+        border-radius: 6px;
+        resize: none;
+        line-height: 1.5;
+        max-height: 7rem;
+        overflow-y: auto;
+        font-family: inherit;
+    }
+
+    .send-button {
+        background: #2196f3;
+        color: white;
+        border: none;
+        padding: 0 1rem;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}

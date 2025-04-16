@@ -5,6 +5,9 @@
         }
     },
     "components": {
+        "chatInterface": {
+            "placeholder": "Write here something..."
+        },
         "fileUpload": {
             "upload": "Select a file or drag it here",
             "loaded": "Loaded"
