@@ -50,6 +50,8 @@
 </template>
 
 <script setup lang="ts">
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Capacitor } from '@capacitor/core';
 import { dataStore } from '@/store';
 
 const privacyAccepted = ref(false);
@@ -104,12 +106,31 @@ function stopAnswering() {
     }
 }
 
-function exportData() {
-    const blob = new Blob([JSON.stringify(dataStore.userData, null, 2)], { type: 'application/json' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'user_data.json';
-    link.click();
+async function exportData() {
+    const data = JSON.stringify(dataStore.userData, null, 2);
+    const fileName = 'user_data.json';
+
+    if (Capacitor.isNativePlatform()) {
+        try {
+            await Filesystem.writeFile({
+                path: fileName,
+                data,
+                directory: Directory.Documents,
+                encoding: Encoding.UTF8,
+            });
+
+            alert('Sikeresen elmentve: ' + fileName);
+        } catch (err) {
+            console.error('Hiba mentés közben:', err);
+            alert('Hiba történt a fájl mentésekor.');
+        }
+    } else {
+        const blob = new Blob([data], { type: 'application/json' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        link.click();
+    }
 }
 </script>
 
