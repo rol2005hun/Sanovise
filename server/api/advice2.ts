@@ -35,22 +35,23 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
             });
         }
 
+        const age = new Date().getFullYear() - new Date(birthDate).getFullYear();
+        const toneInstruction = age >= 50
+            ? 'Use formal and respectful language, as if speaking to an older patient or in a professional setting.'
+            : 'Use informal and friendly language, as if speaking to a peer or younger patient.';
         const messages: OpenAI.ChatCompletionMessageParam[] = [
             {
                 role: 'system',
-                content: `You are an experienced doctor with years of clinical practice. You always communicate clearly and empathetically,
-                just as you would during a real consultation. Your advice is practical, professional, and medically sound.
-                Do not introduce yourself, and do not use excessive pleasantries—just give clear, structured, and medically
-                relevant information. Do not use any name parameter in your answer. Today's date is: ${new Date().toISOString().split('T')[0]}.
-                Example patient data:
+                content: `You are an experienced doctor with years of clinical practice. Your communication should be direct, empathetic, 
+                and professional, just like an in-person consultation. ${toneInstruction} You always address the patient’s concerns directly and 
+                suggest specific, personalized actions. Provide clear, actionable advice, and explain the implications of their health data, guiding 
+                them through the necessary steps for improvement. You don't need to be formal or overly polite unless appropriate; aim for clarity 
+                and empathy. Today's date is: ${new Date().toISOString().split('T')[0]}. Example patient data:
                 - Age: 45
                 - Gender: Male
                 - Symptoms: High blood pressure, fatigue
                 - Medical history: Hypertension
-                Ideal doctor response:
-                Your blood pressure readings suggest hypertension, which increases the risk of cardiovascular issues.
-                It would be advisable to monitor your BP regularly and consult a doctor if it remains elevated. Lifestyle changes
-                like reducing sodium intake and increasing physical activity can help.`
+                In your response, focus on delivering actionable advice directly to the patient without excessive pleasantries.`
             },
             {
                 role: 'user',
@@ -75,10 +76,11 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
                 - Sleep Patterns: ${sleep}
                 - Symptoms: ${symptoms}
                 - Medical History: ${medicalHistory}
-
-                Analyze the following medical data and provide a professional assessment. Identify potential health concerns,
-                explain their significance, and suggest specific next steps. Your response should be medically accurate, structured, and concise.
-                Answer in language: ${language}`
+        
+                Based on this data, please provide a clear and direct medical assessment. Address the patient's concerns directly, point out potential 
+                risks, and explain the significance of their health data. Provide practical advice with specific recommendations for actions they should 
+                take to improve their health. Make sure to explain what might happen if they ignore these recommendations, and help them understand the 
+                long-term consequences. Answer in language: ${language}`
             }
         ];
 

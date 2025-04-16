@@ -3,11 +3,8 @@
         <div v-if="dataStore.serverResponse || dataStore.responseType" class="response">
             <h3>{{ $t('components.response.title') }}</h3>
             <p v-if="dataStore.serverResponse" class="response-text">
-                <span v-for="(line, lineIndex) in wordsList" :key="lineIndex" class="line">
-                    <span v-for="(word, wordIndex) in line" :key="wordIndex" class="word">
-                        {{ word }}
-                        <span class="space" v-if="wordIndex < line.length - 1"> </span>
-                    </span>
+                <span v-for="(line, lineIndex) in formattedLines" :key="lineIndex" class="line">
+                    <span v-html="line"></span>
                     <br />
                 </span>
             </p>
@@ -24,12 +21,23 @@ const userScrolled = ref(false);
 const isAutoScrolling = ref(false);
 const responseContainer = ref<HTMLElement | null>(null);
 
-const wordsList = computed(() => {
+const formattedLines = computed(() => {
     if (!dataStore.serverResponse) return [];
-    return dataStore.serverResponse.split('\n').map((line: string) => line.split(' '));
+    return dataStore.serverResponse.split('\n').map(line => {
+        return line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/_(.*?)_/g, '<em>$1</em>');
+    });
 });
 
-const onScroll = () => {
+function scrollToBottom() {
+    nextTick(() => {
+        if (dataStore.serverResponse && responseContainer.value) {
+            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+        }
+    });
+}
+
+function onScroll() {
     if (isAutoScrolling.value) return;
 
     if (responseContainer.value) {
@@ -39,7 +47,7 @@ const onScroll = () => {
     }
 }
 
-const onUserScrollEnd = () => {
+function onUserScrollEnd() {
     if (responseContainer.value) {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
         if (scrollTop + clientHeight >= scrollHeight - 10) {
@@ -63,6 +71,7 @@ watch([() => dataStore.serverResponse, () => dataStore.responseType], async () =
 onMounted(() => {
     window.addEventListener('scroll', onScroll);
     window.addEventListener('wheel', onUserScrollEnd);
+    scrollToBottom();
 });
 
 onUnmounted(() => {
@@ -70,7 +79,6 @@ onUnmounted(() => {
     window.removeEventListener('wheel', onUserScrollEnd);
 });
 </script>
-
 
 <style scoped lang="scss">
 @use '@/assets/styles/components/response.scss';

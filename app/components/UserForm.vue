@@ -66,7 +66,7 @@ async function submitData() {
         const { signal } = controller;
         dataStore.controller = controller;
 
-        const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice2', {
+        const response = await fetch('http://localhost:2999/api/advice2', {
             method: 'POST',
             signal,
             headers: {
