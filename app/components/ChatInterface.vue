@@ -1,5 +1,5 @@
 <template>
-    <div class="chat-box" v-if="dataStore.messages.length && !dataStore.responseType">
+    <div class="chat-box" v-if="dataStore.messages.length && !dataStore.responseType && dataStore.userData.birthDate">
         <form @submit.prevent="sendMessage" @keyup.enter="sendMessage" class="input-area">
             <textarea v-model="userInput" :placeholder="$t('components.chatInterface.placeholder')" class="chat-input"
                 ref="textarea" rows="1"></textarea>

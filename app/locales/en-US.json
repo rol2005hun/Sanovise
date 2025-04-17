@@ -10,8 +10,7 @@
         },
         "fileUpload": {
             "upload": "Select a file or drag it here",
-            "userData": "User Data",
-            "chatData": "Chat Data"
+            "lastLoaded": "Last loaded"
         },
         "header": {
             "settings": "Settings"
