@@ -6,7 +6,8 @@
                 <h3 v-if="response.role === 'assistant'">{{ $t('components.response.title')
                     }}</h3>
                 <span v-for="(line, lineIndex) in formatResponse(response.content)" :key="lineIndex" class="line">
-                    <span v-for="(token, tokenIndex) in line" :key="tokenIndex" class="token" v-html="token"></span>
+                    <span v-for="(token, tokenIndex) in line" :key="tokenIndex" class="token"
+                        v-html="token == ' ' ? token + '&nbsp;' : token"></span>
                 </span>
             </div>
 
@@ -15,7 +16,7 @@
                 <span v-for="(line, lineIndex) in formatResponse(dataStore.currentResponse)"
                     :key="'stream-' + lineIndex" class="line">
                     <span v-for="(token, tokenIndex) in line" :key="'stream-token-' + lineIndex + '-' + tokenIndex"
-                        class="token" v-html="token"></span>
+                        class="token" v-html="token == ' ' ? token + '&nbsp;' : token"></span>
                 </span>
             </div>
 
