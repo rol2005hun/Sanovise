@@ -10,7 +10,8 @@
         },
         "fileUpload": {
             "upload": "Válasszon fájlt vagy húzza ide",
-            "loaded": "Betöltve"
+            "userData": "Felhasználói adat",
+            "chatData": "Csevegési adat"
         },
         "header": {
             "settings": "Beállítások"

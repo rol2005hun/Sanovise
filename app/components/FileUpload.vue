@@ -2,7 +2,7 @@
     <div class="file-upload" @dragover.prevent @drop="handleDrop">
         <input type="file" id="fileInput" @change="importData" accept="application/json" hidden />
         <label for="fileInput" class="upload-label">{{ $t('components.fileUpload.upload') }}</label>
-        <p v-if="fileName">{{ $t('components.fileUpload.loaded') }}: {{ fileName }}</p>
+        <p v-if="fileName">{{ $t('components.fileUpload.userData') }}: {{ fileName }}</p>
     </div>
 </template>
 
@@ -18,7 +18,15 @@ function importData(event: Event) {
         const reader = new FileReader();
         reader.onload = (e) => {
             try {
-                dataStore.userData = JSON.parse(e.target?.result as string);
+                const jsonData = JSON.parse(e.target?.result as string);
+                if (jsonData[0]) {
+                    dataStore.messages = jsonData;
+                }
+                else if (jsonData.birthDate && jsonData.gender) {
+                    dataStore.userData = jsonData;
+                } else {
+                    alert('A fájl nem tartalmaz felismerhető adatokat!');
+                }
             } catch (error) {
                 alert('Hibás JSON fájl!');
             }
@@ -30,7 +38,8 @@ function importData(event: Event) {
 function handleDrop(event: DragEvent) {
     event.preventDefault();
     if (event.dataTransfer?.files.length) {
-        importData({ target: { files: event.dataTransfer.files } } as unknown as Event);
+        const file = event.dataTransfer.files[0];
+        importData({ target: { files: [file] } } as unknown as Event);
     }
 }
 </script>

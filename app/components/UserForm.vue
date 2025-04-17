@@ -39,8 +39,8 @@
 
         <div class="buttons">
             <button v-if="!dataStore.responseType" type="submit"
-                :class="['submit', { 'disabled': !privacyAccepted || dataStore.responseType }]"
-                :disabled="!privacyAccepted || dataStore.responseType != null">{{ $t('components.userForm.submitData')
+                :class="['submit', { 'disabled': !privacyAccepted || dataStore.messages.length }]"
+                :disabled="!privacyAccepted || dataStore.messages.length">{{ $t('components.userForm.submitData')
                 }}</button>
             <button v-else type="button" @click="stopAnswering()" class="abort">{{ $t('components.userForm.abort')
             }}</button>

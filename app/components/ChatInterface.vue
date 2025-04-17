@@ -3,12 +3,15 @@
         <form @submit.prevent="sendMessage" @keyup.enter="sendMessage" class="input-area">
             <textarea v-model="userInput" :placeholder="$t('components.chatInterface.placeholder')" class="chat-input"
                 ref="textarea" rows="1"></textarea>
+            <button type="button" class="download-button" @click="exportChat"><i class="fa-solid fa-download"></i></button>
             <button type="submit" class="send-button">➤</button>
         </form>
     </div>
 </template>
 
 <script setup lang="ts">
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Capacitor } from '@capacitor/core';
 import { dataStore } from '@/store';
 
 const userInput = ref('');
@@ -83,6 +86,33 @@ async function sendMessage() {
             });
         }
         dataStore.currentResponse = '';
+    }
+}
+
+async function exportChat() {
+    const data = JSON.stringify(dataStore.messages, null, 2);
+    const fileName = 'chat_data.json';
+
+    if (Capacitor.isNativePlatform()) {
+        try {
+            await Filesystem.writeFile({
+                path: fileName,
+                data,
+                directory: Directory.Documents,
+                encoding: Encoding.UTF8,
+            });
+
+            alert('Sikeresen elmentve: ' + fileName);
+        } catch (err) {
+            console.error('Hiba mentés közben:', err);
+            alert('Hiba történt a fájl mentésekor.');
+        }
+    } else {
+        const blob = new Blob([data], { type: 'application/json' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        link.click();
     }
 }
 
