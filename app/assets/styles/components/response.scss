@@ -17,53 +17,57 @@
         justify-content: right;
         display: flex;
         margin-left: auto;
-
-        .line {
-            span {
-                word-break: break-word;
-            }
-        }
-    }
-
-    .word {
-        display: inline-block;
-        animation: fadeIn 3s forwards;
     }
 
     .line {
         display: block;
+        word-break: break-word;
     }
 
-    .space {
+    .token {
         display: inline-block;
+        margin-right: 0.1rem;
+    }
+
+    .stream .token {
+        animation: fadeIn 3s forwards;
+    }
+
+    &-anim {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        animation: blink 1.5s infinite;
+
+        .stop-answering {
+            background-color: transparent;
+            border: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
     }
 }
 
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
     }
 
-    100% {
+    to {
         opacity: 1;
     }
 }
 
-.thinking-anim {
-    margin-top: 1rem;
-    animation: blink 1.5s infinite;
-}
-
 @keyframes blink {
-    0% {
+
+    0%,
+    100% {
         opacity: 1;
     }
 
     50% {
         opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
     }
 }

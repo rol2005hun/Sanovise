@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  
+
   typescript: {
     strict: true,
   },
@@ -16,6 +16,9 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/logo.png' }
+      ],
+      script: [
+        { src: 'https://kit.fontawesome.com/33f8d9654f.js', crossorigin: 'anonymous' }
       ]
     }
   },

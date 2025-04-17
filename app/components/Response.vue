@@ -1,24 +1,30 @@
 <template>
-    <div ref="responseContainer" class="response-container">
-        <div v-if="dataStore.messages.length || dataStore.responseType" class="response">
-            <div v-for="(response, index) in dataStore.messages" :key="index" class="response-block" :class="response.role">
-                <h3 v-if="response.role === 'assistant'" style="margin-bottom: 1rem;">{{ $t('components.response.title') }}</h3>
+    <div class="response-container" v-if="dataStore.messages.length || dataStore.responseType">
+        <div class="response">
+            <div v-for="(response, index) in dataStore.messages" :key="index" class="response-block"
+                :class="response.role">
+                <h3 v-if="response.role === 'assistant'">{{ $t('components.response.title')
+                }}</h3>
                 <span v-for="(line, lineIndex) in formatResponse(response.content)" :key="lineIndex" class="line">
-                    <span v-html="line"></span><br />
+                    <span v-for="(token, tokenIndex) in line" :key="tokenIndex" class="token" v-html="token"></span>
                 </span>
             </div>
 
-            <div v-if="dataStore.currentResponse" class="response-block assistant">
+            <div v-if="dataStore.currentResponse" class="response-block assistant stream">
                 <h3>{{ $t('components.response.title') }}</h3>
                 <span v-for="(line, lineIndex) in formatResponse(dataStore.currentResponse)"
                     :key="'stream-' + lineIndex" class="line">
-                    <span v-html="line"></span><br />
+                    <span v-for="(token, tokenIndex) in line" :key="'stream-token-' + lineIndex + '-' + tokenIndex"
+                        class="token" v-html="token"></span>
                 </span>
             </div>
 
-            <p v-if="dataStore.responseType" class="thinking-anim">
-                {{ $t(`components.response.${dataStore.responseType}`) }}
-            </p>
+            <div class="response-anim" v-if="dataStore.responseType">
+                <span class="thinking-anim">
+                    {{ $t(`components.response.${dataStore.responseType}`) }}
+                </span>
+                <button class="stop-answering" @click="stopAnswering"><i class="fa-solid fa-stop"></i></button>
+            </div>
         </div>
     </div>
 </template>
@@ -28,9 +34,8 @@ import { dataStore } from '@/store';
 
 const userScrolled = ref(false);
 const isAutoScrolling = ref(false);
-const responseContainer = ref<HTMLElement | null>(null);
 
-function formatResponse(text: string) {
+function formatResponse(text: string): string[][] {
     return text.split('\n').map(line => {
         return line
             .replace(/^[-*]\s/g, '<li>')
@@ -40,19 +45,41 @@ function formatResponse(text: string) {
             .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: lightslategrey;">$1</a>')
             .replace(/`(.*?)`/g, '<code>$1</code>')
             .replace(/```(.*?)```/g, '<pre><code>$1</code></pre>')
-            .replace(/^###\s/g, '<h3>$1</h3>')
-            .replace(/^##\s/g, '<h2>$1</h2>')
-            .replace(/^#\s/g, '<h1>$1</h1>');
+            .replace(/^###\s(.*)/g, '<h3>$1</h3>')
+            .replace(/^#\s(.*)/g, '<h2>$1</h2>')
+            .replace(/^#\s(.*)/g, '<h1>$1</h1>')
+            .split(/(\s+)/);
     });
+}
+
+function stopAnswering() {
+    if (dataStore.controller) {
+        dataStore.controller.abort();
+        dataStore.responseType = null;
+
+        if (dataStore.currentResponse && dataStore.currentResponse.trim()) {
+            dataStore.messages.push({
+                role: 'assistant',
+                content: dataStore.currentResponse.trim()
+            });
+        }
+
+        dataStore.currentResponse = '';
+    }
 }
 
 function scrollToBottom() {
     nextTick(() => {
-        if (dataStore.messages.length && responseContainer.value) {
+        if (dataStore.messages.length && !userScrolled.value) {
+            isAutoScrolling.value = true;
             window.scrollTo({
                 top: document.documentElement.scrollHeight,
                 behavior: 'smooth'
             });
+
+            setTimeout(() => {
+                isAutoScrolling.value = false;
+            }, 500);
         }
     });
 }
@@ -60,34 +87,22 @@ function scrollToBottom() {
 function onScroll() {
     if (isAutoScrolling.value) return;
 
-    if (responseContainer.value) {
-        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-        const isAtBottom = scrollTop + clientHeight >= scrollHeight - 10;
-        userScrolled.value = !isAtBottom;
-    }
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    const isAtBottom = scrollTop + clientHeight >= scrollHeight - 10;
+    userScrolled.value = !isAtBottom;
 }
 
 function onUserScrollEnd() {
-    if (responseContainer.value) {
-        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-        if (scrollTop + clientHeight >= scrollHeight - 10) {
-            userScrolled.value = false;
-        }
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 10) {
+        userScrolled.value = false;
     }
 }
 
 watch([() => dataStore.messages, () => dataStore.responseType], async () => {
     await nextTick();
     if (!userScrolled.value) {
-        isAutoScrolling.value = true;
-        window.scrollTo({
-            top: document.documentElement.scrollHeight,
-            behavior: 'smooth'
-        });
-
-        setTimeout(() => {
-            isAutoScrolling.value = false;
-        }, 500);
+        scrollToBottom();
     }
 });
 
