@@ -96,6 +96,7 @@
     },
     "global": {
         "successSave": "Guardado correctamente",
+        "successShare": "Compartido con éxito",
         "errorSave": "Ocurrió un error al guardar.",
         "errorSend": "Ocurrió un error al enviar los datos",
         "tryAgain": "Por favor, intenta nuevamente más tarde o actualiza la página.",
@@ -104,6 +105,7 @@
         "unknownError": "Ocurrió un error desconocido. 😔",
         "errorLoad": "¡El archivo no contiene datos válidos!",
         "invalidJson": "¡Formato de archivo inválido! Asegúrate de que hayas subido un archivo JSON.",
-        "anotherFile": "Por favor, intenta nuevamente o selecciona otro archivo."
+        "anotherFile": "Por favor, intenta nuevamente o selecciona otro archivo.",
+        "es-ES": "Por favor, permite el acceso al almacenamiento."
     }
 }

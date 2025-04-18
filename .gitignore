@@ -36,6 +36,7 @@ app/.idea
 app/.env
 app/.env.*
 app/!.env.example
+app/android
 
 # SERVER IGNORES
 server/node_modules

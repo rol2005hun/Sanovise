@@ -96,6 +96,7 @@
     },
     "global": {
         "successSave": "Erfolgreich gespeichert",
+        "successShare": "Erfolgreich geteilt",
         "errorSave": "Beim Speichern ist ein Fehler aufgetreten.",
         "errorSend": "Beim Senden der Daten ist ein Fehler aufgetreten.",
         "tryAgain": "Bitte versuchen Sie es später erneut oder aktualisieren Sie die Seite.",
@@ -104,6 +105,7 @@
         "unknownError": "Ein unbekannter Fehler ist aufgetreten. 😔",
         "errorLoad": "Die Datei enthält keine gültigen Daten!",
         "invalidJson": "Ungültiges Dateiformat! Bitte überprüfen Sie, ob Sie eine JSON-Datei hochgeladen haben.",
-        "anotherFile": "Bitte versuchen Sie es erneut oder wählen Sie eine andere Datei aus."
+        "anotherFile": "Bitte versuchen Sie es erneut oder wählen Sie eine andere Datei aus.",
+        "de-DE": "Bitte erlaube den Zugriff auf den Speicher."
     }
 }

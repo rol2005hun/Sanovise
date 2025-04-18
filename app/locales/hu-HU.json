@@ -96,6 +96,7 @@
     },
     "global": {
         "successSave": "Sikeresen elmentve",
+        "successShare": "Sikeresen elküldve",
         "errorSave": "Hiba történt a mentés során.",
         "errorSend": "Hiba történt az adatok küldése közben",
         "tryAgain": "Kérlek, próbáld meg újra később, vagy frissítsd az oldalt.",
@@ -104,6 +105,7 @@
         "unknownError": "Ismeretlen hiba történt. 😔",
         "errorLoad": "A fájl nem tartalmaz érvényes adatokat!",
         "invalidJson": "Hibás fájlformátum! Kérlek, ellenőrizd, hogy valóban JSON-t töltöttél-e fel.",
-        "anotherFile": "Kérlek, próbáld meg újra vagy válassz másik fájlt."
+        "anotherFile": "Kérlek, próbáld meg újra vagy válassz másik fájlt.",
+        "needPermission": "Kérlek, engedélyezd a hozzáférést a tárhelyhez."
     }
 }

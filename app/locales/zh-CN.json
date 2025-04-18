@@ -96,6 +96,7 @@
     },
     "global": {
         "successSave": "保存成功",
+        "successShare": "分享成功",
         "errorSave": "保存时出错。",
         "errorSend": "发送数据时出错。",
         "tryAgain": "请稍后再试或刷新页面。",
@@ -104,6 +105,7 @@
         "unknownError": "发生未知错误。 😔",
         "errorLoad": "文件不包含有效的数据！",
         "invalidJson": "文件格式错误！请检查您是否上传了有效的JSON文件。",
-        "anotherFile": "请尝试重新上传或选择其他文件。"
+        "anotherFile": "请尝试重新上传或选择其他文件。",
+        "zh-CN": "请允许访问存储空间。"
     }
 }

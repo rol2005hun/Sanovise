@@ -40,7 +40,8 @@
         <div class="buttons">
             <button v-if="!dataStore.responseType" type="submit" @click="validateForm"
                 :class="['submit', { 'disabled': !dataStore.acceptedPrivacyPolicy || dataStore.messages.length }]"
-                :disabled="!dataStore.acceptedPrivacyPolicy || dataStore.messages.length > 0">{{ $t('components.userForm.submitData')
+                :disabled="!dataStore.acceptedPrivacyPolicy || dataStore.messages.length > 0">{{
+                    $t('components.userForm.submitData')
                 }}</button>
             <button v-else type="button" @click="stopAnswering()" class="abort">{{ $t('components.userForm.abort')
                 }}</button>
@@ -53,6 +54,7 @@
 
 <script setup lang="ts">
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 import { dataStore, toastStore } from '@/store';
 
@@ -160,6 +162,8 @@ async function exportData() {
 
     if (Capacitor.isNativePlatform()) {
         try {
+            if (!checkPermissions()) return;
+
             await Filesystem.writeFile({
                 path: fileName,
                 data,
@@ -168,8 +172,27 @@ async function exportData() {
             });
 
             toastStore.show(`✅ ${t('global.successSave')}: ${fileName}`, 'success');
+
+            await Filesystem.writeFile({
+                path: fileName,
+                data,
+                directory: Directory.Cache,
+                encoding: Encoding.UTF8,
+            });
+
+            const fileUri = await Filesystem.getUri({
+                path: fileName,
+                directory: Directory.Cache,
+            });
+
+            await Share.share({
+                title: 'user_data.json',
+                url: fileUri.uri
+            });
+
+            toastStore.show(`✅ ${t('global.successShare')}: ${fileName}`, 'success');
         } catch (err) {
-            toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}`, 'error');
+            toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}\n${err}`, 'error');
         }
     } else {
         try {

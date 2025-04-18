@@ -96,6 +96,7 @@
     },
     "global": {
         "successSave": "Successfully saved",
+        "successShare": "Successfully shared",
         "errorSave": "An error occurred while saving.",
         "errorSend": "An error occurred while sending the data",
         "tryAgain": "Please try again later or refresh the page.",
@@ -104,6 +105,7 @@
         "unknownError": "An unknown error occurred. 😔",
         "errorLoad": "The file does not contain valid data!",
         "invalidJson": "Invalid file format! Please ensure you uploaded a JSON file.",
-        "anotherFile": "Please try again or select a different file."
+        "anotherFile": "Please try again or select a different file.",
+        "en-US": "Please allow access to storage."
     }
 }

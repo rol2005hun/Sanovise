@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 import { dataStore, toastStore } from '@/store';
 
@@ -117,6 +118,8 @@ async function exportChat() {
 
     if (Capacitor.isNativePlatform()) {
         try {
+            if (!checkPermissions()) return;
+
             await Filesystem.writeFile({
                 path: fileName,
                 data,
@@ -125,6 +128,25 @@ async function exportChat() {
             });
 
             toastStore.show(`✅ ${t('global.successSave')}: ${fileName}`, 'success');
+
+            await Filesystem.writeFile({
+                path: fileName,
+                data,
+                directory: Directory.Cache,
+                encoding: Encoding.UTF8,
+            });
+
+            const fileUri = await Filesystem.getUri({
+                path: fileName,
+                directory: Directory.Cache,
+            });
+
+            await Share.share({
+                title: 'user_data.json',
+                url: fileUri.uri
+            });
+
+            toastStore.show(`✅ ${t('global.successShare')}: ${fileName}`, 'success');
         } catch (err) {
             toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}`, 'error');
         }

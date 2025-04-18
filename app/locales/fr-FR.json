@@ -96,6 +96,7 @@
     },
     "global": {
         "successSave": "Enregistré avec succès",
+        "successShare": "Partagé avec succès",
         "errorSave": "Une erreur est survenue lors de l'enregistrement.",
         "errorSend": "Une erreur est survenue lors de l'envoi des données",
         "tryAgain": "Veuillez réessayer plus tard ou rafraîchir la page.",
@@ -104,6 +105,7 @@
         "unknownError": "Une erreur inconnue est survenue. 😔",
         "errorLoad": "Le fichier ne contient pas de données valides !",
         "invalidJson": "Format de fichier invalide ! Veuillez vérifier que vous avez bien téléchargé un fichier JSON.",
-        "anotherFile": "Veuillez réessayer ou sélectionner un autre fichier."
+        "anotherFile": "Veuillez réessayer ou sélectionner un autre fichier.",
+        "fr-FR": "Veuillez autoriser l'accès au stockage."
     }
 }
