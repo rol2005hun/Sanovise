@@ -20,12 +20,12 @@
     }
 
     .line {
-        display: block;
         word-break: break-word;
     }
 
     .token {
         display: inline-block;
+        word-break: break-all;
     }
 
     .stream .token {

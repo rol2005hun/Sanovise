@@ -1,7 +1,7 @@
 <template>
     <div class="chat-box">
         <form @submit.prevent="sendMessage" class="input-area">
-            <textarea v-model="userInput" @keydown.enter="sendMessage"
+            <textarea v-model="userInput" @keydown.enter.exact.prevent="sendMessage"
                 :placeholder="$t('components.chatInterface.placeholder')" class="chat-input" ref="textarea"
                 rows="1"></textarea>
 
@@ -12,9 +12,8 @@
             </button>
 
             <button type="submit" :class="['send-button', {
-                disabled: !isUserDataComplete || !!dataStore.responseType || dataStore.acceptedPrivacyPolicy === false || userInput.trim() === ''
-            }]"
-                :disabled="!isUserDataComplete || !!dataStore.responseType || dataStore.acceptedPrivacyPolicy === false || userInput.trim() === ''">
+                disabled: !canSend
+            }]" :disabled="!canSend">
                 ➤</button>
         </form>
     </div>
@@ -40,8 +39,17 @@ const isUserDataComplete = computed(() => {
     );
 });
 
+const canSend = computed(() =>
+    isUserDataComplete.value === true &&
+    dataStore.responseType === null &&
+    dataStore.acceptedPrivacyPolicy === true &&
+    userInput.value.trim().length > 0
+);
+
 async function sendMessage() {
+    if (!canSend.value) return;
     if (!validateForm()) return;
+
     const message = userInput.value.trim();
     if (!message) return;
 
@@ -166,6 +174,7 @@ async function exportChat() {
 onMounted(() => {
     if (textarea.value) {
         textarea.value.addEventListener('input', () => {
+            textarea.value!.style.height = 'auto';
             textarea.value!.style.height = `${Math.min(textarea.value!.scrollHeight, 150)}px`;
         });
     }

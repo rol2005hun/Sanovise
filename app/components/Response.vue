@@ -3,21 +3,19 @@
         <div class="response">
             <div v-for="(response, index) in dataStore.messages" :key="index" class="response-block"
                 :class="response.role">
-                <h3 v-if="response.role === 'assistant'">{{ $t('components.response.title')
-                }}</h3>
-                <span v-for="(line, lineIndex) in formatResponse(response.content)" :key="lineIndex" class="line">
-                    <span v-for="(token, tokenIndex) in line" :key="tokenIndex" class="token"
-                        v-html="token == ' ' ? token + '&nbsp;' : token"></span>
-                </span>
+                <h3 v-if="response.role === 'assistant'">{{ $t('components.response.title') }}</h3>
+                <div v-for="(line, lineIndex) in formatResponse(response.content)" :key="lineIndex" class="line">
+                    <div v-for="(token, tokenIndex) in line" :key="tokenIndex" class="token" v-html="token"></div>
+                </div>
             </div>
 
             <div v-if="dataStore.currentResponse" class="response-block assistant stream">
                 <h3>{{ $t('components.response.title') }}</h3>
-                <span v-for="(line, lineIndex) in formatResponse(dataStore.currentResponse)"
-                    :key="'stream-' + lineIndex" class="line">
-                    <span v-for="(token, tokenIndex) in line" :key="'stream-token-' + lineIndex + '-' + tokenIndex"
-                        class="token" v-html="token == ' ' ? token + '&nbsp;' : token"></span>
-                </span>
+                <div v-for="(line, lineIndex) in formatResponse(dataStore.currentResponse)" :key="'stream-' + lineIndex"
+                    class="line">
+                    <div v-for="(token, tokenIndex) in line" :key="'stream-token-' + lineIndex + '-' + tokenIndex"
+                        class="token" v-html="token"></div>
+                </div>
             </div>
 
             <div class="response-anim" v-if="dataStore.responseType">
@@ -37,19 +35,45 @@ const userScrolled = ref(false);
 const isAutoScrolling = ref(false);
 
 function formatResponse(text: string): string[][] {
-    return text.split('\n').map(line => {
+    const formatMarkdown = (line: string) => {
         return line
-            .replace(/^[-*]\s/g, '<li>')
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/_(.*?)_/g, '<em>$1</em>')
             .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: lightslategrey;">$1</a>')
+            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: lightslategrey;">$1</a>')  // Links
             .replace(/`(.*?)`/g, '<code>$1</code>')
-            .replace(/```(.*?)```/g, '<pre><code>$1</code></pre>')
-            .replace(/^###\s(.*)/g, '<h3>$1</h3>')
-            .replace(/^#\s(.*)/g, '<h2>$1</h2>')
-            .replace(/^#\s(.*)/g, '<h1>$1</h1>')
-            .split(/(\s+)/);
+            .replace(/"""(.*?)"""/gs, '<pre><code>$1</code></pre>')
+            .replace(/```(.*?)```/gs, '<pre><code>$1</code></pre>');
+    };
+
+    return text.split('\n').map(line => {
+        if (line.trim() === '') {
+            return [''];
+        }
+
+        let formatted = formatMarkdown(line);
+
+        if (/^###\s/.test(line)) {
+            formatted = `<h3>${formatted.replace(/^###\s/, '')}</h3>`;
+            return [formatted];
+        }
+        if (/^##\s/.test(line)) {
+            formatted = `<h2>${formatted.replace(/^##\s/, '')}</h2>`;
+            return [formatted];
+        }
+        if (/^#\s/.test(line)) {
+            formatted = `<h1>${formatted.replace(/^#\s/, '')}</h1>`;
+            return [formatted];
+        }
+
+        if (/^[-*]\s/.test(line)) {
+            formatted = `<li>${formatted.replace(/^[-*]\s/, '')}</li>`;
+            return [formatted];
+        }
+
+        formatted = formatted.replace(/(\s+)/g, '&nbsp;');
+
+        return formatted.split(/(\s+)/).filter(token => token.length > 0);
     });
 }
 
@@ -112,7 +136,6 @@ watch([() => dataStore.messages, () => dataStore.responseType, () => dataStore.c
 onMounted(() => {
     window.addEventListener('scroll', onScroll);
     window.addEventListener('wheel', onUserScrollEnd);
-    scrollToBottom();
 });
 
 onUnmounted(() => {
