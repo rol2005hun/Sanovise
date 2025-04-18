@@ -1,10 +1,21 @@
 <template>
-    <div class="chat-box" v-if="dataStore.messages.length && !dataStore.responseType && dataStore.userData.birthDate">
-        <form @submit.prevent="sendMessage" @keyup.enter="sendMessage" class="input-area">
-            <textarea v-model="userInput" :placeholder="$t('components.chatInterface.placeholder')" class="chat-input"
-                ref="textarea" rows="1"></textarea>
-            <button type="button" class="download-button" @click="exportChat"><i class="fa-solid fa-download"></i></button>
-            <button type="submit" class="send-button">➤</button>
+    <div class="chat-box">
+        <form @submit.prevent="sendMessage" class="input-area">
+            <textarea v-model="userInput" @keydown.enter="sendMessage"
+                :placeholder="$t('components.chatInterface.placeholder')" class="chat-input" ref="textarea"
+                rows="1"></textarea>
+
+            <button type="button" :class="['download-button', {
+                disabled: dataStore.messages.length < 1
+            }]" :disabled="dataStore.messages.length < 1" @click="exportChat">
+                <i class="fa-solid fa-download"></i>
+            </button>
+
+            <button type="submit" :class="['send-button', {
+                disabled: !isUserDataComplete || !!dataStore.responseType || dataStore.acceptedPrivacyPolicy === false || userInput.trim() === ''
+            }]"
+                :disabled="!isUserDataComplete || !!dataStore.responseType || dataStore.acceptedPrivacyPolicy === false || userInput.trim() === ''">
+                ➤</button>
         </form>
     </div>
 </template>
@@ -12,19 +23,30 @@
 <script setup lang="ts">
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { Capacitor } from '@capacitor/core';
-import { dataStore } from '@/store';
+import { dataStore, toastStore } from '@/store';
 
 const userInput = ref('');
 const textarea = ref<HTMLTextAreaElement | null>(null);
+const { t, locale } = useI18n();
+
+const isUserDataComplete = computed(() => {
+    const data = dataStore.userData;
+    return (
+        data.birthDate !== '' &&
+        data.gender !== '' &&
+        data.height !== '' &&
+        data.weight !== ''
+    );
+});
 
 async function sendMessage() {
-    if (!userInput.value.trim()) return;
-
+    if (!validateForm()) return;
     const message = userInput.value.trim();
+    if (!message) return;
 
     dataStore.messages.push({
         role: 'user',
-        content: message
+        content: message,
     });
 
     userInput.value = '';
@@ -33,6 +55,7 @@ async function sendMessage() {
     try {
         dataStore.responseType = 'analyzing';
         dataStore.currentResponse = '';
+        dataStore.userData.language = locale.value;
         const controller = new AbortController();
         const { signal } = controller;
         dataStore.controller = controller;
@@ -42,17 +65,15 @@ async function sendMessage() {
             signal,
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify({
                 ...dataStore.userData,
-                messages: dataStore.messages
-            })
+                messages: dataStore.messages,
+            }),
         });
 
-        if (!response.body) {
-            throw new Error('A válasz üres.');
-        }
+        if (!response.body) throw new Error(t('global.emptyResponse'));
 
         const reader = response.body.getReader();
         const decoder = new TextDecoder('utf-8');
@@ -63,12 +84,14 @@ async function sendMessage() {
             if (done) {
                 dataStore.responseType = null;
 
-                if (dataStore.currentResponse.trim()) {
+                const trimmed = dataStore.currentResponse.trim();
+                if (trimmed) {
                     dataStore.messages.push({
                         role: 'assistant',
-                        content: dataStore.currentResponse.trim()
+                        content: trimmed,
                     });
                 }
+
                 dataStore.currentResponse = '';
                 break;
             }
@@ -79,10 +102,9 @@ async function sendMessage() {
     } catch (error: any) {
         dataStore.responseType = null;
         if (error.name !== 'AbortError') {
-            const errorMsg = 'Hiba történt az adatok küldése közben: ' + error.message;
             dataStore.messages.push({
                 role: 'assistant',
-                content: errorMsg
+                content: `⚠️ ${t('global.errorSend')} 😕\n\n${error.message}\n\n${t('global.tryAgain')}`,
             });
         }
         dataStore.currentResponse = '';
@@ -102,23 +124,26 @@ async function exportChat() {
                 encoding: Encoding.UTF8,
             });
 
-            alert('Sikeresen elmentve: ' + fileName);
+            toastStore.show(`✅ ${t('global.successSave')}: ${fileName}`, 'success');
         } catch (err) {
-            console.error('Hiba mentés közben:', err);
-            alert('Hiba történt a fájl mentésekor.');
+            toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}`, 'error');
         }
     } else {
-        const blob = new Blob([data], { type: 'application/json' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        link.click();
+        try {
+            const blob = new Blob([data], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+        } catch {
+            toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}`, 'error');
+        }
     }
 }
 
 onMounted(() => {
     if (textarea.value) {
-        textarea.value!.addEventListener('input', () => {
+        textarea.value.addEventListener('input', () => {
             textarea.value!.style.height = `${Math.min(textarea.value!.scrollHeight, 150)}px`;
         });
     }

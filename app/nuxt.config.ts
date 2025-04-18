@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -28,7 +27,14 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       { code: 'en-US', name: 'English (United States)', iso: 'en-US', file: 'en-US.json' },
-      { code: 'hu-HU', name: 'Magyar', iso: 'hu-HU', file: 'hu-HU.json' }
+      { code: 'hu-HU', name: 'Magyar', iso: 'hu-HU', file: 'hu-HU.json' },
+      { code: 'es-ES', name: 'Español (España)', iso: 'es-ES', file: 'es-ES.json' },
+      { code: 'fr-FR', name: 'Français', iso: 'fr-FR', file: 'fr-FR.json' },
+      { code: 'de-DE', name: 'Deutsch', iso: 'de-DE', file: 'de-DE.json' },
+      { code: 'ru-RU', name: 'Русский', iso: 'ru-RU', file: 'ru-RU.json' },
+      { code: 'zh-CN', name: '中文 (简体)', iso: 'zh-CN', file: 'zh-CN.json' },
+      { code: 'ar-SA', name: 'العربية', iso: 'ar-SA', file: 'ar-SA.json' },
+      { code: 'hi-IN', name: 'हिन्दी', iso: 'hi-IN', file: 'hi-IN.json' }
     ],
     defaultLocale: 'en-US',
     lazy: true,

@@ -4,7 +4,7 @@
             <div v-for="(response, index) in dataStore.messages" :key="index" class="response-block"
                 :class="response.role">
                 <h3 v-if="response.role === 'assistant'">{{ $t('components.response.title')
-                    }}</h3>
+                }}</h3>
                 <span v-for="(line, lineIndex) in formatResponse(response.content)" :key="lineIndex" class="line">
                     <span v-for="(token, tokenIndex) in line" :key="tokenIndex" class="token"
                         v-html="token == ' ' ? token + '&nbsp;' : token"></span>

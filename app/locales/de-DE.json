@@ -1,0 +1,109 @@
+{
+    "pages": {
+        "index": {
+            "title": "Laden Sie Ihre Daten hoch"
+        }
+    },
+    "components": {
+        "chatInterface": {
+            "placeholder": "Geben Sie Ihre Nachricht ein..."
+        },
+        "fileUpload": {
+            "upload": "Wählen Sie eine Datei aus oder ziehen Sie sie hierhin",
+            "lastLoaded": "Zuletzt geladen"
+        },
+        "header": {
+            "settings": "Einstellungen"
+        },
+        "optionalFields": {
+            "heartRate": "Durchschnittliche Herzfrequenz",
+            "bloodPressure": "Blutdruck (Systole/Diastole)",
+            "sports": "Sportaktivitäten",
+            "medications": "Regelmäßig eingenommene Medikamente",
+            "chronicDiseases": "Chronische Krankheiten",
+            "allergies": "Allergien",
+            "diet": "Ernährungsgewohnheiten",
+            "waterIntake": "Tägliche Wasseraufnahme (Liter)",
+            "familyHistory": "Familiäre Krankengeschichte",
+            "smoking": "Rauchen",
+            "alcohol": "Alkoholkonsum",
+            "sleep": "Tägliche Schlafdauer (Stunden)",
+            "medicalRecords": "Beschwerden / Symptome",
+            "medicalHistory": "Krankengeschichte",
+            "smokingOptions": {
+                "never": "Nie",
+                "occasionally": "Gelegentlich",
+                "regularly": "Regelmäßig"
+            },
+            "alcoholOptions": {
+                "never": "Nie",
+                "occasionally": "Gelegentlich",
+                "regularly": "Regelmäßig"
+            },
+            "selectPlaceholder": "Nicht angegeben",
+            "placeholderHeartRate": "z.B.: 72",
+            "placeholderBloodPressure": "z.B.: 120/80",
+            "placeholderSports": "z.B.: Laufen, Schwimmen, Fitnessstudio",
+            "placeholderMedications": "z.B.: Aspirin, L-Thyroxin",
+            "placeholderChronicDiseases": "z.B.: Diabetes",
+            "placeholderAllergies": "z.B.: Penicillin, Pollen",
+            "placeholderDiet": "z.B.: Vegetarisch, Keto",
+            "placeholderWaterIntake": "z.B.: 2.5",
+            "placeholderFamilyHistory": "z.B.: Herzerkrankungen",
+            "placeholderSleep": "z.B.: 7.5",
+            "placeholderMedicalRecords": "z.B.: Häufige Kopfschmerzen",
+            "placeholderMedicalHistory": "Frühere Krankheiten"
+        },
+        "privacyModal": {
+            "title": "Unsere Datenschutzrichtlinie",
+            "text1": "Die von Ihnen angegebenen Daten werden ausschließlich vom Gesundheitssystem verwendet und nicht an Dritte weitergegeben. Ihre Daten werden nicht gespeichert; Sie können sie verwalten und auf Ihrem eigenen Gerät speichern.",
+            "text2": "Durch die Annahme der Datenschutzbedingungen stimmen Sie zu, dass unser System basierend auf den von Ihnen angegebenen Informationen Ratschläge gibt."
+        },
+        "response": {
+            "title": "Antwort von Dr. Sanovise:",
+            "analyzing": "Daten werden analysiert 📚🧠",
+            "thinking": "Überlege 🤔"
+        },
+        "settingsModal": {
+            "title": "Einstellungen",
+            "text": "Wählen Sie Ihre bevorzugte Sprache:"
+        },
+        "userForm": {
+            "requiredInfo": "Die mit einem <span class='required'>*</span> markierten Felder sind erforderlich!",
+            "birthDate": "Geburtsdatum",
+            "gender": "Geschlecht",
+            "selectGender": "Geschlecht auswählen",
+            "male": "Männlich",
+            "female": "Weiblich",
+            "height": "Größe",
+            "weight": "Gewicht",
+            "placeholderHeight": "z.B.: 175",
+            "placeholderWeight": "z.B.: 70",
+            "showExtra": "Weitere Felder anzeigen",
+            "hideExtra": "Weitere Felder ausblenden",
+            "acceptPrivacy": "Ich akzeptiere die",
+            "privacyLink": "Datenschutzrichtlinie",
+            "submitData": "Daten übermitteln",
+            "abort": "Nicht antworten",
+            "exportData": "Daten exportieren",
+            "invalidHeight": "Die Größe muss zwischen 50 cm und 300 cm liegen.",
+            "invalidWeight": "Das Gewicht muss zwischen 1 kg und 500 kg liegen.",
+            "invalidWaterIntake": "Die tägliche Wasseraufnahme muss zwischen 0 und 50 Litern liegen.",
+            "invalidHeartRate": "Die Herzfrequenz muss zwischen 30 und 250 liegen.",
+            "invalidSleep": "Die Schlafdauer muss zwischen 0 und 24 Stunden liegen.",
+            "invalidBloodPressure": "Der Blutdruck muss im folgenden Format vorliegen: Systole/Diastole (z.B.: 120/80)."
+        }
+    },
+    "global": {
+        "successSave": "Erfolgreich gespeichert",
+        "errorSave": "Beim Speichern ist ein Fehler aufgetreten.",
+        "errorSend": "Beim Senden der Daten ist ein Fehler aufgetreten.",
+        "tryAgain": "Bitte versuchen Sie es später erneut oder aktualisieren Sie die Seite.",
+        "emptyResponse": "Der Server hat keine Antwort gesendet. Es könnte ein Fehler aufgetreten sein.",
+        "networkError": "Netzwerkfehler – Bitte überprüfen Sie Ihre Internetverbindung!",
+        "unknownError": "Ein unbekannter Fehler ist aufgetreten. 😔",
+        "errorLoad": "Die Datei enthält keine gültigen Daten!",
+        "invalidJson": "Ungültiges Dateiformat! Bitte überprüfen Sie, ob Sie eine JSON-Datei hochgeladen haben.",
+        "anotherFile": "Bitte versuchen Sie es erneut oder wählen Sie eine andere Datei aus."
+    }
+}

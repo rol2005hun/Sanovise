@@ -12,6 +12,9 @@ etc.
 
 The application processes this data and provides information about the user's health status and potential risks. **⚠️ It is important to note that this application does not replace a consultation with a doctor!**
 
+**🌍 Multiple languages supported**: The application is available in several languages, including English, Hungarian, Spanish, French, German, Russian, Chinese, Arabic, and Hindi.
+
+**Beta Version 1.0.0**
 ---
 
 ## 🛠️ Technology Stack
@@ -39,19 +42,6 @@ The application processes this data and provides information about the user's he
 - 🤖 Processing of medical records using AI
 - 🏥 AI-based health consultation
 - 💾 JSON data saving: export/import
-
----
-
-## 💡 Ideas
-
-- [ ] 🔄 Automatic app updates when new code changes are deployed
-- [x] 🗺️ Google Maps integration for the contact section on the landing page
-- [ ] 📰 News section on the homepage of the landing page
-- [ ] 📖 More detailed and interactive "About Us" page
-- [ ] ✅ Real-time form validation
-- [ ] 🎨 Theme and language selection options in the settings
-- [ ] 💬 Implementing a chat-based consultation feature
-- [ ] 🚀 Building a brand identity around "Dr. Sanovise"
 
 ---
 

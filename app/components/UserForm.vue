@@ -12,7 +12,7 @@
         </select>
 
         <label for="height">{{ $t('components.userForm.height') }} (cm)<span class="required">*</span></label>
-        <input type="number" id="height" v-model="dataStore.userData.height" min="50" max="250" required
+        <input type="number" id="height" v-model="dataStore.userData.height" min="50" max="300" required
             :placeholder="$t('components.userForm.placeholderHeight')" />
 
         <label for="weight">{{ $t('components.userForm.weight') }} (kg)<span class="required">*</span></label>
@@ -28,7 +28,7 @@
         <OptionalFields />
 
         <div class="privacy-checkbox">
-            <input type="checkbox" id="privacyPolicy" v-model="privacyAccepted" required />
+            <input type="checkbox" id="privacyPolicy" v-model="dataStore.acceptedPrivacyPolicy" required />
             <label for="privacyPolicy">
                 {{ $t('components.userForm.acceptPrivacy') }}
                 <span @click.stop.prevent="dataStore.showPrivacyModal = true" class="privacy-link">
@@ -38,13 +38,15 @@
         </div>
 
         <div class="buttons">
-            <button v-if="!dataStore.responseType" type="submit"
-                :class="['submit', { 'disabled': !privacyAccepted || dataStore.messages.length }]"
-                :disabled="!privacyAccepted || dataStore.messages.length">{{ $t('components.userForm.submitData')
+            <button v-if="!dataStore.responseType" type="submit" @click="validateForm"
+                :class="['submit', { 'disabled': !dataStore.acceptedPrivacyPolicy || dataStore.messages.length }]"
+                :disabled="!dataStore.acceptedPrivacyPolicy || dataStore.messages.length > 0">{{ $t('components.userForm.submitData')
                 }}</button>
             <button v-else type="button" @click="stopAnswering()" class="abort">{{ $t('components.userForm.abort')
-            }}</button>
-            <button type="button" @click="exportData" class="export">{{ $t('components.userForm.exportData') }}</button>
+                }}</button>
+            <button type="button" :class="['export', {
+                'disabled': !isUserDataComplete
+            }]" :disabled="!isUserDataComplete" @click="exportData">{{ $t('components.userForm.exportData') }}</button>
         </div>
     </form>
 </template>
@@ -52,12 +54,24 @@
 <script setup lang="ts">
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { Capacitor } from '@capacitor/core';
-import { dataStore } from '@/store';
+import { dataStore, toastStore } from '@/store';
 
 const { locale } = useI18n();
-const privacyAccepted = ref(false);
+const { t } = useI18n();
+
+const isUserDataComplete = computed(() => {
+    const data = dataStore.userData;
+    return (
+        data.birthDate !== '' &&
+        data.gender !== '' &&
+        data.height !== '' &&
+        data.weight !== ''
+    );
+});
 
 async function submitData() {
+    if (!validateForm()) return;
+
     try {
         dataStore.responseType = 'analyzing';
         dataStore.currentResponse = '';
@@ -76,9 +90,7 @@ async function submitData() {
             body: JSON.stringify(dataStore.userData),
         });
 
-        if (!response.body) {
-            throw new Error('A válasz üres.');
-        }
+        if (!response.body) throw new Error(t('global.emptyResponse'));
 
         const reader = response.body.getReader();
         const decoder = new TextDecoder('utf-8');
@@ -104,13 +116,24 @@ async function submitData() {
         }
     } catch (error: any) {
         dataStore.responseType = null;
+
         if (error.name !== 'AbortError') {
-            const errorMsg = 'Hiba történt az adatok küldése közben: ' + error.message;
+            let errorMessage = '';
+
+            if (error.message.includes('fetch') || error.message.includes('NetworkError')) {
+                errorMessage = `⚠️ ${t('global.networkError')}`;
+            } else if (error.message === t('global.emptyResponse')) {
+                errorMessage = `⚠️ ${t('global.emptyResponse')}`;
+            } else {
+                errorMessage = `⚠️ ${t('global.errorSend')}: ${error.message}\n\n${t('global.tryAgain')}`;
+            }
+
             dataStore.messages.push({
                 role: 'assistant',
-                content: errorMsg
+                content: errorMessage
             });
         }
+
         dataStore.currentResponse = '';
     }
 }
@@ -119,7 +142,7 @@ function stopAnswering() {
     if (dataStore.controller) {
         dataStore.controller.abort();
         dataStore.responseType = null;
-        
+
         if (dataStore.currentResponse && dataStore.currentResponse.trim()) {
             dataStore.messages.push({
                 role: 'assistant',
@@ -144,17 +167,20 @@ async function exportData() {
                 encoding: Encoding.UTF8,
             });
 
-            alert('Sikeresen elmentve: ' + fileName);
+            toastStore.show(`✅ ${t('global.successSave')}: ${fileName}`, 'success');
         } catch (err) {
-            console.error('Hiba mentés közben:', err);
-            alert('Hiba történt a fájl mentésekor.');
+            toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}`, 'error');
         }
     } else {
-        const blob = new Blob([data], { type: 'application/json' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        link.click();
+        try {
+            const blob = new Blob([data], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+        } catch {
+            toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}`, 'error');
+        }
     }
 }
 </script>

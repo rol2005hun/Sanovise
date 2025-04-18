@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <Header />
+    <Toast />
     <main class="main-container">
       <NuxtPage />
     </main>

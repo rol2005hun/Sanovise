@@ -7,32 +7,35 @@
 </template>
 
 <script setup lang="ts">
-import { dataStore } from '@/store';
+import { dataStore, toastStore } from '@/store';
 
 const fileName = ref<string>('');
+const { t } = useI18n();
 
 function importData(event: Event) {
     const file = (event.target as HTMLInputElement).files?.[0];
-    if (file) {
-        fileName.value = file.name;
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            try {
-                const jsonData = JSON.parse(e.target?.result as string);
-                
-                if (jsonData.birthDate) {
-                    dataStore.userData = jsonData;
-                } else if (jsonData[0].role === 'assistant') {
-                    dataStore.messages = jsonData;
-                } else {
-                    alert('A fájl nem tartalmaz felismerhető adatokat!');
-                }
-            } catch (error) {
-                alert('Hibás JSON fájl!');
+    if (!file) return;
+
+    fileName.value = file.name;
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+        try {
+            const jsonData = JSON.parse(e.target?.result as string);
+
+            if (jsonData.birthDate) {
+                dataStore.userData = jsonData;
+            } else if (Array.isArray(jsonData) && jsonData[0]?.role) {
+                dataStore.messages = jsonData;
+            } else {
+                toastStore.show(`⚠️ ${t('global.errorLoad')}\n\n${t('global.anotherFile')}`, 'error');
             }
+        } catch (error) {
+            toastStore.show(`⚠️ ${t('global.invalidJson')}\n\n${t('global.anotherFile')}`, 'error');
         }
-        reader.readAsText(file);
-    }
+    };
+
+    reader.readAsText(file);
 }
 
 function handleDrop(event: DragEvent) {

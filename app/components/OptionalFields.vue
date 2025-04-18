@@ -1,12 +1,13 @@
 <template>
-    <div v-if="dataStore.showOptionalFields" class="optional-fields">
+    <div v-show="dataStore.showOptionalFields" class="optional-fields">
         <label for="heartRate">{{ $t('components.optionalFields.heartRate') }}</label>
-        <input type="number" id="heartRate" v-model="dataStore.userData.heartRate" min="30" max="200"
+        <input type="number" id="heartRate" v-model="dataStore.userData.heartRate" min="30" max="250"
             :placeholder="$t('components.optionalFields.placeholderHeartRate')" />
 
         <label for="bloodPressure">{{ $t('components.optionalFields.bloodPressure') }}</label>
         <input type="text" id="bloodPressure" v-model="dataStore.userData.bloodPressure"
-            :placeholder="$t('components.optionalFields.placeholderBloodPressure')" />
+            :placeholder="$t('components.optionalFields.placeholderBloodPressure')"
+            pattern="^\d{2,3}\/\d{2,3}$" />
 
         <label for="sports">{{ $t('components.optionalFields.sports') }}</label>
         <input type="text" id="sports" v-model="dataStore.userData.sports"
@@ -29,7 +30,7 @@
             :placeholder="$t('components.optionalFields.placeholderDiet')" />
 
         <label for="waterIntake">{{ $t('components.optionalFields.waterIntake') }}</label>
-        <input type="number" id="waterIntake" v-model="dataStore.userData.waterIntake" min="0" max="10" step="0.1"
+        <input type="number" id="waterIntake" v-model="dataStore.userData.waterIntake" min="0" max="50" step="0.1"
             :placeholder="$t('components.optionalFields.placeholderWaterIntake')" />
 
         <label for="familyHistory">{{ $t('components.optionalFields.familyHistory') }}</label>
