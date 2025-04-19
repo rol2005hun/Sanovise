@@ -37,6 +37,7 @@ app/.env
 app/.env.*
 app/!.env.example
 app/android
+app/src-tauri
 
 # SERVER IGNORES
 server/node_modules
