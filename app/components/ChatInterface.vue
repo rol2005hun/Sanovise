@@ -1,5 +1,9 @@
 <template>
     <div class="chat-box">
+        <button v-if="canScroll" @click="scrollToTopOrBottom" class="scroll-btn" title="scroll">
+            {{ scrolledOffset > 200 ? '⬇' : '⬆' }}
+        </button>
+
         <form @submit.prevent="sendMessage" class="input-area">
             <textarea v-model="userInput" @keydown.enter.exact.prevent="sendMessage"
                 :placeholder="$t('components.chatInterface.placeholder')" class="chat-input" ref="textarea"
@@ -25,9 +29,11 @@ import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 import { dataStore, toastStore } from '@/store';
 
+const { t, locale } = useI18n();
 const userInput = ref('');
 const textarea = ref<HTMLTextAreaElement | null>(null);
-const { t, locale } = useI18n();
+const scrolledOffset = ref(0);
+const canScroll = ref(false);
 
 const isUserDataComplete = computed(() => {
     const data = dataStore.userData;
@@ -45,6 +51,20 @@ const canSend = computed(() =>
     dataStore.acceptedPrivacyPolicy === true &&
     userInput.value.trim().length > 0
 );
+
+function updateScrollOffset() {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    scrolledOffset.value = scrollHeight - scrollTop - clientHeight;
+    canScroll.value = scrollHeight > clientHeight + 10;
+}
+
+function scrollToTopOrBottom() {
+    if (scrolledOffset.value < 200) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+    }
+}
 
 async function sendMessage() {
     if (!canSend.value) return;
@@ -172,12 +192,19 @@ async function exportChat() {
 }
 
 onMounted(() => {
+    window.addEventListener('scroll', updateScrollOffset);
+    updateScrollOffset();
+
     if (textarea.value) {
         textarea.value.addEventListener('input', () => {
             textarea.value!.style.height = 'auto';
             textarea.value!.style.height = `${Math.min(textarea.value!.scrollHeight, 150)}px`;
         });
     }
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', updateScrollOffset);
 });
 </script>
 

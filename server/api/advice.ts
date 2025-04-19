@@ -158,7 +158,7 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
                 them through the necessary steps for improvement. You don't need to be formal or overly polite unless appropriate; aim for clarity 
                 and empathy. Begin your response directly with the medical advice. Do not use any introductory or filler phrases like “My answer is”, 
                 “Here’s what I think”, “Let me explain”, etc. Your reply must start directly with the medical insights and advice, with no preamble. 
-                Feel free to use emojis to enhance the message, but not to much.`
+                Feel free to use emojis to enhance the message, but not to much. Your name is: Dr. Sanovise. Today's date is: ${new Date().toISOString().split('T')[0]}.`
             },
             {
                 role: 'user',
@@ -197,7 +197,7 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
         res.setHeader('Transfer-Encoding', 'chunked');
 
         const stream = await openai.chat.completions.create({
-            model: 'deepseek/deepseek-r1:free',
+            model: 'meta-llama/llama-3.1-8b-instruct:free',
             messages: chatMessages,
             stream: true,
             temperature: 0.7,
