@@ -23,12 +23,11 @@
         word-break: break-word;
     }
 
-    .token {
+    :deep(.token) {
         display: inline-block;
-        word-break: break-all;
     }
 
-    .stream .token {
+    .stream :deep(.token) {
         animation: fadeIn 3s forwards;
     }
 
@@ -46,6 +45,15 @@
             color: white;
             cursor: pointer;
         }
+    }
+    
+    :deep(li.sub-list) {
+        list-style-type: circle;
+        margin-left: 1rem;
+    }
+
+    :deep(li.numbered-list) {
+        list-style-type: none;
     }
 }
 
