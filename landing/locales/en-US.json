@@ -13,7 +13,7 @@
             ],
             "howItWorks": "🛠️ How It Works?",
             "howItWorksSteps": [
-                "Visit the <a href='https://app.sanovise.ranzak.site' target='_blank'>Sanovise Myself</a> page.",
+                "Visit the <a href='https://app.sanovise.ranzak.site' target='_blank'>Sanovise App</a> page.",
                 "Enter your health data, such as heart rate, blood pressure, height, weight, etc.",
                 "The application analyzes the data using artificial intelligence.",
                 "Receive feedback on your health status and learn about potential health risks."
@@ -48,12 +48,12 @@
                 "android": {
                     "title": "Android",
                     "description": "Available for Android 6.0 and later.",
-                    "button": "Download from Google Play"
+                    "button": "Download"
                 },
                 "ios": {
                     "title": "iOS (iPhone/iPad)",
                     "description": "Compatible with iOS 14 and later.",
-                    "button": "Download from the App Store"
+                    "button": "Download"
                 }
             },
             "web": {

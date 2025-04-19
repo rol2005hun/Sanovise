@@ -17,7 +17,7 @@
                         $t('pages.download.mobile.android.title')
                     }}</h3>
                     <p>{{ $t('pages.download.mobile.android.description') }}</p>
-                    <a href="https://web.unideb.hu/rol2005hun/szakdoga/sanovise.apk" target="_blank"
+                    <a href="https://web.unideb.hu/rol2005hun/szakdoga/Sanovise.apk" target="_blank"
                         rel="noopener noreferrer" class="btn-download store-link">
                         {{ $t('pages.download.mobile.android.button') }}
                     </a>
@@ -62,7 +62,7 @@
                         <span class="emoji-os" role="img" aria-label="Laptop computer emoji"><i
                                 class="fa-brands fa-microsoft"></i></span>
                         <span class="os-name">{{ $t('pages.download.desktop.windows.title') }}</span>
-                        <a href="javascript:void(0);" class="btn-secondary download-link not-available" @click.prevent download>
+                        <a href="https://web.unideb.hu/rol2005hun/szakdoga/Sanovise.exe" class="btn-secondary download-link" download>
                             {{ $t('pages.download.desktop.downloadButton') }} <span role="img"
                                 aria-label="Download symbol">📥</span>
                         </a>

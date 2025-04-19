@@ -13,7 +13,7 @@
             ],
             "howItWorks": "🛠️ Hogyan működik?",
             "howItWorksSteps": [
-                "Látogasson el a {link} oldalára.",
+                "Látogasson el a <a href='https://app.sanovise.ranzak.site' target='_blank'>Sanovise App</a> oldalára.",
                 "Adja meg egészségügyi adatait, mint például pulzusszám, vérnyomás, magasság, súly stb.",
                 "Az alkalmazás mesterséges intelligencia segítségével elemzi az adatokat.",
                 "Kapjon visszajelzést egészségi állapotáról, és tájékozódjon a lehetséges betegségekről."
@@ -48,12 +48,12 @@
                 "android": {
                     "title": "Android",
                     "description": "Elérhető Android 6.0 és újabb verziókra.",
-                    "button": "Letöltés a Google Play-ből"
+                    "button": "Letöltés"
                 },
                 "ios": {
                     "title": "iOS (iPhone/iPad)",
                     "description": "Kompatibilis iOS 14 és újabb rendszerekkel.",
-                    "button": "Letöltés az App Store-ból"
+                    "button": "Letöltés"
                 }
             },
             "web": {
