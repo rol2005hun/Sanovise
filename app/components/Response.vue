@@ -4,108 +4,113 @@
             <div v-for="(response, index) in dataStore.messages" :key="index" class="response-block"
                 :class="response.role">
                 <h3 v-if="response.role === 'assistant'">{{ $t('components.response.title') }}</h3>
-                <div v-for="(line, lineIndex) in formatResponse(response.content)" :key="lineIndex" class="line">
-                    <span v-for="(html, htmlIndex) in line" :key="htmlIndex" v-html="html" />
-                </div>
+                <div v-html="marked.parse(response.content)" class="block"></div>
             </div>
 
             <div v-if="dataStore.currentResponse" class="response-block assistant stream">
                 <h3>{{ $t('components.response.title') }}</h3>
-                <div v-for="(line, lineIndex) in formatResponse(dataStore.currentResponse)" :key="'stream-' + lineIndex"
-                    class="line">
-                    <span v-for="(html, htmlIndex) in line" :key="'stream-token-' + lineIndex + '-' + htmlIndex"
-                        v-html="html" />
-                </div>
+                <component v-for="(block, blockIndex) in structuredTokens" :key="blockIndex" :is="block.tag"
+                    v-bind="block.attrs" class="block">
+                    <template v-for="(token, i) in block.tokens" :key="`${blockIndex}-${i}`">
+                        <span class="token" v-html="token"></span>
+                    </template>
+                </component>
             </div>
 
             <div class="response-anim" v-if="dataStore.responseType">
                 <span class="thinking-anim">
                     {{ $t(`components.response.${dataStore.responseType}`) }}
                 </span>
-                <button class="stop-answering" @click="stopAnswering"><i class="fa-solid fa-stop"></i></button>
+                <button class="stop-answering" @click="stopAnswering">
+                    <i class="fa-solid fa-stop"></i>
+                </button>
             </div>
         </div>
     </div>
 </template>
 
+
 <script setup lang="ts">
+import { marked } from 'marked';
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 import { dataStore } from '@/store';
+
+type Block = { tag: string; attrs: Record<string, string>; tokens: string[] };
 
 const userScrolled = ref(false);
 const isAutoScrolling = ref(false);
+const structuredTokens = ref<Block[]>([]);
+let fullBuffer = '';
+let animationIndex = 0;
 
-function tokenizeHTMLLine(line: string): string {
-    const match = line.match(/^<(\w+)[^>]*>(.*?)<\/\1>$/);
-    if (!match) return line;
+watch(() => dataStore.currentResponse, async (newVal) => {
+    if (!newVal) return;
 
-    const tag = match[0].match(/<(\w+)[^>]*>/);
-    if (!tag) return line;
+    const newChunk = newVal.slice(fullBuffer.length);
+    if (!newChunk) return;
 
-    const content = match[2];
-    const tokenized = content
-        .split(/(\s+)/)
-        .map(token => {
-            if (token.trim() === '') {
-                return `<span class="token">&nbsp;</span>`;
-            } else return `<span class="token">${token}</span>`;
-        }).join('');
+    fullBuffer = newVal;
 
-    return `${tag[0]}${tokenized}</${tag[1]}>`;
-}
+    const html = await Promise.resolve(marked(fullBuffer));
+    const container = document.createElement('div');
+    container.innerHTML = html;
 
-function formatMarkdown(line: string): string {
-    return line
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/_(.*?)_/g, '<em>$1</em>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: lightslategrey;">$1</a>')
-        .replace(/`(.*?)`/g, '<code>$1</code>')
-        .replace(/"""(.*?)"""/gs, '<pre><code>$1</code></pre>')
-        .replace(/```(.*?)```/gs, '<pre><code>$1</code></pre>');
-}
+    const parsed = parseDomToStructuredTokens(container);
+    structuredTokens.value = parsed;
+});
 
-function formatResponse(text: string): string[][] {
-    return text.split('\n').map(line => {
-        if (line.trim() === '') {
-            return ['<br>'];
+function parseDomToStructuredTokens(container: HTMLElement): Block[] {
+    const blocks: Block[] = [];
+    animationIndex = 0;
+
+    function walk(node: HTMLElement): Block | null {
+        if (!node.tagName) return null;
+
+        const tag = node.tagName.toLowerCase();
+        const attrs: Record<string, string> = {};
+        for (const attr of node.attributes) {
+            attrs[attr.name] = attr.value;
         }
 
-        let formatted = formatMarkdown(line);
-        if (/^###\s/.test(line)) {
-            return [tokenizeHTMLLine(`<h3>${formatted.replace(/^###\s/, '')}</h3>`)];
-        } else if (/^##\s/.test(line)) {
-            return [tokenizeHTMLLine(`<h2>${formatted.replace(/^##\s/, '')}</h2>`)];
-        } else if (/^#\s/.test(line)) {
-            return [tokenizeHTMLLine(`<h1>${formatted.replace(/^#\s/, '')}</h1>`)];
-        } else if (/^\s{2}[-*]\s/.test(line)) {
-            return [tokenizeHTMLLine(`<li class="sub-list">${formatted.replace(/^\s{2}[-*]\s/, '')}</li>`)];
-        } else if (/^\s{3}[-*]\s/.test(line)) {
-            return [tokenizeHTMLLine(`<li class="sub-list">${formatted.replace(/^\s{3}[-*]\s/, '')}</li>`)];
-        } else if (/^[-*]\s/.test(line)) {
-            return [tokenizeHTMLLine(`<li class="list">${formatted.replace(/^[-*]\s/, '')}</li>`)];
-        } else if (/^\d+\.\s/.test(line)) {
-            return [tokenizeHTMLLine(`<li class="numbered-list">${formatted}</li>`)];
-        } else if (/^>\s/.test(line)) {
-            return [tokenizeHTMLLine(`<blockquote>${formatted.replace(/^>\s/, '')}</blockquote>`)];
-        } else if (/^!\[.*?\]\(.*?\)/.test(line)) {
-            const match = line.match(/!\[(.*?)\]\((.*?)\)/);
-            if (match) {
-                const altText = match[1];
-                const imageUrl = match[2];
-                return [tokenizeHTMLLine(`<img src="${imageUrl}" alt="${altText}" />`)];
+        const tokens: string[] = [];
+
+        node.childNodes.forEach((child) => {
+            if (child.nodeType === Node.TEXT_NODE) {
+                const text = child.textContent || '';
+                const words = text.split(/(\s+)/g);
+                words.forEach((word) => {
+                    if (word === ' ') {
+                        tokens.push('&nbsp;');
+                    } else if (word.trim() !== '') {
+                        tokens.push(word);
+                    }
+                });
+            } else if (child.nodeType === Node.ELEMENT_NODE) {
+                const el = child as HTMLElement;
+
+                if (el.tagName.toLowerCase() === 'br') {
+                    tokens.push('<br />');
+                } else {
+                    const span = document.createElement('span');
+                    span.appendChild(el.cloneNode(true));
+                    tokens.push(span.innerHTML);
+                }
             }
+        });
+
+        if (tokens.length === 0) {
+            tokens.push('&nbsp;');
         }
 
-        const stripped = formatted.replace(/<\/?[^>]+(>|$)/g, match => `${match}`);
-        const tokens = stripped.split(/(\s+|<\/?[^>]+>)/).filter(token => token.length > 0);
-        const output = tokens.map(token => {
-            if (token.trim() === '') {
-                return '<span class="token">&nbsp;</span>';
-            } else return `<span class="token">${token}</span>`;
-        }).join('');
+        return { tag, attrs, tokens };
+    }
 
-        return [output];
+    Array.from(container.children).forEach((el) => {
+        const block = walk(el as HTMLElement);
+        if (block) blocks.push(block);
     });
+
+    return blocks;
 }
 
 function stopAnswering() {
@@ -113,7 +118,7 @@ function stopAnswering() {
         dataStore.controller.abort();
         dataStore.responseType = null;
 
-        if (dataStore.currentResponse && dataStore.currentResponse.trim()) {
+        if (dataStore.currentResponse?.trim()) {
             dataStore.messages.push({
                 role: 'assistant',
                 content: dataStore.currentResponse.trim()
@@ -121,6 +126,7 @@ function stopAnswering() {
         }
 
         dataStore.currentResponse = '';
+        fullBuffer = '';
     }
 
     scrollToBottom();
@@ -157,12 +163,15 @@ function onUserScrollEnd() {
     }
 }
 
-watch([() => dataStore.messages, () => dataStore.responseType, () => dataStore.currentResponse], async () => {
-    await nextTick();
-    if (!userScrolled.value) {
-        scrollToBottom();
+watch(
+    [() => dataStore.messages, () => dataStore.responseType, () => dataStore.currentResponse],
+    async () => {
+        await nextTick();
+        if (!userScrolled.value) {
+            scrollToBottom();
+        }
     }
-});
+);
 
 onMounted(() => {
     window.addEventListener('scroll', onScroll);

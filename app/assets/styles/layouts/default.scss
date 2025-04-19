@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 * {
-    margin: 0;
-	padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
@@ -11,6 +9,8 @@ body {
     position: relative;
     min-height: 100vh;
     font-size: 1rem;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(to bottom right, #152935, #961107);
 }
 
