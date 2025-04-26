@@ -46,7 +46,7 @@
         }
     }
 
-    .language-selection {
+    .language-selection, .ai-model-selection {
         margin-top: 1rem;
 
         label {
@@ -55,7 +55,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .language-select {
+        .language-select, .ai-model-select {
             padding: 0.5rem;
             width: 100%;
             font-size: 1rem;

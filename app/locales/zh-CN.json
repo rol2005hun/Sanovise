@@ -1,111 +1,134 @@
 {
-    "pages": {
-        "index": {
-            "title": "上传您的数据"
-        }
-    },
     "components": {
         "chatInterface": {
             "placeholder": "请输入您的消息..."
         },
+        "clickMenu": {
+            "showForm": "显示数据输入表单",
+            "showChat": "显示聊天界面"
+        },
         "fileUpload": {
+            "title": "上传您的数据",
             "upload": "选择文件或将其拖放到此处",
-            "lastLoaded": "最后加载"
+            "lastLoaded": "上次加载"
         },
         "header": {
             "settings": "设置"
         },
         "optionalFields": {
-            "heartRate": "平均心率",
-            "bloodPressure": "血压（收缩压/舒张压）",
-            "sports": "运动活动",
-            "medications": "定期服用的药物",
+            "heartRate": "心率",
+            "placeholderHeartRate": "请输入您的心率",
+            "bloodPressure": "血压",
+            "placeholderBloodPressure": "请输入您的血压，如 120/80",
+            "sports": "运动",
+            "placeholderSports": "您从事哪些运动？",
+            "medications": "药物",
+            "placeholderMedications": "请输入您正在服用的药物",
             "chronicDiseases": "慢性疾病",
+            "placeholderChronicDiseases": "请输入您的慢性疾病",
             "allergies": "过敏",
-            "diet": "饮食习惯",
-            "waterIntake": "每日水摄入量（升）",
+            "placeholderAllergies": "请输入您的过敏情况",
+            "diet": "饮食",
+            "placeholderDiet": "请输入您的饮食习惯",
+            "waterIntake": "每日饮水量（升）",
+            "placeholderWaterIntake": "请输入您的每日饮水量",
             "familyHistory": "家族病史",
+            "placeholderFamilyHistory": "请输入您的家族病史",
             "smoking": "吸烟",
-            "alcohol": "饮酒",
-            "sleep": "每日睡眠时间（小时）",
-            "medicalRecords": "症状 / 问题",
-            "medicalHistory": "病史",
             "smokingOptions": {
                 "never": "从不",
                 "occasionally": "偶尔",
-                "regularly": "定期"
+                "regularly": "经常"
             },
+            "selectPlaceholder": "请选择",
+            "alcohol": "饮酒",
             "alcoholOptions": {
                 "never": "从不",
                 "occasionally": "偶尔",
-                "regularly": "定期"
+                "regularly": "经常"
             },
-            "selectPlaceholder": "未指定",
-            "placeholderHeartRate": "例如：72",
-            "placeholderBloodPressure": "例如：120/80",
-            "placeholderSports": "例如：跑步，游泳，健身房",
-            "placeholderMedications": "例如：阿司匹林，左甲状腺素",
-            "placeholderChronicDiseases": "例如：糖尿病",
-            "placeholderAllergies": "例如：青霉素，花粉",
-            "placeholderDiet": "例如：素食主义，生酮",
-            "placeholderWaterIntake": "例如：2.5",
-            "placeholderFamilyHistory": "例如：心脏病",
-            "placeholderSleep": "例如：7.5",
-            "placeholderMedicalRecords": "例如：经常头痛",
-            "placeholderMedicalHistory": "以前的疾病"
+            "sleep": "睡眠（小时/天）",
+            "placeholderSleep": "请输入您的每日睡眠时间",
+            "physicalActivityLevel": "身体活动水平",
+            "placeholderPhysicalActivityLevel": "请输入您的活动水平",
+            "workType": "工作类型",
+            "placeholderWorkType": "请输入您的工作类型",
+            "stressLevel": "压力水平",
+            "placeholderStressLevel": "请输入您的压力水平",
+            "mentalHealth": "心理健康",
+            "placeholderMentalHealth": "请输入您的心理健康状况",
+            "cholesterolLevel": "胆固醇水平",
+            "placeholderCholesterolLevel": "请输入您的胆固醇水平",
+            "bloodSugarLevel": "血糖水平",
+            "placeholderBloodSugarLevel": "请输入您的血糖水平",
+            "supplements": "膳食补充剂",
+            "placeholderSupplements": "请输入您正在服用的补充剂",
+            "vaccinations": "疫苗接种",
+            "placeholderVaccinations": "请输入您的疫苗接种情况",
+            "reproductiveHealth": "生殖健康",
+            "placeholderReproductiveHealth": "请输入您的生殖健康信息",
+            "visionAndHearing": "视力与听力",
+            "placeholderVisionAndHearing": "请输入您的视力和听力问题",
+            "sleepQuality": "睡眠质量",
+            "placeholderSleepQuality": "请输入您的睡眠质量",
+            "medicalRecords": "医疗记录",
+            "placeholderMedicalRecords": "请输入您的医疗记录",
+            "medicalHistory": "病史",
+            "placeholderMedicalHistory": "请输入您的病史"
         },
         "privacyModal": {
-            "title": "隐私政策",
-            "text1": "您提供的数据仅供健康顾问系统使用，并且不会被转交给第三方。系统不会保存您的数据，您可以管理这些数据并将其保存到您的设备。",
-            "text2": "接受隐私条款即表示您同意我们的系统根据您提供的信息提供建议。"
+            "title": "我们的隐私政策",
+            "text1": "您提供的数据仅用于健康咨询系统，不会传输给第三方。系统不会保存您的数据，您可以自行管理并保存到您的设备。",
+            "text2": "接受隐私条款即表示您同意根据您提供的信息获得建议。"
         },
         "response": {
-            "title": "Dr. Sanovise 的回复：",
+            "title": "Dr. Sanovise的回复：",
             "analyzing": "正在分析数据 📚🧠",
-            "thinking": "正在思考 🤔"
+            "thinking": "思考中 🤔"
         },
         "settingsModal": {
             "title": "设置",
-            "text": "请选择您想要的语言："
+            "selectLanguage": "请选择您的语言：",
+            "selectAIModel": "请选择您的AI模型："
         },
         "userForm": {
-            "requiredInfo": "带有 <span class='required'>*</span> 的字段是必填项！",
+            "requiredInfo": "带有<span class='required'>*</span>的字段为必填项！",
             "birthDate": "出生日期",
             "gender": "性别",
-            "selectGender": "选择性别",
+            "selectGender": "请选择性别",
             "male": "男性",
             "female": "女性",
             "height": "身高",
             "weight": "体重",
             "placeholderHeight": "例如：175",
             "placeholderWeight": "例如：70",
-            "showExtra": "显示更多数据",
-            "hideExtra": "隐藏更多数据",
+            "showExtra": "填写更多信息",
+            "hideExtra": "隐藏更多信息",
             "acceptPrivacy": "我接受",
             "privacyLink": "隐私政策",
             "submitData": "提交数据",
-            "abort": "不回答",
+            "abort": "取消回复",
             "exportData": "导出数据",
-            "invalidHeight": "身高应在50厘米到300厘米之间。",
-            "invalidWeight": "体重应在1公斤到500公斤之间。",
-            "invalidWaterIntake": "每日水摄入量应在0到50升之间。",
-            "invalidHeartRate": "心率应在30到250之间。",
-            "invalidSleep": "睡眠时间应在0到24小时之间。",
-            "invalidBloodPressure": "血压应采用以下格式：收缩压/舒张压（例如：120/80）。"
+            "invalidHeight": "身高必须在50厘米到300厘米之间。",
+            "invalidWeight": "体重必须在1公斤到500公斤之间。",
+            "invalidWaterIntake": "每日饮水量必须在0到50升之间。",
+            "invalidHeartRate": "心率必须在30到250之间。",
+            "invalidSleep": "睡眠时间必须在0到24小时之间。",
+            "invalidBloodPressure": "血压格式应为收缩压/舒张压（例如：120/80）。"
         }
     },
     "global": {
         "successSave": "保存成功",
-        "successShare": "分享成功",
-        "errorSave": "保存时出错。",
-        "errorSend": "发送数据时出错。",
-        "tryAgain": "请稍后再试或刷新页面。",
-        "emptyResponse": "服务器没有返回响应，可能发生了中断。",
-        "networkError": "网络错误 - 请检查您的互联网连接！",
-        "unknownError": "发生未知错误。 😔",
-        "errorLoad": "文件不包含有效的数据！",
-        "invalidJson": "文件格式错误！请检查您是否上传了有效的JSON文件。",
-        "anotherFile": "请尝试重新上传或选择其他文件。",
-        "zh-CN": "请允许访问存储空间。"
+        "successShare": "发送成功",
+        "errorSave": "保存时发生错误。",
+        "errorSend": "发送数据时发生错误。",
+        "tryAgain": "请稍后重试或刷新页面。",
+        "emptyResponse": "服务器未返回响应。可能出现了问题。",
+        "networkError": "网络错误 – 请检查您的互联网连接！",
+        "unknownError": "发生未知错误。😔",
+        "errorLoad": "文件中不包含有效数据！",
+        "invalidJson": "文件格式错误！请确认上传的是JSON文件。",
+        "anotherFile": "请重试或选择其他文件。",
+        "needPermission": "请允许访问存储权限。"
     }
 }

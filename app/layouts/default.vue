@@ -2,6 +2,7 @@
   <div class="app-container">
     <Header />
     <Toast />
+    <ClickMenu />
     <main class="main-container">
       <NuxtPage />
     </main>

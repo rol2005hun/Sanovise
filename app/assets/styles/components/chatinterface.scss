@@ -1,6 +1,6 @@
 .chat-box {
     position: fixed;
-    bottom: 0;
+    bottom: 1rem;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
-    border-radius: 12px 12px 0 0;
+    border-radius: 10px;
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
@@ -16,11 +16,11 @@
 
 .scroll-btn {
     position: fixed;
-    right: 0.5rem;
+    right: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 3.5rem;
+    bottom: 4.5rem;
     z-index: 1000;
     background-color: #2196f3;
     color: white;
@@ -78,5 +78,11 @@
         background-color: #ccc;
         color: white;
         cursor: not-allowed;
+    }
+}
+
+@media (max-width: 700px) {
+    .chat-box {
+        width: calc(100% - 2rem);
     }
 }

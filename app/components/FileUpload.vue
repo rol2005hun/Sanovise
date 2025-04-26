@@ -1,8 +1,11 @@
 <template>
-    <div class="file-upload" @dragover.prevent @drop="handleDrop">
-        <input type="file" id="fileInput" @change="importData" accept="application/json" hidden />
-        <label for="fileInput" class="upload-label">{{ $t('components.fileUpload.upload') }}</label>
-        <span v-if="fileName">{{ $t('components.fileUpload.lastLoaded') }}: {{ fileName }}</span>
+    <div class="upload-container" v-if="dataStore.showForm">
+        <h2>{{ $t('components.fileUpload.title') }}:</h2>
+        <div class="file-upload" @dragover.prevent @drop="handleDrop">
+            <input type="file" id="fileInput" @change="importData" accept="application/json" hidden />
+            <label for="fileInput" class="upload-label">{{ $t('components.fileUpload.upload') }}</label>
+            <span v-if="fileName">{{ $t('components.fileUpload.lastLoaded') }}: {{ fileName }}</span>
+        </div>
     </div>
 </template>
 

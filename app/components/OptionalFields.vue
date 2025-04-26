@@ -6,8 +6,7 @@
 
         <label for="bloodPressure">{{ $t('components.optionalFields.bloodPressure') }}</label>
         <input type="text" id="bloodPressure" v-model="dataStore.userData.bloodPressure"
-            :placeholder="$t('components.optionalFields.placeholderBloodPressure')"
-            pattern="^\d{2,3}\/\d{2,3}$" />
+            :placeholder="$t('components.optionalFields.placeholderBloodPressure')" pattern="^\d{2,3}\/\d{2,3}$" />
 
         <label for="sports">{{ $t('components.optionalFields.sports') }}</label>
         <input type="text" id="sports" v-model="dataStore.userData.sports"
@@ -56,6 +55,50 @@
         <label for="sleep">{{ $t('components.optionalFields.sleep') }}</label>
         <input type="number" id="sleep" v-model="dataStore.userData.sleep" min="0" max="24" step="0.5"
             :placeholder="$t('components.optionalFields.placeholderSleep')" />
+
+        <label for="physicalActivityLevel">{{ $t('components.optionalFields.physicalActivityLevel') }}</label>
+        <input type="text" id="physicalActivityLevel" v-model="dataStore.userData.physicalActivityLevel"
+            :placeholder="$t('components.optionalFields.placeholderPhysicalActivityLevel')" />
+
+        <label for="workType">{{ $t('components.optionalFields.workType') }}</label>
+        <input type="text" id="workType" v-model="dataStore.userData.workType"
+            :placeholder="$t('components.optionalFields.placeholderWorkType')" />
+
+        <label for="stressLevel">{{ $t('components.optionalFields.stressLevel') }}</label>
+        <input type="text" id="stressLevel" v-model="dataStore.userData.stressLevel"
+            :placeholder="$t('components.optionalFields.placeholderStressLevel')" />
+
+        <label for="mentalHealth">{{ $t('components.optionalFields.mentalHealth') }}</label>
+        <input type="text" id="mentalHealth" v-model="dataStore.userData.mentalHealth"
+            :placeholder="$t('components.optionalFields.placeholderMentalHealth')" />
+
+        <label for="cholesterolLevel">{{ $t('components.optionalFields.cholesterolLevel') }}</label>
+        <input type="text" id="cholesterolLevel" v-model="dataStore.userData.cholesterolLevel"
+            :placeholder="$t('components.optionalFields.placeholderCholesterolLevel')" />
+
+        <label for="bloodSugarLevel">{{ $t('components.optionalFields.bloodSugarLevel') }}</label>
+        <input type="text" id="bloodSugarLevel" v-model="dataStore.userData.bloodSugarLevel"
+            :placeholder="$t('components.optionalFields.placeholderBloodSugarLevel')" />
+
+        <label for="supplements">{{ $t('components.optionalFields.supplements') }}</label>
+        <input type="text" id="supplements" v-model="dataStore.userData.supplements"
+            :placeholder="$t('components.optionalFields.placeholderSupplements')" />
+
+        <label for="vaccinations">{{ $t('components.optionalFields.vaccinations') }}</label>
+        <input type="text" id="vaccinations" v-model="dataStore.userData.vaccinations"
+            :placeholder="$t('components.optionalFields.placeholderVaccinations')" />
+
+        <label for="reproductiveHealth">{{ $t('components.optionalFields.reproductiveHealth') }}</label>
+        <input type="text" id="reproductiveHealth" v-model="dataStore.userData.reproductiveHealth"
+            :placeholder="$t('components.optionalFields.placeholderReproductiveHealth')" />
+
+        <label for="visionAndHearing">{{ $t('components.optionalFields.visionAndHearing') }}</label>
+        <input type="text" id="visionAndHearing" v-model="dataStore.userData.visionAndHearing"
+            :placeholder="$t('components.optionalFields.placeholderVisionAndHearing')" />
+
+        <label for="sleepQuality">{{ $t('components.optionalFields.sleepQuality') }}</label>
+        <input type="text" id="sleepQuality" v-model="dataStore.userData.sleepQuality"
+            :placeholder="$t('components.optionalFields.placeholderSleepQuality')" />
 
         <label for="medicalRecords">{{ $t('components.optionalFields.medicalRecords') }}</label>
         <textarea id="medicalRecords" v-model="dataStore.userData.symptoms"

@@ -1,75 +1,98 @@
 {
-    "pages": {
-        "index": {
-            "title": "Laden Sie Ihre Daten hoch"
-        }
-    },
     "components": {
         "chatInterface": {
             "placeholder": "Geben Sie Ihre Nachricht ein..."
         },
+        "clickMenu": {
+            "showForm": "Eingabeformular anzeigen",
+            "showChat": "Chat-Oberfläche anzeigen"
+        },
         "fileUpload": {
-            "upload": "Wählen Sie eine Datei aus oder ziehen Sie sie hierhin",
+            "title": "Laden Sie Ihre Daten hoch",
+            "upload": "Datei auswählen oder hierher ziehen",
             "lastLoaded": "Zuletzt geladen"
         },
         "header": {
             "settings": "Einstellungen"
         },
         "optionalFields": {
-            "heartRate": "Durchschnittliche Herzfrequenz",
-            "bloodPressure": "Blutdruck (Systole/Diastole)",
-            "sports": "Sportaktivitäten",
-            "medications": "Regelmäßig eingenommene Medikamente",
+            "heartRate": "Herzfrequenz",
+            "placeholderHeartRate": "Geben Sie Ihre Herzfrequenz ein",
+            "bloodPressure": "Blutdruck",
+            "placeholderBloodPressure": "Geben Sie Ihren Blutdruck ein, z. B. 120/80",
+            "sports": "Sportarten",
+            "placeholderSports": "Welche Sportarten betreiben Sie?",
+            "medications": "Medikamente",
+            "placeholderMedications": "Geben Sie Ihre Medikamente ein",
             "chronicDiseases": "Chronische Krankheiten",
+            "placeholderChronicDiseases": "Geben Sie Ihre chronischen Krankheiten ein",
             "allergies": "Allergien",
-            "diet": "Ernährungsgewohnheiten",
-            "waterIntake": "Tägliche Wasseraufnahme (Liter)",
-            "familyHistory": "Familiäre Krankengeschichte",
+            "placeholderAllergies": "Geben Sie Ihre Allergien ein",
+            "diet": "Diät",
+            "placeholderDiet": "Geben Sie Ihre Diät ein",
+            "waterIntake": "Täglicher Wasserkonsum (Liter)",
+            "placeholderWaterIntake": "Geben Sie Ihren täglichen Wasserkonsum ein",
+            "familyHistory": "Familienanamnese",
+            "placeholderFamilyHistory": "Geben Sie Ihre Familienanamnese ein",
             "smoking": "Rauchen",
-            "alcohol": "Alkoholkonsum",
-            "sleep": "Tägliche Schlafdauer (Stunden)",
-            "medicalRecords": "Beschwerden / Symptome",
-            "medicalHistory": "Krankengeschichte",
             "smokingOptions": {
                 "never": "Nie",
                 "occasionally": "Gelegentlich",
                 "regularly": "Regelmäßig"
             },
+            "selectPlaceholder": "Wählen",
+            "alcohol": "Alkoholkonsum",
             "alcoholOptions": {
                 "never": "Nie",
                 "occasionally": "Gelegentlich",
                 "regularly": "Regelmäßig"
             },
-            "selectPlaceholder": "Nicht angegeben",
-            "placeholderHeartRate": "z.B.: 72",
-            "placeholderBloodPressure": "z.B.: 120/80",
-            "placeholderSports": "z.B.: Laufen, Schwimmen, Fitnessstudio",
-            "placeholderMedications": "z.B.: Aspirin, L-Thyroxin",
-            "placeholderChronicDiseases": "z.B.: Diabetes",
-            "placeholderAllergies": "z.B.: Penicillin, Pollen",
-            "placeholderDiet": "z.B.: Vegetarisch, Keto",
-            "placeholderWaterIntake": "z.B.: 2.5",
-            "placeholderFamilyHistory": "z.B.: Herzerkrankungen",
-            "placeholderSleep": "z.B.: 7.5",
-            "placeholderMedicalRecords": "z.B.: Häufige Kopfschmerzen",
-            "placeholderMedicalHistory": "Frühere Krankheiten"
+            "sleep": "Schlaf (Stunden/Tag)",
+            "placeholderSleep": "Geben Sie Ihre tägliche Schlafdauer ein",
+            "physicalActivityLevel": "Körperliche Aktivitätsstufe",
+            "placeholderPhysicalActivityLevel": "Geben Sie Ihr Aktivitätsniveau ein",
+            "workType": "Arten von Arbeit",
+            "placeholderWorkType": "Geben Sie Ihre Arbeitsart ein",
+            "stressLevel": "Stresslevel",
+            "placeholderStressLevel": "Geben Sie Ihr Stresslevel ein",
+            "mentalHealth": "Psychische Gesundheit",
+            "placeholderMentalHealth": "Geben Sie Ihren psychischen Zustand ein",
+            "cholesterolLevel": "Cholesterinspiegel",
+            "placeholderCholesterolLevel": "Geben Sie Ihren Cholesterinspiegel ein",
+            "bloodSugarLevel": "Blutzuckerspiegel",
+            "placeholderBloodSugarLevel": "Geben Sie Ihren Blutzuckerspiegel ein",
+            "supplements": "Nahrungsergänzungsmittel",
+            "placeholderSupplements": "Geben Sie Ihre Nahrungsergänzungsmittel ein",
+            "vaccinations": "Impfungen",
+            "placeholderVaccinations": "Geben Sie Ihre Impfungen ein",
+            "reproductiveHealth": "Reproduktive Gesundheit",
+            "placeholderReproductiveHealth": "Geben Sie Ihre reproduktive Gesundheit ein",
+            "visionAndHearing": "Sehen und Hören",
+            "placeholderVisionAndHearing": "Geben Sie Ihre Seh- und Hörprobleme ein",
+            "sleepQuality": "Schlafqualität",
+            "placeholderSleepQuality": "Geben Sie Ihre Schlafqualität ein",
+            "medicalRecords": "Medizinische Unterlagen",
+            "placeholderMedicalRecords": "Geben Sie Ihre medizinischen Unterlagen ein",
+            "medicalHistory": "Medizinische Vorgeschichte",
+            "placeholderMedicalHistory": "Geben Sie Ihre bisherigen Erkrankungen ein"
         },
         "privacyModal": {
-            "title": "Unsere Datenschutzrichtlinie",
-            "text1": "Die von Ihnen angegebenen Daten werden ausschließlich vom Gesundheitssystem verwendet und nicht an Dritte weitergegeben. Ihre Daten werden nicht gespeichert; Sie können sie verwalten und auf Ihrem eigenen Gerät speichern.",
-            "text2": "Durch die Annahme der Datenschutzbedingungen stimmen Sie zu, dass unser System basierend auf den von Ihnen angegebenen Informationen Ratschläge gibt."
+            "title": "Unsere Datenschutzerklärung",
+            "text1": "Die von Ihnen angegebenen Daten werden ausschließlich vom Gesundheitssystem verwendet und nicht an Dritte weitergegeben. Ihre Daten werden nicht gespeichert – Sie können diese verwalten und auf Ihr eigenes Gerät speichern.",
+            "text2": "Mit der Annahme der Datenschutzbedingungen stimmen Sie zu, dass unser System Ihnen auf Basis Ihrer Angaben Ratschläge erteilen darf."
         },
         "response": {
             "title": "Antwort von Dr. Sanovise:",
             "analyzing": "Daten werden analysiert 📚🧠",
-            "thinking": "Überlege 🤔"
+            "thinking": "Ich denke nach 🤔"
         },
         "settingsModal": {
             "title": "Einstellungen",
-            "text": "Wählen Sie Ihre bevorzugte Sprache:"
+            "selectLanguage": "Wählen Sie die gewünschte Sprache:",
+            "selectAIModel": "Wählen Sie das gewünschte KI-Modell:"
         },
         "userForm": {
-            "requiredInfo": "Die mit einem <span class='required'>*</span> markierten Felder sind erforderlich!",
+            "requiredInfo": "Felder mit <span class='required'>*</span> sind Pflichtfelder!",
             "birthDate": "Geburtsdatum",
             "gender": "Geschlecht",
             "selectGender": "Geschlecht auswählen",
@@ -79,33 +102,33 @@
             "weight": "Gewicht",
             "placeholderHeight": "z.B.: 175",
             "placeholderWeight": "z.B.: 70",
-            "showExtra": "Weitere Felder anzeigen",
-            "hideExtra": "Weitere Felder ausblenden",
+            "showExtra": "Weitere Daten eingeben",
+            "hideExtra": "Weitere Daten ausblenden",
             "acceptPrivacy": "Ich akzeptiere die",
             "privacyLink": "Datenschutzrichtlinie",
-            "submitData": "Daten übermitteln",
-            "abort": "Nicht antworten",
+            "submitData": "Daten absenden",
+            "abort": "Antwort abbrechen",
             "exportData": "Daten exportieren",
             "invalidHeight": "Die Größe muss zwischen 50 cm und 300 cm liegen.",
             "invalidWeight": "Das Gewicht muss zwischen 1 kg und 500 kg liegen.",
             "invalidWaterIntake": "Die tägliche Wasseraufnahme muss zwischen 0 und 50 Litern liegen.",
             "invalidHeartRate": "Die Herzfrequenz muss zwischen 30 und 250 liegen.",
             "invalidSleep": "Die Schlafdauer muss zwischen 0 und 24 Stunden liegen.",
-            "invalidBloodPressure": "Der Blutdruck muss im folgenden Format vorliegen: Systole/Diastole (z.B.: 120/80)."
+            "invalidBloodPressure": "Der Blutdruck muss im Format systolisch/diastolisch angegeben werden (z.B.: 120/80)."
         }
     },
     "global": {
         "successSave": "Erfolgreich gespeichert",
-        "successShare": "Erfolgreich geteilt",
-        "errorSave": "Beim Speichern ist ein Fehler aufgetreten.",
-        "errorSend": "Beim Senden der Daten ist ein Fehler aufgetreten.",
+        "successShare": "Erfolgreich gesendet",
+        "errorSave": "Fehler beim Speichern aufgetreten.",
+        "errorSend": "Fehler beim Senden der Daten aufgetreten",
         "tryAgain": "Bitte versuchen Sie es später erneut oder aktualisieren Sie die Seite.",
-        "emptyResponse": "Der Server hat keine Antwort gesendet. Es könnte ein Fehler aufgetreten sein.",
-        "networkError": "Netzwerkfehler – Bitte überprüfen Sie Ihre Internetverbindung!",
+        "emptyResponse": "Keine Antwort vom Server erhalten. Möglicherweise gab es eine Unterbrechung.",
+        "networkError": "Netzwerkfehler – bitte überprüfen Sie Ihre Internetverbindung!",
         "unknownError": "Ein unbekannter Fehler ist aufgetreten. 😔",
         "errorLoad": "Die Datei enthält keine gültigen Daten!",
-        "invalidJson": "Ungültiges Dateiformat! Bitte überprüfen Sie, ob Sie eine JSON-Datei hochgeladen haben.",
-        "anotherFile": "Bitte versuchen Sie es erneut oder wählen Sie eine andere Datei aus.",
-        "de-DE": "Bitte erlaube den Zugriff auf den Speicher."
+        "invalidJson": "Ungültiges Dateiformat! Bitte stellen Sie sicher, dass Sie eine JSON-Datei hochgeladen haben.",
+        "anotherFile": "Bitte versuchen Sie es erneut oder wählen Sie eine andere Datei.",
+        "needPermission": "Bitte erteilen Sie die Berechtigung zum Zugriff auf den Speicher."
     }
 }

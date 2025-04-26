@@ -19,20 +19,34 @@ export const useData = defineStore('data', {
             smoking: '',
             alcohol: '',
             sleep: '',
+            physicalActivityLevel: '',
+            workType: '',
+            stressLevel: '',
+            mentalHealth: '',
+            cholesterolLevel: '',
+            bloodSugarLevel: '',
+            supplements: '',
+            vaccinations: '',
+            reproductiveHealth: '',
+            visionAndHearing: '',
+            sleepQuality: '',
             symptoms: '',
             medicalHistory: '',
-            language: ''
+            language: '',
+            selectedModel: 'deepseek/deepseek-r1:free'
         },
         messages: [] as { role: string, content: string }[],
         currentResponse: null as string | null,
         responseType: null as string | null,
         showOptionalFields: false,
         showPrivacyModal: false,
+        showForm: true,
+        showChat: true,
         acceptedPrivacyPolicy: false,
         controller: <AbortController | null>(null),
     }),
 
     actions: {
-        
+
     }
 });

@@ -1,0 +1,134 @@
+{
+    "components": {
+        "chatInterface": {
+            "placeholder": "Wpisz swoją wiadomość..."
+        },
+        "clickMenu": {
+            "showForm": "Pokaż formularz danych",
+            "showChat": "Pokaż interfejs czatu"
+        },
+        "fileUpload": {
+            "title": "Prześlij swoje dane",
+            "upload": "Wybierz plik lub przeciągnij go tutaj",
+            "lastLoaded": "Ostatnie załadowanie"
+        },
+        "header": {
+            "settings": "Ustawienia"
+        },
+        "optionalFields": {
+            "heartRate": "Tętno",
+            "placeholderHeartRate": "Wpisz swoje tętno",
+            "bloodPressure": "Ciśnienie krwi",
+            "placeholderBloodPressure": "Wpisz swoje ciśnienie krwi np. 120/80",
+            "sports": "Sporty",
+            "placeholderSports": "Jakie uprawiasz sporty?",
+            "medications": "Leki",
+            "placeholderMedications": "Wpisz swoje stosowane leki",
+            "chronicDiseases": "Choroby przewlekłe",
+            "placeholderChronicDiseases": "Wpisz swoje choroby przewlekłe",
+            "allergies": "Alergie",
+            "placeholderAllergies": "Wpisz swoje alergie",
+            "diet": "Dieta",
+            "placeholderDiet": "Wpisz swoją dietę",
+            "waterIntake": "Codzienne spożycie wody (litry)",
+            "placeholderWaterIntake": "Wpisz swoje codzienne spożycie wody",
+            "familyHistory": "Historia chorób w rodzinie",
+            "placeholderFamilyHistory": "Wpisz historię chorób w rodzinie",
+            "smoking": "Palenie",
+            "smokingOptions": {
+                "never": "Nigdy",
+                "occasionally": "Od czasu do czasu",
+                "regularly": "Regularnie"
+            },
+            "selectPlaceholder": "Wybierz",
+            "alcohol": "Spożycie alkoholu",
+            "alcoholOptions": {
+                "never": "Nigdy",
+                "occasionally": "Od czasu do czasu",
+                "regularly": "Regularnie"
+            },
+            "sleep": "Sen (godziny/dzień)",
+            "placeholderSleep": "Wpisz ilość godzin snu na dobę",
+            "physicalActivityLevel": "Poziom aktywności fizycznej",
+            "placeholderPhysicalActivityLevel": "Wpisz poziom swojej aktywności",
+            "workType": "Rodzaj pracy",
+            "placeholderWorkType": "Wpisz rodzaj swojej pracy",
+            "stressLevel": "Poziom stresu",
+            "placeholderStressLevel": "Wpisz poziom swojego stresu",
+            "mentalHealth": "Zdrowie psychiczne",
+            "placeholderMentalHealth": "Wpisz swój stan zdrowia psychicznego",
+            "cholesterolLevel": "Poziom cholesterolu",
+            "placeholderCholesterolLevel": "Wpisz swój poziom cholesterolu",
+            "bloodSugarLevel": "Poziom cukru we krwi",
+            "placeholderBloodSugarLevel": "Wpisz swój poziom cukru we krwi",
+            "supplements": "Suplementy diety",
+            "placeholderSupplements": "Wpisz swoje stosowane suplementy",
+            "vaccinations": "Szczepienia",
+            "placeholderVaccinations": "Wpisz swoje szczepienia",
+            "reproductiveHealth": "Zdrowie reprodukcyjne",
+            "placeholderReproductiveHealth": "Wpisz swoje zdrowie reprodukcyjne",
+            "visionAndHearing": "Wzrok i słuch",
+            "placeholderVisionAndHearing": "Wpisz swoje problemy ze wzrokiem i słuchem",
+            "sleepQuality": "Jakość snu",
+            "placeholderSleepQuality": "Wpisz jakość swojego snu",
+            "medicalRecords": "Wyniki badań medycznych",
+            "placeholderMedicalRecords": "Wpisz swoje wyniki badań medycznych",
+            "medicalHistory": "Historia medyczna",
+            "placeholderMedicalHistory": "Wpisz swoją historię medyczną"
+        },
+        "privacyModal": {
+            "title": "Nasza polityka prywatności",
+            "text1": "Dane, które podałeś, będą wykorzystywane wyłącznie przez system doradczy zdrowia i nie będą przekazywane osobom trzecim. System nie przechowuje twoich danych, masz pełną kontrolę nad nimi i możesz je zapisać na swoim urządzeniu.",
+            "text2": "Akceptując warunki prywatności, zgadzasz się na udzielanie porad na podstawie podanych informacji."
+        },
+        "response": {
+            "title": "Odpowiedź dr. Sanovise:",
+            "analyzing": "Analizuję dane 📚🧠",
+            "thinking": "Myślę 🤔"
+        },
+        "settingsModal": {
+            "title": "Ustawienia",
+            "selectLanguage": "Wybierz język:",
+            "selectAIModel": "Wybierz model AI:"
+        },
+        "userForm": {
+            "requiredInfo": "Pola oznaczone <span class='required'>*</span> są wymagane!",
+            "birthDate": "Data urodzenia",
+            "gender": "Płeć",
+            "selectGender": "Wybierz płeć",
+            "male": "Mężczyzna",
+            "female": "Kobieta",
+            "height": "Wzrost",
+            "weight": "Waga",
+            "placeholderHeight": "np.: 175",
+            "placeholderWeight": "np.: 70",
+            "showExtra": "Podaj dodatkowe dane",
+            "hideExtra": "Ukryj dodatkowe dane",
+            "acceptPrivacy": "Akceptuję",
+            "privacyLink": "politykę prywatności",
+            "submitData": "Prześlij dane",
+            "abort": "Nie odpowiadaj",
+            "exportData": "Eksportuj dane",
+            "invalidHeight": "Wzrost musi mieścić się w przedziale od 50 cm do 300 cm.",
+            "invalidWeight": "Waga musi wynosić od 1 kg do 500 kg.",
+            "invalidWaterIntake": "Codzienne spożycie wody musi wynosić od 0 do 50 litrów.",
+            "invalidHeartRate": "Tętno musi wynosić od 30 do 250 uderzeń na minutę.",
+            "invalidSleep": "Czas snu musi wynosić od 0 do 24 godzin.",
+            "invalidBloodPressure": "Ciśnienie krwi musi być zapisane w formacie: ciśnienie skurczowe/ciśnienie rozkurczowe (np. 120/80)."
+        }
+    },
+    "global": {
+        "successSave": "Zapisano pomyślnie",
+        "successShare": "Wysłano pomyślnie",
+        "errorSave": "Wystąpił błąd podczas zapisywania.",
+        "errorSend": "Wystąpił błąd podczas wysyłania danych.",
+        "tryAgain": "Spróbuj ponownie później lub odśwież stronę.",
+        "emptyResponse": "Serwer nie wysłał odpowiedzi. Może coś przerwało połączenie.",
+        "networkError": "Błąd sieciowy – sprawdź swoje połączenie internetowe!",
+        "unknownError": "Wystąpił nieznany błąd. 😔",
+        "errorLoad": "Plik nie zawiera ważnych danych!",
+        "invalidJson": "Zły format pliku! Sprawdź, czy na pewno przesłałeś plik JSON.",
+        "anotherFile": "Spróbuj ponownie lub wybierz inny plik.",
+        "needPermission": "Proszę, zezwól na dostęp do pamięci."
+    }
+}

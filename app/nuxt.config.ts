@@ -34,7 +34,10 @@ export default defineNuxtConfig({
       { code: 'ru-RU', name: 'Русский', iso: 'ru-RU', file: 'ru-RU.json' },
       { code: 'zh-CN', name: '中文 (简体)', iso: 'zh-CN', file: 'zh-CN.json' },
       { code: 'ar-SA', name: 'العربية', iso: 'ar-SA', file: 'ar-SA.json' },
-      { code: 'hi-IN', name: 'हिन्दी', iso: 'hi-IN', file: 'hi-IN.json' }
+      { code: 'hi-IN', name: 'हिन्दी', iso: 'hi-IN', file: 'hi-IN.json' },
+      { code: 'ro-RO', name: 'Română', iso: 'ro-RO', file: 'ro-RO.json' },
+      { code: 'pl-PL', name: 'Polski', iso: 'pl-PL', file: 'pl-PL.json' },
+      { code: 'it-IT', name: 'Italiano', iso: 'it-IT', file: 'it-IT.json' }
     ],
     defaultLocale: 'en-US',
     lazy: true,

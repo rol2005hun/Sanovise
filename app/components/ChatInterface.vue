@@ -1,5 +1,5 @@
 <template>
-    <div class="chat-box">
+    <div class="chat-box" v-if="dataStore.showChat">
         <button v-if="canScroll" @click="scrollToTopOrBottom" class="scroll-btn" title="scroll">
             {{ scrolledOffset > 200 ? '⬇' : '⬆' }}
         </button>

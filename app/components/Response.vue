@@ -82,6 +82,7 @@ function parseDomToStructuredTokens(container: HTMLElement): Block[] {
 
                 lines.forEach((line, lineIndex) => {
                     const parts = line.split(/(\s+)/g);
+                    console.log(parts);
                     parts.forEach((part) => {
                         if (part.trim() === '') {
                             tokens.push({ type: 'text', value: '&nbsp;' });

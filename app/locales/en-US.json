@@ -1,111 +1,134 @@
 {
-    "pages": {
-        "index": {
-            "title": "Upload Your Data"
-        }
-    },
     "components": {
         "chatInterface": {
             "placeholder": "Enter your message..."
         },
+        "clickMenu": {
+            "showForm": "Show data entry form",
+            "showChat": "Show chat interface"
+        },
         "fileUpload": {
-            "upload": "Select a file or drag it here",
+            "title": "Upload your data",
+            "upload": "Choose a file or drag it here",
             "lastLoaded": "Last loaded"
         },
         "header": {
             "settings": "Settings"
         },
         "optionalFields": {
-            "heartRate": "Average Heart Rate",
-            "bloodPressure": "Blood Pressure (systole/diastole)",
-            "sports": "Sports Activities",
-            "medications": "Regular Medications",
+            "heartRate": "Heart Rate",
+            "placeholderHeartRate": "Enter your heart rate",
+            "bloodPressure": "Blood Pressure",
+            "placeholderBloodPressure": "Enter your blood pressure, e.g., 120/80",
+            "sports": "Sports",
+            "placeholderSports": "What sports do you practice?",
+            "medications": "Medications",
+            "placeholderMedications": "Enter your medications",
             "chronicDiseases": "Chronic Diseases",
+            "placeholderChronicDiseases": "Enter your chronic diseases",
             "allergies": "Allergies",
-            "diet": "Dietary Habits",
+            "placeholderAllergies": "Enter your allergies",
+            "diet": "Diet",
+            "placeholderDiet": "Enter your diet",
             "waterIntake": "Daily Water Intake (liters)",
+            "placeholderWaterIntake": "Enter your daily water intake",
             "familyHistory": "Family Medical History",
+            "placeholderFamilyHistory": "Enter your family medical history",
             "smoking": "Smoking",
-            "alcohol": "Alcohol Consumption",
-            "sleep": "Daily Sleep Duration (hours)",
-            "medicalRecords": "Complaints / Symptoms",
-            "medicalHistory": "Medical History",
             "smokingOptions": {
                 "never": "Never",
                 "occasionally": "Occasionally",
                 "regularly": "Regularly"
             },
+            "selectPlaceholder": "Select",
+            "alcohol": "Alcohol Consumption",
             "alcoholOptions": {
                 "never": "Never",
                 "occasionally": "Occasionally",
                 "regularly": "Regularly"
             },
-            "selectPlaceholder": "Not provided",
-            "placeholderHeartRate": "e.g., 72",
-            "placeholderBloodPressure": "e.g., 120/80",
-            "placeholderSports": "e.g., running, swimming, gym",
-            "placeholderMedications": "e.g., Aspirin, L-thyroxine",
-            "placeholderChronicDiseases": "e.g., diabetes",
-            "placeholderAllergies": "e.g., penicillin, pollen",
-            "placeholderDiet": "e.g., vegetarian, keto",
-            "placeholderWaterIntake": "e.g., 2.5",
-            "placeholderFamilyHistory": "e.g., heart diseases",
-            "placeholderSleep": "e.g., 7.5",
-            "placeholderMedicalRecords": "e.g., frequent headaches",
-            "placeholderMedicalHistory": "Previous illnesses"
+            "sleep": "Sleep (hours/day)",
+            "placeholderSleep": "Enter your daily sleep duration",
+            "physicalActivityLevel": "Physical Activity Level",
+            "placeholderPhysicalActivityLevel": "Enter your activity level",
+            "workType": "Type of Work",
+            "placeholderWorkType": "Enter your type of work",
+            "stressLevel": "Stress Level",
+            "placeholderStressLevel": "Enter your stress level",
+            "mentalHealth": "Mental Health",
+            "placeholderMentalHealth": "Enter your mental state",
+            "cholesterolLevel": "Cholesterol Level",
+            "placeholderCholesterolLevel": "Enter your cholesterol level",
+            "bloodSugarLevel": "Blood Sugar Level",
+            "placeholderBloodSugarLevel": "Enter your blood sugar level",
+            "supplements": "Supplements",
+            "placeholderSupplements": "Enter your supplements",
+            "vaccinations": "Vaccinations",
+            "placeholderVaccinations": "Enter your vaccinations",
+            "reproductiveHealth": "Reproductive Health",
+            "placeholderReproductiveHealth": "Enter your reproductive health",
+            "visionAndHearing": "Vision and Hearing",
+            "placeholderVisionAndHearing": "Enter your vision and hearing issues",
+            "sleepQuality": "Sleep Quality",
+            "placeholderSleepQuality": "Enter your sleep quality",
+            "medicalRecords": "Medical Records",
+            "placeholderMedicalRecords": "Enter your medical records",
+            "medicalHistory": "Medical History",
+            "placeholderMedicalHistory": "Enter your previous illnesses"
         },
         "privacyModal": {
             "title": "Our Privacy Policy",
-            "text1": "The data you provide will only be used by the healthcare advisory system and will not be shared with third parties. Your data is not stored; you can manage it and save it to your own device.",
-            "text2": "By accepting the privacy terms, you agree that our system may provide advice based on the information you provided."
+            "text1": "The data you provide is used solely by the healthcare advisory system and is not shared with third parties. Your data is not stored; you can manage and save it on your own device.",
+            "text2": "By accepting the privacy terms, you agree that our system may provide advice based on the information you provide."
         },
         "response": {
-            "title": "Dr. Sanovise's Response:",
-            "analyzing": "Analyzing data 📚🧠",
+            "title": "Dr. Sanovise's Answer:",
+            "analyzing": "Analyzing the data 📚🧠",
             "thinking": "Thinking 🤔"
         },
         "settingsModal": {
             "title": "Settings",
-            "text": "Choose your preferred language:"
+            "selectLanguage": "Select your preferred language:",
+            "selectAIModel": "Select your preferred AI model:"
         },
         "userForm": {
             "requiredInfo": "Fields marked with <span class='required'>*</span> are required!",
             "birthDate": "Date of Birth",
             "gender": "Gender",
-            "selectGender": "Select Gender",
+            "selectGender": "Select gender",
             "male": "Male",
             "female": "Female",
             "height": "Height",
             "weight": "Weight",
             "placeholderHeight": "e.g., 175",
             "placeholderWeight": "e.g., 70",
-            "showExtra": "Show More Fields",
-            "hideExtra": "Hide Extra Fields",
+            "showExtra": "Provide additional data",
+            "hideExtra": "Hide additional data",
             "acceptPrivacy": "I accept the",
             "privacyLink": "privacy policy",
-            "submitData": "Submit Data",
-            "abort": "Do not respond",
-            "exportData": "Export Data",
+            "submitData": "Submit data",
+            "abort": "Abort response",
+            "exportData": "Export data",
             "invalidHeight": "Height must be between 50 cm and 300 cm.",
             "invalidWeight": "Weight must be between 1 kg and 500 kg.",
             "invalidWaterIntake": "Daily water intake must be between 0 and 50 liters.",
-            "invalidHeartRate": "Heart rate must be between 30 and 250 bpm.",
-            "invalidSleep": "Sleep duration must be between 0 and 24 hours.",
-            "invalidBloodPressure": "Blood pressure must be in the format systole/diastole (e.g., 120/80)."
+            "invalidHeartRate": "Heart rate must be between 30 and 250.",
+            "invalidSleep": "Sleep time must be between 0 and 24 hours.",
+            "invalidBloodPressure": "Blood pressure must be in the format systolic/diastolic (e.g., 120/80)."
         }
     },
     "global": {
         "successSave": "Successfully saved",
-        "successShare": "Successfully shared",
+        "successShare": "Successfully sent",
         "errorSave": "An error occurred while saving.",
-        "errorSend": "An error occurred while sending the data",
+        "errorSend": "An error occurred while sending the data.",
         "tryAgain": "Please try again later or refresh the page.",
-        "emptyResponse": "The server did not return a response. Something may have gone wrong.",
+        "emptyResponse": "No response received from the server. Something might have gone wrong.",
         "networkError": "Network error – please check your internet connection!",
         "unknownError": "An unknown error occurred. 😔",
         "errorLoad": "The file does not contain valid data!",
-        "invalidJson": "Invalid file format! Please ensure you uploaded a JSON file.",
-        "anotherFile": "Please try again or select a different file.",
-        "en-US": "Please allow access to storage."
+        "invalidJson": "Invalid file format! Please make sure you uploaded a JSON file.",
+        "anotherFile": "Please try again or choose another file.",
+        "needPermission": "Please allow access to storage."
     }
 }

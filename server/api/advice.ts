@@ -47,52 +47,65 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
             });
         }
 
-        const age = new Date().getFullYear() - new Date(birthDate).getFullYear();
-        const toneInstruction = age >= 50
-            ? 'Use formal and respectful language, as if speaking to an older patient or in a professional setting.'
-            : 'Use informal and friendly language, as if speaking to a peer or younger patient.';
         const messages = [
             {
                 role: 'system',
-                content: `You are an experienced doctor with years of clinical practice. Your communication should be direct, empathetic, 
-                and professional, just like an in-person consultation. ${toneInstruction} You always address the patient’s concerns directly and 
-                suggest specific, personalized actions. Provide clear, actionable advice, and explain the implications of their health data, guiding 
-                them through the necessary steps for improvement. You don't need to be formal or overly polite unless appropriate; aim for clarity 
-                and empathy. Today's date is: ${new Date().toISOString().split('T')[0]}. Example patient data:
-                - Age: 45
-                - Gender: Male
-                - Symptoms: High blood pressure, fatigue
-                - Medical history: Hypertension
-                In your response, focus on delivering actionable advice directly to the patient without excessive pleasantries.`
+                content: `
+                    You are Dr. Sanovise – a highly experienced, empathetic medical doctor who speaks directly, clearly, and in a human, conversational way. You're not writing a letter; you're having a real-time consultation, as if you're face-to-face with the patient. Your tone adapts based on age:
+
+                    👵 For older patients (50+): Use respectful and formal speech ("sir/ma’am", avoid slang). Speak gently and reassuringly, like a caring professional.
+
+                    🧑 For younger patients: Be warm, friendly, and informal. Speak as a peer would, using natural, conversational language.
+
+                    💬 Formatting is encouraged – feel free to use emojis, bullet points, or bold text to highlight important parts and keep the conversation engaging.
+
+                    🧠 Your job is to:
+                    - Address patient data with personalized, actionable advice
+                    - Explain risks, consequences, and next steps clearly
+                    - Provide motivation and encouragement for healthier habits
+                    - Keep it direct: no greetings, no sign-offs, no “As an AI…” disclaimers
+
+                    ❗ If the user asks unrelated questions (e.g. recipes, math problems), you can briefly answer but **always redirect them back to their health**. For example:
+
+                    User: “Can you give me a goulash recipe?”
+                    You: “Nice try! 😉 Let’s stay focused on your health — here’s a healthier version of goulash you might enjoy: ...”
+
+                    🗓️ Today’s date is: ${new Date().toISOString().split('T')[0]}.
+
+                    Start every response like you're talking directly to the patient, without introductions or fluff — dive right into the advice.
+                `
             },
             {
                 role: 'user',
                 content: `
-                Patient Details:
-                - Date of Birth: ${birthDate}
-                - Age: ${new Date().getFullYear() - new Date(birthDate).getFullYear()}
-                - Gender: ${gender}
-                - Height: ${height} cm
-                - Weight: ${weight} kg
-                - Heart Rate: ${heartRate}
-                - Blood Pressure: ${bloodPressure}
-                - Sports Activity: ${sports}
-                - Medications: ${medications}
-                - Chronic Diseases: ${chronicDiseases}
-                - Allergies: ${allergies}
-                - Diet: ${diet}
-                - Water Intake: ${waterIntake}
-                - Family History: ${familyHistory}
-                - Smoking: ${smoking}
-                - Alcohol Consumption: ${alcohol}
-                - Sleep Patterns: ${sleep}
-                - Symptoms: ${symptoms}
-                - Medical History: ${medicalHistory}
-        
-                Based on this data, please provide a clear and direct medical assessment. Address the patient's concerns directly, point out potential 
-                risks, and explain the significance of their health data. Provide practical advice with specific recommendations for actions they should 
-                take to improve their health. Make sure to explain what might happen if they ignore these recommendations, and help them understand the 
-                long-term consequences. Answer in language: ${language}`
+                    Here are my details:
+
+                    - Date of Birth: ${birthDate}
+                    - Age: ${new Date().getFullYear() - new Date(birthDate).getFullYear()}
+                    - Gender: ${gender}
+                    - Height: ${height} cm
+                    - Weight: ${weight} kg
+                    - Heart Rate: ${heartRate}
+                    - Blood Pressure: ${bloodPressure}
+                    - Sports Activity: ${sports}
+                    - Medications: ${medications}
+                    - Chronic Diseases: ${chronicDiseases}
+                    - Allergies: ${allergies}
+                    - Diet: ${diet}
+                    - Water Intake: ${waterIntake}
+                    - Family History: ${familyHistory}
+                    - Smoking: ${smoking}
+                    - Alcohol Consumption: ${alcohol}
+                    - Sleep Patterns: ${sleep}
+                    - Symptoms: ${symptoms}
+                    - Medical History: ${medicalHistory}
+
+                    Based on all of this, please give me a clear and direct medical assessment. Speak to me like we’re in a real consultation. Tell me what my data means, point out any risks, and explain how they might affect my health. I want **practical, specific advice** on what I should do to improve things.
+
+                    Please also explain what could happen if I don’t follow these recommendations, and help me understand the long-term consequences — in a way that's easy to grasp.
+
+                    Answer in language: ${language}
+                `
             }
         ];
 
@@ -134,7 +147,8 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
             birthDate, gender, height, weight, heartRate, bloodPressure,
             sports, medications, chronicDiseases, allergies, diet, waterIntake,
             familyHistory, smoking, alcohol, sleep, symptoms, medicalHistory,
-            language, messages
+            language, messages, selectedModel, vaccinations, supplements, sleepQuality,
+            mentalHealth, cholesterolLevel, bloodSugarLevel, reproductiveHealth, visionAndHearing
         } = req.body;
 
         if (!birthDate || !gender || !height || !weight || !language) {
@@ -145,49 +159,75 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
             });
         }
 
-        const age = new Date().getFullYear() - new Date(birthDate).getFullYear();
-        const toneInstruction = age >= 50
-            ? 'Please use a very respectful and formal tone, as if addressing an old patient in a medical consultation.'
-            : 'Use an informal and friendly tone, appropriate for a younger patient or peer.';
+        const model = selectedModel || 'deepseek/deepseek-r1:free';
+
         let chatMessages: OpenAI.ChatCompletionMessageParam[] = [
             {
                 role: 'system',
-                content: `You are an experienced doctor with years of clinical practice. Your communication should be direct, empathetic, 
-                and professional, just like an in-person consultation. You always address the patient’s concerns directly and 
-                suggest specific, personalized actions. Provide clear, actionable advice, and explain the implications of their health data, guiding 
-                them through the necessary steps for improvement. You don't need to be formal or overly polite unless appropriate; aim for clarity 
-                and empathy. Begin your response directly with the medical advice. Do not use any introductory or filler phrases like “My answer is”, 
-                “Here’s what I think”, “Let me explain”, etc. Your reply must start directly with the medical insights and advice, with no preamble. 
-                Feel free to use emojis to enhance the message, but not to much. Your name is: Dr. Sanovise. Today's date is: ${new Date().toISOString().split('T')[0]}.`
+                content: `
+                    You are Dr. Sanovise – a highly experienced, empathetic medical doctor who speaks directly, clearly, and in a human, conversational way. You're not writing a letter; you're having a real-time consultation, as if you're face-to-face with the patient. Your tone adapts based on age:
+
+                    👵 For older patients (50+): Use respectful and formal speech ("sir/ma’am", avoid slang). Speak gently and reassuringly, like a caring professional.
+
+                    🧑 For younger patients: Be warm, friendly, and informal. Speak as a peer would, using natural, conversational language.
+
+                    💬 Formatting is encouraged – feel free to use emojis, bullet points, or bold text to highlight important parts and keep the conversation engaging.
+
+                    🧠 Your job is to:
+                    - Address patient data with personalized, actionable advice
+                    - Explain risks, consequences, and next steps clearly
+                    - Provide motivation and encouragement for healthier habits
+                    - Keep it direct: no greetings, no sign-offs, no “As an AI…” disclaimers
+
+                    ❗ If the user asks unrelated questions (e.g. recipes, math problems), you can briefly answer but **always redirect them back to their health**. For example:
+
+                    User: “Can you give me a goulash recipe?”
+                    You: “Nice try! 😉 Let’s stay focused on your health — here’s a healthier version of goulash you might enjoy: ...”
+
+                    🗓️ Today’s date is: ${new Date().toISOString().split('T')[0]}.
+
+                    Start every response like you're talking directly to the patient, without introductions or fluff — dive right into the advice.
+                `
             },
             {
                 role: 'user',
                 content: `
-                Patient Details:
-                - Date of Birth: ${birthDate}
-                - Age: ${new Date().getFullYear() - new Date(birthDate).getFullYear()}
-                - Gender: ${gender}
-                - Height: ${height} cm
-                - Weight: ${weight} kg
-                - Heart Rate: ${heartRate}
-                - Blood Pressure: ${bloodPressure}
-                - Sports Activity: ${sports}
-                - Medications: ${medications}
-                - Chronic Diseases: ${chronicDiseases}
-                - Allergies: ${allergies}
-                - Diet: ${diet}
-                - Water Intake: ${waterIntake}
-                - Family History: ${familyHistory}
-                - Smoking: ${smoking}
-                - Alcohol Consumption: ${alcohol}
-                - Sleep Patterns: ${sleep}
-                - Symptoms: ${symptoms}
-                - Medical History: ${medicalHistory}
-        
-                Based on this data, please provide a clear and direct medical assessment. Address my concerns directly, point out potential 
-                risks, and explain the significance of my health data. Provide practical advice with specific recommendations for actions I should 
-                take to improve my health. Make sure to explain what might happen if I ignore these recommendations, and help me understand the 
-                long-term consequences. ${toneInstruction} Answer in language: ${language}`
+                    Here are my details:
+
+                    - Date of Birth: ${birthDate}
+                    - Age: ${new Date().getFullYear() - new Date(birthDate).getFullYear()}
+                    - Gender: ${gender}
+                    - Height: ${height} cm
+                    - Weight: ${weight} kg
+                    - Heart Rate: ${heartRate}
+                    - Blood Pressure: ${bloodPressure}
+                    - Sports Activity: ${sports}
+                    - Medications: ${medications}
+                    - Chronic Diseases: ${chronicDiseases}
+                    - Allergies: ${allergies}
+                    - Diet: ${diet}
+                    - Water Intake: ${waterIntake}
+                    - Family History: ${familyHistory}
+                    - Smoking: ${smoking}
+                    - Alcohol Consumption: ${alcohol}
+                    - Sleep Patterns: ${sleep}
+                    - Symptoms: ${symptoms}
+                    - Medical History: ${medicalHistory}
+                    - Vaccinations: ${vaccinations}
+                    - Supplements: ${supplements}
+                    - Sleep Quality: ${sleepQuality}
+                    - Mental Health: ${mentalHealth}
+                    - Cholesterol Level: ${cholesterolLevel}
+                    - Blood Sugar Level: ${bloodSugarLevel}
+                    - Reproductive Health: ${reproductiveHealth}
+                    - Vision and Hearing: ${visionAndHearing}
+
+                    Based on all of this, please give me a clear and direct medical assessment. Speak to me like we’re in a real consultation. Tell me what my data means, point out any risks, and explain how they might affect my health. I want **practical, specific advice** on what I should do to improve things.
+
+                    Please also explain what could happen if I don’t follow these recommendations, and help me understand the long-term consequences — in a way that's easy to grasp.
+
+                    Answer in language: ${language}
+                `
             }
         ];
 
@@ -197,7 +237,7 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
         res.setHeader('Transfer-Encoding', 'chunked');
 
         const stream = await openai.chat.completions.create({
-            model: 'meta-llama/llama-3.1-8b-instruct:free',
+            model: model,
             messages: chatMessages,
             stream: true,
             temperature: 0.7,

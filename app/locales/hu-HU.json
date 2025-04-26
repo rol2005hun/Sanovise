@@ -1,14 +1,14 @@
 {
-    "pages": {
-        "index": {
-            "title": "Töltse fel adatait"
-        }
-    },
     "components": {
         "chatInterface": {
             "placeholder": "Írja be üzenetét..."
         },
+        "clickMenu": {
+            "showForm": "Adatbekérő űrlap megjelenítése",
+            "showChat": "Beszélgető felület megjelenítése"
+        },
         "fileUpload": {
+            "title": "Töltse fel adatait",
             "upload": "Válasszon fájlt vagy húzza ide",
             "lastLoaded": "Utoljára betöltve"
         },
@@ -16,43 +16,65 @@
             "settings": "Beállítások"
         },
         "optionalFields": {
-            "heartRate": "Átlagos pulzus",
-            "bloodPressure": "Vérnyomás (systole/diastole)",
-            "sports": "Sporttevékenyégek",
-            "medications": "Rendszeresen szedett gyógyszerek",
+            "heartRate": "Pulzusszám",
+            "placeholderHeartRate": "Írd be a pulzusszámod",
+            "bloodPressure": "Vérnyomás",
+            "placeholderBloodPressure": "Írd be a vérnyomásod pl. 120/80",
+            "sports": "Sportok",
+            "placeholderSports": "Milyen sportokat űzöl?",
+            "medications": "Gyógyszerek",
+            "placeholderMedications": "Írd be a szedett gyógyszereidet",
             "chronicDiseases": "Krónikus betegségek",
+            "placeholderChronicDiseases": "Írd be a krónikus betegségeidet",
             "allergies": "Allergiák",
-            "diet": "Táplálkozási szokások",
+            "placeholderAllergies": "Írd be az allergiáidat",
+            "diet": "Diéta",
+            "placeholderDiet": "Írd be a követett diétát",
             "waterIntake": "Napi vízfogyasztás (liter)",
+            "placeholderWaterIntake": "Add meg a napi vízfogyasztásod",
             "familyHistory": "Családi kórtörténet",
+            "placeholderFamilyHistory": "Írd be a családi kórtörténeted",
             "smoking": "Dohányzás",
-            "alcohol": "Alkoholfogyasztás",
-            "sleep": "Napi alvásidő (óra)",
-            "medicalRecords": "Panaszok / tünetek",
-            "medicalHistory": "Betegéletút",
             "smokingOptions": {
                 "never": "Soha",
                 "occasionally": "Alkalmanként",
                 "regularly": "Rendszeresen"
             },
+            "selectPlaceholder": "Válassz",
+            "alcohol": "Alkoholfogyasztás",
             "alcoholOptions": {
                 "never": "Soha",
                 "occasionally": "Alkalmanként",
                 "regularly": "Rendszeresen"
             },
-            "selectPlaceholder": "Nincs megadva",
-            "placeholderHeartRate": "pl.: 72",
-            "placeholderBloodPressure": "pl.: 120/80",
-            "placeholderSports": "pl.: futás, úszás, edzőterem",
-            "placeholderMedications": "pl.: Aspirin, L-thyroxin",
-            "placeholderChronicDiseases": "pl.: cukorbetegség",
-            "placeholderAllergies": "pl.: penicillin, pollen",
-            "placeholderDiet": "pl.: vegetáriánus, keto",
-            "placeholderWaterIntake": "pl.: 2.5",
-            "placeholderFamilyHistory": "pl.: szívbetegségek",
-            "placeholderSleep": "pl.: 7.5",
-            "placeholderMedicalRecords": "pl.: gyakori fejfájás",
-            "placeholderMedicalHistory": "Korábbi betegségek"
+            "sleep": "Alvás (óra/nap)",
+            "placeholderSleep": "Írd be az alvásod napi mennyiségét",
+            "physicalActivityLevel": "Fizikai aktivitás szintje",
+            "placeholderPhysicalActivityLevel": "Írd be az aktivitás szinted",
+            "workType": "Munka típusa",
+            "placeholderWorkType": "Írd be a munkád típusát",
+            "stressLevel": "Stressz szint",
+            "placeholderStressLevel": "Írd be a stressz szinted",
+            "mentalHealth": "Mentális egészség",
+            "placeholderMentalHealth": "Írd be a mentális állapotod",
+            "cholesterolLevel": "Koleszterinszint",
+            "placeholderCholesterolLevel": "Írd be a koleszterinszinted",
+            "bloodSugarLevel": "Vércukorszint",
+            "placeholderBloodSugarLevel": "Írd be a vércukorszinted",
+            "supplements": "Táplálékkiegészítők",
+            "placeholderSupplements": "Írd be a szedett táplálékkiegészítőket",
+            "vaccinations": "Oltások",
+            "placeholderVaccinations": "Írd be a kapott oltásokat",
+            "reproductiveHealth": "Reproduktív egészség",
+            "placeholderReproductiveHealth": "Írd be a reproduktív egészséged",
+            "visionAndHearing": "Látás és hallás",
+            "placeholderVisionAndHearing": "Írd be a látás- és hallásproblémáid",
+            "sleepQuality": "Alvásminőség",
+            "placeholderSleepQuality": "Írd be az alvásod minőségét",
+            "medicalRecords": "Orvosi leletek",
+            "placeholderMedicalRecords": "Írd be az orvosi leleteidet",
+            "medicalHistory": "Orvosi előzmények",
+            "placeholderMedicalHistory": "Írd be a korábbi betegségeidet"
         },
         "privacyModal": {
             "title": "Adatvédelmi tájékoztatónk",
@@ -66,7 +88,8 @@
         },
         "settingsModal": {
             "title": "Beállítások",
-            "text": "Válaszd ki a kívánt nyelvet:"
+            "selectLanguage": "Válaszd ki a kívánt nyelvet:",
+            "selectAIModel": "Válaszd ki a kívánt AI modellt:"
         },
         "userForm": {
             "requiredInfo": "A <span class='required'>*</span>-gal jelölt mezők kitöltése kötelező!",

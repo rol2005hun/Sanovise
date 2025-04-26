@@ -1,7 +1,6 @@
 .response {
     margin-top: 1.25rem;
     border-radius: 5px;
-    margin-bottom: 3rem;
 
     &-block {
         padding: 0.5rem;
@@ -35,7 +34,6 @@
         display: inline-block;
         opacity: 0;
         animation: fadeIn 3s ease forwards;
-        word-break: break-all;
     }
 
     .block:last-child {
