@@ -10,11 +10,11 @@ This application is a digital health assistant that uses artificial intelligence
 
 etc.
 
-The application processes this data and provides information about the user's health status and potential risks. **⚠️ It is important to note that this application does not replace a consultation with a doctor!**
+The application processes this data and provides information about the user's health status and potential risks.
+**⚠️ It is important to note that this application does not replace a consultation with a doctor!**
 
 **🌍 Multiple languages supported**: The application is available in several languages, including English, Hungarian, Spanish, French, German, Russian, Chinese, Arabic, and Hindi.
 
-**Beta Version 1.0.0**
 ---
 
 ## 🛠️ Technology Stack
