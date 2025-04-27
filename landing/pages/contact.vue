@@ -8,12 +8,12 @@
                 </div>
                 <div class="info-card">
                     <h3>{{ $t('pages.contact.email') }}</h3>
-                    <a :href="'mailto:' + $t('pages.contact.emailAddress', { dot: '@' })">{{
-                        $t('pages.contact.emailAddress', { dot: '@' }) }}</a>
+                    <a :href="'mailto:' + $t('pages.contact.emailAddress', { at: '@' })">{{
+                        $t('pages.contact.emailAddress', { at: '@' }) }}</a>
                 </div>
                 <div class="info-card">
                     <h3>{{ $t('pages.contact.address') }}</h3>
-                    <p>{{ $t('pages.contact.addressDetails') }}</p>
+                    <span>{{ $t('pages.contact.addressDetails') }}</span>
                 </div>
             </section>
 
@@ -31,7 +31,7 @@
 
                         <label for="email">{{ $t('pages.contact.emailLabel') }}<span class="required">*</span></label>
                         <input id="email" type="email" name="email"
-                            :placeholder="$t('pages.contact.emailPlaceholder', { dot: '@' })" required />
+                            :placeholder="$t('pages.contact.emailPlaceholder', { at: '@' })" required />
 
                         <label for="message">{{ $t('pages.contact.messageLabel') }}<span
                                 class="required">*</span></label>

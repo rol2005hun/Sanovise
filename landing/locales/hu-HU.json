@@ -26,14 +26,14 @@
             "phone": "📞 Telefon",
             "phoneNumber": "+36 123 456 789",
             "email": "📧 Email",
-            "emailAddress": "info{dot}sanovise.com",
+            "emailAddress": "info{at}sanovise.com",
             "address": "📍 Cím",
             "addressDetails": "Debrecen, Kassai út 1.",
             "contactFormTitle": "📝 Írj nekünk",
             "nameLabel": "Név",
             "namePlaceholder": "pl.: Dr. Sanovise",
             "emailLabel": "Email",
-            "emailPlaceholder": "pl.: info{dot}sanovise.hu",
+            "emailPlaceholder": "pl.: info{at}sanovise.com",
             "messageLabel": "Üzenet",
             "messagePlaceholder": "pl.: Hiba van a rendszerrel!",
             "submitButton": "Küldés",
@@ -83,18 +83,28 @@
             "heroTitle": "🤖 Digitális egészségügyi asszisztens",
             "heroDescription": "Fedezd fel részletesen egészségügyi adataid és ajánlásaink segítségével hozd meg a legjobb döntéseket!",
             "getStarted": "Kezdd el",
-            "features": {
-                "titles": [
-                    "📊 Részletes elemzés",
-                    "🛡️ Adatbiztonság",
-                    "🌐 Multi-platform"
-                ],
-                "descriptions": [
-                    "Személyre szabott egészségügyi tanácsadás a te adataid alapján.",
-                    "Adatvédelmi protokollok és titkosítás minden szinten.",
-                    "Webes, asztali és mobil eszközökön egyaránt elérhető."
-                ]
-            }
+            "features": [
+                {
+                    "title": "📊 Részletes elemzés",
+                    "description": "A legújabb technológiák segítségével elemezzük egészségügyi adataidat. Személyre szabott tanácsokat adunk az egészséged javítására."
+                },
+                {
+                    "title": "🛡️ Adatbiztonság",
+                    "description": "Adatvédelmi protokollok és titkosítás minden szinten. Az adataid biztonságban vannak nálunk. Csak Te férhetsz hozzá az információidhoz."
+                },
+                {
+                    "title": "🌐 Multi-platform",
+                    "description": "Webes, asztali és mobil eszközökön egyaránt elérhető. Az alkalmazásunk minden platformon zökkenőmentesen működik."
+                },
+                {
+                    "title": "📥 Adatmentes Exportálás",
+                    "description": "Exportáld a felhasználói adatokat és a beszélgetéseid történetét JSON formátumban, így teljes kontrollod van az adataid felett. Biztonságosan letöltheted és archiválhatod őket bármikor."
+                },
+                {
+                    "title": "🔒 Adatvédelem és anonimitás",
+                    "description": "Minden adat titkosítva van, és csak akkor kerülnek tárolásra, ha azt te kifejezetten engedélyezed. Az alkalmazás működése során az anonimitás biztosított."
+                }
+            ]
         },
         "terms": {
             "title": "Felhasználási feltételek",
@@ -115,25 +125,29 @@
                     "title": "2. Használati engedély",
                     "content": [
                         "Engedélyezett a Sanovise weboldal anyagainak ideiglenes letöltése személyes, nem kereskedelmi célú átmeneti megtekintésre. Ez egy licenc engedély, nem pedig tulajdonjog átruházása, és ezen licenc alapján Ön nem jogosult:",
-                        "- az anyagok módosítására vagy másolására",
-                        "- az anyagok kereskedelmi célú felhasználására",
-                        "- a weboldalon található szoftver visszafejtésére vagy dekódolására",
-                        "- szerzői jogi vagy tulajdonjogi jelzések eltávolítására",
-                        "- az anyagok továbbítására más személynek vagy más szerveren való tükrözésére",
+                        {
+                            "list": [
+                                "Az anyagok módosítására vagy másolására",
+                                "Az anyagok kereskedelmi célú felhasználására",
+                                "A weboldalon található szoftver visszafejtésére vagy dekódolására",
+                                "Szerzői jogi vagy tulajdonjogi jelzések eltávolítására",
+                                "Az anyagok továbbítására más személynek vagy más szerveren való tükrözésére"
+                            ]
+                        },
                         "Ez a licenc automatikusan megszűnik, ha megsérti ezen korlátozásokat, és a Sanovise bármikor visszavonhatja azt."
                     ]
                 },
                 {
                     "title": "3. Jogi nyilatkozat",
                     "content": [
-                        "A Sanovise weboldalán található anyagokat 'ahogy van' alapon nyújtjuk. A Sanovise semmilyen kifejezett vagy hallgatólagos garanciát nem vállal, és ezennel minden egyéb garanciát kizár, beleértve, de nem kizárólagosan, az eladhatóságra, adott célra való alkalmasságra vagy szellemi tulajdon megsértésének hiányára vonatkozó garanciákat.",
+                        "A Sanovise weboldalán található anyagokat 'ahogy van' alapon nyújtjuk. A Sanovise semmilyen kifejezett vagy hallgatólagos garanciát nem vállal, és ezennel minden egyéb garanciát kizár.",
                         "Továbbá a Sanovise nem garantálja az anyagok pontosságát, eredményességét vagy megbízhatóságát, valamint nem vállal felelősséget más webhelyek tartalmáért, amelyek linkként szerepelhetnek."
                     ]
                 },
                 {
                     "title": "4. Korlátozások",
                     "content": [
-                        "A Sanovise vagy beszállítói semmilyen esetben nem felelősek semmilyen kárért (beleértve, de nem kizárólagosan, adatvesztésből vagy üzleti megszakításból eredő károk), amelyek a weboldal használatából vagy használatra való képtelenségből erednek, még akkor sem, ha a Sanovise képviselőjét értesítették a kár lehetőségéről.",
+                        "A Sanovise vagy beszállítói semmilyen esetben nem felelősek semmilyen kárért (beleértve, de nem kizárólagosan, adatvesztésből vagy üzleti megszakításból eredő károk), amelyek a weboldal használatából vagy használatra való képtelenségből erednek.",
                         "Mivel egyes joghatóságok nem engedélyezik a hallgatólagos garanciák korlátozását vagy a következményi károkért való felelősség korlátozását, ezek a korlátozások Önre esetleg nem vonatkoznak."
                     ]
                 },
@@ -147,7 +161,7 @@
                 {
                     "title": "6. Hivatkozások",
                     "content": [
-                        "A Sanovise nem vizsgálta felül az összes, weboldaláról hivatkozott oldalt, és nem vállal felelősséget azok tartalmáért. A linkek szerepeltetése nem jelenti azok jóváhagyását.",
+                        "A Sanovise nem vizsgálta felül az összes, weboldaláról hivatkozott oldalt, és nem vállal felelősséget azok tartalmáért.",
                         "Az ilyen linkelt weboldalak használata a felhasználó saját felelősségére történik."
                     ]
                 },
@@ -162,6 +176,26 @@
                     "title": "8. Irányadó jog",
                     "content": [
                         "A jelen feltételekre az alkalmazandó jog az irányadó, és Ön visszavonhatatlanul elfogadja az adott területen működő bíróságok kizárólagos illetékességét."
+                    ]
+                },
+                {
+                    "title": "9. Adatvédelem",
+                    "content": [
+                        "A Sanovise elkötelezett az Ön adatainak védelme mellett. Az adatkezelés során a hatályos jogszabályoknak megfelelően járunk el, és csak az Ön által megadott, illetve az alkalmazás működéséhez szükséges adatokat dolgozzuk fel.",
+                        "További információkért kérjük, olvassa el Adatvédelmi szabályzatunkat."
+                    ]
+                },
+                {
+                    "title": "10. Felelősség korlátozása",
+                    "content": [
+                        "Az alkalmazás által szolgáltatott információk tájékoztatási célt szolgálnak, nem helyettesítik az orvosi tanácsadást, diagnózist vagy kezelést.",
+                        "A Sanovise nem vállal felelősséget a szolgáltatott adatok helyességéért, teljességéért és időszerűségéért, valamint az ezek alapján meghozott döntésekből eredő esetleges károkért."
+                    ]
+                },
+                {
+                    "title": "11. Kapcsolatfelvétel",
+                    "content": [
+                        "Ha kérdése vagy aggálya merül fel a Felhasználási feltételekkel kapcsolatban, kérjük, lépjen kapcsolatba velünk az elérhetőségeken."
                     ]
                 }
             ]

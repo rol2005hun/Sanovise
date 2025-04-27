@@ -6,19 +6,25 @@
         </header>
 
         <div class="tos-content">
-            <section v-for="(item, index) in $tm('pages.terms.sections')" :key="index"
-                class="tos-section">
-                <h2>{{ $t(`pages.terms.sections[${index}].title`) }}</h2>
+            <section v-for="item in sections" :key="item" class="tos-section">
+                <h2>{{ $rt(item.title) }}</h2>
                 <div>
-                    <p v-for="(item2, index2) in $tm(`pages.terms.sections[${index}].content`)" :key="index2">
-                        {{ $t(`pages.terms.sections[${index}].content[${index2}]`) }}
-                    </p>
+                    <template v-for="content in item.content" :key="content">
+                        <ul v-if="content.list">
+                            <li v-for="listItem in content.list" :key="listItem">
+                                {{ $rt(listItem) }}
+                            </li>
+                        </ul>
+                        <p v-else>
+                            {{ $rt(content) }}
+                        </p>
+                    </template>
                 </div>
             </section>
 
             <div class="tos-acceptance">
-                <p v-for="(item, index) in $tm('pages.terms.acceptanceText')" :key="index">
-                    {{ $t(`pages.terms.acceptanceText[${index}]`) }}
+                <p v-for="item in $tm('pages.terms.acceptanceText')" :key="item">
+                    {{ $rt(item) }}
                 </p>
             </div>
         </div>
@@ -26,7 +32,8 @@
 </template>
 
 <script setup lang="ts">
-const lastUpdated = ref(new Date().toLocaleDateString('en-US', {
+const sections = useI18n().tm('pages.terms.sections') as any[];
+const lastUpdated = ref(new Date('2025-04-27').toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
