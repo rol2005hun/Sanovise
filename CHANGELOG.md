@@ -1,6 +1,16 @@
 # Changelog
 
 ## [1.1.1] - 2025-04-27
+**Hotfix** for issues in the [1.1.1] update.
+
+### Added
+
+### Changed
+
+### Fixed
+- Changed the NewsAPI to Guardian API, NewsAPI only works with localhost.
+
+## [1.1.1] - 2025-04-27
 All changes are in the **Landing Page**.
 
 ### Added

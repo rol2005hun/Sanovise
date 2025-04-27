@@ -31,14 +31,19 @@ const features = useI18n().tm('pages.index.features') as any[];
 const newsArticles = ref<any[]>([]);
 
 const fetchNews = async () => {
-  const apiKey = '665b04e4317e42a69d12d5a7b993fcdb';
-  const url = `https://newsapi.org/v2/everything?q=health&apiKey=${apiKey}`;
+  const apiKey = '845f4cfb-9408-4252-b5cb-75f2444f20f0';
+  const url = `https://content.guardianapis.com/search?q=health&api-key=${apiKey}&show-fields=trailText&page-size=4`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
-    if (data.status === 'ok') {
-      newsArticles.value = data.articles.slice(0, 4);
+    console.log(data);
+    if (data.response.status === 'ok') {
+      newsArticles.value = data.response.results.slice(0, 4).map((article: any) => ({
+        title: article.webTitle,
+        description: article.fields.trailText || 'No description available',
+        url: article.webUrl
+      }));
     } else {
       console.error('Failed to fetch news');
     }
