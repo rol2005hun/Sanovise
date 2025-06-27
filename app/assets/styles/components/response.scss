@@ -30,12 +30,6 @@
         }
     }
 
-    .stream :deep(.token) {
-        display: inline-block;
-        opacity: 0;
-        animation: fadeIn 3s ease forwards;
-    }
-
     .block:last-child {
         margin: 0;
     }
@@ -54,16 +48,6 @@
             color: white;
             cursor: pointer;
         }
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
     }
 }
 
