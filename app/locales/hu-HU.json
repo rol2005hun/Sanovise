@@ -16,10 +16,10 @@
             "settings": "Beállítások"
         },
         "optionalFields": {
-            "heartRate": "Pulzusszám",
-            "placeholderHeartRate": "Írd be a pulzusszámod",
-            "bloodPressure": "Vérnyomás",
-            "placeholderBloodPressure": "Írd be a vérnyomásod pl. 120/80",
+            "heartRate": "Átlag pulzusszám",
+            "placeholderHeartRate": "Írd be az átlag pulzusszámod",
+            "bloodPressure": "Átlag vérnyomás",
+            "placeholderBloodPressure": "Írd be az átlag vérnyomásod pl. 120/80",
             "sports": "Sportok",
             "placeholderSports": "Milyen sportokat űzöl?",
             "medications": "Gyógyszerek",

@@ -37,7 +37,7 @@ const fetchNews = async () => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+    
     if (data.response.status === 'ok') {
       newsArticles.value = data.response.results.slice(0, 4).map((article: any) => ({
         title: article.webTitle,
