@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "सेटिंग्स",
             "selectLanguage": "अपनी पसंदीदा भाषा चुनें:",
-            "selectAIModel": "अपना पसंदीदा एआई मॉडल चुनें:"
+            "selectAIModel": "अपना पसंदीदा एआई मॉडल चुनें:",
+            "version": "संस्करण"
         },
         "userForm": {
             "requiredInfo": "<span class='required'>*</span> चिह्नित फ़ील्ड भरना अनिवार्य है!",

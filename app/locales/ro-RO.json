@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "Setări",
             "selectLanguage": "Selectați limba preferată:",
-            "selectAIModel": "Selectați modelul AI preferat:"
+            "selectAIModel": "Selectați modelul AI preferat:",
+            "version": "Versiune"
         },
         "userForm": {
             "requiredInfo": "Câmpurile marcate cu <span class='required'>*</span> sunt obligatorii!",

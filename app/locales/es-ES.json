@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "Configuración",
             "selectLanguage": "Selecciona tu idioma preferido:",
-            "selectAIModel": "Selecciona el modelo de IA preferido:"
+            "selectAIModel": "Selecciona el modelo de IA preferido:",
+            "version": "Versión"
         },
         "userForm": {
             "requiredInfo": "¡Los campos marcados con <span class='required'>*</span> son obligatorios!",

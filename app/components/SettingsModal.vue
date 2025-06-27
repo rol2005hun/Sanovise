@@ -21,12 +21,17 @@
                     </option>
                 </select>
             </div>
+
+            <p class="version-info">
+                {{ $t('components.settingsModal.version') }}: {{ appVersion }}
+            </p>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { dataStore } from '@/store';
+import packageJson from '../package.json';
 
 const { locales, locale, setLocale } = useI18n();
 
@@ -41,10 +46,12 @@ const selectedModel = ref(aiModels[0].id);
 
 const language = computed({
     get: () => locale.value,
-    set: (value) => {
-        setLocale(value);
+    set: (value: string) => {
+        setLocale(value as any);
     }
 });
+
+const appVersion = ref(packageJson.version);
 
 watch(selectedModel, (newModel) => {
     dataStore.userData.selectedModel = newModel;

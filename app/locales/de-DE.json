@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "Einstellungen",
             "selectLanguage": "Wählen Sie die gewünschte Sprache:",
-            "selectAIModel": "Wählen Sie das gewünschte KI-Modell:"
+            "selectAIModel": "Wählen Sie das gewünschte KI-Modell:",
+            "version": "Version"
         },
         "userForm": {
             "requiredInfo": "Felder mit <span class='required'>*</span> sind Pflichtfelder!",

@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "Impostazioni",
             "selectLanguage": "Seleziona la lingua:",
-            "selectAIModel": "Seleziona il modello AI:"
+            "selectAIModel": "Seleziona il modello AI:",
+            "version": "Versione"
         },
         "userForm": {
             "requiredInfo": "I campi contrassegnati con <span class='required'>*</span> sono obbligatori!",

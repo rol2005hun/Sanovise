@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "设置",
             "selectLanguage": "请选择您的语言：",
-            "selectAIModel": "请选择您的AI模型："
+            "selectAIModel": "请选择您的AI模型：",
+            "version": "版本"
         },
         "userForm": {
             "requiredInfo": "带有<span class='required'>*</span>的字段为必填项！",

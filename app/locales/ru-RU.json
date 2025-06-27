@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "Настройки",
             "selectLanguage": "Выберите предпочитаемый язык:",
-            "selectAIModel": "Выберите предпочитаемую модель ИИ:"
+            "selectAIModel": "Выберите предпочитаемую модель ИИ:",
+            "version": "Версия"
         },
         "userForm": {
             "requiredInfo": "Поля, отмеченные <span class='required'>*</span>, обязательны для заполнения!",

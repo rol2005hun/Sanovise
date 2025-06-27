@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "Beállítások",
             "selectLanguage": "Válaszd ki a kívánt nyelvet:",
-            "selectAIModel": "Válaszd ki a kívánt AI modellt:"
+            "selectAIModel": "Válaszd ki a kívánt AI modellt:",
+            "version": "Verzió"
         },
         "userForm": {
             "requiredInfo": "A <span class='required'>*</span>-gal jelölt mezők kitöltése kötelező!",

@@ -89,7 +89,8 @@
         "settingsModal": {
             "title": "الإعدادات",
             "selectLanguage": "اختر اللغة المطلوبة:",
-            "selectAIModel": "اختر نموذج الذكاء الاصطناعي:"
+            "selectAIModel": "اختر نموذج الذكاء الاصطناعي:",
+            "version": "الإصدار"
         },
         "userForm": {
             "requiredInfo": "الحقول التي تحتوي على <span class='required'>*</span> مطلوبة!",
