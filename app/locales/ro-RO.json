@@ -1,135 +1,136 @@
 {
-    "components": {
-        "chatInterface": {
-            "placeholder": "Introduceți mesajul dvs..."
-        },
-        "clickMenu": {
-            "showForm": "Afișează formularul de introducere",
-            "showChat": "Afișează interfața de chat"
-        },
-        "fileUpload": {
-            "title": "Încărcați datele dvs.",
-            "upload": "Selectați un fișier sau trageți-l aici",
-            "lastLoaded": "Ultima încărcare"
-        },
-        "header": {
-            "settings": "Setări"
-        },
-        "optionalFields": {
-            "heartRate": "Puls",
-            "placeholderHeartRate": "Introduceți pulsul dvs.",
-            "bloodPressure": "Tensiune arterială",
-            "placeholderBloodPressure": "Introduceți tensiunea arterială, ex.: 120/80",
-            "sports": "Sporturi",
-            "placeholderSports": "Ce sporturi practicați?",
-            "medications": "Medicamente",
-            "placeholderMedications": "Introduceți medicamentele dvs.",
-            "chronicDiseases": "Boli cronice",
-            "placeholderChronicDiseases": "Introduceți bolile cronice",
-            "allergies": "Alergii",
-            "placeholderAllergies": "Introduceți alergiile dvs.",
-            "diet": "Dietă",
-            "placeholderDiet": "Introduceți dieta dvs.",
-            "waterIntake": "Consum zilnic de apă (litri)",
-            "placeholderWaterIntake": "Introduceți consumul zilnic de apă",
-            "familyHistory": "Istoric familial",
-            "placeholderFamilyHistory": "Introduceți istoricul familial",
-            "smoking": "Fumat",
-            "smokingOptions": {
-                "never": "Niciodată",
-                "occasionally": "Ocazional",
-                "regularly": "Regulat"
-            },
-            "selectPlaceholder": "Selectați",
-            "alcohol": "Consumul de alcool",
-            "alcoholOptions": {
-                "never": "Niciodată",
-                "occasionally": "Ocazional",
-                "regularly": "Regulat"
-            },
-            "sleep": "Somn (ore/zi)",
-            "placeholderSleep": "Introduceți durata somnului zilnic",
-            "physicalActivityLevel": "Nivel de activitate fizică",
-            "placeholderPhysicalActivityLevel": "Introduceți nivelul dvs. de activitate",
-            "workType": "Tip de muncă",
-            "placeholderWorkType": "Introduceți tipul muncii dvs.",
-            "stressLevel": "Nivel de stres",
-            "placeholderStressLevel": "Introduceți nivelul dvs. de stres",
-            "mentalHealth": "Sănătate mintală",
-            "placeholderMentalHealth": "Introduceți starea dvs. mintală",
-            "cholesterolLevel": "Nivel de colesterol",
-            "placeholderCholesterolLevel": "Introduceți nivelul de colesterol",
-            "bloodSugarLevel": "Glicemie",
-            "placeholderBloodSugarLevel": "Introduceți nivelul glicemiei",
-            "supplements": "Suplimente",
-            "placeholderSupplements": "Introduceți suplimentele alimentare",
-            "vaccinations": "Vaccinuri",
-            "placeholderVaccinations": "Introduceți vaccinurile",
-            "reproductiveHealth": "Sănătate reproductivă",
-            "placeholderReproductiveHealth": "Introduceți informațiile despre sănătatea reproductivă",
-            "visionAndHearing": "Vedere și auz",
-            "placeholderVisionAndHearing": "Introduceți problemele de vedere și auz",
-            "sleepQuality": "Calitatea somnului",
-            "placeholderSleepQuality": "Introduceți calitatea somnului dvs.",
-            "medicalRecords": "Dosare medicale",
-            "placeholderMedicalRecords": "Introduceți dosarele medicale",
-            "medicalHistory": "Istoric medical",
-            "placeholderMedicalHistory": "Introduceți istoricul medical"
-        },
-        "privacyModal": {
-            "title": "Politica noastră de confidențialitate",
-            "text1": "Datele furnizate vor fi utilizate exclusiv de sistemul de consiliere în sănătate și nu vor fi partajate cu terțe părți. Datele dvs. nu vor fi stocate; le puteți gestiona și salva pe propriul dispozitiv.",
-            "text2": "Acceptând politica de confidențialitate, sunteți de acord ca sistemul nostru să vă ofere recomandări bazate pe informațiile furnizate."
-        },
-        "response": {
-            "title": "Răspunsul Dr. Sanovise:",
-            "analyzing": "Analizez datele 📚🧠",
-            "thinking": "Gândesc 🤔"
-        },
-        "settingsModal": {
-            "title": "Setări",
-            "selectLanguage": "Selectați limba preferată:",
-            "selectAIModel": "Selectați modelul AI preferat:",
-            "version": "Versiune"
-        },
-        "userForm": {
-            "requiredInfo": "Câmpurile marcate cu <span class='required'>*</span> sunt obligatorii!",
-            "birthDate": "Data nașterii",
-            "gender": "Gen",
-            "selectGender": "Selectați genul",
-            "male": "Masculin",
-            "female": "Feminin",
-            "height": "Înălțime",
-            "weight": "Greutate",
-            "placeholderHeight": "ex.: 175",
-            "placeholderWeight": "ex.: 70",
-            "showExtra": "Furnizați informații suplimentare",
-            "hideExtra": "Ascundeți informațiile suplimentare",
-            "acceptPrivacy": "Accept",
-            "privacyLink": "politica de confidențialitate",
-            "submitData": "Trimiteți datele",
-            "abort": "Anulați răspunsul",
-            "exportData": "Exportați datele",
-            "invalidHeight": "Înălțimea trebuie să fie între 50 cm și 300 cm.",
-            "invalidWeight": "Greutatea trebuie să fie între 1 kg și 500 kg.",
-            "invalidWaterIntake": "Consumul zilnic de apă trebuie să fie între 0 și 50 litri.",
-            "invalidHeartRate": "Pulsul trebuie să fie între 30 și 250.",
-            "invalidSleep": "Durata somnului trebuie să fie între 0 și 24 ore.",
-            "invalidBloodPressure": "Tensiunea arterială trebuie să fie în formatul sistolic/diastolic (ex.: 120/80)."
-        }
+  "components": {
+    "chatInterface": {
+      "placeholder": "Scrieți mesajul dvs...."
     },
-    "global": {
-        "successSave": "Salvat cu succes",
-        "successShare": "Trimis cu succes",
-        "errorSave": "A apărut o eroare la salvare.",
-        "errorSend": "A apărut o eroare la trimiterea datelor.",
-        "tryAgain": "Vă rugăm să încercați din nou mai târziu sau să reîmprospătați pagina.",
-        "emptyResponse": "Serverul nu a trimis niciun răspuns. Este posibil să fi apărut o eroare.",
-        "networkError": "Eroare de rețea – verificați conexiunea la internet!",
-        "unknownError": "A apărut o eroare necunoscută. 😔",
-        "errorLoad": "Fișierul nu conține date valide!",
-        "invalidJson": "Format de fișier invalid! Asigurați-vă că ați încărcat un fișier JSON.",
-        "anotherFile": "Încercați din nou sau alegeți alt fișier.",
-        "needPermission": "Vă rugăm să permiteți accesul la stocare."
+    "clickMenu": {
+      "showForm": "Afișează formularul de introducere a datelor",
+      "showChat": "Afișează interfața de chat"
+    },
+    "fileUpload": {
+      "title": "Încarcă datele tale",
+      "upload": "Alege un fișier sau trage-l aici",
+      "lastLoaded": "Ultima încărcare"
+    },
+    "header": {
+      "settings": "Setări"
+    },
+    "optionalFields": {
+      "heartRate": "Puls mediu",
+      "placeholderHeartRate": "ex.: 76",
+      "bloodPressure": "Tensiune arterială medie",
+      "placeholderBloodPressure": "ex.: 120/80",
+      "sports": "Sporturi",
+      "placeholderSports": "ex.: Alergare, Înot",
+      "medications": "Medicamente",
+      "placeholderMedications": "ex.: Aspirină, Paracetamol",
+      "chronicDiseases": "Boli cronice",
+      "placeholderChronicDiseases": "ex.: Hipertensiune, Diabet",
+      "allergies": "Alergii",
+      "placeholderAllergies": "ex.: Polen, Nuci",
+      "diet": "Dietă",
+      "placeholderDiet": "ex.: Vegetariană, Fără gluten",
+      "waterIntake": "Consumul zilnic de apă (litri)",
+      "placeholderWaterIntake": "ex.: 2.5",
+      "familyHistory": "Istoric familial",
+      "placeholderFamilyHistory": "ex.: Boli de inimă, Cancer",
+      "smoking": "Fumat",
+      "smokingOptions": {
+        "selectPlaceholder": "Selectează obiceiul de fumat",
+        "never": "Niciodată",
+        "occasionally": "Ocazional",
+        "regularly": "Regulat"
+      },
+      "alcohol": "Consumul de alcool",
+      "alcoholOptions": {
+        "selectPlaceholder": "Selectează obiceiul de consum al alcoolului",
+        "never": "Niciodată",
+        "occasionally": "Ocazional",
+        "regularly": "Regulat"
+      },
+      "sleep": "Somn (ore/zi)",
+      "placeholderSleep": "ex.: 7",
+      "physicalActivityLevel": "Nivelul de activitate fizică",
+      "placeholderPhysicalActivityLevel": "ex.: Scăzut, Mediu, Ridicat",
+      "workType": "Tipul muncii",
+      "placeholderWorkType": "ex.: Birou, Fizic, Mixt",
+      "stressLevel": "Nivel de stres",
+      "placeholderStressLevel": "ex.: Scăzut, Mediu, Ridicat / 30, 60, 90",
+      "mentalHealth": "Sănătate mintală",
+      "placeholderMentalHealth": "ex.: Depresie, Anxietate",
+      "cholesterolLevel": "Nivel colesterol",
+      "placeholderCholesterolLevel": "ex.: 200 mg/dL",
+      "bloodSugarLevel": "Nivel glicemie",
+      "placeholderBloodSugarLevel": "ex.: 100 mg/dL",
+      "supplements": "Suplimente alimentare",
+      "placeholderSupplements": "ex.: Vitamina D, Omega‑3",
+      "vaccinations": "Vaccinări",
+      "placeholderVaccinations": "ex.: Gripă, COVID‑19",
+      "reproductiveHealth": "Sănătate reproductivă",
+      "placeholderReproductiveHealth": "ex.: Ciclu menstrual, Sarcină",
+      "visionAndHearing": "Vedere și auz",
+      "placeholderVisionAndHearing": "ex.: Miopie, Pierdere auz",
+      "sleepQuality": "Calitatea somnului",
+      "placeholderSleepQuality": "ex.: Bună, Medie, Slabă",
+      "medicalRecords": "Rezultate medicale",
+      "placeholderMedicalRecords": "ex.: Analize sânge, Radiografie",
+      "medicalHistory": "Istoric medical",
+      "placeholderMedicalHistory": "ex.: Operații, Internări"
+    },
+    "privacyModal": {
+      "title": "Politica de confidențialitate",
+      "text1": "Datele furnizate de dvs. sunt folosite exclusiv de sistemul de consiliere medicală și nu sunt partajate cu terți. Sistemul nu salvează datele dvs.; aveți control total asupra acestora și le puteți salva pe dispozitivul propriu.",
+      "text2": "Prin acceptarea politicii de confidențialitate, sunteți de acord ca sistemul să ofere recomandări pe baza informațiilor furnizate."
+    },
+    "response": {
+      "title": "Răspunsul Dr. Sanovise:",
+      "analyzing": "Analizez datele 📚🧠",
+      "thinking": "Gândesc 🤔"
+    },
+    "settingsModal": {
+      "title": "Setări",
+      "selectLanguage": "Selectează limba dorită:",
+      "selectAIModel": "Selectează modelul AI:",
+      "version": "Versiune"
+    },
+    "userForm": {
+      "requiredInfo": "Câmpurile marcate cu <span class='required'>*</span> sunt obligatorii!",
+      "birthDate": "Data nașterii",
+      "gender": "Gen",
+      "selectGender": "Selectează genul",
+      "male": "Masculin",
+      "female": "Feminin",
+      "height": "Înălțime",
+      "weight": "Greutate",
+      "placeholderHeight": "ex.: 175",
+      "placeholderWeight": "ex.: 70",
+      "showExtra": "Afișează câmpuri suplimentare",
+      "hideExtra": "Ascunde câmpuri suplimentare",
+      "acceptPrivacy": "Accept",
+      "privacyLink": "politica de confidențialitate",
+      "submitData": "Trimite datele",
+      "abort": "Nu răspunde",
+      "exportData": "Exportă datele",
+      "invalidHeight": "Înălțimea trebuie să fie între 50 și 300 cm.",
+      "invalidWeight": "Greutatea trebuie să fie între 1 și 500 kg.",
+      "invalidWaterIntake": "Consumul zilnic de apă trebuie să fie între 0 și 50 litri.",
+      "invalidHeartRate": "Pulsul trebuie să fie între 30 și 250.",
+      "invalidSleep": "Timpul de somn trebuie să fie între 0 și 24 de ore.",
+      "invalidBloodPressure": "Tensiunea arterială trebuie să fie în formatul sistolic/diastolic (ex.: 120/80)."
     }
+  },
+  "global": {
+    "successSave": "Salvat cu succes",
+    "successShare": "Trimis cu succes",
+    "errorSave": "Eroare la salvare.",
+    "errorSend": "Eroare la trimiterea datelor",
+    "tryAgain": "Vă rugăm să încercați din nou mai târziu sau reîncărcați pagina.",
+    "emptyResponse": "Serverul nu a răspuns. Conexiunea poate fi întreruptă.",
+    "networkError": "Eroare de rețea – verifică conexiunea la internet!",
+    "unknownError": "A apărut o eroare necunoscută. 😔",
+    "errorLoad": "Fișierul nu conține date valide!",
+    "invalidJson": "Format fișier invalid! Asigură-te că ai încărcat un fișier JSON.",
+    "anotherFile": "Încearcă din nou sau selectează un alt fișier.",
+    "needPermission": "Permite accesul la stocare."
+  }
 }

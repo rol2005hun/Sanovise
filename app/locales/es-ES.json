@@ -1,135 +1,136 @@
 {
-    "components": {
-        "chatInterface": {
-            "placeholder": "Escribe tu mensaje..."
-        },
-        "clickMenu": {
-            "showForm": "Mostrar formulario de entrada de datos",
-            "showChat": "Mostrar interfaz de chat"
-        },
-        "fileUpload": {
-            "title": "Sube tus datos",
-            "upload": "Elige un archivo o arrástralo aquí",
-            "lastLoaded": "Última carga"
-        },
-        "header": {
-            "settings": "Configuración"
-        },
-        "optionalFields": {
-            "heartRate": "Frecuencia cardíaca",
-            "placeholderHeartRate": "Introduce tu frecuencia cardíaca",
-            "bloodPressure": "Presión arterial",
-            "placeholderBloodPressure": "Introduce tu presión arterial, por ejemplo, 120/80",
-            "sports": "Deportes",
-            "placeholderSports": "¿Qué deportes practicas?",
-            "medications": "Medicamentos",
-            "placeholderMedications": "Introduce tus medicamentos",
-            "chronicDiseases": "Enfermedades crónicas",
-            "placeholderChronicDiseases": "Introduce tus enfermedades crónicas",
-            "allergies": "Alergias",
-            "placeholderAllergies": "Introduce tus alergias",
-            "diet": "Dieta",
-            "placeholderDiet": "Introduce tu dieta",
-            "waterIntake": "Consumo diario de agua (litros)",
-            "placeholderWaterIntake": "Introduce tu consumo diario de agua",
-            "familyHistory": "Historial médico familiar",
-            "placeholderFamilyHistory": "Introduce el historial médico de tu familia",
-            "smoking": "Tabaquismo",
-            "smokingOptions": {
-                "never": "Nunca",
-                "occasionally": "Ocasionalmente",
-                "regularly": "Regularmente"
-            },
-            "selectPlaceholder": "Seleccionar",
-            "alcohol": "Consumo de alcohol",
-            "alcoholOptions": {
-                "never": "Nunca",
-                "occasionally": "Ocasionalmente",
-                "regularly": "Regularmente"
-            },
-            "sleep": "Sueño (horas/día)",
-            "placeholderSleep": "Introduce tus horas de sueño diarias",
-            "physicalActivityLevel": "Nivel de actividad física",
-            "placeholderPhysicalActivityLevel": "Introduce tu nivel de actividad",
-            "workType": "Tipo de trabajo",
-            "placeholderWorkType": "Introduce tu tipo de trabajo",
-            "stressLevel": "Nivel de estrés",
-            "placeholderStressLevel": "Introduce tu nivel de estrés",
-            "mentalHealth": "Salud mental",
-            "placeholderMentalHealth": "Introduce tu estado mental",
-            "cholesterolLevel": "Nivel de colesterol",
-            "placeholderCholesterolLevel": "Introduce tu nivel de colesterol",
-            "bloodSugarLevel": "Nivel de azúcar en sangre",
-            "placeholderBloodSugarLevel": "Introduce tu nivel de azúcar en sangre",
-            "supplements": "Suplementos",
-            "placeholderSupplements": "Introduce tus suplementos",
-            "vaccinations": "Vacunas",
-            "placeholderVaccinations": "Introduce tus vacunas",
-            "reproductiveHealth": "Salud reproductiva",
-            "placeholderReproductiveHealth": "Introduce tu salud reproductiva",
-            "visionAndHearing": "Visión y audición",
-            "placeholderVisionAndHearing": "Introduce tus problemas de visión y audición",
-            "sleepQuality": "Calidad del sueño",
-            "placeholderSleepQuality": "Introduce la calidad de tu sueño",
-            "medicalRecords": "Registros médicos",
-            "placeholderMedicalRecords": "Introduce tus registros médicos",
-            "medicalHistory": "Historial médico",
-            "placeholderMedicalHistory": "Introduce tus enfermedades anteriores"
-        },
-        "privacyModal": {
-            "title": "Nuestra Política de Privacidad",
-            "text1": "Los datos que proporciones serán utilizados únicamente por el sistema de asesoramiento de salud y no serán compartidos con terceros. Tus datos no se almacenarán; podrás gestionarlos y guardarlos en tu propio dispositivo.",
-            "text2": "Al aceptar las condiciones de privacidad, consientes que nuestro sistema te brinde consejos basados en la información proporcionada."
-        },
-        "response": {
-            "title": "Respuesta de Dr. Sanovise:",
-            "analyzing": "Analizando los datos 📚🧠",
-            "thinking": "Pensando 🤔"
-        },
-        "settingsModal": {
-            "title": "Configuración",
-            "selectLanguage": "Selecciona tu idioma preferido:",
-            "selectAIModel": "Selecciona el modelo de IA preferido:",
-            "version": "Versión"
-        },
-        "userForm": {
-            "requiredInfo": "¡Los campos marcados con <span class='required'>*</span> son obligatorios!",
-            "birthDate": "Fecha de nacimiento",
-            "gender": "Género",
-            "selectGender": "Seleccionar género",
-            "male": "Hombre",
-            "female": "Mujer",
-            "height": "Altura",
-            "weight": "Peso",
-            "placeholderHeight": "ej.: 175",
-            "placeholderWeight": "ej.: 70",
-            "showExtra": "Proporcionar datos adicionales",
-            "hideExtra": "Ocultar datos adicionales",
-            "acceptPrivacy": "Acepto la",
-            "privacyLink": "política de privacidad",
-            "submitData": "Enviar datos",
-            "abort": "Cancelar respuesta",
-            "exportData": "Exportar datos",
-            "invalidHeight": "La altura debe estar entre 50 cm y 300 cm.",
-            "invalidWeight": "El peso debe estar entre 1 kg y 500 kg.",
-            "invalidWaterIntake": "El consumo diario de agua debe estar entre 0 y 50 litros.",
-            "invalidHeartRate": "La frecuencia cardíaca debe estar entre 30 y 250.",
-            "invalidSleep": "Las horas de sueño deben estar entre 0 y 24.",
-            "invalidBloodPressure": "La presión arterial debe tener el formato sistólica/diastólica (ej.: 120/80)."
-        }
+  "components": {
+    "chatInterface": {
+      "placeholder": "Escribe tu mensaje..."
     },
-    "global": {
-        "successSave": "Guardado exitosamente",
-        "successShare": "Enviado exitosamente",
-        "errorSave": "Ocurrió un error al guardar.",
-        "errorSend": "Ocurrió un error al enviar los datos.",
-        "tryAgain": "Por favor, inténtalo de nuevo más tarde o actualiza la página.",
-        "emptyResponse": "El servidor no envió respuesta. Algo pudo haber fallado.",
-        "networkError": "Error de red – ¡verifica tu conexión a internet!",
-        "unknownError": "Ocurrió un error desconocido. 😔",
-        "errorLoad": "¡El archivo no contiene datos válidos!",
-        "invalidJson": "¡Formato de archivo inválido! Asegúrate de que hayas subido un archivo JSON.",
-        "anotherFile": "Por favor, inténtalo de nuevo o elige otro archivo.",
-        "needPermission": "Por favor, permite el acceso al almacenamiento."
+    "clickMenu": {
+      "showForm": "Mostrar formulario de datos",
+      "showChat": "Mostrar interfaz de chat"
+    },
+    "fileUpload": {
+      "title": "Sube tus datos",
+      "upload": "Elige un archivo o arrástralo aquí",
+      "lastLoaded": "Última carga"
+    },
+    "header": {
+      "settings": "Configuración"
+    },
+    "optionalFields": {
+      "heartRate": "Frecuencia cardíaca media",
+      "placeholderHeartRate": "ej.: 76",
+      "bloodPressure": "Presión arterial media",
+      "placeholderBloodPressure": "ej.: 120/80",
+      "sports": "Deportes",
+      "placeholderSports": "ej.: Correr, Natación",
+      "medications": "Medicamentos",
+      "placeholderMedications": "ej.: Aspirina, Paracetamol",
+      "chronicDiseases": "Enfermedades crónicas",
+      "placeholderChronicDiseases": "ej.: Hipertensión, Diabetes",
+      "allergies": "Alergias",
+      "placeholderAllergies": "ej.: Polen, Nueces",
+      "diet": "Dieta",
+      "placeholderDiet": "ej.: Vegetariana, Sin gluten",
+      "waterIntake": "Consumo diario de agua (litros)",
+      "placeholderWaterIntake": "ej.: 2.5",
+      "familyHistory": "Historial médico familiar",
+      "placeholderFamilyHistory": "ej.: Enfermedad cardíaca, Cáncer",
+      "smoking": "Tabaquismo",
+      "smokingOptions": {
+        "selectPlaceholder": "Selecciona el hábito de fumar",
+        "never": "Nunca",
+        "occasionally": "Ocasionalmente",
+        "regularly": "Regularmente"
+      },
+      "alcohol": "Consumo de alcohol",
+      "alcoholOptions": {
+        "selectPlaceholder": "Selecciona el hábito de consumo de alcohol",
+        "never": "Nunca",
+        "occasionally": "Ocasionalmente",
+        "regularly": "Regularmente"
+      },
+      "sleep": "Sueño (horas/día)",
+      "placeholderSleep": "ej.: 7",
+      "physicalActivityLevel": "Nivel de actividad física",
+      "placeholderPhysicalActivityLevel": "ej.: Bajo, Medio, Alto",
+      "workType": "Tipo de trabajo",
+      "placeholderWorkType": "ej.: Oficina, Físico, Mixto",
+      "stressLevel": "Nivel de estrés",
+      "placeholderStressLevel": "ej.: Bajo, Medio, Alto / 30, 60, 90",
+      "mentalHealth": "Salud mental",
+      "placeholderMentalHealth": "ej.: Depresión, Ansiedad",
+      "cholesterolLevel": "Nivel de colesterol",
+      "placeholderCholesterolLevel": "ej.: 200 mg/dL",
+      "bloodSugarLevel": "Nivel de azúcar en sangre",
+      "placeholderBloodSugarLevel": "ej.: 100 mg/dL",
+      "supplements": "Suplementos",
+      "placeholderSupplements": "ej.: Vitamina D, Omega‑3",
+      "vaccinations": "Vacunas",
+      "placeholderVaccinations": "ej.: Gripe, COVID‑19",
+      "reproductiveHealth": "Salud reproductiva",
+      "placeholderReproductiveHealth": "ej.: Ciclo menstrual, Embarazo",
+      "visionAndHearing": "Visión y audición",
+      "placeholderVisionAndHearing": "ej.: Miopía, Pérdida auditiva",
+      "sleepQuality": "Calidad del sueño",
+      "placeholderSleepQuality": "ej.: Buena, Regular, Mala",
+      "medicalRecords": "Informes médicos",
+      "placeholderMedicalRecords": "ej.: Análisis de sangre, Radiografía",
+      "medicalHistory": "Historial médico",
+      "placeholderMedicalHistory": "ej.: Cirugías, Hospitalizaciones"
+    },
+    "privacyModal": {
+      "title": "Aviso de privacidad",
+      "text1": "Los datos que proporciones serán utilizados exclusivamente por el sistema de asesoramiento sanitario y no se compartirán con terceros. El sistema no almacena tus datos; tú los gestionas y puedes guardarlos en tu dispositivo.",
+      "text2": "Al aceptar la política de privacidad, consientes que el sistema te brinde recomendaciones basadas en la información proporcionada."
+    },
+    "response": {
+      "title": "Respuesta de Dr. Sanovise:",
+      "analyzing": "Analizando los datos 📚🧠",
+      "thinking": "Pensando 🤔"
+    },
+    "settingsModal": {
+      "title": "Configuración",
+      "selectLanguage": "Selecciona el idioma:",
+      "selectAIModel": "Selecciona el modelo de IA:",
+      "version": "Versión"
+    },
+    "userForm": {
+      "requiredInfo": "¡Los campos marcados con <span class='required'>*</span> son obligatorios!",
+      "birthDate": "Fecha de nacimiento",
+      "gender": "Género",
+      "selectGender": "Selecciona género",
+      "male": "Hombre",
+      "female": "Mujer",
+      "height": "Altura",
+      "weight": "Peso",
+      "placeholderHeight": "ej.: 175",
+      "placeholderWeight": "ej.: 70",
+      "showExtra": "Mostrar datos adicionales",
+      "hideExtra": "Ocultar datos adicionales",
+      "acceptPrivacy": "Acepto la",
+      "privacyLink": "política de privacidad",
+      "submitData": "Enviar datos",
+      "abort": "No responder",
+      "exportData": "Exportar datos",
+      "invalidHeight": "La altura debe estar entre 50 cm y 300 cm.",
+      "invalidWeight": "El peso debe estar entre 1 kg y 500 kg.",
+      "invalidWaterIntake": "El consumo diario de agua debe estar entre 0 y 50 litros.",
+      "invalidHeartRate": "La frecuencia cardíaca debe estar entre 30 y 250.",
+      "invalidSleep": "El tiempo de sueño debe estar entre 0 y 24 horas.",
+      "invalidBloodPressure": "La presión arterial debe estar en formato sistólica/diastólica (ej.: 120/80)."
     }
+  },
+  "global": {
+    "successSave": "Guardado con éxito",
+    "successShare": "Enviado con éxito",
+    "errorSave": "Se produjo un error al guardar.",
+    "errorSend": "Se produjo un error al enviar los datos",
+    "tryAgain": "Inténtalo de nuevo más tarde o actualiza la página.",
+    "emptyResponse": "El servidor no respondió. Puede haberse perdido la conexión.",
+    "networkError": "Error de red – ¡verifica tu conexión a internet!",
+    "unknownError": "Ocurrió un error desconocido. 😔",
+    "errorLoad": "¡El archivo no contiene datos válidos!",
+    "invalidJson": "¡Formato de archivo no válido! Asegúrate de subir un archivo JSON.",
+    "anotherFile": "Inténtalo de nuevo o elige otro archivo.",
+    "needPermission": "Por favor, concede permiso de acceso al almacenamiento."
+  }
 }

@@ -1,5 +1,5 @@
 # Changelog
-## [Client version] - [Server Version] - [Date]
+
 ## [1.1.3] - [1.0.0] - 2025-06-27
 ### Added
 - **SettingsModal**: Added a version display in the settings modal.
@@ -7,6 +7,7 @@
 ### Changed
 - **i18n**: Added a new key for the version in the settings modal.
 - **ChatInterface**: Changed the scroll up/down button from center to right side.
+- **Response**: Removed animation from the streamed reponse.
 
 ### Fixed
 

@@ -1,135 +1,136 @@
 {
-    "components": {
-        "chatInterface": {
-            "placeholder": "Enter your message..."
-        },
-        "clickMenu": {
-            "showForm": "Show data entry form",
-            "showChat": "Show chat interface"
-        },
-        "fileUpload": {
-            "title": "Upload your data",
-            "upload": "Choose a file or drag it here",
-            "lastLoaded": "Last loaded"
-        },
-        "header": {
-            "settings": "Settings"
-        },
-        "optionalFields": {
-            "heartRate": "Heart Rate",
-            "placeholderHeartRate": "Enter your heart rate",
-            "bloodPressure": "Blood Pressure",
-            "placeholderBloodPressure": "Enter your blood pressure, e.g., 120/80",
-            "sports": "Sports",
-            "placeholderSports": "What sports do you practice?",
-            "medications": "Medications",
-            "placeholderMedications": "Enter your medications",
-            "chronicDiseases": "Chronic Diseases",
-            "placeholderChronicDiseases": "Enter your chronic diseases",
-            "allergies": "Allergies",
-            "placeholderAllergies": "Enter your allergies",
-            "diet": "Diet",
-            "placeholderDiet": "Enter your diet",
-            "waterIntake": "Daily Water Intake (liters)",
-            "placeholderWaterIntake": "Enter your daily water intake",
-            "familyHistory": "Family Medical History",
-            "placeholderFamilyHistory": "Enter your family medical history",
-            "smoking": "Smoking",
-            "smokingOptions": {
-                "never": "Never",
-                "occasionally": "Occasionally",
-                "regularly": "Regularly"
-            },
-            "selectPlaceholder": "Select",
-            "alcohol": "Alcohol Consumption",
-            "alcoholOptions": {
-                "never": "Never",
-                "occasionally": "Occasionally",
-                "regularly": "Regularly"
-            },
-            "sleep": "Sleep (hours/day)",
-            "placeholderSleep": "Enter your daily sleep duration",
-            "physicalActivityLevel": "Physical Activity Level",
-            "placeholderPhysicalActivityLevel": "Enter your activity level",
-            "workType": "Type of Work",
-            "placeholderWorkType": "Enter your type of work",
-            "stressLevel": "Stress Level",
-            "placeholderStressLevel": "Enter your stress level",
-            "mentalHealth": "Mental Health",
-            "placeholderMentalHealth": "Enter your mental state",
-            "cholesterolLevel": "Cholesterol Level",
-            "placeholderCholesterolLevel": "Enter your cholesterol level",
-            "bloodSugarLevel": "Blood Sugar Level",
-            "placeholderBloodSugarLevel": "Enter your blood sugar level",
-            "supplements": "Supplements",
-            "placeholderSupplements": "Enter your supplements",
-            "vaccinations": "Vaccinations",
-            "placeholderVaccinations": "Enter your vaccinations",
-            "reproductiveHealth": "Reproductive Health",
-            "placeholderReproductiveHealth": "Enter your reproductive health",
-            "visionAndHearing": "Vision and Hearing",
-            "placeholderVisionAndHearing": "Enter your vision and hearing issues",
-            "sleepQuality": "Sleep Quality",
-            "placeholderSleepQuality": "Enter your sleep quality",
-            "medicalRecords": "Medical Records",
-            "placeholderMedicalRecords": "Enter your medical records",
-            "medicalHistory": "Medical History",
-            "placeholderMedicalHistory": "Enter your previous illnesses"
-        },
-        "privacyModal": {
-            "title": "Our Privacy Policy",
-            "text1": "The data you provide is used solely by the healthcare advisory system and is not shared with third parties. Your data is not stored; you can manage and save it on your own device.",
-            "text2": "By accepting the privacy terms, you agree that our system may provide advice based on the information you provide."
-        },
-        "response": {
-            "title": "Dr. Sanovise's Answer:",
-            "analyzing": "Analyzing the data 📚🧠",
-            "thinking": "Thinking 🤔"
-        },
-        "settingsModal": {
-            "title": "Settings",
-            "selectLanguage": "Select your preferred language:",
-            "selectAIModel": "Select your preferred AI model:",
-            "version": "Version"
-        },
-        "userForm": {
-            "requiredInfo": "Fields marked with <span class='required'>*</span> are required!",
-            "birthDate": "Date of Birth",
-            "gender": "Gender",
-            "selectGender": "Select gender",
-            "male": "Male",
-            "female": "Female",
-            "height": "Height",
-            "weight": "Weight",
-            "placeholderHeight": "e.g., 175",
-            "placeholderWeight": "e.g., 70",
-            "showExtra": "Provide additional data",
-            "hideExtra": "Hide additional data",
-            "acceptPrivacy": "I accept the",
-            "privacyLink": "privacy policy",
-            "submitData": "Submit data",
-            "abort": "Abort response",
-            "exportData": "Export data",
-            "invalidHeight": "Height must be between 50 cm and 300 cm.",
-            "invalidWeight": "Weight must be between 1 kg and 500 kg.",
-            "invalidWaterIntake": "Daily water intake must be between 0 and 50 liters.",
-            "invalidHeartRate": "Heart rate must be between 30 and 250.",
-            "invalidSleep": "Sleep time must be between 0 and 24 hours.",
-            "invalidBloodPressure": "Blood pressure must be in the format systolic/diastolic (e.g., 120/80)."
-        }
+  "components": {
+    "chatInterface": {
+      "placeholder": "Type your message..."
     },
-    "global": {
-        "successSave": "Successfully saved",
-        "successShare": "Successfully sent",
-        "errorSave": "An error occurred while saving.",
-        "errorSend": "An error occurred while sending the data.",
-        "tryAgain": "Please try again later or refresh the page.",
-        "emptyResponse": "No response received from the server. Something might have gone wrong.",
-        "networkError": "Network error – please check your internet connection!",
-        "unknownError": "An unknown error occurred. 😔",
-        "errorLoad": "The file does not contain valid data!",
-        "invalidJson": "Invalid file format! Please make sure you uploaded a JSON file.",
-        "anotherFile": "Please try again or choose another file.",
-        "needPermission": "Please allow access to storage."
+    "clickMenu": {
+      "showForm": "Show data input form",
+      "showChat": "Show chat interface"
+    },
+    "fileUpload": {
+      "title": "Upload your data",
+      "upload": "Choose a file or drag it here",
+      "lastLoaded": "Last loaded"
+    },
+    "header": {
+      "settings": "Settings"
+    },
+    "optionalFields": {
+      "heartRate": "Average heart rate",
+      "placeholderHeartRate": "e.g., 76",
+      "bloodPressure": "Average blood pressure",
+      "placeholderBloodPressure": "e.g., 120/80",
+      "sports": "Sports",
+      "placeholderSports": "e.g., Running, Swimming",
+      "medications": "Medications",
+      "placeholderMedications": "e.g., Aspirin, Paracetamol",
+      "chronicDiseases": "Chronic diseases",
+      "placeholderChronicDiseases": "e.g., Hypertension, Diabetes",
+      "allergies": "Allergies",
+      "placeholderAllergies": "e.g., Pollen, Nuts",
+      "diet": "Diet",
+      "placeholderDiet": "e.g., Vegetarian, Gluten-free",
+      "waterIntake": "Daily water intake (liters)",
+      "placeholderWaterIntake": "e.g., 2.5",
+      "familyHistory": "Family medical history",
+      "placeholderFamilyHistory": "e.g., Heart disease, Cancer",
+      "smoking": "Smoking",
+      "smokingOptions": {
+        "selectPlaceholder": "Select smoking habit",
+        "never": "Never",
+        "occasionally": "Occasionally",
+        "regularly": "Regularly"
+      },
+      "alcohol": "Alcohol consumption",
+      "alcoholOptions": {
+        "selectPlaceholder": "Select alcohol consumption habit",
+        "never": "Never",
+        "occasionally": "Occasionally",
+        "regularly": "Regularly"
+      },
+      "sleep": "Sleep (hours/day)",
+      "placeholderSleep": "e.g., 7",
+      "physicalActivityLevel": "Physical activity level",
+      "placeholderPhysicalActivityLevel": "e.g., Low, Medium, High",
+      "workType": "Work type",
+      "placeholderWorkType": "e.g., Office, Physical, Mixed",
+      "stressLevel": "Stress level",
+      "placeholderStressLevel": "e.g., Low, Medium, High / 30, 60, 90",
+      "mentalHealth": "Mental health",
+      "placeholderMentalHealth": "e.g., Depression, Anxiety",
+      "cholesterolLevel": "Cholesterol level",
+      "placeholderCholesterolLevel": "e.g., 200 mg/dL",
+      "bloodSugarLevel": "Blood sugar level",
+      "placeholderBloodSugarLevel": "e.g., 100 mg/dL",
+      "supplements": "Supplements",
+      "placeholderSupplements": "e.g., Vitamin D, Omega‑3",
+      "vaccinations": "Vaccinations",
+      "placeholderVaccinations": "e.g., Flu, COVID‑19",
+      "reproductiveHealth": "Reproductive health",
+      "placeholderReproductiveHealth": "e.g., Menstrual cycle, Pregnancy",
+      "visionAndHearing": "Vision and hearing",
+      "placeholderVisionAndHearing": "e.g., Nearsightedness, Hearing loss",
+      "sleepQuality": "Sleep quality",
+      "placeholderSleepQuality": "e.g., Good, Fair, Poor",
+      "medicalRecords": "Medical records",
+      "placeholderMedicalRecords": "e.g., Blood test, X-ray",
+      "medicalHistory": "Medical history",
+      "placeholderMedicalHistory": "e.g., Surgeries, Hospitalizations"
+    },
+    "privacyModal": {
+      "title": "Our Privacy Notice",
+      "text1": "The information you provide is used solely by the health advisory system and is not shared with third parties. Your data is not stored by the system – you manage it and can download it to your device.",
+      "text2": "By accepting the privacy policy, you consent to the system providing advice based on the information you enter."
+    },
+    "response": {
+      "title": "Dr. Sanovise’s response:",
+      "analyzing": "Analyzing data 📚🧠",
+      "thinking": "Thinking 🤔"
+    },
+    "settingsModal": {
+      "title": "Settings",
+      "selectLanguage": "Select your preferred language:",
+      "selectAIModel": "Select your preferred AI model:",
+      "version": "Version"
+    },
+    "userForm": {
+      "requiredInfo": "Fields marked with <span class='required'>*</span> are required!",
+      "birthDate": "Birth date",
+      "gender": "Gender",
+      "selectGender": "Select gender",
+      "male": "Male",
+      "female": "Female",
+      "height": "Height",
+      "weight": "Weight",
+      "placeholderHeight": "e.g., 175",
+      "placeholderWeight": "e.g., 70",
+      "showExtra": "Show additional data",
+      "hideExtra": "Hide additional data",
+      "acceptPrivacy": "I accept the",
+      "privacyLink": "privacy policy",
+      "submitData": "Submit data",
+      "abort": "Do not respond",
+      "exportData": "Export data",
+      "invalidHeight": "Height must be between 50 cm and 300 cm.",
+      "invalidWeight": "Weight must be between 1 kg and 500 kg.",
+      "invalidWaterIntake": "Daily water intake must be between 0 and 50 liters.",
+      "invalidHeartRate": "Heart rate must be between 30 and 250.",
+      "invalidSleep": "Sleep time must be between 0 and 24 hours.",
+      "invalidBloodPressure": "Blood pressure must be in the format systole/diastole (e.g., 120/80)."
     }
+  },
+  "global": {
+    "successSave": "Successfully saved",
+    "successShare": "Successfully sent",
+    "errorSave": "An error occurred while saving.",
+    "errorSend": "An error occurred while sending the data",
+    "tryAgain": "Please try again later or refresh the page.",
+    "emptyResponse": "No response from server. There may have been a disconnection.",
+    "networkError": "Network error – check your internet connection!",
+    "unknownError": "An unknown error occurred. 😔",
+    "errorLoad": "The file does not contain valid data!",
+    "invalidJson": "Invalid file format! Please make sure it is a JSON file.",
+    "anotherFile": "Please try again or choose another file.",
+    "needPermission": "Please grant storage access permission."
+  }
 }
