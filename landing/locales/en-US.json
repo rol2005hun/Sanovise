@@ -1,208 +1,216 @@
 {
-    "pages": {
-        "about": {
-            "description": "👋 Welcome to a new dimension of health advisory! Our goal is to support our users in increasing their health awareness with the help of a digital health assistant. Our app is powered by artificial intelligence and allows for personalized health analysis.",
-            "goal": "🎯 Our Goal",
-            "goalText": "To create an innovative platform that provides useful information by analyzing your health data. Our assistant helps you understand your health status based on average heart rate, blood pressure, current medications, medical reports, birth date, weight, height, and other data, and can predict potential health problems.",
-            "features": "👀 Key Features",
-            "featuresList": [
-                "Analyzing user health data 📈",
-                "Personalized health advice ↩️",
-                "Export and import data in JSON format 🙈",
-                "Intuitive and responsive user interface 🎊"
-            ],
-            "howItWorks": "🛠️ How It Works?",
-            "howItWorksSteps": [
-                "Visit the <a href='https://app.sanovise.ranzak.site' target='_blank'>Sanovise App</a> website.",
-                "Enter your health data such as heart rate, blood pressure, height, weight, etc.",
-                "The app analyzes the data using artificial intelligence.",
-                "Receive feedback on your health status and get informed about possible diseases."
-            ],
-            "whyChooseUs": "👉 Why Choose This App?",
-            "whyChooseUsText": "Our health advisory system is built on modern technology that simplifies the management and analysis of your health data. With the integration of an intuitive user interface and artificial intelligence, you can gain a comprehensive understanding of your health status. It's the ideal choice for anyone who wants to actively track and improve their health.",
-            "thankYou": "Thank you for choosing us and giving us the opportunity to support you on your journey to a healthier lifestyle!"
-        },
-        "contact": {
-            "phone": "📞 Phone",
-            "phoneNumber": "+36 123 456 789",
-            "email": "📧 Email",
-            "emailAddress": "info{at}sanovise.com",
-            "address": "📍 Address",
-            "addressDetails": "Debrecen, Kassai út 1.",
-            "contactFormTitle": "📝 Write to us",
-            "nameLabel": "Name",
-            "namePlaceholder": "e.g., Dr. Sanovise",
-            "emailLabel": "Email",
-            "emailPlaceholder": "e.g., info{at}sanovise.com",
-            "messageLabel": "Message",
-            "messagePlaceholder": "e.g., There's a problem with the system!",
-            "submitButton": "Submit",
-            "agreeLabel": "I accept the terms and conditions of sending messages."
-        },
-        "download": {
-            "title": "Download the App",
-            "subtitle": "Choose the platform that suits you, or simply use the web version.",
-            "mobile": {
-                "title": "📱 Mobile Apps",
-                "description": "Take your health assistant anywhere with you.",
-                "android": {
-                    "title": "Android",
-                    "description": "Available for Android 6.0 and newer versions.",
-                    "button": "Download"
-                },
-                "ios": {
-                    "title": "iOS (iPhone/iPad)",
-                    "description": "Compatible with iOS 14 and newer systems.",
-                    "button": "Download"
-                }
-            },
-            "web": {
-                "title": "✨ Web App",
-                "emphasis": "✨ The easiest and most convenient way to use the app!",
-                "description": "No installation needed, immediately available from any modern browser.",
-                "launchButton": "🚀 Launch Web App",
-                "benefits": "Always up-to-date version, accessible from anywhere."
-            },
-            "desktop": {
-                "title": "🖥️ Desktop Apps",
-                "description": "Install the app directly to your computer for a seamless experience.",
-                "windows": {
-                    "title": "Windows"
-                },
-                "macos": {
-                    "title": "macOS"
-                },
-                "linux": {
-                    "title": "Linux (.deb / .AppImage)"
-                },
-                "downloadButton": "Download",
-                "note": "Choose the version appropriate for your operating system."
-            }
-        },
-        "index": {
-            "heroTitle": "🤖 Digital Health Assistant",
-            "heroDescription": "Explore your health data in detail and make the best decisions with the help of our recommendations!",
-            "getStarted": "Get Started",
-            "features": [
-                {
-                    "title": "📊 Detailed Analysis",
-                    "description": "We analyze your health data using the latest technologies. We provide personalized advice to improve your health."
-                },
-                {
-                    "title": "🛡️ Data Security",
-                    "description": "Privacy protocols and encryption at all levels. Your data is secure with us. Only you have access to your information."
-                },
-                {
-                    "title": "🌐 Multi-platform",
-                    "description": "Available on web, desktop, and mobile devices. Our app works seamlessly across all platforms."
-                }
-            ]
-        },
-        "terms": {
-            "title": "Terms and Conditions",
-            "lastUpdated": "Last updated: {date}",
-            "acceptanceText": [
-                "By using the service, you agree to these Terms and Conditions.",
-                "If you have any questions regarding the terms, please contact us."
-            ],
-            "sections": [
-                {
-                    "title": "1. Acceptance of Terms",
-                    "content": [
-                        "Welcome to the Sanovise website. By accessing the website, you agree to these Terms and Conditions, all applicable laws and regulations, and you accept responsibility for compliance with applicable local laws.",
-                        "If you do not agree with these terms, you are prohibited from using the website."
-                    ]
-                },
-                {
-                    "title": "2. License to Use",
-                    "content": [
-                        "You are permitted to temporarily download materials from the Sanovise website for personal, non-commercial use. This is a license, not a transfer of title, and under this license, you may not:",
-                        {
-                            "list": [
-                                "Modify or copy the materials",
-                                "Use the materials for commercial purposes",
-                                "Decompile or reverse engineer the software on the website",
-                                "Remove copyright or ownership notations",
-                                "Transfer the materials to another person or mirror the materials on another server"
-                            ]
-                        },
-                        "This license will automatically terminate if you violate any of these restrictions, and Sanovise may terminate it at any time."
-                    ]
-                },
-                {
-                    "title": "3. Disclaimer",
-                    "content": [
-                        "The materials on the Sanovise website are provided 'as is'. Sanovise makes no warranties, express or implied, and hereby disclaims all other warranties.",
-                        "Additionally, Sanovise does not guarantee the accuracy, effectiveness, or reliability of the materials on the website, nor does it take responsibility for content on other websites linked from the Sanovise site."
-                    ]
-                },
-                {
-                    "title": "4. Limitations",
-                    "content": [
-                        "In no event shall Sanovise or its suppliers be liable for any damages (including, but not limited to, damages from data loss or business interruptions) arising from the use or inability to use the website.",
-                        "As some jurisdictions do not allow the exclusion of implied warranties or the limitation of liability for consequential damages, these limitations may not apply to you."
-                    ]
-                },
-                {
-                    "title": "5. Accuracy of Materials",
-                    "content": [
-                        "The materials on the Sanovise website may contain technical, typographical, or photographic errors. Sanovise does not guarantee that any of the materials on the website are accurate, complete, or current.",
-                        "Sanovise may make changes to the materials on its website at any time without notice, but does not commit to updating them."
-                    ]
-                },
-                {
-                    "title": "6. Links",
-                    "content": [
-                        "Sanovise has not reviewed all of the websites linked to its own website and is not responsible for the contents of any linked website.",
-                        "The use of any such linked websites is at the user's own risk."
-                    ]
-                },
-                {
-                    "title": "7. Modifications",
-                    "content": [
-                        "Sanovise may revise these terms and conditions at any time without prior notice.",
-                        "By using the website, you accept the current terms."
-                    ]
-                },
-                {
-                    "title": "8. Governing Law",
-                    "content": [
-                        "These terms are governed by applicable law, and you irrevocably accept the exclusive jurisdiction of the courts in the relevant area."
-                    ]
-                },
-                {
-                    "title": "9. Privacy",
-                    "content": [
-                        "Sanovise is committed to protecting your data. We handle data processing in accordance with applicable laws and only process the data you provide or the data necessary for the app's operation.",
-                        "For more information, please read our Privacy Policy."
-                    ]
-                },
-                {
-                    "title": "10. Limitation of Liability",
-                    "content": [
-                        "The information provided by the app is for informational purposes only and does not substitute medical advice, diagnosis, or treatment.",
-                        "Sanovise is not responsible for the accuracy, completeness, or timeliness of the provided data, or for any damages resulting from decisions made based on that information."
-                    ]
-                },
-                {
-                    "title": "11. Contact",
-                    "content": [
-                        "If you have any questions or concerns about the Terms and Conditions, please contact us using the provided contact details."
-                    ]
-                }
-            ]
-        }
+  "pages": {
+    "about": {
+      "description": "👋 Welcome to a new dimension of health guidance! Our goal is to support users in boosting health awareness through a digital health assistant. Our app uses AI to enable personalized health analysis.",
+      "goal": "🎯 Our goal",
+      "goalText": "To create an innovative platform that analyzes your health data to deliver valuable insights. Our assistant helps you understand your health status and can anticipate potential issues based on average heart rate, blood pressure, current medications, medical records, birth date, weight, height, and more.",
+      "features": "👀 Main features",
+      "featuresList": [
+        "Analysis of user health data 📈",
+        "Personalized health advice ↩️",
+        "Export/import data in JSON format 🙈",
+        "Intuitive, responsive user interface 🎊"
+      ],
+      "howItWorks": "🛠️ How it works",
+      "howItWorksSteps": [
+        "Visit the <a href='https://app.sanovise.ranzak.site' target='_blank'>Sanovise App</a>.",
+        "Enter your health data such as heart rate, blood pressure, height, weight, etc.",
+        "The app uses AI to analyze the data.",
+        "Receive feedback on your health status and learn about possible conditions."
+      ],
+      "whyChooseUs": "👉 Why choose us?",
+      "whyChooseUsText": "Our health advisor system is built with modern technology that simplifies managing and analyzing your health data. With an intuitive UI and AI integration, you get a comprehensive view of your health. Ideal for anyone actively tracking and improving their wellbeing.",
+      "thankYou": "Thanks for choosing us and giving us the opportunity to support you on your path to a health-conscious lifestyle!"
     },
-    "components": {
-        "footer": {
-            "terms": "Terms and Conditions",
-            "copyright": "© 2025 Sanovise - All Rights Reserved."
+    "contact": {
+      "phone": "📞 Phone",
+      "phoneNumber": "+36 123 456 789",
+      "email": "📧 Email",
+      "emailAddress": "info{at}sanovise.com",
+      "address": "📍 Address",
+      "addressDetails": "Kassai út 1, Debrecen, Hungary",
+      "contactFormTitle": "📝 Write to us",
+      "nameLabel": "Name",
+      "namePlaceholder": "e.g., Dr. Sanovise",
+      "emailLabel": "Email",
+      "emailPlaceholder": "e.g., info{at}sanovise.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "e.g., I found a bug!",
+      "submitButton": "Send",
+      "agreeLabel": "I agree to the message sending terms."
+    },
+    "download": {
+      "title": "Download the app",
+      "subtitle": "Choose your platform or use the web version easily.",
+      "mobile": {
+        "title": "📱 Mobile apps",
+        "description": "Take your health assistant anywhere.",
+        "android": {
+          "title": "Android",
+          "description": "Available for Android 6.0 and above.",
+          "button": "Download"
         },
-        "header": {
-            "home": "Home",
-            "download": "Download",
-            "about": "About Us",
-            "contact": "Contact"
+        "ios": {
+          "title": "iOS (iPhone/iPad)",
+          "description": "Compatible with iOS 14 and above.",
+          "button": "Download"
         }
+      },
+      "web": {
+        "title": "✨ Web app",
+        "emphasis": "✨ The easiest and most convenient way to use the app!",
+        "description": "No installation needed — instantly available via any modern browser.",
+        "launchButton": "🚀 Launch web app",
+        "benefits": "Always up-to-date version, accessible from anywhere."
+      },
+      "desktop": {
+        "title": "🖥️ Desktop apps",
+        "description": "Install the app directly to your computer for a seamless experience.",
+        "windows": {
+          "title": "Windows"
+        },
+        "macos": {
+          "title": "macOS"
+        },
+        "linux": {
+          "title": "Linux (.deb / .AppImage)"
+        },
+        "downloadButton": "Download",
+        "note": "Choose the version that matches your operating system."
+      }
+    },
+    "index": {
+      "heroTitle": "🤖 Digital Health Assistant",
+      "heroDescription": "Explore your health data in detail and make the best decisions with our recommendations!",
+      "getStarted": "Get started",
+      "features": [
+        {
+          "title": "📊 In-depth analysis",
+          "description": "We analyze your health data using the latest technology and provide tailored advice to improve your wellbeing."
+        },
+        {
+          "title": "🛡️ Data security",
+          "description": "We use privacy protocols and encryption at every level. Your data is safe with us — only you can access your information."
+        },
+        {
+          "title": "🌐 Multi-platform",
+          "description": "Available on web, desktop, and mobile. Our app works smoothly across all platforms."
+        },
+        {
+          "title": "📥 Export data",
+          "description": "Export user data and chat history in JSON format — full control over your information. Safely download and archive anytime."
+        },
+        {
+          "title": "🔒 Privacy & anonymity",
+          "description": "All data is encrypted and only stored with your permission. We ensure anonymized operation throughout."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "lastUpdated": "Last updated: {date}",
+      "acceptanceText": [
+        "By using this service, you agree to these Terms of Use.",
+        "If you have any questions about the terms, please contact us."
+      ],
+      "sections": [
+        {
+          "title": "1. Acceptance of Terms",
+          "content": [
+            "Welcome to the Sanovise website. By accessing the site, you accept these Terms of Use, applicable laws, and acknowledge responsibility for compliance.",
+            "If you disagree with these terms, do not use the site."
+          ]
+        },
+        {
+          "title": "2. License to Use",
+          "content": [
+            "You are granted a limited license to temporarily download materials from Sanovise for personal, non-commercial viewing. This is not a transfer of ownership.",
+            {
+              "list": [
+                "Modifying or copying materials",
+                "Using materials for commercial purposes",
+                "Reverse engineering any software on the site",
+                "Removing copyright or proprietary notices",
+                "Transferring materials to another person or mirror server"
+              ]
+            },
+            "This license terminates if you violate these restrictions, and Sanovise may revoke it at any time."
+          ]
+        },
+        {
+          "title": "3. Disclaimer",
+          "content": [
+            "Materials on the Sanovise website are provided 'as is'. Sanovise disclaims all warranties, express or implied.",
+            "Sanovise does not guarantee accuracy, effectiveness, or reliability of the materials, nor is it responsible for external linked content."
+          ]
+        },
+        {
+          "title": "4. Limitations",
+          "content": [
+            "Sanovise and its suppliers are not liable for any damages (including data loss or business interruption) arising from your use of the site.",
+            "Some jurisdictions do not allow limitations on implied warranties or liability, so these limitations may not apply to you."
+          ]
+        },
+        {
+          "title": "5. Accuracy of Materials",
+          "content": [
+            "Materials may contain technical, typographical, or photographic errors. Sanovise does not guarantee accuracy or completeness.",
+            "Sanovise may change the content at any time without notice, but is not obligated to update it."
+          ]
+        },
+        {
+          "title": "6. Links",
+          "content": [
+            "Sanovise has not reviewed all websites linked from its site and is not responsible for their content.",
+            "Use of external links is at your own risk."
+          ]
+        },
+        {
+          "title": "7. Modifications",
+          "content": [
+            "Sanovise may update these Terms at any time without notice.",
+            "Your continued use of the site means you accept the current terms."
+          ]
+        },
+        {
+          "title": "8. Governing Law",
+          "content": [
+            "These terms are governed by applicable law, and you irrevocably submit to the exclusive jurisdiction of the local courts."
+          ]
+        },
+        {
+          "title": "9. Privacy",
+          "content": [
+            "Sanovise is committed to protecting your data. We process only information you provide and that is necessary for app functionality, in compliance with relevant laws.",
+            "For more details, please read our Privacy Policy."
+          ]
+        },
+        {
+          "title": "10. Limitation of Liability",
+          "content": [
+            "The app’s information is for informational purposes only and does not replace medical advice, diagnosis, or treatment.",
+            "Sanovise is not responsible for accuracy, completeness, or timeliness of the data, nor for decisions made based on it."
+          ]
+        },
+        {
+          "title": "11. Contact",
+          "content": [
+            "If you have questions about these Terms of Use, please contact us using the provided information."
+          ]
+        }
+      ]
     }
+  },
+  "components": {
+    "footer": {
+      "terms": "Terms of Use",
+      "copyright": "© 2025 Sanovise – All rights reserved."
+    },
+    "header": {
+      "home": "Home",
+      "download": "Download",
+      "about": "About",
+      "contact": "Contact"
+    }
+  }
 }

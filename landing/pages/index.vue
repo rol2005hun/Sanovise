@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-const features = useI18n().tm('pages.index.features') as any[];
+const features = computed(() => useI18n().tm('pages.index.features') as any[]);
 const newsArticles = ref<any[]>([]);
 
 const fetchNews = async () => {
@@ -45,10 +45,10 @@ const fetchNews = async () => {
         url: article.webUrl
       }));
     } else {
-      console.error('Failed to fetch news');
+      console.error('Failed to fetch news.');
     }
   } catch (error) {
-    console.error('Error fetching news:', error);
+    console.error('Error fetching news: ', error);
   }
 };
 

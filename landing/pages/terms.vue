@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-const sections = useI18n().tm('pages.terms.sections') as any[];
+const sections = computed(() => useI18n().tm('pages.terms.sections') as any[]);
 const lastUpdated = ref(new Date('2025-04-27').toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
