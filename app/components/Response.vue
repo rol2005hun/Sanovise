@@ -16,9 +16,6 @@
                 <span class="thinking-anim">
                     {{ $t(`components.response.${dataStore.responseType}`) }}
                 </span>
-                <button class="stop-answering" @click="stopAnswering">
-                    <i class="fa-solid fa-stop"></i>
-                </button>
             </div>
         </div>
     </div>
@@ -31,24 +28,6 @@ import { dataStore } from '@/store';
 
 const userScrolled = ref(false);
 const isAutoScrolling = ref(false);
-
-function stopAnswering() {
-    if (dataStore.controller) {
-        dataStore.controller.abort();
-        dataStore.responseType = null;
-
-        if (dataStore.currentResponse?.trim()) {
-            dataStore.messages.push({
-                role: 'assistant',
-                content: dataStore.currentResponse.trim()
-            });
-        }
-
-        dataStore.currentResponse = '';
-    }
-
-    scrollToBottom();
-}
 
 function scrollToBottom() {
     nextTick(() => {

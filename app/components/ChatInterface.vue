@@ -1,7 +1,8 @@
 <template>
     <div class="chat-box" v-if="dataStore.showChat">
         <button v-if="canScroll" @click="scrollToTopOrBottom" class="scroll-btn" title="scroll">
-            {{ scrolledOffset > 200 ? '⬇' : '⬆' }}
+            <span
+                v-html="scrolledOffset > 200 ? `<i class='fa-solid fa-up-long'></i>` : `<i class='fa-solid fa-down-long'></i>`"></span>
         </button>
 
         <form @submit.prevent="sendMessage" class="input-area">
@@ -15,10 +16,15 @@
                 <i class="fa-solid fa-download"></i>
             </button>
 
-            <button type="submit" :class="['send-button', {
-                disabled: !canSend
-            }]" :disabled="!canSend">
-                ➤</button>
+            <button v-if="dataStore.responseType" type="button" class="stop-answering" @click="stopAnswering"
+                title="Stop Answering">
+                <i class="fa-solid fa-stop"></i>
+            </button>
+
+            <button v-else type="submit" :class="['send-button', { disabled: !canSend }]" :disabled="!canSend"
+                title="Send Message">
+                ➤
+            </button>
         </form>
     </div>
 </template>
@@ -51,6 +57,21 @@ const canSend = computed(() =>
     dataStore.acceptedPrivacyPolicy === true &&
     userInput.value.trim().length > 0
 );
+
+function stopAnswering() {
+    if (dataStore.controller) {
+        dataStore.controller.abort();
+        dataStore.responseType = null;
+
+        if (dataStore.currentResponse?.trim()) {
+            dataStore.messages.push({
+                role: 'assistant',
+                content: dataStore.currentResponse.trim()
+            });
+        }
+        dataStore.currentResponse = '';
+    }
+}
 
 function updateScrollOffset() {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
@@ -120,7 +141,6 @@ async function sendMessage() {
                         content: trimmed,
                     });
                 }
-
                 dataStore.currentResponse = '';
                 break;
             }
@@ -146,7 +166,7 @@ async function exportChat() {
 
     if (Capacitor.isNativePlatform()) {
         try {
-            if (!checkPermissions()) return;
+            if (!(await checkPermissions())) return;
 
             await Filesystem.writeFile({
                 path: fileName,
@@ -176,6 +196,7 @@ async function exportChat() {
 
             toastStore.show(`✅ ${t('global.successShare')}: ${fileName}`, 'success');
         } catch (err) {
+            console.error('Error exporting/sharing chat:', err);
             toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}`, 'error');
         }
     } else {
@@ -184,8 +205,12 @@ async function exportChat() {
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
             link.download = fileName;
+            document.body.appendChild(link);
             link.click();
-        } catch {
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        } catch (err) {
+            console.error('Error exporting chat (web):', err);
             toastStore.show(`⚠️ ${t('global.errorSave')}\n\n${t('global.tryAgain')}`, 'error');
         }
     }

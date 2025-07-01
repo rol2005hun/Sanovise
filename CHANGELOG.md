@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.5] - [1.0.2] - 2025-07-01
+### Added
+
+### Changed
+- Scroll up/down buttons are now icons instead of emojis.
+- The response stop button now moved to the chat interface at the sending place.
+
+### Fixed
+- Fixed a problem with the req.ip, now works how is should.
+
 ## [1.1.4] - [1.0.1] - 2025-07-01
 ### Added
 - Added Discord logging for debugging purposes.
