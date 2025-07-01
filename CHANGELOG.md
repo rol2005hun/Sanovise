@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.1.4] - [1.0.1] - 2025-07-01
+### Added
+- Added Discord logging for debugging purposes.
+
+### Changed
+- Main language changed from Hungarian to English.
+- Removed `npm start2` script from the server package.json.
+
+### Fixed
+- Fixed some unhandled errors.
+
+## [1.1.3] - [1.0.0] - 2025-06-27
+### Added
+- **SettingsModal**: Added a version display in the settings modal.
+
+### Changed
+- **i18n**: Added a new key for the version in the settings modal.
+- **ChatInterface**: Changed the scroll up/down button from center to right side.
+- **Response**: Removed animation from the streamed reponse.
+
+## [1.1.4] - [1.0.0] - 2025-06-30
+### Added
+
+### Changed
+- **i18n**: Updated the i18n keys for every language.
+
+### Fixed
+- **i18n**: Fixed the problem with non-reactive locales.
+
 ## [1.1.3] - [1.0.0] - 2025-06-27
 ### Added
 - **SettingsModal**: Added a version display in the settings modal.
