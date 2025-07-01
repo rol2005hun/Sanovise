@@ -6,6 +6,8 @@ import { sendDiscordLog } from './utils/discordLogger';
 
 const server = express();
 
+server.set('trust proxy', true);
+
 server.use(express.json());
 server.use(cors());
 server.use(express.urlencoded({ extended: true }));
