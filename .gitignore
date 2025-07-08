@@ -1,24 +1,6 @@
 # MAIN IGNORES
 node_modules
 
-# LANDING IGNORES
-landing/node_modules
-landing/package-lock.json
-landing/.output
-landing/.data
-landing/.nuxt
-landing/.nitro
-landing/.cache
-landing/dist
-landing/logs
-landing/*.log
-landing/.DS_Store
-landing/.fleet
-landing/.idea
-landing/.env
-landing/.env.*
-landing/!.env.example
-
 # APP IGNORES
 app/node_modules
 app/package-lock.json
@@ -37,7 +19,24 @@ app/.env
 app/.env.*
 app/!.env.example
 app/android
-app/src-tauri
+
+# LANDING IGNORES
+landing/node_modules
+landing/package-lock.json
+landing/.output
+landing/.data
+landing/.nuxt
+landing/.nitro
+landing/.cache
+landing/dist
+landing/logs
+landing/*.log
+landing/.DS_Store
+landing/.fleet
+landing/.idea
+landing/.env
+landing/.env.*
+landing/!.env.example
 
 # SERVER IGNORES
 server/node_modules
