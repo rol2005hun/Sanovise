@@ -39,12 +39,12 @@
 
         <div class="buttons">
             <button v-if="!dataStore.responseType" type="submit" @click="validateForm"
-                :class="['submit', { 'disabled': !dataStore.acceptedPrivacyPolicy || dataStore.messages.length > 0 || !isUserDataComplete}]"
+                :class="['submit', { 'disabled': !dataStore.acceptedPrivacyPolicy || dataStore.messages.length > 0 || !isUserDataComplete }]"
                 :disabled="!dataStore.acceptedPrivacyPolicy || dataStore.messages.length > 0 || !isUserDataComplete">{{
                     $t('components.userForm.submitData')
                 }}</button>
             <button v-else type="button" @click="stopAnswering()" class="abort">{{ $t('components.userForm.abort')
-                }}</button>
+            }}</button>
             <button type="button" :class="['export', {
                 'disabled': !isUserDataComplete
             }]" :disabled="!isUserDataComplete" @click="exportData">{{ $t('components.userForm.exportData') }}</button>

@@ -1,18 +1,18 @@
 <template>
     <div class="right-click-menu" v-if="showMenu" :style="{ top: `${menuY}px`, left: `${menuX}px` }">
         <div class="menu-item">
-            <input type="checkbox" id="checkbox1" v-model="dataStore.showForm"/>
+            <input type="checkbox" id="checkbox1" v-model="dataStore.showForm" />
             <label for="checkbox1">{{ $t('components.clickMenu.showForm') }}</label>
         </div>
         <div class="menu-item">
-            <input type="checkbox" id="checkbox2" v-model="dataStore.showChat"/>
+            <input type="checkbox" id="checkbox2" v-model="dataStore.showChat" />
             <label for="checkbox2">{{ $t('components.clickMenu.showChat') }}</label>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { dataStore } from '~/store';
+import { dataStore } from '@/store';
 
 const showMenu = ref(false);
 const menuX = ref(0);

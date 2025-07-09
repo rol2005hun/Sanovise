@@ -38,7 +38,8 @@
 
         <label for="smoking">{{ $t('components.optionalFields.smoking') }}</label>
         <select id="smoking" v-model="dataStore.userData.smoking">
-            <option value="" disabled selected>{{ $t('components.optionalFields.smokingOptions.selectPlaceholder') }}</option>
+            <option value="" disabled selected>{{ $t('components.optionalFields.smokingOptions.selectPlaceholder') }}
+            </option>
             <option value="never">{{ $t('components.optionalFields.smokingOptions.never') }}</option>
             <option value="occasionally">{{ $t('components.optionalFields.smokingOptions.occasionally') }}</option>
             <option value="regularly">{{ $t('components.optionalFields.smokingOptions.regularly') }}</option>
@@ -46,7 +47,8 @@
 
         <label for="alcohol">{{ $t('components.optionalFields.alcohol') }}</label>
         <select id="alcohol" v-model="dataStore.userData.alcohol">
-            <option value="" disabled selected>{{ $t('components.optionalFields.alcoholOptions.selectPlaceholder') }}</option>
+            <option value="" disabled selected>{{ $t('components.optionalFields.alcoholOptions.selectPlaceholder') }}
+            </option>
             <option value="never">{{ $t('components.optionalFields.alcoholOptions.never') }}</option>
             <option value="occasionally">{{ $t('components.optionalFields.alcoholOptions.occasionally') }}</option>
             <option value="regularly">{{ $t('components.optionalFields.alcoholOptions.regularly') }}</option>
