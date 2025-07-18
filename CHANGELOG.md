@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.6] - [1.0.3] - 2025-07-09
+## [1.1.6] - [1.0.3] - 2025-07-18
 ### Added
 - Added new AI model: Dr. Sanovise, which is a Hugging Face model. (test only)
 
