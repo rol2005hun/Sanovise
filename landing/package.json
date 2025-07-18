@@ -13,8 +13,8 @@
   "author": "ranzak",
   "license": "ISC",
   "dependencies": {
-    "@nuxtjs/i18n": "^9.5.6",
-    "nuxt": "^3.17.6",
+    "@nuxtjs/i18n": "^10.0.0",
+    "nuxt": "^4.0.0",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
