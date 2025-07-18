@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.6] - [1.0.3] - 2025-07-09
+### Added
+- Added new AI model: Dr. Sanovise, which is a Hugging Face model. (test only)
+
+### Changed
+- The scroll up/down buttons has been reversed.
+- Updated the .env.example file with a new OpenAI API key and Discord webhook URL.
+
+### Fixed
+- Now answers at the selected language.
+- If the answer failes, you can retry without reloading the page.
+
 ## [1.1.5] - [1.0.2] - 2025-07-01
 ### Added
 

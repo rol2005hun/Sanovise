@@ -39,8 +39,8 @@
 
         <div class="buttons">
             <button v-if="!dataStore.responseType" type="submit" @click="validateForm"
-                :class="['submit', { 'disabled': !dataStore.acceptedPrivacyPolicy || dataStore.messages.length > 0 || !isUserDataComplete }]"
-                :disabled="!dataStore.acceptedPrivacyPolicy || dataStore.messages.length > 0 || !isUserDataComplete">{{
+                :class="['submit', { 'disabled': !dataStore.acceptedPrivacyPolicy || hasValidMessages || !isUserDataComplete }]"
+                :disabled="!dataStore.acceptedPrivacyPolicy || hasValidMessages || !isUserDataComplete">{{
                     $t('components.userForm.submitData')
                 }}</button>
             <button v-else type="button" @click="stopAnswering()" class="abort">{{ $t('components.userForm.abort')
@@ -71,6 +71,15 @@ const isUserDataComplete = computed(() => {
     );
 });
 
+const hasValidMessages = computed(() => {
+    return dataStore.messages.some(msg =>
+        msg.role !== 'assistant' || (
+            msg.role === 'assistant' &&
+            !msg.content.startsWith('⚠️')
+        )
+    );
+});
+
 async function submitData() {
     if (!validateForm()) return;
 
@@ -81,15 +90,20 @@ async function submitData() {
         const controller = new AbortController();
         const { signal } = controller;
         dataStore.controller = controller;
-
-        const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice2', {
+        
+        const response = await fetch(`http://localhost:6969/api/${dataStore.userData.selectedModel.type}`, {
             method: 'POST',
             signal,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
-            body: JSON.stringify(dataStore.userData),
+            body: (
+                JSON.stringify({
+                    ...dataStore.userData,
+                    selectedModel: dataStore.userData.selectedModel.id
+                })
+            ),
         });
 
         if (!response.body) throw new Error(t('global.emptyResponse'));
@@ -117,8 +131,6 @@ async function submitData() {
             dataStore.responseType = 'thinking';
         }
     } catch (error: any) {
-        dataStore.responseType = null;
-
         if (error.name !== 'AbortError') {
             let errorMessage = '';
 
@@ -136,6 +148,7 @@ async function submitData() {
             });
         }
 
+        dataStore.responseType = null;
         dataStore.currentResponse = '';
     }
 }

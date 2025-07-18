@@ -2,7 +2,7 @@
     <div class="chat-box" v-if="dataStore.showChat">
         <button v-if="canScroll" @click="scrollToTopOrBottom" class="scroll-btn" title="scroll">
             <span
-                v-html="scrolledOffset > 200 ? `<i class='fa-solid fa-up-long'></i>` : `<i class='fa-solid fa-down-long'></i>`"></span>
+                v-html="scrolledOffset > 200 ? `<i class='fa-solid fa-down-long'></i>` : `<i class='fa-solid fa-up-long'></i>`"></span>
         </button>
 
         <form @submit.prevent="sendMessage" class="input-area">

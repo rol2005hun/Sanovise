@@ -15,7 +15,7 @@
 
             <div class="ai-model-selection">
                 <label for="ai-model">{{ $t('components.settingsModal.selectAIModel') }}</label>
-                <select id="ai-model" v-model="selectedModel" class="ai-model-select">
+                <select id="ai-model" v-model="selectedModelId" class="ai-model-select">
                     <option v-for="model in aiModels" :key="model.id" :value="model.id">
                         {{ model.name }}
                     </option>
@@ -34,15 +34,15 @@ import { dataStore } from '@/store';
 import packageJson from '../package.json';
 
 const { locales, locale, setLocale } = useI18n();
-
 const aiModels = [
-    { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1' },
-    { id: 'deepseek/deepseek-chat-v3-0324:free', name: 'DeepSeek V3' },
-    { id: 'microsoft/mai-ds-r1:free', name: 'MAI DS R1' },
-    { id: 'deepseek/deepseek-r1-zero:free', name: 'DeepSeek R1 Zero' },
+    { id: 'zeeshaan-ai/Medical-Summary-Notes-ONNX', name: 'Dr. Sanovise', type: 'advice'},
+    { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1', type: 'advice2'},
+    { id: 'deepseek/deepseek-chat-v3-0324:free', name: 'DeepSeek V3', type: 'advice2'},
+    { id: 'deepseek/deepseek-r1-zero:free', name: 'DeepSeek R1 Zero', type: 'advice2'},
+    { id: 'microsoft/mai-ds-r1:free', name: 'MAI DS R1', type: 'advice2'},
 ];
-
-const selectedModel = ref(aiModels[0].id);
+const appVersion = ref(packageJson.version);
+const selectedModel = ref(aiModels.find(model => model.id === dataStore.userData.selectedModel?.id) || aiModels[1]);
 
 const language = computed({
     get: () => locale.value,
@@ -51,10 +51,15 @@ const language = computed({
     }
 });
 
-const appVersion = ref(packageJson.version);
-
-watch(selectedModel, (newModel) => {
-    dataStore.userData.selectedModel = newModel;
+const selectedModelId = computed({
+  get: () => selectedModel.value.id,
+  set: (newId: string) => {
+    const newModel = aiModels.find(model => model.id === newId);
+    if (newModel) {
+      selectedModel.value = newModel;
+      dataStore.userData.selectedModel = newModel;
+    }
+  }
 });
 </script>
 

@@ -33,7 +33,7 @@ export const useData = defineStore('data', {
             symptoms: '',
             medicalHistory: '',
             language: '',
-            selectedModel: 'deepseek/deepseek-r1:free'
+            selectedModel: { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1', type: 'advice2'}
         },
         messages: [] as { role: string, content: string }[],
         currentResponse: null as string | null,
@@ -44,9 +44,5 @@ export const useData = defineStore('data', {
         showChat: true,
         acceptedPrivacyPolicy: false,
         controller: <AbortController | null>(null),
-    }),
-
-    actions: {
-
-    }
+    })
 });

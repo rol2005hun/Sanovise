@@ -27,7 +27,10 @@ function importData(event: Event) {
             const jsonData = JSON.parse(e.target?.result as string);
 
             if (jsonData.birthDate) {
-                dataStore.userData = jsonData;
+                dataStore.userData = {
+                    ...dataStore.userData,
+                    ...jsonData
+                };
             } else if (Array.isArray(jsonData) && jsonData[0]?.role) {
                 dataStore.messages = jsonData;
             } else {

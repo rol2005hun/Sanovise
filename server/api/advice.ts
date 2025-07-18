@@ -11,7 +11,7 @@ let pipe: any;
 (async () => {
     try {
         env.cacheDir = './.cache';
-        pipe = await pipeline('text-generation', 'HuggingFaceTB/SmolLM2-1.7B-Instruct');
+        pipe = await pipeline('text-generation', 'zeeshaan-ai/Medical-Summary-Notes-ONNX');
         console.log('[Sanovise - Success] Model loaded successfully.');
         sendDiscordLog('Hugging Face model loaded successfully.', 'INFO');
     } catch (error) {
@@ -181,7 +181,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
             },
         });
 
-        await pipe(messages, { max_new_tokens: 512, temperature: 0.7, top_k: 100, top_p: 0.8, do_sample: true, streamer });
+        await pipe(chatMessages, { max_new_tokens: 512, temperature: 0.7, top_k: 100, top_p: 0.8, do_sample: true, streamer });
         res.end();
 
         const duration = Date.now() - startTime;
@@ -327,6 +327,12 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
                     - Blood Sugar Level: ${bloodSugarLevel || 'N/A'}
                     - Reproductive Health: ${reproductiveHealth || 'N/A'}
                     - Vision and Hearing: ${visionAndHearing || 'N/A'}
+
+                    Based on all of this, please give me a clear and direct medical assessment. Speak to me like we’re in a real consultation. Tell me what my data means, point out any risks, and explain how they might affect my health. I want **practical, specific advice** on what I should do to improve things.
+
+                    Please also explain what could happen if I don’t follow these recommendations, and help me understand the long-term consequences — in a way that's easy to grasp.
+
+                    Answer in language: ${language}
                 `
             }
         ];

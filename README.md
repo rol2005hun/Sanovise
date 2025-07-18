@@ -2,18 +2,19 @@
 
 ## 📝 Description
 
-This application is a digital health assistant that uses artificial intelligence to analyze user data. The analyzed data includes:
-- ❤️ Average heart rate, blood pressure
+Sanovise is a digital health assistant powered by artificial intelligence, designed to analyze user health data and provide meaningful insights. The types of data it analyzes include:
+
+- ❤️ Average heart rate and blood pressure
 - 📅 Date of birth, weight, height
 - 💊 List of medications
 - 📄 Medical records
+- ⚠️ Symptoms, lifestyle factors, family history
 
-etc.
+The application processes this information to provide users with an overview of their health status and potential risks.
 
-The application processes this data and provides information about the user's health status and potential risks.
-**⚠️ It is important to note that this application does not replace a consultation with a doctor!**
+**⚠️ Note:** This application does *not* replace professional medical consultation. It is intended for informational purposes only.
 
-**🌍 Multiple languages supported**: The application is available in several languages, including English, Hungarian, Spanish, French, German, Russian, Chinese, Arabic, and Hindi.
+**🌍 Multilingual Support:** Sanovise is available in several languages, including English, Hungarian, Spanish, French, German, Russian, Chinese, Arabic, and Hindi.
 
 ---
 
@@ -23,46 +24,42 @@ The application processes this data and provides information about the user's he
 - **🖥️ Framework:** Nuxt.js (Vue.js-based)
 - **📝 Language:** TypeScript
 - **🎨 Styling:** SCSS
-- **📱 Platforms:** Web, Desktop (Tauri/Electron), Mobile (Capacitor)
+- **📱 Platforms:** Web, Desktop (via Tauri/Electron), Mobile (via Capacitor)
 
 ### **Backend**
 - **🌐 Server:** Node.js + Express.js
-- **🧠 AI Model:** AI model integrated with transformers.js, supporting Hugging Face models
-- **📂 Data Handling:** JSON export/import
+- **🧠 AI Model:** Integrated with Transformers.js, supporting Hugging Face models
+- **📂 Data Handling:** JSON import/export
 
 ### **🚀 Hosting & Deployment**
-- **Frontend:** Netlify + Cloudflare, custom domain
-- **Backend:** Google Cloud virtual machine
+- **Frontend:** Netlify + Cloudflare with a custom domain
+- **Backend:** Google Cloud VM instance
 
 ---
 
 ## ✨ Features
 
-- 📊 Analysis of user data (e.g., blood pressure, heart rate, medications)
-- 🤖 Processing of medical records using AI
-- 🏥 AI-based health consultation
-- 💾 JSON data saving: export/import
+- 📊 Health data analysis (e.g., blood pressure, heart rate, medications)
+- 🤖 AI-based medical record processing
+- 🏥 AI-powered health consultation and risk assessment
+- 💾 JSON data saving, export & import functionality
+- 📱 Mobile-ready & multi-platform support
+- 🔁 Real-time response streaming via API
 
 ---
 
-## 📅 Development Plan
+## 🎥 Demo Video & Feature Walkthrough
 
-**🟢 Month 1: Planning**
-- 🏗️ Designing system architecture
-- 📌 Structuring user data collection
+Curious how **Sanovise** works in action? Check out the official demo video for a full overview of the app's functionality and user experience:
 
-**🔵 Month 2: Frontend Development**
-- 🎨 Developing UI components
-- 🔄 Implementing JSON export/import functionality
+📺 **Watch now**: [Meet Sanovise!](https://www.youtube.com/watch?v=1CuafcQSEeg)
 
-**🟣 Month 3: Backend Development & AI Integration**
-- 🌐 Developing a Node.js server
-- 🧠 Integrating a TensorFlow-based AI model
-- 🔗 Creating API endpoints
-
-**🟡 Month 4: Testing & Optimization**
-- 🐞 Bug fixes, optimizing responsiveness
-- 🚀 Deploying frontend on Netlify & hosting the backend
+### What the video covers:
+- 🧠 AI model processing and user feedback
+- 📱 Live form handling and interface tour
+- 🌍 Multilingual usage demonstration
+- 💾 JSON export/import features
+- ⚠️ Health risk alerts and advisory system
 
 ---
 
@@ -87,9 +84,9 @@ The frontend will be available at **http://localhost:3000/**.
 
 ### **4️⃣ Start the backend**
 ```bash
-cd server && npm run start2
+cd server && npm run start
 ```
-The backend will run at **http://localhost:2999/**.
+The backend will be available at **http://localhost:2999/** (ensure your `.env` file is correctly configured).
 
 ---
 
@@ -101,6 +98,8 @@ The backend will run at **http://localhost:2999/**.
 4. 🚀 Push to the branch: `git push origin new-feature`
 5. 🔃 Open a Pull Request
 
+All contributions, feedback, and ideas are welcome!
+
 ---
 
 ## 📜 License
@@ -111,4 +110,4 @@ The backend will run at **http://localhost:2999/**.
 
 **👨‍💻 Created by:** ranzak
 
-For any inquiries, feel free to reach out on GitHub or via email! 📩
+For any inquiries, feel free to reach out on GitHub or via [email](mailto:contact@ranzak.site)! 📩
