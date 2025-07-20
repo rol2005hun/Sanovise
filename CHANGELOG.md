@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.7] - [1.0.3] - 2025-07-18
+## [1.1.7] - [1.0.3] - 2025-07-21
 **Hotfix** for issues in the [1.1.6] update.
 ### Added
 - Added new AI model: Kimi K2, which is an OpenRouter model.
