@@ -101,6 +101,7 @@ async function submitData() {
             body: (
                 JSON.stringify({
                     ...dataStore.userData,
+                    messages: dataStore.messages,
                     selectedModel: dataStore.userData.selectedModel.id
                 })
             ),

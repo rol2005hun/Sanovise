@@ -109,18 +109,21 @@ async function sendMessage() {
         const controller = new AbortController();
         const { signal } = controller;
         dataStore.controller = controller;
-
-        const response = await fetch('https://api.app.sanovise.ranzak.site/api/advice2', {
+        
+        const response = await fetch(`https://api.app.sanovise.ranzak.site/api/${dataStore.userData.selectedModel.type}`, {
             method: 'POST',
             signal,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
             },
-            body: JSON.stringify({
-                ...dataStore.userData,
-                messages: dataStore.messages,
-            }),
+            body: (
+                JSON.stringify({
+                    ...dataStore.userData,
+                    messages: dataStore.messages,
+                    selectedModel: dataStore.userData.selectedModel.id
+                })
+            ),
         });
 
         if (!response.body) throw new Error(t('global.emptyResponse'));

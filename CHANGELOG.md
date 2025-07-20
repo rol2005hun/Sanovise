@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.7] - [1.0.3] - 2025-07-18
+**Hotfix** for issues in the [1.1.6] update.
+### Added
+- Added new AI model: Kimi K2, which is an OpenRouter model.
+
+### Changed
+
+### Fixed
+- Fixed the chat, now the AI answers the question.
+
 ## [1.1.6] - [1.0.3] - 2025-07-18
 ### Added
 - Added new AI model: Dr. Sanovise, which is a Hugging Face model. (test only)
