@@ -40,7 +40,8 @@ const aiModels = [
     { id: 'deepseek/deepseek-chat-v3-0324:free', name: 'DeepSeek V3', type: 'advice2'},
     { id: 'deepseek/deepseek-r1-zero:free', name: 'DeepSeek R1 Zero', type: 'advice2'},
     { id: 'microsoft/mai-ds-r1:free', name: 'MAI DS R1', type: 'advice2'},
-    { id: 'moonshotai/kimi-k2:free', name: 'Kimi K2', type: 'advice2'}
+    { id: 'moonshotai/kimi-k2:free', name: 'Kimi K2', type: 'advice2'},
+    { id: 'qwen/qwen3-coder:free', name: 'Qwen 3 Coder', type: 'advice2'}
 ];
 const appVersion = ref(packageJson.version);
 const selectedModel = ref(aiModels.find(model => model.id === dataStore.userData.selectedModel?.id) || aiModels[1]);

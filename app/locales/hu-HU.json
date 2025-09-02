@@ -13,7 +13,8 @@
             "lastLoaded": "Utoljára betöltve"
         },
         "header": {
-            "settings": "Beállítások"
+            "settings": "Beállítások",
+            "resetConfirmation": "Biztosan vissza szeretné állítani az összes beállítást és adatot?"
         },
         "optionalFields": {
             "heartRate": "Átlag pulzusszám",

@@ -12,10 +12,13 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n();
 const showSettingsModal = ref(false);
 
 function resetAll() {
-    useRouter().go(0);
+    if (confirm(t('components.header.resetConfirmation'))) {
+        useRouter().go(0);
+    }
 }
 </script>
 

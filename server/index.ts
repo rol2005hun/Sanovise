@@ -23,7 +23,7 @@ server.use((req: Request, res: Response, next: NextFunction) => {
 
 server.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error('[Sanovise - Error] Unhandled server error: ', err);
-  
+
   sendDiscordLog(
     `Unhandled server error: ${err.message}. ` +
     `Stack: ${err.stack ? err.stack.substring(0, 1000) : 'N/A'}. ` +

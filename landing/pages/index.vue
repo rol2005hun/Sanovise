@@ -12,7 +12,7 @@
       <div class="news-container">
         <div class="news-item" v-for="item in newsArticles" :key="item.title" @click="openArticle(item.url)">
           <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
+          <p v-html="item.description"></p>
         </div>
       </div>
 
@@ -31,13 +31,13 @@ const features = computed(() => useI18n().tm('pages.index.features') as any[]);
 const newsArticles = ref<any[]>([]);
 
 const fetchNews = async () => {
-  const apiKey = '845f4cfb-9408-4252-b5cb-75f2444f20f0';
+  const apiKey = '15dc1018-b768-4c2b-8566-bba934576d88';
   const url = `https://content.guardianapis.com/search?q=health&api-key=${apiKey}&show-fields=trailText&page-size=4`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
-    
+
     if (data.response.status === 'ok') {
       newsArticles.value = data.response.results.slice(0, 4).map((article: any) => ({
         title: article.webTitle,
