@@ -91,7 +91,11 @@
       "title": "सेटिंग्स",
       "selectLanguage": "अपनी पसंदीदा भाषा चुनें:",
       "selectAIModel": "अपना पसंदीदा एआई मॉडल चुनें:",
-      "version": "संस्करण"
+  "version": "संस्करण",
+  "deleteAccount": "Delete account",
+  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+  "deleteSuccess": "Account deleted",
+  "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "<span class='required'>*</span> चिह्नित फ़ील्ड आवश्यक हैं!",
@@ -121,6 +125,8 @@
   },
   "global": {
     "successSave": "सफलतापूर्वक सहेजा गया",
+  "autoSaveSuccess": "✅ Data automatically saved",
+  "autoSaveFailure": "⚠️ Automatic save failed: {error}",
     "successShare": "सफलतापूर्वक भेजा गया",
     "errorSave": "सेव करते समय त्रुटि हुई।",
     "errorSend": "डेटा भेजते समय त्रुटि हुई।",

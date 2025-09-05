@@ -3,6 +3,7 @@
     <Header />
     <Toast />
     <ClickMenu />
+    <AuthModal />
     <main class="main-container">
       <NuxtPage />
     </main>

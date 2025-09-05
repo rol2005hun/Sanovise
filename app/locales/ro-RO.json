@@ -91,7 +91,11 @@
       "title": "Setări",
       "selectLanguage": "Selectează limba dorită:",
       "selectAIModel": "Selectează modelul AI:",
-      "version": "Versiune"
+      "version": "Versiune",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Câmpurile marcate cu <span class='required'>*</span> sunt obligatorii!",
@@ -121,6 +125,8 @@
   },
   "global": {
     "successSave": "Salvat cu succes",
+  "autoSaveSuccess": "✅ Date salvate automat",
+  "autoSaveFailure": "⚠️ Salvarea automată a eșuat: {error}",
     "successShare": "Trimis cu succes",
     "errorSave": "Eroare la salvare.",
     "errorSend": "Eroare la trimiterea datelor",

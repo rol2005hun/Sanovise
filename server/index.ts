@@ -1,6 +1,8 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import adviceRouter from './api/advice';
+import authRouter from './api/auth';
+import { connectDB } from './utils/db';
 import 'dotenv/config';
 import { sendDiscordLog } from './utils/discordLogger';
 
@@ -9,10 +11,15 @@ const server = express();
 server.set('trust proxy', true);
 
 server.use(express.json());
-server.use(cors());
+server.use(cors({ origin: true, credentials: true }));
 server.use(express.urlencoded({ extended: true }));
 
 server.use('/api', adviceRouter);
+server.use('/api/auth', authRouter);
+
+connectDB().catch(err => {
+  console.error('[Sanovise - Error] Initial DB connection failed: ', err);
+});
 
 server.use((req: Request, res: Response, next: NextFunction) => {
   const errorMessage = `Endpoint not found: ${req.method} ${req.originalUrl}`;

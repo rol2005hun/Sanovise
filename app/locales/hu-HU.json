@@ -1,5 +1,31 @@
 {
+    "pages": {
+    "auth": {
+            "login": "Bejelentkezés",
+            "register": "Regisztráció",
+            "goToRegister": "Regisztrálok",
+            "goToLogin": "Bejelentkezek",
+            "email": "Email",
+            "password": "Jelszó",
+            "passwordConfirm": "Jelszó ismét",
+            "acceptPrivacy": "Elfogadom az",
+            "privacyLink": "adatvédelmi irányelveket",
+            "rememberMe": "Maradjak bejelentkezve",
+            "fillEmailPassword": "Kérlek töltsd ki az emailt és jelszót.",
+            "loginFailed": "Bejelentkezés sikertelen.",
+            "loginSuccess": "Sikeres bejelentkezés.",
+            "logoutSuccess": "Sikeres kijelentkezés.",
+            "fillAll": "Kérlek töltsd ki az összes mezőt és fogadd el az adatvédelmi irányelveket.",
+            "registerFailed": "Regisztráció sikertelen.",
+            "registerSuccess": "Sikeres regisztráció."
+        }
+    },
     "components": {
+        "authModal": {
+            "title": "Jelentkezzen be!",
+            "description": "Ha bejelentkezik, mégkönnyebben elmentheti és betöltheti adatait eszközei között. Csupán egy felhasználónév és jelszó párosra van szüksége hozzá.",
+            "go": "Mehet"
+        },
         "chatInterface": {
             "placeholder": "Írja be üzenetét..."
         },
@@ -9,7 +35,7 @@
         },
         "fileUpload": {
             "title": "Töltse fel adatait",
-            "upload": "Válassz fájlt vagy húzza ide",
+            "upload": "Válasszon fájlt vagy húzza ide",
             "lastLoaded": "Utoljára betöltve"
         },
         "header": {
@@ -83,6 +109,11 @@
             "text1": "Az Ön által megadott adatokat kizárólag az egészségügyi tanácsadó rendszer használja fel, és harmadik fél számára nem kerülnek továbbításra. Az adatait a rendszer nem tárolja, Ön kezelheti azokat, és mentheti le saját készülékére.",
             "text2": "Az adatvédelmi feltételek elfogadásával hozzájárul ahhoz, hogy rendszerünk az Ön által megadott információk alapján tanácsokat adjon."
         },
+        "privacyModalAuth": {
+            "title": "Adatvédelmi tájékoztatónk",
+            "text1": "Az Ön által megadott adatokat kizárólag az egészségügyi tanácsadó rendszer használja fel, és harmadik fél számára nem kerülnek továbbításra. Az adatait a rendszer egy MongoDB adatbázisban tárolja, amely biztonságosan van konfigurálva és védve az esetleges támadások ellen.",
+            "text2": "Az adatvédelmi feltételek elfogadásával hozzájárul ahhoz, hogy rendszerünk az Ön által megadott információk alapján tanácsokat adjon."
+        },
         "response": {
             "title": "Dr. Sanovise válasza:",
             "analyzing": "Elemzem az adatokat 📚🧠",
@@ -92,7 +123,12 @@
             "title": "Beállítások",
             "selectLanguage": "Válaszd ki a kívánt nyelvet:",
             "selectAIModel": "Válaszd ki a kívánt AI modellt:",
-            "version": "Verzió"
+            "version": "Verzió",
+            "logout": "Kijelentkezés",
+            "deleteAccount": "Fiók törlése",
+            "deleteConfirm": "Biztosan törölni szeretnéd a fiókodat? Ez végleges.",
+            "deleteSuccess": "Fiók törölve",
+            "deleteError": "Hiba történt a fiók törlésekor"
         },
         "userForm": {
             "requiredInfo": "A <span class='required'>*</span>-gal jelölt mezők kitöltése kötelező!",
@@ -122,6 +158,8 @@
     },
     "global": {
         "successSave": "Sikeresen elmentve",
+        "autoSaveSuccess": "✅ Adatok automatikusan elmentve",
+        "autoSaveFailure": "⚠️ Az automatikus mentés sikertelen: {error}",
         "successShare": "Sikeresen elküldve",
         "errorSave": "Hiba történt a mentés során.",
         "errorSend": "Hiba történt az adatok küldése közben",

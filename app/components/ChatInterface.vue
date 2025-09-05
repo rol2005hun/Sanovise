@@ -110,7 +110,7 @@ async function sendMessage() {
         const { signal } = controller;
         dataStore.controller = controller;
         
-        const response = await fetch(`https://api.app.sanovise.ranzak.site/api/${dataStore.userData.selectedModel.type}`, {
+        const response = await fetch(`http://138.68.77.184:6969/api/${dataStore.userData.selectedModel.type}`, {
             method: 'POST',
             signal,
             headers: {

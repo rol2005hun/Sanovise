@@ -7,8 +7,8 @@
             <div class="language-selection">
                 <label for="language">{{ $t('components.settingsModal.selectLanguage') }}</label>
                 <select id="language" v-model="language" class="language-select">
-                    <option v-for="locale in locales" :key="locale.code" :value="locale.code">
-                        {{ locale.name }}
+                    <option v-for="code in availableLocales" :key="code" :value="code">
+                        {{ code }}
                     </option>
                 </select>
             </div>
@@ -22,6 +22,16 @@
                 </select>
             </div>
 
+            <div class="logout-row" v-if="dataStore.isLoggedIn">
+                <div class="account-actions">
+                    <button class="delete-btn" @click="handleDeleteAccount">{{
+                        $t('components.settingsModal.deleteAccount') || 'Delete account' }}</button>
+                    <button class="logout-btn" @click="handleLogout">
+                        {{ $t('components.settingsModal.logout') || 'Logout' }}
+                    </button>
+                </div>
+            </div>
+
             <p class="version-info">
                 {{ $t('components.settingsModal.version') }}: {{ appVersion }}
             </p>
@@ -32,16 +42,17 @@
 <script setup lang="ts">
 import { dataStore } from '@/store';
 import packageJson from '../package.json';
+import { toastStore } from '@/store';
 
-const { locales, locale, setLocale } = useI18n();
+const { availableLocales, locale } = useI18n();
 const aiModels = [
-    { id: 'zeeshaan-ai/Medical-Summary-Notes-ONNX', name: 'Dr. Sanovise', type: 'advice'},
-    { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1', type: 'advice2'},
-    { id: 'deepseek/deepseek-chat-v3-0324:free', name: 'DeepSeek V3', type: 'advice2'},
-    { id: 'deepseek/deepseek-r1-zero:free', name: 'DeepSeek R1 Zero', type: 'advice2'},
-    { id: 'microsoft/mai-ds-r1:free', name: 'MAI DS R1', type: 'advice2'},
-    { id: 'moonshotai/kimi-k2:free', name: 'Kimi K2', type: 'advice2'},
-    { id: 'qwen/qwen3-coder:free', name: 'Qwen 3 Coder', type: 'advice2'}
+    { id: 'zeeshaan-ai/Medical-Summary-Notes-ONNX', name: 'Dr. Sanovise', type: 'advice' },
+    { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1', type: 'advice2' },
+    { id: 'deepseek/deepseek-chat-v3-0324:free', name: 'DeepSeek V3', type: 'advice2' },
+    { id: 'deepseek/deepseek-r1-zero:free', name: 'DeepSeek R1 Zero', type: 'advice2' },
+    { id: 'microsoft/mai-ds-r1:free', name: 'MAI DS R1', type: 'advice2' },
+    { id: 'moonshotai/kimi-k2:free', name: 'Kimi K2', type: 'advice2' },
+    { id: 'qwen/qwen3-coder:free', name: 'Qwen 3 Coder', type: 'advice2' }
 ];
 const appVersion = ref(packageJson.version);
 const selectedModel = ref(aiModels.find(model => model.id === dataStore.userData.selectedModel?.id) || aiModels[1]);
@@ -49,20 +60,43 @@ const selectedModel = ref(aiModels.find(model => model.id === dataStore.userData
 const language = computed({
     get: () => locale.value,
     set: (value: string) => {
-        setLocale(value as any);
+        locale.value = value as any;
     }
 });
 
 const selectedModelId = computed({
-  get: () => selectedModel.value.id,
-  set: (newId: string) => {
-    const newModel = aiModels.find(model => model.id === newId);
-    if (newModel) {
-      selectedModel.value = newModel;
-      dataStore.userData.selectedModel = newModel;
+    get: () => selectedModel.value?.id ?? '',
+    set: (newId: string) => {
+        const newModel = aiModels.find(model => model.id === newId);
+        if (newModel) {
+            selectedModel.value = newModel;
+            dataStore.userData.selectedModel = newModel;
+        }
     }
-  }
 });
+
+const tokenCookie = useCookie('sanovise_token', { path: '/', maxAge: 60 * 60 * 24 * 30 });
+
+function handleLogout() {
+    tokenCookie.value = null;
+    toastStore.show('✅ ' + (useNuxtApp().$i18n.t('pages.auth.logoutSuccess') as string), 'info');
+    dataStore.setLoggedIn(false);
+}
+
+async function handleDeleteAccount() {
+    const confirmText = (useNuxtApp().$i18n.t('components.settingsModal.deleteConfirm') as string) || 'Are you sure you want to delete your account? This action is permanent.';
+    if (!confirm(confirmText)) return;
+
+    try {
+        await $fetch('http://localhost:6969/api/auth/delete', { method: 'DELETE', credentials: 'include' });
+        tokenCookie.value = null;
+        dataStore.setLoggedIn(false);
+        toastStore.show('✅ ' + ((useNuxtApp().$i18n.t('components.settingsModal.deleteSuccess') as string) || 'Account deleted'), 'info');
+    } catch (err: any) {
+        console.error('[Sanovise - Error] delete account failed', err);
+        toastStore.show('❌ ' + ((useNuxtApp().$i18n.t('components.settingsModal.deleteError') as string) || 'An error occurred while deleting the account'), 'error');
+    }
+}
 </script>
 
 <style scoped lang="scss">

@@ -1,4 +1,23 @@
 {
+  "pages": {
+  "auth": {
+      "login": "Login",
+      "register": "Register",
+      "goToRegister": "Register",
+      "goToLogin": "Log in",
+      "email": "Email",
+      "password": "Password",
+      "passwordConfirm": "Confirm password",
+      "acceptPrivacy": "I accept the privacy policy",
+      "rememberMe": "Remember me",
+      "fillEmailPassword": "Please fill in email and password.",
+      "loginFailed": "Login failed.",
+      "loginSuccess": "Successfully logged in.",
+      "fillAll": "Please fill all fields and accept the privacy policy.",
+      "registerFailed": "Registration failed.",
+      "registerSuccess": "Successfully registered."
+    }
+  },
   "components": {
     "chatInterface": {
       "placeholder": "Type your message..."
@@ -91,7 +110,11 @@
       "title": "Settings",
       "selectLanguage": "Select your preferred language:",
       "selectAIModel": "Select your preferred AI model:",
-      "version": "Version"
+  "version": "Version",
+  "deleteAccount": "Delete account",
+  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+  "deleteSuccess": "Account deleted",
+  "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Fields marked with <span class='required'>*</span> are required!",
@@ -121,6 +144,8 @@
   },
   "global": {
     "successSave": "Successfully saved",
+  "autoSaveSuccess": "✅ Data automatically saved",
+  "autoSaveFailure": "⚠️ Automatic save failed: {error}",
     "successShare": "Successfully sent",
     "errorSave": "An error occurred while saving.",
     "errorSend": "An error occurred while sending the data",

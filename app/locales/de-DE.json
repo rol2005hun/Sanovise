@@ -91,7 +91,11 @@
       "title": "Einstellungen",
       "selectLanguage": "Sprache auswählen:",
       "selectAIModel": "KI-Modell auswählen:",
-      "version": "Version"
+  "version": "Version",
+  "deleteAccount": "Delete account",
+  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+  "deleteSuccess": "Account deleted",
+  "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Felder mit <span class='required'>*</span> sind Pflichtfelder!",
@@ -121,6 +125,8 @@
   },
   "global": {
     "successSave": "Erfolgreich gespeichert",
+  "autoSaveSuccess": "✅ Daten automatisch gespeichert",
+  "autoSaveFailure": "⚠️ Automatisches Speichern fehlgeschlagen: {error}",
     "successShare": "Erfolgreich gesendet",
     "errorSave": "Fehler beim Speichern aufgetreten.",
     "errorSend": "Fehler beim Senden der Daten aufgetreten",

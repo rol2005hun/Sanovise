@@ -91,7 +91,11 @@
       "title": "Ustawienia",
       "selectLanguage": "Wybierz język:",
       "selectAIModel": "Wybierz model AI:",
-      "version": "Wersja"
+  "version": "Wersja",
+  "deleteAccount": "Delete account",
+  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+  "deleteSuccess": "Account deleted",
+  "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Pola oznaczone <span class='required'>*</span> są obowiązkowe!",
@@ -121,6 +125,8 @@
   },
   "global": {
     "successSave": "Pomyślnie zapisano",
+  "autoSaveSuccess": "✅ Dane zapisane automatycznie",
+  "autoSaveFailure": "⚠️ Automatyczne zapisywanie nie powiodło się: {error}",
     "successShare": "Pomyślnie wysłano",
     "errorSave": "Wystąpił błąd podczas zapisu.",
     "errorSend": "Wystąpił błąd podczas wysyłania danych",

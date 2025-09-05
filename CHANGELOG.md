@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.8] - [1.0.4] - 2025-09-05
+### Added
+- Implemented an auth system, allowing users to register and log in, and save the data more easily.
+- The user can now delete their account from the settings modal.
+- The user can log out from the settings modal.
+
+### Changed
+- Changed the CORS settings in the server to allow credentials and restrict origin.
+- Updated the .env.example file with the new API keys and URLs.
+
+### Fixed
+
 ## [1.1.7] - [1.0.3] - 2025-07-21
 **Hotfix** for issues in the [1.1.6] update.
 ### Added

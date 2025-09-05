@@ -33,8 +33,9 @@ export const useData = defineStore('data', {
             symptoms: '',
             medicalHistory: '',
             language: '',
-            selectedModel: { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1', type: 'advice2'}
+            selectedModel: { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1', type: 'advice2' }
         },
+        isLoggedIn: false,
         messages: [] as { role: string, content: string }[],
         currentResponse: null as string | null,
         responseType: null as string | null,
@@ -44,5 +45,10 @@ export const useData = defineStore('data', {
         showChat: true,
         acceptedPrivacyPolicy: false,
         controller: <AbortController | null>(null),
-    })
+    }),
+    actions: {
+        setLoggedIn(value: boolean) {
+            (this as any).isLoggedIn = value
+        }
+    }
 });

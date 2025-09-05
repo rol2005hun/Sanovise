@@ -1,0 +1,144 @@
+.auth-card {
+    width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    color: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    .auth-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 1.9rem;
+            margin: 0;
+            line-height: 1;
+            font-weight: 700;
+            color: inherit;
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: #7feea6;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding-left: 0.4rem;
+        }
+    }
+
+    .required-info {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    :deep(.required) {
+        color: red;
+        font-weight: bold;
+        margin: 0 0.3rem;
+    }
+
+    form {
+        .input-label {
+            display: block;
+            margin: 0 0 0.45rem 0;
+            font-size: 1rem;
+            color: inherit;
+        }
+
+        .input {
+            width: 100%;
+            padding: 0.65rem 0.9rem;
+            border-radius: 5px;
+            border: 1px solid rgba(216, 216, 216, 0.9);
+            margin: 0 0 1rem 0;
+            box-sizing: border-box;
+            font-size: 0.95rem;
+            background: #fff;
+            color: #111;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+                border-color: var(--primary, #2563eb);
+            }
+        }
+
+        .checkbox {
+            display: flex;
+            margin-bottom: 1rem;
+            gap: 5px;
+
+            .privacy-link {
+                color: chocolate;
+                cursor: pointer;
+            }
+
+            .checkbox-label {
+                color: inherit;
+                font-size: 0.95rem;
+
+                input[type="checkbox"] {
+                    width: auto;
+                    transform: translateY(1px);
+                }
+            }
+        }
+
+        .actions {
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: flex-end;
+
+            .go {
+                background-color: var(--primary, #2563eb);
+                color: #fff;
+                border: none;
+                padding: 0.6rem 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 0.95rem;
+                min-width: 130px;
+
+                &[disabled] {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+
+    .required {
+        color: #ff6b6b;
+        font-weight: 700;
+        margin-left: 0.25rem;
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: 480px) {
+        margin: 1rem;
+        padding: 1rem;
+
+        .auth-header {
+            h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        form {
+            .input {
+                font-size: 0.92rem;
+                padding: 0.55rem 0.75rem;
+            }
+
+            .actions .go {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    }
+}

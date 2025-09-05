@@ -121,6 +121,8 @@
   },
   "global": {
     "successSave": "Salvato con successo",
+    "autoSaveSuccess": "✅ Dati salvati automaticamente",
+    "autoSaveFailure": "⚠️ Salvataggio automatico fallito: {error}",
     "successShare": "Inviato con successo",
     "errorSave": "Errore durante il salvataggio.",
     "errorSend": "Errore durante l'invio dei dati",

@@ -91,7 +91,11 @@
       "title": "Paramètres",
       "selectLanguage": "Sélectionnez la langue souhaitée :",
       "selectAIModel": "Sélectionnez le modèle d’IA :",
-      "version": "Version"
+  "version": "Version",
+  "deleteAccount": "Delete account",
+  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+  "deleteSuccess": "Account deleted",
+  "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Les champs marqués par <span class='required'>*</span> sont obligatoires !",
@@ -121,6 +125,8 @@
   },
   "global": {
     "successSave": "Enregistré avec succès",
+  "autoSaveSuccess": "✅ Données enregistrées automatiquement",
+  "autoSaveFailure": "⚠️ Échec de la sauvegarde automatique : {error}",
     "successShare": "Envoyé avec succès",
     "errorSave": "Une erreur est survenue lors de l’enregistrement.",
     "errorSend": "Une erreur est survenue lors de l’envoi des données",

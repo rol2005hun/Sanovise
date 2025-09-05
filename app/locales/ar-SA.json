@@ -91,7 +91,11 @@
       "title": "الإعدادات",
       "selectLanguage": "اختر اللغة المطلوبة:",
       "selectAIModel": "اختر نموذج الذكاء الاصطناعي:",
-      "version": "الإصدار"
+  "version": "الإصدار",
+  "deleteAccount": "Delete account",
+  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+  "deleteSuccess": "Account deleted",
+  "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "الحقول الموسومة بـ <span class='required'>*</span> إلزامية!",
@@ -121,6 +125,8 @@
   },
   "global": {
     "successSave": "تم الحفظ بنجاح",
+  "autoSaveSuccess": "✅ تم حفظ البيانات تلقائيًا",
+  "autoSaveFailure": "⚠️ فشل الحفظ التلقائي: {error}",
     "successShare": "تم الإرسال بنجاح",
     "errorSave": "حدث خطأ أثناء الحفظ.",
     "errorSend": "حدث خطأ أثناء إرسال البيانات",

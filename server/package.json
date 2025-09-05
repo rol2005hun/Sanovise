@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The server (backend) of Sanovise.",
   "main": "index.ts",
   "scripts": {
@@ -11,18 +11,23 @@
   "author": "ranzak",
   "license": "ISC",
   "dependencies": {
-    "@huggingface/transformers": "^3.6.3",
+    "@huggingface/transformers": "^3.7.2",
     "cors": "^2.8.5",
     "discord-webhook-node": "^1.1.8",
-    "dotenv": "^17.2.0",
+    "dotenv": "^17.2.2",
     "express": "^5.1.0",
-    "openai": "^5.10.1"
+    "openai": "^5.19.1",
+    "mongoose": "^8.18.0",
+    "bcrypt": "^6.0.0",
+    "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
-    "@types/node": "^24.0.14",
+    "@types/node": "^24.3.1",
+    "@types/bcrypt": "^6.0.0",
+    "@types/jsonwebtoken": "^9.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   }
 }

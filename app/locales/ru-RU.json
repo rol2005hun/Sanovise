@@ -91,7 +91,11 @@
       "title": "Настройки",
       "selectLanguage": "Выберите язык:",
       "selectAIModel": "Выберите AI-модель:",
-      "version": "Версия"
+  "version": "Версия",
+  "deleteAccount": "Delete account",
+  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+  "deleteSuccess": "Account deleted",
+  "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Поля, отмеченные <span class='required'>*</span>, обязательны для заполнения!",
@@ -121,6 +125,8 @@
   },
   "global": {
     "successSave": "Успешно сохранено",
+  "autoSaveSuccess": "✅ Данные автоматически сохранены",
+  "autoSaveFailure": "⚠️ Автосохранение не удалось: {error}",
     "successShare": "Успешно отправлено",
     "errorSave": "Ошибка при сохранении.",
     "errorSend": "Ошибка при отправке данных",

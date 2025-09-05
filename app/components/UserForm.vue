@@ -91,7 +91,7 @@ async function submitData() {
         const { signal } = controller;
         dataStore.controller = controller;
 
-        const response = await fetch(`https://api.app.sanovise.ranzak.site/api/${dataStore.userData.selectedModel.type}`, {
+        const response = await fetch(`http://138.68.77.184:6969/api/${dataStore.userData.selectedModel.type}`, {
             method: 'POST',
             signal,
             headers: {
@@ -220,6 +220,41 @@ async function exportData() {
         }
     }
 }
+import { onMounted, onBeforeUnmount, watch } from 'vue';
+import { useAutoSaveUserData } from '@/composables/useAutoSaveUserData';
+
+const { start } = useAutoSaveUserData();
+
+let stopAutosave: (() => void) | null = null;
+
+onMounted(() => {
+    const tokenCookie = useCookie('sanovise_token');
+    if (tokenCookie.value) {
+        dataStore.setLoggedIn(true);
+        stopAutosave = start();
+        return;
+    }
+
+    if (dataStore.isLoggedIn) {
+        stopAutosave = start();
+    }
+});
+
+watch(() => dataStore.isLoggedIn, (val) => {
+    if (val) {
+        if (!stopAutosave) stopAutosave = start();
+    } else {
+        if (stopAutosave) {
+            stopAutosave();
+            stopAutosave = null;
+        }
+    }
+});
+
+onBeforeUnmount(() => {
+    if (stopAutosave) stopAutosave();
+});
+
 </script>
 
 <style scoped lang="scss">

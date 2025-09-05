@@ -91,7 +91,11 @@
       "title": "设置",
       "selectLanguage": "请选择语言：",
       "selectAIModel": "请选择AI模型：",
-      "version": "版本"
+  "version": "版本",
+  "deleteAccount": "Delete account",
+  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+  "deleteSuccess": "Account deleted",
+  "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "带有 <span class='required'>*</span> 标记的字段为必填！",
@@ -121,6 +125,8 @@
   },
   "global": {
     "successSave": "保存成功",
+  "autoSaveSuccess": "✅ 数据已自动保存",
+  "autoSaveFailure": "⚠️ 自动保存失败：{error}",
     "successShare": "发送成功",
     "errorSave": "保存时出错。",
     "errorSend": "发送数据时出错",
