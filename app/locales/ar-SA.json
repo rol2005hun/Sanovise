@@ -91,11 +91,11 @@
       "title": "الإعدادات",
       "selectLanguage": "اختر اللغة المطلوبة:",
       "selectAIModel": "اختر نموذج الذكاء الاصطناعي:",
-  "version": "الإصدار",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "الإصدار",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "الحقول الموسومة بـ <span class='required'>*</span> إلزامية!",
@@ -115,6 +115,7 @@
       "submitData": "إرسال البيانات",
       "abort": "لا ترد",
       "exportData": "تصدير البيانات",
+  "healthPage": "الذهاب إلى صفحة الصحة",
       "invalidHeight": "يجب أن يكون الطول بين 50 سم و300 سم.",
       "invalidWeight": "يجب أن يكون الوزن بين 1 كجم و500 كجم.",
       "invalidWaterIntake": "يجب أن تكون كمية الماء اليومية بين 0 و50 لتر.",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "تم الحفظ بنجاح",
-  "autoSaveSuccess": "✅ تم حفظ البيانات تلقائيًا",
-  "autoSaveFailure": "⚠️ فشل الحفظ التلقائي: {error}",
+    "autoSaveSuccess": "✅ تم حفظ البيانات تلقائيًا",
+    "autoSaveFailure": "⚠️ فشل الحفظ التلقائي: {error}",
     "successShare": "تم الإرسال بنجاح",
     "errorSave": "حدث خطأ أثناء الحفظ.",
     "errorSend": "حدث خطأ أثناء إرسال البيانات",
@@ -138,5 +139,32 @@
     "invalidJson": "تنسيق الملف غير صالح! يرجى التأكد أنك رفعت ملف JSON فعلي.",
     "anotherFile": "يرجى المحاولة مرة أخرى أو اختيار ملف آخر.",
     "needPermission": "يرجى السماح بالوصول إلى وحدة التخزين."
+  },
+  "health": {
+    "page": {
+      "title": "سجل الصحة"
+    },
+    "form": {
+      "title": "تسجيل بيانات الصحة اليومية",
+      "date": "التاريخ",
+      "pulse": "نبض",
+      "systolic": "انقباضي",
+      "diastolic": "انبساطي",
+      "steps": "الخطوات",
+      "notes": "ملاحظات",
+      "save": "حفظ",
+      "clear": "مسح"
+    },
+    "dashboard": {
+      "title": "ملخص الصحة",
+      "avgPulse": "متوسط النبض",
+      "avgBP": "متوسط ضغط الدم",
+      "totalSteps": "إجمالي الخطوات",
+      "pulseChart": "النبض (30 يوم)",
+      "stepsChart": "الخطوات (30 يوم)",
+      "evaluationTitle": "التقييم المميز",
+      "noDataEvaluation": "لا توجد بيانات للتقييم",
+      "score": "الدرجة"
+    }
   }
 }

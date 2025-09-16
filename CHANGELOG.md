@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0] - [1.0.4] - 2025-09-15
+### Added
+- Added a health page that displays health data visualizations and evaluations.
+- Added a button in the user form to navigate to the health page.
+- The user can now input daily their health data (pulse, blood pressure, steps, and a comment) and get a health score based on the data.
+
+### Changed
+
+### Fixed
+
 ## [1.1.8] - [1.0.4] - 2025-09-05
 ### Added
 - Implemented an auth system, allowing users to register and log in, and save the data more easily.

@@ -1,6 +1,6 @@
 {
   "pages": {
-  "auth": {
+    "auth": {
       "login": "Login",
       "register": "Register",
       "goToRegister": "Register",
@@ -110,11 +110,11 @@
       "title": "Settings",
       "selectLanguage": "Select your preferred language:",
       "selectAIModel": "Select your preferred AI model:",
-  "version": "Version",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "Version",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Fields marked with <span class='required'>*</span> are required!",
@@ -133,7 +133,8 @@
       "privacyLink": "privacy policy",
       "submitData": "Submit data",
       "abort": "Do not respond",
-      "exportData": "Export data",
+  "exportData": "Export data",
+  "healthPage": "Go to Health page",
       "invalidHeight": "Height must be between 50 cm and 300 cm.",
       "invalidWeight": "Weight must be between 1 kg and 500 kg.",
       "invalidWaterIntake": "Daily water intake must be between 0 and 50 liters.",
@@ -144,8 +145,8 @@
   },
   "global": {
     "successSave": "Successfully saved",
-  "autoSaveSuccess": "✅ Data automatically saved",
-  "autoSaveFailure": "⚠️ Automatic save failed: {error}",
+    "autoSaveSuccess": "✅ Data automatically saved",
+    "autoSaveFailure": "⚠️ Automatic save failed: {error}",
     "successShare": "Successfully sent",
     "errorSave": "An error occurred while saving.",
     "errorSend": "An error occurred while sending the data",
@@ -157,5 +158,34 @@
     "invalidJson": "Invalid file format! Please make sure it is a JSON file.",
     "anotherFile": "Please try again or choose another file.",
     "needPermission": "Please grant storage access permission."
+  },
+  "health": {
+    "page": {
+      "title": "Health Log"
+    },
+    "form": {
+      "title": "Record daily health data",
+      "date": "Date",
+      "pulse": "Pulse",
+      "systolic": "Systolic",
+      "diastolic": "Diastolic",
+      "steps": "Steps",
+      "notes": "Notes",
+      "save": "Save",
+      "clear": "Clear"
+    },
+    "dashboard": {
+      "title": "Health Summary",
+      "avgPulse": "Avg. pulse",
+      "avgBP": "Avg. BP",
+      "totalSteps": "Total steps",
+      "daily": "Daily",
+      "averageWithDays": "Average ({days} days)",
+      "pulseChart": "Pulse (30 days)",
+      "stepsChart": "Steps (30 days)",
+      "evaluationTitle": "Highlighted evaluation",
+      "noDataEvaluation": "No data for evaluation"
+      ,"score": "Score"
+    }
   }
 }

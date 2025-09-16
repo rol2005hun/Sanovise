@@ -130,7 +130,7 @@ async function handleLogin() {
             password: loginForm.password,
         }
 
-        const res = await $fetch('http://localhost:6969/api/auth/login', {
+        const res = await $fetch('http://138.68.77.184:6969/api/auth/login', {
             method: 'POST',
             body: payload,
             headers: { 'Content-Type': 'application/json' }
@@ -165,7 +165,7 @@ async function handleRegister() {
             language: ds.userData?.language || 'en'
         }
 
-        const res = await $fetch('http://localhost:6969/api/auth/register', {
+        const res = await $fetch('http://138.68.77.184:6969/api/auth/register', {
             method: 'POST',
             body: payload,
             headers: { 'Content-Type': 'application/json' }

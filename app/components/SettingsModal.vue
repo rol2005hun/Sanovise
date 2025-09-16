@@ -25,9 +25,9 @@
             <div class="logout-row" v-if="dataStore.isLoggedIn">
                 <div class="account-actions">
                     <button class="delete-btn" @click="handleDeleteAccount">{{
-                        $t('components.settingsModal.deleteAccount') || 'Delete account' }}</button>
+                        $t('components.settingsModal.deleteAccount') }}</button>
                     <button class="logout-btn" @click="handleLogout">
-                        {{ $t('components.settingsModal.logout') || 'Logout' }}
+                        {{ $t('components.settingsModal.logout') }}
                     </button>
                 </div>
             </div>
@@ -88,7 +88,7 @@ async function handleDeleteAccount() {
     if (!confirm(confirmText)) return;
 
     try {
-        await $fetch('http://localhost:6969/api/auth/delete', { method: 'DELETE', credentials: 'include' });
+        await $fetch('http://138.68.77.184:6969/api/auth/delete', { method: 'DELETE', credentials: 'include' });
         tokenCookie.value = null;
         dataStore.setLoggedIn(false);
         toastStore.show('✅ ' + ((useNuxtApp().$i18n.t('components.settingsModal.deleteSuccess') as string) || 'Account deleted'), 'info');

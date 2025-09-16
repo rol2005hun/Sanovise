@@ -91,11 +91,11 @@
       "title": "设置",
       "selectLanguage": "请选择语言：",
       "selectAIModel": "请选择AI模型：",
-  "version": "版本",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "版本",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "带有 <span class='required'>*</span> 标记的字段为必填！",
@@ -115,6 +115,7 @@
       "submitData": "提交数据",
       "abort": "不回答",
       "exportData": "导出数据",
+  "healthPage": "前往健康页面",
       "invalidHeight": "身高应在50到300厘米之间。",
       "invalidWeight": "体重应在1到500公斤之间。",
       "invalidWaterIntake": "每日饮水量应在0到50升之间。",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "保存成功",
-  "autoSaveSuccess": "✅ 数据已自动保存",
-  "autoSaveFailure": "⚠️ 自动保存失败：{error}",
+    "autoSaveSuccess": "✅ 数据已自动保存",
+    "autoSaveFailure": "⚠️ 自动保存失败：{error}",
     "successShare": "发送成功",
     "errorSave": "保存时出错。",
     "errorSend": "发送数据时出错",
@@ -138,5 +139,32 @@
     "invalidJson": "文件格式错误！请确认上传的是JSON文件。",
     "anotherFile": "请重试或选择另一个文件。",
     "needPermission": "请允许访问存储权限。"
+  },
+  "health": {
+    "page": {
+      "title": "健康日志"
+    },
+    "form": {
+      "title": "记录每日健康数据",
+      "date": "日期",
+      "pulse": "心率",
+      "systolic": "收缩压",
+      "diastolic": "舒张压",
+      "steps": "步数",
+      "notes": "备注",
+      "save": "保存",
+      "clear": "清除"
+    },
+    "dashboard": {
+      "title": "健康摘要",
+      "avgPulse": "平均心率",
+      "avgBP": "平均血压",
+      "totalSteps": "总步数",
+      "pulseChart": "心率（30天）",
+      "stepsChart": "步数（30天）",
+      "evaluationTitle": "重点评估",
+      "noDataEvaluation": "暂无评估数据",
+      "score": "评分"
+    }
   }
 }

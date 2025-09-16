@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+.container {
+    padding: 1rem;
+
+    h1 {
+        color: white;
+    }
+}
+
+@media (max-width: 1050px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container h1 {
+        text-align: center;
+    }
+}

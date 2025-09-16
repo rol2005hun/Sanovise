@@ -115,6 +115,7 @@
       "submitData": "Trimite datele",
       "abort": "Nu răspunde",
       "exportData": "Exportă datele",
+  "healthPage": "Du-te la pagina Sănătate",
       "invalidHeight": "Înălțimea trebuie să fie între 50 și 300 cm.",
       "invalidWeight": "Greutatea trebuie să fie între 1 și 500 kg.",
       "invalidWaterIntake": "Consumul zilnic de apă trebuie să fie între 0 și 50 litri.",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "Salvat cu succes",
-  "autoSaveSuccess": "✅ Date salvate automat",
-  "autoSaveFailure": "⚠️ Salvarea automată a eșuat: {error}",
+    "autoSaveSuccess": "✅ Date salvate automat",
+    "autoSaveFailure": "⚠️ Salvarea automată a eșuat: {error}",
     "successShare": "Trimis cu succes",
     "errorSave": "Eroare la salvare.",
     "errorSend": "Eroare la trimiterea datelor",
@@ -138,5 +139,32 @@
     "invalidJson": "Format fișier invalid! Asigură-te că ai încărcat un fișier JSON.",
     "anotherFile": "Încearcă din nou sau selectează un alt fișier.",
     "needPermission": "Permite accesul la stocare."
+  },
+  "health": {
+    "page": {
+      "title": "Jurnal de sănătate"
+    },
+    "form": {
+      "title": "Înregistrează datele zilnice de sănătate",
+      "date": "Dată",
+      "pulse": "Puls",
+      "systolic": "Sistolică",
+      "diastolic": "Diastolică",
+      "steps": "Pași",
+      "notes": "Note",
+      "save": "Salvează",
+      "clear": "Curăță"
+    },
+    "dashboard": {
+      "title": "Rezumat sănătate",
+      "avgPulse": "Puls mediu",
+      "avgBP": "Tensiune medie",
+      "totalSteps": "Total pași",
+      "pulseChart": "Puls (30 zile)",
+      "stepsChart": "Pași (30 zile)",
+      "evaluationTitle": "Evaluare evidențiată",
+      "noDataEvaluation": "Nu există date pentru evaluare",
+      "score": "Scor"
+    }
   }
 }

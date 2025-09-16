@@ -23,7 +23,6 @@
 
 <script setup lang="ts">
 import { marked } from 'marked';
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 import { dataStore } from '@/store';
 
 const userScrolled = ref(false);

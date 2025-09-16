@@ -91,11 +91,11 @@
       "title": "Paramètres",
       "selectLanguage": "Sélectionnez la langue souhaitée :",
       "selectAIModel": "Sélectionnez le modèle d’IA :",
-  "version": "Version",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "Version",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Les champs marqués par <span class='required'>*</span> sont obligatoires !",
@@ -115,6 +115,7 @@
       "submitData": "Envoyer les données",
       "abort": "Ne pas répondre",
       "exportData": "Exporter les données",
+  "healthPage": "Aller à la page Santé",
       "invalidHeight": "La taille doit être comprise entre 50 cm et 300 cm.",
       "invalidWeight": "Le poids doit être compris entre 1 kg et 500 kg.",
       "invalidWaterIntake": "La consommation d’eau doit être comprise entre 0 et 50 litres par jour.",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "Enregistré avec succès",
-  "autoSaveSuccess": "✅ Données enregistrées automatiquement",
-  "autoSaveFailure": "⚠️ Échec de la sauvegarde automatique : {error}",
+    "autoSaveSuccess": "✅ Données enregistrées automatiquement",
+    "autoSaveFailure": "⚠️ Échec de la sauvegarde automatique : {error}",
     "successShare": "Envoyé avec succès",
     "errorSave": "Une erreur est survenue lors de l’enregistrement.",
     "errorSend": "Une erreur est survenue lors de l’envoi des données",
@@ -138,5 +139,32 @@
     "invalidJson": "Format de fichier invalide ! Veuillez vérifier qu’il s’agit bien d’un fichier JSON.",
     "anotherFile": "Veuillez réessayer ou choisir un autre fichier.",
     "needPermission": "Veuillez autoriser l’accès au stockage."
+  },
+  "health": {
+    "page": {
+      "title": "Journal de santé"
+    },
+    "form": {
+      "title": "Enregistrer les données de santé quotidiennes",
+      "date": "Date",
+      "pulse": "Pouls",
+      "systolic": "Systolique",
+      "diastolic": "Diastolique",
+      "steps": "Pas",
+      "notes": "Notes",
+      "save": "Enregistrer",
+      "clear": "Effacer"
+    },
+    "dashboard": {
+      "title": "Résumé de santé",
+      "avgPulse": "Pouls moyen",
+      "avgBP": "PA moyenne",
+      "totalSteps": "Total pas",
+      "pulseChart": "Pouls (30 jours)",
+      "stepsChart": "Pas (30 jours)",
+      "evaluationTitle": "Évaluation mise en avant",
+      "noDataEvaluation": "Pas de données pour évaluation",
+      "score": "Score"
+    }
   }
 }

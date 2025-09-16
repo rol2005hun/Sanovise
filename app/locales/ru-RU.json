@@ -91,11 +91,11 @@
       "title": "Настройки",
       "selectLanguage": "Выберите язык:",
       "selectAIModel": "Выберите AI-модель:",
-  "version": "Версия",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "Версия",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Поля, отмеченные <span class='required'>*</span>, обязательны для заполнения!",
@@ -115,6 +115,7 @@
       "submitData": "Отправить данные",
       "abort": "Не отвечать",
       "exportData": "Экспорт данных",
+  "healthPage": "Перейти на страницу Здоровье",
       "invalidHeight": "Рост должен быть от 50 до 300 см.",
       "invalidWeight": "Вес должен быть от 1 до 500 кг.",
       "invalidWaterIntake": "Потребление воды должно быть от 0 до 50 литров в день.",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "Успешно сохранено",
-  "autoSaveSuccess": "✅ Данные автоматически сохранены",
-  "autoSaveFailure": "⚠️ Автосохранение не удалось: {error}",
+    "autoSaveSuccess": "✅ Данные автоматически сохранены",
+    "autoSaveFailure": "⚠️ Автосохранение не удалось: {error}",
     "successShare": "Успешно отправлено",
     "errorSave": "Ошибка при сохранении.",
     "errorSend": "Ошибка при отправке данных",
@@ -138,5 +139,32 @@
     "invalidJson": "Неверный формат файла! Убедитесь, что вы загрузили JSON-файл.",
     "anotherFile": "Попробуйте снова или выберите другой файл.",
     "needPermission": "Предоставьте доступ к хранилищу."
+  },
+  "health": {
+    "page": {
+      "title": "Журнал здоровья"
+    },
+    "form": {
+      "title": "Записать ежедневные данные о здоровье",
+      "date": "Дата",
+      "pulse": "Пульс",
+      "systolic": "Систолическое",
+      "diastolic": "Диастолическое",
+      "steps": "Шаги",
+      "notes": "Заметки",
+      "save": "Сохранить",
+      "clear": "Очистить"
+    },
+    "dashboard": {
+      "title": "Сводка здоровья",
+      "avgPulse": "Средний пульс",
+      "avgBP": "Среднее давление",
+      "totalSteps": "Всего шагов",
+      "pulseChart": "Пульс (30 дней)",
+      "stepsChart": "Шаги (30 дней)",
+      "evaluationTitle": "Выделенная оценка",
+      "noDataEvaluation": "Нет данных для оценки",
+      "score": "Оценка"
+    }
   }
 }

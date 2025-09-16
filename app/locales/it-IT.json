@@ -111,6 +111,7 @@
       "submitData": "Invia dati",
       "abort": "Non rispondere",
       "exportData": "Esporta dati",
+  "healthPage": "Vai alla pagina Salute",
       "invalidHeight": "L'altezza deve essere compresa tra 50 cm e 300 cm.",
       "invalidWeight": "Il peso deve essere compreso tra 1 kg e 500 kg.",
       "invalidWaterIntake": "L'assunzione di acqua deve essere tra 0 e 50 litri al giorno.",
@@ -134,5 +135,32 @@
     "invalidJson": "Formato file non valido! Verifica di aver caricato un file JSON.",
     "anotherFile": "Riprova o scegli un altro file.",
     "needPermission": "Concedi l'autorizzazione per accedere alla memoria."
+  },
+  "health": {
+    "page": {
+      "title": "Registro salute"
+    },
+    "form": {
+      "title": "Registra i dati di salute giornalieri",
+      "date": "Data",
+      "pulse": "Frequenza cardiaca",
+      "systolic": "Sistolica",
+      "diastolic": "Diastolica",
+      "steps": "Passi",
+      "notes": "Note",
+      "save": "Salva",
+      "clear": "Cancella"
+    },
+    "dashboard": {
+      "title": "Riepilogo salute",
+      "avgPulse": "Frequenza media",
+      "avgBP": "Pressione media",
+      "totalSteps": "Passi totali",
+      "pulseChart": "Frequenza (30 giorni)",
+      "stepsChart": "Passi (30 giorni)",
+      "evaluationTitle": "Valutazione principale",
+      "noDataEvaluation": "Nessun dato per la valutazione",
+      "score": "Punteggio"
+    }
   }
 }

@@ -12,7 +12,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
         }
 
         try {
-            const res = await $fetch('http://localhost:6969/api/auth/me', {
+            const res = await $fetch('http://138.68.77.184:6969/api/auth/me', {
                 method: 'GET',
                 headers: { Authorization: `Bearer ${token}` }
             }) as any;

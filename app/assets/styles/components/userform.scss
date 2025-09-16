@@ -90,6 +90,16 @@
                 color: white;
             }
 
+            &.open-health-page {
+                background: linear-gradient(to right, red, darkred 60%);
+                color: white;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+
             &.export {
                 background-color: yellow;
                 color: black;

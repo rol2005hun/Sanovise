@@ -91,11 +91,11 @@
       "title": "Ustawienia",
       "selectLanguage": "Wybierz język:",
       "selectAIModel": "Wybierz model AI:",
-  "version": "Wersja",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "Wersja",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Pola oznaczone <span class='required'>*</span> są obowiązkowe!",
@@ -115,6 +115,7 @@
       "submitData": "Wyślij dane",
       "abort": "Nie odpowiadaj",
       "exportData": "Eksportuj dane",
+  "healthPage": "Przejdź do strony Zdrowie",
       "invalidHeight": "Wzrost musi być w zakresie 50–300 cm.",
       "invalidWeight": "Waga musi być w zakresie 1–500 kg.",
       "invalidWaterIntake": "Dzienne spożycie wody musi być w zakresie 0–50 litrów.",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "Pomyślnie zapisano",
-  "autoSaveSuccess": "✅ Dane zapisane automatycznie",
-  "autoSaveFailure": "⚠️ Automatyczne zapisywanie nie powiodło się: {error}",
+    "autoSaveSuccess": "✅ Dane zapisane automatycznie",
+    "autoSaveFailure": "⚠️ Automatyczne zapisywanie nie powiodło się: {error}",
     "successShare": "Pomyślnie wysłano",
     "errorSave": "Wystąpił błąd podczas zapisu.",
     "errorSend": "Wystąpił błąd podczas wysyłania danych",
@@ -138,5 +139,32 @@
     "invalidJson": "Nieprawidłowy format pliku! Upewnij się, że przesyłasz plik JSON.",
     "anotherFile": "Spróbuj ponownie lub wybierz inny plik.",
     "needPermission": "Zezwól na dostęp do pamięci urządzenia."
+  },
+  "health": {
+    "page": {
+      "title": "Dziennik zdrowia"
+    },
+    "form": {
+      "title": "Zapisz dzienne dane zdrowotne",
+      "date": "Data",
+      "pulse": "Tętno",
+      "systolic": "Skurczowe",
+      "diastolic": "Rozkurczowe",
+      "steps": "Kroki",
+      "notes": "Notatki",
+      "save": "Zapisz",
+      "clear": "Wyczyść"
+    },
+    "dashboard": {
+      "title": "Podsumowanie zdrowia",
+      "avgPulse": "Średnie tętno",
+      "avgBP": "Średnie ciśnienie",
+      "totalSteps": "Suma kroków",
+      "pulseChart": "Tętno (30 dni)",
+      "stepsChart": "Kroki (30 dni)",
+      "evaluationTitle": "Wyróżniona ocena",
+      "noDataEvaluation": "Brak danych do oceny",
+      "score": "Wynik"
+    }
   }
 }

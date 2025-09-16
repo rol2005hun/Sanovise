@@ -91,11 +91,11 @@
       "title": "सेटिंग्स",
       "selectLanguage": "अपनी पसंदीदा भाषा चुनें:",
       "selectAIModel": "अपना पसंदीदा एआई मॉडल चुनें:",
-  "version": "संस्करण",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "संस्करण",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "<span class='required'>*</span> चिह्नित फ़ील्ड आवश्यक हैं!",
@@ -115,6 +115,7 @@
       "submitData": "डेटा सबमिट करें",
       "abort": "उत्तर न दें",
       "exportData": "डेटा निर्यात करें",
+  "healthPage": "स्वास्थ्य पृष्ठ पर जाएँ",
       "invalidHeight": "ऊंचाई 50 से 300 सेमी के बीच होनी चाहिए।",
       "invalidWeight": "वज़न 1 से 500 किग्रा के बीच होना चाहिए।",
       "invalidWaterIntake": "दैनिक पानी का सेवन 0 से 50 लीटर के बीच होना चाहिए।",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "सफलतापूर्वक सहेजा गया",
-  "autoSaveSuccess": "✅ Data automatically saved",
-  "autoSaveFailure": "⚠️ Automatic save failed: {error}",
+    "autoSaveSuccess": "✅ Data automatically saved",
+    "autoSaveFailure": "⚠️ Automatic save failed: {error}",
     "successShare": "सफलतापूर्वक भेजा गया",
     "errorSave": "सेव करते समय त्रुटि हुई।",
     "errorSend": "डेटा भेजते समय त्रुटि हुई।",
@@ -138,5 +139,32 @@
     "invalidJson": "अमान्य फ़ाइल प्रारूप! कृपया सुनिश्चित करें कि आपने JSON फ़ाइल अपलोड की है।",
     "anotherFile": "कृपया पुनः प्रयास करें या कोई दूसरी फ़ाइल चुनें।",
     "needPermission": "कृपया स्टोरेज एक्सेस की अनुमति दें।"
+  },
+  "health": {
+    "page": {
+      "title": "स्वास्थ्य लॉग"
+    },
+    "form": {
+      "title": "दैनिक स्वास्थ्य डेटा रिकॉर्ड करें",
+      "date": "तिथि",
+      "pulse": "नाड़ी",
+      "systolic": "सिस्टोलिक",
+      "diastolic": "डायास्टोलिक",
+      "steps": "कदम",
+      "notes": "नोट्स",
+      "save": "सहेजें",
+      "clear": "साफ़ करें"
+    },
+    "dashboard": {
+      "title": "स्वास्थ्य सारांश",
+      "avgPulse": "औसत नाड़ी",
+      "avgBP": "औसत रक्तचाप",
+      "totalSteps": "कुल कदम",
+      "pulseChart": "नाड़ी (30 दिन)",
+      "stepsChart": "कदम (30 दिन)",
+      "evaluationTitle": "हाइलाइट मूल्यांकन",
+        "noDataEvaluation": "मूल्यांकन के लिए कोई डेटा नहीं",
+        "score": "स्कोर"
+    }
   }
 }

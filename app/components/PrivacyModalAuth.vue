@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
 import { dataStore } from '@/store';
-import { onMounted, onUnmounted } from 'vue';
 
 const ds = dataStore;
 

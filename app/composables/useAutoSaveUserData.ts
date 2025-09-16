@@ -18,7 +18,7 @@ export function useAutoSaveUserData() {
             const token = useCookie('sanovise_token').value;
             if (!token) return;
 
-            const res = await $fetch('http://localhost:6969/api/auth/update', {
+            const res = await $fetch('http://138.68.77.184:6969/api/auth/update', {
                 method: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
                 body: { userData }

@@ -91,11 +91,11 @@
       "title": "Einstellungen",
       "selectLanguage": "Sprache auswählen:",
       "selectAIModel": "KI-Modell auswählen:",
-  "version": "Version",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "Version",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "Felder mit <span class='required'>*</span> sind Pflichtfelder!",
@@ -115,6 +115,7 @@
       "submitData": "Daten absenden",
       "abort": "Nicht antworten",
       "exportData": "Daten exportieren",
+  "healthPage": "Zur Gesundheitsseite",
       "invalidHeight": "Die Größe muss zwischen 50 cm und 300 cm liegen.",
       "invalidWeight": "Das Gewicht muss zwischen 1 kg und 500 kg liegen.",
       "invalidWaterIntake": "Der tägliche Wasserkonsum muss zwischen 0 und 50 Litern liegen.",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "Erfolgreich gespeichert",
-  "autoSaveSuccess": "✅ Daten automatisch gespeichert",
-  "autoSaveFailure": "⚠️ Automatisches Speichern fehlgeschlagen: {error}",
+    "autoSaveSuccess": "✅ Daten automatisch gespeichert",
+    "autoSaveFailure": "⚠️ Automatisches Speichern fehlgeschlagen: {error}",
     "successShare": "Erfolgreich gesendet",
     "errorSave": "Fehler beim Speichern aufgetreten.",
     "errorSend": "Fehler beim Senden der Daten aufgetreten",
@@ -138,5 +139,32 @@
     "invalidJson": "Ungültiges Dateiformat! Bitte überprüfen Sie, ob Sie eine JSON-Datei hochgeladen haben.",
     "anotherFile": "Bitte versuchen Sie es erneut oder wählen Sie eine andere Datei.",
     "needPermission": "Bitte erteilen Sie die Berechtigung für den Speicherzugriff."
+  },
+  "health": {
+    "page": {
+      "title": "Gesundheitsprotokoll"
+    },
+    "form": {
+      "title": "Tägliche Gesundheitsdaten erfassen",
+      "date": "Datum",
+      "pulse": "Puls",
+      "systolic": "Systolisch",
+      "diastolic": "Diastolisch",
+      "steps": "Schritte",
+      "notes": "Notizen",
+      "save": "Speichern",
+      "clear": "Löschen"
+    },
+    "dashboard": {
+      "title": "Gesundheitsübersicht",
+      "avgPulse": "Ø Puls",
+      "avgBP": "Ø Blutdruck",
+      "totalSteps": "Gesamte Schritte",
+      "pulseChart": "Puls (30 Tage)",
+      "stepsChart": "Schritte (30 Tage)",
+      "evaluationTitle": "Hervorgehobene Auswertung",
+      "noDataEvaluation": "Keine Daten für Auswertung",
+      "score": "Punktzahl"
+    }
   }
 }

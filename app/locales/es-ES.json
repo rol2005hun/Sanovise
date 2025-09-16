@@ -91,11 +91,11 @@
       "title": "Configuración",
       "selectLanguage": "Selecciona el idioma:",
       "selectAIModel": "Selecciona el modelo de IA:",
-  "version": "Versión",
-  "deleteAccount": "Delete account",
-  "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-  "deleteSuccess": "Account deleted",
-  "deleteError": "An error occurred while deleting the account"
+      "version": "Versión",
+      "deleteAccount": "Delete account",
+      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteSuccess": "Account deleted",
+      "deleteError": "An error occurred while deleting the account"
     },
     "userForm": {
       "requiredInfo": "¡Los campos marcados con <span class='required'>*</span> son obligatorios!",
@@ -115,6 +115,7 @@
       "submitData": "Enviar datos",
       "abort": "No responder",
       "exportData": "Exportar datos",
+  "healthPage": "Ir a la página de Salud",
       "invalidHeight": "La altura debe estar entre 50 cm y 300 cm.",
       "invalidWeight": "El peso debe estar entre 1 kg y 500 kg.",
       "invalidWaterIntake": "El consumo diario de agua debe estar entre 0 y 50 litros.",
@@ -125,8 +126,8 @@
   },
   "global": {
     "successSave": "Guardado con éxito",
-  "autoSaveSuccess": "✅ Datos guardados automáticamente",
-  "autoSaveFailure": "⚠️ La guardado automático falló: {error}",
+    "autoSaveSuccess": "✅ Datos guardados automáticamente",
+    "autoSaveFailure": "⚠️ La guardado automático falló: {error}",
     "successShare": "Enviado con éxito",
     "errorSave": "Se produjo un error al guardar.",
     "errorSend": "Se produjo un error al enviar los datos",
@@ -138,5 +139,32 @@
     "invalidJson": "¡Formato de archivo no válido! Asegúrate de subir un archivo JSON.",
     "anotherFile": "Inténtalo de nuevo o elige otro archivo.",
     "needPermission": "Por favor, concede permiso de acceso al almacenamiento."
+  },
+  "health": {
+    "page": {
+      "title": "Registro de salud"
+    },
+    "form": {
+      "title": "Registrar datos de salud diarios",
+      "date": "Fecha",
+      "pulse": "Pulso",
+      "systolic": "Sistólica",
+      "diastolic": "Diastólica",
+      "steps": "Pasos",
+      "notes": "Notas",
+      "save": "Guardar",
+      "clear": "Borrar"
+    },
+    "dashboard": {
+      "title": "Resumen de salud",
+      "avgPulse": "Pulso medio",
+      "avgBP": "Presión media",
+      "totalSteps": "Pasos totales",
+      "pulseChart": "Pulso (30 días)",
+      "stepsChart": "Pasos (30 días)",
+      "evaluationTitle": "Evaluación destacada",
+      "noDataEvaluation": "No hay datos para evaluar",
+      "score": "Puntuación"
+    }
   }
 }

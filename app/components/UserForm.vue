@@ -44,7 +44,10 @@
                     $t('components.userForm.submitData')
                 }}</button>
             <button v-else type="button" @click="stopAnswering()" class="abort">{{ $t('components.userForm.abort')
-            }}</button>
+                }}</button>
+            <button class="open-health-page">
+                <NuxtLink to="/health">{{ $t('components.userForm.healthPage') }}</NuxtLink>
+            </button>
             <button type="button" :class="['export', {
                 'disabled': !isUserDataComplete
             }]" :disabled="!isUserDataComplete" @click="exportData">{{ $t('components.userForm.exportData') }}</button>
@@ -220,7 +223,6 @@ async function exportData() {
         }
     }
 }
-import { onMounted, onBeforeUnmount, watch } from 'vue';
 import { useAutoSaveUserData } from '@/composables/useAutoSaveUserData';
 
 const { start } = useAutoSaveUserData();

@@ -1,6 +1,6 @@
 {
     "pages": {
-    "auth": {
+        "auth": {
             "login": "Bejelentkezés",
             "register": "Regisztráció",
             "goToRegister": "Regisztrálok",
@@ -148,6 +148,7 @@
             "submitData": "Adatok beküldése",
             "abort": "Ne válaszolj",
             "exportData": "Adatok exportálása",
+            "healthPage": "Egészség oldal",
             "invalidHeight": "A magasság 50 cm és 300 cm között kell legyen.",
             "invalidWeight": "A súly 1 kg és 500 kg között kell legyen.",
             "invalidWaterIntake": "A napi vízfogyasztás 0 és 50 liter között kell legyen.",
@@ -171,5 +172,38 @@
         "invalidJson": "Hibás fájlformátum! Kérlek, ellenőrizd, hogy valóban JSON-t töltöttél-e fel.",
         "anotherFile": "Kérlek, próbáld meg újra vagy válassz másik fájlt.",
         "needPermission": "Kérlek, engedélyezd a hozzáférést a tárhelyhez."
+    },
+    "health": {
+        "page": {
+            "title": "Egészségnapló"
+        },
+        "form": {
+            "title": "Napi egészségadat rögzítése",
+            "date": "Dátum",
+            "pulse": "Pulzus",
+            "systolic": "Systolés",
+            "diastolic": "Diastolés",
+            "steps": "Lépésszám",
+            "notes": "Megjegyzés",
+            "save": "Mentés",
+            "clear": "Törlés"
+        },
+        "dashboard": {
+            "title": "Egészség összegzés",
+            "avgPulse": "Átlagos pulzus",
+            "avgBP": "Átlagos vérnyomás",
+            "totalSteps": "Összes lépés",
+            "pulseChart": "Pulzus (30 nap)",
+            "stepsChart": "Lépések (30 nap)",
+            "daily": "Napi",
+            "averageWithDays": "Átlag ({days} nap)",
+            "evaluationTitle": "Kiemelt értékelés",
+            "noDataEvaluation": "Nincs adat a kiértékeléshez",
+            "selectedTitle": "Kiválasztott dátum",
+            "noSelected": "Nincs kiválasztott bejegyzés",
+            "dailyScore": "Napi pontszám",
+            "avgScore": "Átlagos pontszám",
+            "score": "Pontszám"
+        }
     }
 }
