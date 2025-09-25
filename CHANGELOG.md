@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.1] - [1.0.5] - 2025-09-25
+### Added
+- Added health model to database, the health page now saves the data also in database.
+
+### Changed
+- Updated the locales files with new keys and translations.
+- Updated npm dependencies version to the newest.
+
+### Fixed
+- Fixed the bug while the language selector was not working.
+- Fixed the type error during npm dependencies update.
+
 ## [1.2.0] - [1.0.4] - 2025-09-15
 ### Added
 - Added a health page that displays health data visualizations and evaluations.

@@ -12,8 +12,6 @@
 
         <form @submit.prevent="mode === 'login' ? handleLogin() : handleRegister()" novalidate>
             <template v-if="mode === 'register'">
-                <!-- name field removed: only email and password required -->
-
                 <label class="input-label">
                     {{ $t('pages.auth.email') }} <span class="required">*</span>
                 </label>
@@ -110,7 +108,7 @@ const canLogin = computed(() => {
 
 const canRegister = computed(() => {
     return (
-    registerForm.email.trim().length > 0 &&
+        registerForm.email.trim().length > 0 &&
         registerForm.password.length > 0 &&
         registerForm.confirm.length > 0 &&
         registerForm.password === registerForm.confirm &&

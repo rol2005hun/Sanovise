@@ -1,26 +1,53 @@
 {
+  "pages": {
+    "auth": {
+      "login": "登录",
+      "register": "注册",
+      "goToRegister": "注册",
+      "goToLogin": "登录",
+      "email": "电子邮件",
+      "password": "密码",
+      "passwordConfirm": "确认密码",
+      "acceptPrivacy": "我接受",
+      "privacyLink": "隐私政策",
+      "rememberMe": "保持登录",
+      "fillEmailPassword": "请填写电子邮件和密码。",
+      "loginFailed": "登录失败。",
+      "loginSuccess": "登录成功。",
+      "logoutSuccess": "注销成功。",
+      "fillAll": "请填写所有字段并接受隐私政策。",
+      "registerFailed": "注册失败。",
+      "registerSuccess": "注册成功。"
+    }
+  },
   "components": {
+    "authModal": {
+      "title": "请登录！",
+      "description": "登录后，您可以在设备之间更方便地保存和加载数据。只需一个用户名和密码即可。",
+      "go": "继续"
+    },
     "chatInterface": {
-      "placeholder": "请输入您的消息..."
+      "placeholder": "输入您的消息..."
     },
     "clickMenu": {
-      "showForm": "显示数据输入表单",
+      "showForm": "显示数据表单",
       "showChat": "显示聊天界面"
     },
     "fileUpload": {
       "title": "上传您的数据",
-      "upload": "选择文件或拖拽至此",
+      "upload": "选择文件或将其拖到此处",
       "lastLoaded": "上次加载"
     },
     "header": {
-      "settings": "设置"
+      "settings": "设置",
+      "resetConfirmation": "确定要重置所有设置和数据吗？"
     },
     "optionalFields": {
       "heartRate": "平均心率",
       "placeholderHeartRate": "例如：76",
       "bloodPressure": "平均血压",
       "placeholderBloodPressure": "例如：120/80",
-      "sports": "运动项目",
+      "sports": "运动",
       "placeholderSports": "例如：跑步，游泳",
       "medications": "药物",
       "placeholderMedications": "例如：阿司匹林，扑热息痛",
@@ -32,30 +59,30 @@
       "placeholderDiet": "例如：素食，无麸质",
       "waterIntake": "每日饮水量（升）",
       "placeholderWaterIntake": "例如：2.5",
-      "familyHistory": "家族病史",
+      "familyHistory": "家族史",
       "placeholderFamilyHistory": "例如：心脏病，癌症",
-      "smoking": "吸烟情况",
+      "smoking": "吸烟",
       "smokingOptions": {
-        "selectPlaceholder": "请选择吸烟习惯",
+        "selectPlaceholder": "选择吸烟习惯",
         "never": "从不",
         "occasionally": "偶尔",
         "regularly": "经常"
       },
       "alcohol": "饮酒情况",
       "alcoholOptions": {
-        "selectPlaceholder": "请选择饮酒习惯",
+        "selectPlaceholder": "选择饮酒习惯",
         "never": "从不",
         "occasionally": "偶尔",
         "regularly": "经常"
       },
-      "sleep": "睡眠时间（小时/天）",
+      "sleep": "睡眠（小时/天）",
       "placeholderSleep": "例如：7",
       "physicalActivityLevel": "身体活动水平",
       "placeholderPhysicalActivityLevel": "例如：低，中，高",
       "workType": "工作类型",
       "placeholderWorkType": "例如：办公室，体力，混合",
       "stressLevel": "压力水平",
-      "placeholderStressLevel": "例如：低，中，高 / 30, 60, 90",
+      "placeholderStressLevel": "例如：低，中，高 / 30、60、90",
       "mentalHealth": "心理健康",
       "placeholderMentalHealth": "例如：抑郁，焦虑",
       "cholesterolLevel": "胆固醇水平",
@@ -63,65 +90,71 @@
       "bloodSugarLevel": "血糖水平",
       "placeholderBloodSugarLevel": "例如：100 mg/dL",
       "supplements": "营养补充剂",
-      "placeholderSupplements": "例如：维生素D，欧米伽3",
+      "placeholderSupplements": "例如：维生素D，Omega-3",
       "vaccinations": "疫苗接种",
-      "placeholderVaccinations": "例如：流感，新冠疫苗",
+      "placeholderVaccinations": "例如：流感，COVID-19",
       "reproductiveHealth": "生殖健康",
       "placeholderReproductiveHealth": "例如：月经周期，怀孕",
       "visionAndHearing": "视力与听力",
       "placeholderVisionAndHearing": "例如：近视，听力下降",
       "sleepQuality": "睡眠质量",
-      "placeholderSleepQuality": "例如：好，一般，差",
+      "placeholderSleepQuality": "例如：好，普通，差",
       "medicalRecords": "医疗记录",
       "placeholderMedicalRecords": "例如：血液检查，X光",
       "medicalHistory": "病史",
-      "placeholderMedicalHistory": "例如：手术，住院"
+      "placeholderMedicalHistory": "例如：手术，住院治疗"
     },
     "privacyModal": {
-      "title": "隐私政策",
-      "text1": "您提供的数据仅用于健康咨询系统，不会与第三方共享。系统不存储您的数据，您可以自行管理并保存到设备。",
-      "text2": "接受隐私政策即表示您同意系统基于您提供的信息提供建议。"
+      "title": "我们的隐私声明",
+      "text1": "您提供的数据仅供健康咨询系统使用，不会与第三方共享。系统不会保存您的数据；您可以自行管理并保存在您的设备上。",
+      "text2": "接受隐私条款即表示您同意我们的系统根据您提供的信息提供建议。"
+    },
+    "privacyModalAuth": {
+      "title": "我们的隐私声明",
+      "text1": "您提供的数据仅供健康咨询系统使用，不会与第三方共享。您的数据存储在 MongoDB 数据库中，该数据库已安全配置并受到潜在攻击的保护。",
+      "text2": "接受隐私条款即表示您同意我们的系统根据您提供的信息提供建议。"
     },
     "response": {
-      "title": "Sanovise医生的回复：",
+      "title": "Dr. Sanovise 的回复：",
       "analyzing": "正在分析数据 📚🧠",
-      "thinking": "思考中 🤔"
+      "thinking": "正在思考 🤔"
     },
     "settingsModal": {
       "title": "设置",
-      "selectLanguage": "请选择语言：",
-      "selectAIModel": "请选择AI模型：",
+      "selectLanguage": "选择所需语言：",
+      "selectAIModel": "选择所需 AI 模型：",
       "version": "版本",
-      "deleteAccount": "Delete account",
-      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
-      "deleteSuccess": "Account deleted",
-      "deleteError": "An error occurred while deleting the account"
+      "logout": "注销",
+      "deleteAccount": "删除账户",
+      "deleteConfirm": "确定要删除您的账户吗？此操作不可撤销。",
+      "deleteSuccess": "账户已删除",
+      "deleteError": "删除账户时出错"
     },
     "userForm": {
-      "requiredInfo": "带有 <span class='required'>*</span> 标记的字段为必填！",
+      "requiredInfo": "带有 <span class='required'>*</span> 的字段为必填项！",
       "birthDate": "出生日期",
       "gender": "性别",
-      "selectGender": "请选择性别",
+      "selectGender": "选择性别",
       "male": "男",
       "female": "女",
       "height": "身高",
       "weight": "体重",
       "placeholderHeight": "例如：175",
       "placeholderWeight": "例如：70",
-      "showExtra": "显示更多信息",
-      "hideExtra": "隐藏更多信息",
+      "showExtra": "显示更多数据",
+      "hideExtra": "隐藏更多数据",
       "acceptPrivacy": "我接受",
       "privacyLink": "隐私政策",
       "submitData": "提交数据",
       "abort": "不回答",
       "exportData": "导出数据",
-  "healthPage": "前往健康页面",
-      "invalidHeight": "身高应在50到300厘米之间。",
-      "invalidWeight": "体重应在1到500公斤之间。",
-      "invalidWaterIntake": "每日饮水量应在0到50升之间。",
-      "invalidHeartRate": "心率应在30到250之间。",
-      "invalidSleep": "睡眠时间应在0到24小时之间。",
-      "invalidBloodPressure": "血压格式应为收缩压/舒张压（例如：120/80）。"
+      "healthPage": "健康页面",
+      "invalidHeight": "身高必须在 50 厘米到 300 厘米之间。",
+      "invalidWeight": "体重必须在 1 公斤到 500 公斤之间。",
+      "invalidWaterIntake": "每日饮水量必须在 0 到 50 升之间。",
+      "invalidHeartRate": "心率必须在 30 到 250 之间。",
+      "invalidSleep": "睡眠时间必须在 0 到 24 小时之间。",
+      "invalidBloodPressure": "血压格式应为：systole/diastole（例如：120/80）。"
     }
   },
   "global": {
@@ -129,25 +162,25 @@
     "autoSaveSuccess": "✅ 数据已自动保存",
     "autoSaveFailure": "⚠️ 自动保存失败：{error}",
     "successShare": "发送成功",
-    "errorSave": "保存时出错。",
-    "errorSend": "发送数据时出错",
-    "tryAgain": "请稍后再试或刷新页面。",
-    "emptyResponse": "服务器未返回响应。可能连接已断开。",
+    "errorSave": "保存时发生错误。",
+    "errorSend": "发送数据时发生错误",
+    "tryAgain": "请稍后重试或刷新页面。",
+    "emptyResponse": "服务器未返回响应。可能已中断。",
     "networkError": "网络错误 – 请检查您的互联网连接！",
-    "unknownError": "发生未知错误。😔",
+    "unknownError": "发生未知错误。 😔",
     "errorLoad": "文件不包含有效数据！",
-    "invalidJson": "文件格式错误！请确认上传的是JSON文件。",
-    "anotherFile": "请重试或选择另一个文件。",
-    "needPermission": "请允许访问存储权限。"
+    "invalidJson": "文件格式无效！请确认您上传的是 JSON 文件。",
+    "anotherFile": "请重试或选择其他文件。",
+    "needPermission": "请授权访问存储。"
   },
   "health": {
     "page": {
-      "title": "健康日志"
+      "title": "健康日记"
     },
     "form": {
       "title": "记录每日健康数据",
       "date": "日期",
-      "pulse": "心率",
+      "pulse": "脉搏",
       "systolic": "收缩压",
       "diastolic": "舒张压",
       "steps": "步数",
@@ -157,14 +190,43 @@
     },
     "dashboard": {
       "title": "健康摘要",
-      "avgPulse": "平均心率",
+      "avgPulse": "平均脉搏",
       "avgBP": "平均血压",
       "totalSteps": "总步数",
-      "pulseChart": "心率（30天）",
+      "pulseChart": "脉搏（30天）",
       "stepsChart": "步数（30天）",
-      "evaluationTitle": "重点评估",
-      "noDataEvaluation": "暂无评估数据",
-      "score": "评分"
+      "daily": "每日",
+      "averageWithDays": "平均值（{days} 天）",
+      "evaluationTitle": "精选评估",
+      "noDataEvaluation": "无评估数据",
+      "selectedTitle": "所选日期",
+      "noSelected": "未选择条目",
+      "dailyScore": "每日得分",
+      "avgScore": "平均得分",
+      "score": "得分",
+      "unitBpm": "次/分钟",
+      "unitSteps": "步"
+    },
+    "evaluation": {
+      "pulse": {
+        "low": "脉搏偏低",
+        "high": "脉搏偏高",
+        "ok": "脉搏正常"
+      },
+      "bp": {
+        "danger": "危险性高血压",
+        "high": "高血压",
+        "low": "低血压",
+        "ok": "血压正常"
+      },
+      "activity": {
+        "low": "活动量低",
+        "good": "活动量良好",
+        "ok": "活动量"
+      },
+      "age": {
+        "highPulse": "老年人脉搏偏高"
+      }
     }
   }
 }

@@ -18,7 +18,6 @@
             </div>
         </div>
 
-        <!-- Charts: 30-day pulse and steps -->
         <div class="charts">
             <div class="chart">
                 <h4>{{ $t('health.dashboard.pulseChart') }}</h4>
@@ -55,7 +54,6 @@
             </div>
         </div>
 
-        <!-- Single card: selected-day table with daily vs 30-day average evaluations -->
         <div class="selected-entry single-card">
             <h4>{{ $t('health.dashboard.selectedTitle') }}: {{ selectedDate }}</h4>
 
@@ -78,12 +76,12 @@
                             <td>
                                 <div class="metric-value">{{ selectedEntry.pulse ?? '-' }}</div>
                                 <div class="metric-eval" :class="dailyPulseCategory?.severity">{{
-                                    dailyPulseCategory?.message ?? '' }}</div>
+                                    dailyPulseCategory ? t(dailyPulseCategory.message) : '' }}</div>
                             </td>
                             <td>
                                 <div class="metric-value">{{ avgMetrics.pulse ?? '-' }}</div>
                                 <div class="metric-eval" :class="avgPulseCategory?.severity">{{
-                                    avgPulseCategory?.message ?? '' }}</div>
+                                    avgPulseCategory ? t(avgPulseCategory.message) : '' }}</div>
                             </td>
                         </tr>
 
@@ -92,14 +90,14 @@
                             <td>
                                 <div class="metric-value">{{ selectedEntry.systolic ?? '-' }}/{{ selectedEntry.diastolic
                                     ?? '-' }}</div>
-                                <div class="metric-eval" :class="dailyBPCategory?.severity">{{ dailyBPCategory?.message
-                                    ?? '' }}</div>
+                                <div class="metric-eval" :class="dailyBPCategory?.severity">{{ dailyBPCategory ?
+                                    t(dailyBPCategory.message) : '' }}</div>
                             </td>
                             <td>
                                 <div class="metric-value">{{ avgMetrics.systolic ?? '-' }}/{{ avgMetrics.diastolic ??
                                     '-' }}</div>
-                                <div class="metric-eval" :class="avgBPCategory?.severity">{{ avgBPCategory?.message ??
-                                    '' }}</div>
+                                <div class="metric-eval" :class="avgBPCategory?.severity">{{ avgBPCategory ?
+                                    t(avgBPCategory.message) : '' }}</div>
                             </td>
                         </tr>
 
@@ -108,12 +106,12 @@
                             <td>
                                 <div class="metric-value">{{ selectedEntry.steps ?? '-' }}</div>
                                 <div class="metric-eval" :class="dailyStepsCategory?.severity">{{
-                                    dailyStepsCategory?.message ?? '' }}</div>
+                                    dailyStepsCategory ? t(dailyStepsCategory.message) : '' }}</div>
                             </td>
                             <td>
                                 <div class="metric-value">{{ avgMetrics.steps ?? '-' }}</div>
                                 <div class="metric-eval" :class="avgStepsCategory?.severity">{{
-                                    avgStepsCategory?.message ?? '' }}</div>
+                                    avgStepsCategory ? t(avgStepsCategory.message) : '' }}</div>
                             </td>
                         </tr>
                     </tbody>
@@ -136,6 +134,7 @@
 
 <script setup lang="ts">
 import { useHealth } from '@/store/modules/health';
+import { useI18n } from 'vue-i18n';
 import { useHealthLog } from '@/composables/useHealthLog';
 import { evaluateHealthEntry, type HealthEvaluation } from '@/utils/healthEvaluator';
 
@@ -269,6 +268,8 @@ const stepsTitle = ref<string | null>(null);
 
 function clamp(v: number, a: number, b: number) { return Math.max(a, Math.min(b, v)); }
 
+const { t } = useI18n();
+
 function onPulseMove(ev: MouseEvent) {
     const svg = ev.currentTarget as SVGElement | null;
     if (!svg) return;
@@ -279,7 +280,7 @@ function onPulseMove(ev: MouseEvent) {
     const d = data.value[idx];
     const val = pulseValues.value[idx];
     if (!d) { hideTooltip(); return; }
-    const txt = (val === null || val === undefined) ? `${d.date}: —` : `${d.date}: ${val} bpm`;
+    const txt = (val === null || val === undefined) ? `${d.date}: —` : `${d.date}: ${val} ${t('health.dashboard.unitBpm')}`;
     showTooltip(txt, ev.clientX, ev.clientY);
 }
 
@@ -293,7 +294,7 @@ function onStepsMove(ev: MouseEvent) {
     const d = data.value[idx];
     const val = stepsValues.value[idx];
     if (!d) { hideTooltip(); return; }
-    const txt = (val === null || val === undefined) ? `${d.date}: —` : `${d.date}: ${val} lépés`;
+    const txt = (val === null || val === undefined) ? `${d.date}: —` : `${d.date}: ${val} ${t('health.dashboard.unitSteps')}`;
     showTooltip(txt, ev.clientX, ev.clientY);
 }
 

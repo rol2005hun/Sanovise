@@ -7,8 +7,8 @@
             <div class="language-selection">
                 <label for="language">{{ $t('components.settingsModal.selectLanguage') }}</label>
                 <select id="language" v-model="language" class="language-select">
-                    <option v-for="code in availableLocales" :key="code" :value="code">
-                        {{ code }}
+                    <option v-for="locale in locales" :key="locale.code" :value="locale.code">
+                        {{ locale.name }}
                     </option>
                 </select>
             </div>
@@ -40,11 +40,10 @@
 </template>
 
 <script setup lang="ts">
-import { dataStore } from '@/store';
+import { dataStore, toastStore } from '@/store';
 import packageJson from '../package.json';
-import { toastStore } from '@/store';
 
-const { availableLocales, locale } = useI18n();
+const { locales, locale, setLocale } = useI18n();
 const aiModels = [
     { id: 'zeeshaan-ai/Medical-Summary-Notes-ONNX', name: 'Dr. Sanovise', type: 'advice' },
     { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1', type: 'advice2' },
@@ -60,7 +59,7 @@ const selectedModel = ref(aiModels.find(model => model.id === dataStore.userData
 const language = computed({
     get: () => locale.value,
     set: (value: string) => {
-        locale.value = value as any;
+        setLocale(value as any);
     }
 });
 

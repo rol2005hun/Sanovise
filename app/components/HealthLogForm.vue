@@ -75,8 +75,12 @@ watch(date, (val) => {
   loadForDate(val);
 });
 
-onMounted(() => {
-  store.init();
+onMounted(async () => {
+  try {
+    if (store.init && typeof store.init === 'function') await store.init();
+  } catch (err) {
+    console.warn('[HealthLogForm] store.init failed', err);
+  }
   store.selectDate(date.value);
   loadForDate(date.value);
 });
@@ -84,7 +88,6 @@ onMounted(() => {
 function onSubmit() {
   add({ date: date.value, pulse: pulse.value, systolic: systolic.value, diastolic: diastolic.value, steps: steps.value, notes: notes.value });
   pulse.value = null; systolic.value = null; diastolic.value = null; steps.value = null; notes.value = '';
-  alert(String($t('global.successSave')) || 'Saved');
 }
 
 function clear() {

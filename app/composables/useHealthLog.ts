@@ -1,12 +1,42 @@
 import { useHealth } from '../store/modules/health'
+import { dataStore } from '@/store'
 import { evaluateHealthEntry, type HealthEvaluation } from '../utils/healthEvaluator'
 
 export function useHealthLog() {
     const store = useHealth();
-    store.init();
 
     function add(entry: { date?: string, pulse?: number | null, systolic?: number | null, diastolic?: number | null, steps?: number | null, notes?: string }) {
         const e = store.addEntry(entry);
+
+        try {
+            if (dataStore.isLoggedIn) {
+                const apiUrl = 'http://138.68.77.184:6969/api/health';
+                (async () => {
+                    try {
+                        let headers: any = { 'Content-Type': 'application/json' };
+                        try {
+                            const tokenCookie = useCookie && typeof useCookie === 'function' ? useCookie('sanovise_token') : null;
+                            const token = tokenCookie ? tokenCookie.value : null;
+                            if (token) headers['Authorization'] = `Bearer ${token}`;
+                        } catch (e) {
+                            console.error(e);
+                        }
+
+                        await fetch(apiUrl, {
+                            method: 'POST',
+                            credentials: 'include',
+                            headers,
+                            body: JSON.stringify(e)
+                        });
+                    } catch (err) {
+                        console.warn('[useHealthLog] Failed to POST health entry to server', err);
+                    }
+                })();
+            }
+        } catch (err) {
+            console.warn('[useHealthLog] Error while attempting server save', err);
+        }
+
         return e;
     }
 

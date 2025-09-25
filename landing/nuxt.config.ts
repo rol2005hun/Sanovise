@@ -31,12 +31,8 @@ export default defineNuxtConfig({
       { code: 'hu-HU', name: 'Magyar', iso: 'hu-HU', file: 'hu-HU.json' }
     ],
     defaultLocale: 'en-US',
-    lazy: true,
     langDir: '../locales',
     strategy: 'no_prefix',
-    bundle: {
-      optimizeTranslationDirective: false
-    },
     detectBrowserLanguage: {
       redirectOn: 'all'
     },

@@ -13,12 +13,12 @@
   "author": "ranzak",
   "license": "ISC",
   "dependencies": {
-    "@nuxtjs/i18n": "^10.0.0",
-    "nuxt": "^4.0.0",
-    "vue": "^3.5.17",
+    "@nuxtjs/i18n": "^10.1.0",
+    "nuxt": "^4.1.2",
+    "vue": "^3.5.22",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "sass": "^1.89.2"
+    "sass": "^1.93.2"
   }
 }

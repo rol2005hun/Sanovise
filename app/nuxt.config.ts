@@ -40,12 +40,8 @@ export default defineNuxtConfig({
       { code: 'it-IT', name: 'Italiano', iso: 'it-IT', file: 'it-IT.json' }
     ],
     defaultLocale: 'en-US',
-    lazy: true,
     langDir: '../locales',
     strategy: 'no_prefix',
-    bundle: {
-      optimizeTranslationDirective: false
-    },
     detectBrowserLanguage: {
       redirectOn: 'all'
     },

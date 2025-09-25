@@ -203,7 +203,30 @@
             "noSelected": "Nincs kiválasztott bejegyzés",
             "dailyScore": "Napi pontszám",
             "avgScore": "Átlagos pontszám",
-            "score": "Pontszám"
+            "score": "Pontszám",
+            "unitBpm": "bpm",
+            "unitSteps": "lépés"
+        },
+        "evaluation": {
+            "pulse": {
+                "low": "Alacsony pulzus",
+                "high": "Magas pulzus",
+                "ok": "Pulzus normális"
+            },
+            "bp": {
+                "danger": "Veszélyesen magas vérnyomás",
+                "high": "Magas vérnyomás",
+                "low": "Alacsony vérnyomás",
+                "ok": "Vérnyomás normális"
+            },
+            "activity": {
+                "low": "Kevés aktivitás",
+                "good": "Jó aktivitás",
+                "ok": "Aktivitás"
+            },
+            "age": {
+                "highPulse": "Idős korban magas pulzus"
+            }
         }
     }
 }

@@ -66,8 +66,55 @@ export const useHealth = defineStore('health', {
     },
 
     actions: {
-        init() {
+        async init() {
             try {
+                if (typeof window !== 'undefined') {
+                    try {
+                        const headers: any = {};
+                        try {
+                            const tokenCookie = typeof useCookie === 'function' ? useCookie('sanovise_token') : null;
+                            const token = tokenCookie ? tokenCookie.value : null;
+                            if (token) headers['Authorization'] = `Bearer ${token}`;
+                        } catch (e) {
+                            console.log(e);
+                        }
+
+                        const res = await fetch('http://138.68.77.184:6969/api/health', { credentials: 'include', headers });
+                        if (res.ok) {
+                            const body = await res.json();
+                            if (body && body.success && Array.isArray(body.entries)) {
+                                const mapped = body.entries.map((e: any) => ({
+                                    id: e._id?.toString() ?? e.id ?? genId(),
+                                    date: e.date,
+                                    pulse: typeof e.pulse === 'number' ? e.pulse : null,
+                                    systolic: typeof e.systolic === 'number' ? e.systolic : null,
+                                    diastolic: typeof e.diastolic === 'number' ? e.diastolic : null,
+                                    steps: typeof e.steps === 'number' ? e.steps : null,
+                                    notes: e.notes ?? ''
+                                } as any));
+
+                                const local = readLocal();
+                                const serverByDate = new Map<string, any>();
+                                for (const s of mapped) serverByDate.set(s.date, s);
+
+                                for (const l of local) {
+                                    if (!serverByDate.has(l.date)) {
+                                        serverByDate.set(l.date, l);
+                                    }
+                                }
+
+                                const merged = Array.from(serverByDate.values()).sort((a: any, b: any) => a.date < b.date ? 1 : -1);
+                                this.entries = merged;
+
+                                this.save();
+                                return;
+                            }
+                        }
+                    } catch (err) {
+                        console.warn('[Sanovise] Failed to load health entries from server, falling back to localStorage', err);
+                    }
+                }
+
                 this.entries = readLocal();
             } catch (e) {
                 console.error(e);

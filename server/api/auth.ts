@@ -110,6 +110,8 @@ const authMiddleware = async (req: Request, res: Response, next: NextFunction): 
     }
 };
 
+export { authMiddleware };
+
 router.get('/me', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         let uid: string | undefined = (req as any).user?.id;

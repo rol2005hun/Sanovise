@@ -3,27 +3,34 @@
     "auth": {
       "login": "Login",
       "register": "Register",
-      "goToRegister": "Register",
-      "goToLogin": "Log in",
+      "goToRegister": "Go to Register",
+      "goToLogin": "Go to Login",
       "email": "Email",
       "password": "Password",
-      "passwordConfirm": "Confirm password",
-      "acceptPrivacy": "I accept the privacy policy",
+      "passwordConfirm": "Confirm Password",
+      "acceptPrivacy": "I accept the",
+      "privacyLink": "privacy policy",
       "rememberMe": "Remember me",
-      "fillEmailPassword": "Please fill in email and password.",
+      "fillEmailPassword": "Please fill in the email and password.",
       "loginFailed": "Login failed.",
-      "loginSuccess": "Successfully logged in.",
-      "fillAll": "Please fill all fields and accept the privacy policy.",
+      "loginSuccess": "Login successful.",
+      "logoutSuccess": "Logout successful.",
+      "fillAll": "Please fill in all fields and accept the privacy policy.",
       "registerFailed": "Registration failed.",
-      "registerSuccess": "Successfully registered."
+      "registerSuccess": "Registration successful."
     }
   },
   "components": {
+    "authModal": {
+      "title": "Sign in!",
+      "description": "If you sign in, you can more easily save and load your data across devices. You only need a username and password.",
+      "go": "Go"
+    },
     "chatInterface": {
       "placeholder": "Type your message..."
     },
     "clickMenu": {
-      "showForm": "Show data input form",
+      "showForm": "Show data entry form",
       "showChat": "Show chat interface"
     },
     "fileUpload": {
@@ -32,27 +39,28 @@
       "lastLoaded": "Last loaded"
     },
     "header": {
-      "settings": "Settings"
+      "settings": "Settings",
+      "resetConfirmation": "Are you sure you want to reset all settings and data?"
     },
     "optionalFields": {
       "heartRate": "Average heart rate",
-      "placeholderHeartRate": "e.g., 76",
+      "placeholderHeartRate": "e.g.: 76",
       "bloodPressure": "Average blood pressure",
-      "placeholderBloodPressure": "e.g., 120/80",
+      "placeholderBloodPressure": "e.g.: 120/80",
       "sports": "Sports",
-      "placeholderSports": "e.g., Running, Swimming",
+      "placeholderSports": "e.g.: Running, Swimming",
       "medications": "Medications",
-      "placeholderMedications": "e.g., Aspirin, Paracetamol",
+      "placeholderMedications": "e.g.: Aspirin, Paracetamol",
       "chronicDiseases": "Chronic diseases",
-      "placeholderChronicDiseases": "e.g., Hypertension, Diabetes",
+      "placeholderChronicDiseases": "e.g.: Hypertension, Diabetes",
       "allergies": "Allergies",
-      "placeholderAllergies": "e.g., Pollen, Nuts",
+      "placeholderAllergies": "e.g.: Pollen, Nuts",
       "diet": "Diet",
-      "placeholderDiet": "e.g., Vegetarian, Gluten-free",
+      "placeholderDiet": "e.g.: Vegetarian, Gluten-free",
       "waterIntake": "Daily water intake (liters)",
-      "placeholderWaterIntake": "e.g., 2.5",
+      "placeholderWaterIntake": "e.g.: 2.5",
       "familyHistory": "Family medical history",
-      "placeholderFamilyHistory": "e.g., Heart disease, Cancer",
+      "placeholderFamilyHistory": "e.g.: Heart disease, Cancer",
       "smoking": "Smoking",
       "smokingOptions": {
         "selectPlaceholder": "Select smoking habit",
@@ -62,57 +70,63 @@
       },
       "alcohol": "Alcohol consumption",
       "alcoholOptions": {
-        "selectPlaceholder": "Select alcohol consumption habit",
+        "selectPlaceholder": "Select alcohol habit",
         "never": "Never",
         "occasionally": "Occasionally",
         "regularly": "Regularly"
       },
       "sleep": "Sleep (hours/day)",
-      "placeholderSleep": "e.g., 7",
+      "placeholderSleep": "e.g.: 7",
       "physicalActivityLevel": "Physical activity level",
-      "placeholderPhysicalActivityLevel": "e.g., Low, Medium, High",
-      "workType": "Work type",
-      "placeholderWorkType": "e.g., Office, Physical, Mixed",
+      "placeholderPhysicalActivityLevel": "e.g.: Low, Moderate, High",
+      "workType": "Type of work",
+      "placeholderWorkType": "e.g.: Office, Physical, Mixed",
       "stressLevel": "Stress level",
-      "placeholderStressLevel": "e.g., Low, Medium, High / 30, 60, 90",
+      "placeholderStressLevel": "e.g.: Low, Moderate, High / 30, 60, 90",
       "mentalHealth": "Mental health",
-      "placeholderMentalHealth": "e.g., Depression, Anxiety",
+      "placeholderMentalHealth": "e.g.: Depression, Anxiety",
       "cholesterolLevel": "Cholesterol level",
-      "placeholderCholesterolLevel": "e.g., 200 mg/dL",
+      "placeholderCholesterolLevel": "e.g.: 200 mg/dL",
       "bloodSugarLevel": "Blood sugar level",
-      "placeholderBloodSugarLevel": "e.g., 100 mg/dL",
+      "placeholderBloodSugarLevel": "e.g.: 100 mg/dL",
       "supplements": "Supplements",
-      "placeholderSupplements": "e.g., Vitamin D, Omega‑3",
+      "placeholderSupplements": "e.g.: Vitamin D, Omega-3",
       "vaccinations": "Vaccinations",
-      "placeholderVaccinations": "e.g., Flu, COVID‑19",
+      "placeholderVaccinations": "e.g.: Influenza, COVID-19",
       "reproductiveHealth": "Reproductive health",
-      "placeholderReproductiveHealth": "e.g., Menstrual cycle, Pregnancy",
+      "placeholderReproductiveHealth": "e.g.: Menstrual cycle, Pregnancy",
       "visionAndHearing": "Vision and hearing",
-      "placeholderVisionAndHearing": "e.g., Nearsightedness, Hearing loss",
+      "placeholderVisionAndHearing": "e.g.: Nearsightedness, Hearing loss",
       "sleepQuality": "Sleep quality",
-      "placeholderSleepQuality": "e.g., Good, Fair, Poor",
+      "placeholderSleepQuality": "e.g.: Good, Moderate, Poor",
       "medicalRecords": "Medical records",
-      "placeholderMedicalRecords": "e.g., Blood test, X-ray",
+      "placeholderMedicalRecords": "e.g.: Blood test, X-ray",
       "medicalHistory": "Medical history",
-      "placeholderMedicalHistory": "e.g., Surgeries, Hospitalizations"
+      "placeholderMedicalHistory": "e.g.: Surgeries, Hospital treatments"
     },
     "privacyModal": {
-      "title": "Our Privacy Notice",
-      "text1": "The information you provide is used solely by the health advisory system and is not shared with third parties. Your data is not stored by the system – you manage it and can download it to your device.",
-      "text2": "By accepting the privacy policy, you consent to the system providing advice based on the information you enter."
+      "title": "Our privacy policy",
+      "text1": "The data you provide is used only by the health advisory system and is not shared with third parties. The system does not store your data; you can manage it and save it to your own device.",
+      "text2": "By accepting the privacy terms, you consent to our system giving advice based on the information you provide."
+    },
+    "privacyModalAuth": {
+      "title": "Our privacy policy",
+      "text1": "The data you provide is used only by the health advisory system and is not shared with third parties. Your data is stored in a MongoDB database that is securely configured and protected against potential attacks.",
+      "text2": "By accepting the privacy terms, you consent to our system giving advice based on the information you provide."
     },
     "response": {
-      "title": "Dr. Sanovise’s response:",
-      "analyzing": "Analyzing data 📚🧠",
+      "title": "Dr. Sanovise's response:",
+      "analyzing": "Analyzing the data 📚🧠",
       "thinking": "Thinking 🤔"
     },
     "settingsModal": {
       "title": "Settings",
-      "selectLanguage": "Select your preferred language:",
-      "selectAIModel": "Select your preferred AI model:",
+      "selectLanguage": "Select the desired language:",
+      "selectAIModel": "Select the desired AI model:",
       "version": "Version",
+      "logout": "Logout",
       "deleteAccount": "Delete account",
-      "deleteConfirm": "Are you sure you want to delete your account? This action is permanent.",
+      "deleteConfirm": "Are you sure you want to delete your account? This is permanent.",
       "deleteSuccess": "Account deleted",
       "deleteError": "An error occurred while deleting the account"
     },
@@ -125,43 +139,43 @@
       "female": "Female",
       "height": "Height",
       "weight": "Weight",
-      "placeholderHeight": "e.g., 175",
-      "placeholderWeight": "e.g., 70",
+      "placeholderHeight": "e.g.: 175",
+      "placeholderWeight": "e.g.: 70",
       "showExtra": "Show additional data",
       "hideExtra": "Hide additional data",
       "acceptPrivacy": "I accept the",
       "privacyLink": "privacy policy",
       "submitData": "Submit data",
-      "abort": "Do not respond",
-  "exportData": "Export data",
-  "healthPage": "Go to Health page",
+      "abort": "Do not answer",
+      "exportData": "Export data",
+      "healthPage": "Health page",
       "invalidHeight": "Height must be between 50 cm and 300 cm.",
       "invalidWeight": "Weight must be between 1 kg and 500 kg.",
       "invalidWaterIntake": "Daily water intake must be between 0 and 50 liters.",
       "invalidHeartRate": "Heart rate must be between 30 and 250.",
-      "invalidSleep": "Sleep time must be between 0 and 24 hours.",
-      "invalidBloodPressure": "Blood pressure must be in the format systole/diastole (e.g., 120/80)."
+      "invalidSleep": "Sleep duration must be between 0 and 24 hours.",
+      "invalidBloodPressure": "Blood pressure must be in the format systole/diastole (e.g.: 120/80)."
     }
   },
   "global": {
-    "successSave": "Successfully saved",
-    "autoSaveSuccess": "✅ Data automatically saved",
-    "autoSaveFailure": "⚠️ Automatic save failed: {error}",
-    "successShare": "Successfully sent",
+    "successSave": "Saved successfully",
+    "autoSaveSuccess": "✅ Data saved automatically",
+    "autoSaveFailure": "⚠️ Auto-save failed: {error}",
+    "successShare": "Sent successfully",
     "errorSave": "An error occurred while saving.",
     "errorSend": "An error occurred while sending the data",
     "tryAgain": "Please try again later or refresh the page.",
-    "emptyResponse": "No response from server. There may have been a disconnection.",
+    "emptyResponse": "The server did not send a response. Something may have been interrupted.",
     "networkError": "Network error – check your internet connection!",
     "unknownError": "An unknown error occurred. 😔",
     "errorLoad": "The file does not contain valid data!",
-    "invalidJson": "Invalid file format! Please make sure it is a JSON file.",
+    "invalidJson": "Invalid file format! Please check that you uploaded a JSON file.",
     "anotherFile": "Please try again or choose another file.",
-    "needPermission": "Please grant storage access permission."
+    "needPermission": "Please allow access to storage."
   },
   "health": {
     "page": {
-      "title": "Health Log"
+      "title": "Health journal"
     },
     "form": {
       "title": "Record daily health data",
@@ -175,17 +189,44 @@
       "clear": "Clear"
     },
     "dashboard": {
-      "title": "Health Summary",
-      "avgPulse": "Avg. pulse",
-      "avgBP": "Avg. BP",
+      "title": "Health summary",
+      "avgPulse": "Average pulse",
+      "avgBP": "Average blood pressure",
       "totalSteps": "Total steps",
-      "daily": "Daily",
-      "averageWithDays": "Average ({days} days)",
       "pulseChart": "Pulse (30 days)",
       "stepsChart": "Steps (30 days)",
+      "daily": "Daily",
+      "averageWithDays": "Average ({days} days)",
       "evaluationTitle": "Highlighted evaluation",
-      "noDataEvaluation": "No data for evaluation"
-      ,"score": "Score"
+      "noDataEvaluation": "No data for evaluation",
+      "selectedTitle": "Selected date",
+      "noSelected": "No entry selected",
+      "dailyScore": "Daily score",
+      "avgScore": "Average score",
+      "score": "Score",
+      "unitBpm": "bpm",
+      "unitSteps": "steps"
+    },
+    "evaluation": {
+      "pulse": {
+        "low": "Low pulse",
+        "high": "High pulse",
+        "ok": "Pulse normal"
+      },
+      "bp": {
+        "danger": "Dangerously high blood pressure",
+        "high": "High blood pressure",
+        "low": "Low blood pressure",
+        "ok": "Blood pressure normal"
+      },
+      "activity": {
+        "low": "Low activity",
+        "good": "Good activity",
+        "ok": "Activity"
+      },
+      "age": {
+        "highPulse": "High pulse for older age"
+      }
     }
   }
 }

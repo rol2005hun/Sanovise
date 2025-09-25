@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import adviceRouter from './api/advice';
 import authRouter from './api/auth';
+import healthRouter from './api/health';
 import { connectDB } from './utils/db';
 import 'dotenv/config';
 import { sendDiscordLog } from './utils/discordLogger';
@@ -16,6 +17,7 @@ server.use(express.urlencoded({ extended: true }));
 
 server.use('/api', adviceRouter);
 server.use('/api/auth', authRouter);
+server.use('/api/health', healthRouter);
 
 connectDB().catch(err => {
   console.error('[Sanovise - Error] Initial DB connection failed: ', err);
