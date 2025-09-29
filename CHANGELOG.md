@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.2] - [1.0.5] - 2025-09-29
+### Added
+
+### Changed
+
+### Fixed
+- Fixed the width size of input type date on mobile browsers.
+
 ## [1.2.1] - [1.0.5] - 2025-09-25
 ### Added
 - Added health model to database, the health page now saves the data also in database.
