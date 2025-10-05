@@ -139,7 +139,7 @@ import { useHealthLog } from '@/composables/useHealthLog';
 import { evaluateHealthEntry, type HealthEvaluation } from '@/utils/healthEvaluator';
 
 const healthStore = useHealth();
-const { summary, evaluateLatest, evaluateForDate, averageScore, store } = useHealthLog();
+const { summary, evaluateForDate, averageScore, store } = useHealthLog();
 const days = 30;
 const data = computed(() => summary(days));
 
@@ -159,8 +159,7 @@ const pulsePoints = computed(() => {
     });
 
     return pts.join(' ');
-})
-
+});
 
 const stepsPoints = computed(() => {
     const arr = data.value;
@@ -183,9 +182,7 @@ const stepsPoints = computed(() => {
     });
 
     return pts.join(' ');
-})
-
-const evaluation = computed(() => evaluateLatest());
+});
 
 const selectedEntry = computed(() => store.entryForSelectedDate ?? store.entries.find(e => e.date === store.selectedDate) ?? null);
 
@@ -262,9 +259,6 @@ const stepsMax = computed(() => {
     const vals = stepsValues.value.filter((v): v is number => typeof v === 'number');
     return vals.length ? Math.max(...vals) : null;
 });
-
-const pulseTitle = ref<string | null>(null);
-const stepsTitle = ref<string | null>(null);
 
 function clamp(v: number, a: number, b: number) { return Math.max(a, Math.min(b, v)); }
 

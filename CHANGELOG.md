@@ -1,10 +1,11 @@
 # Changelog
 
-## [1.2.2] - [1.0.6] - 2025-10-01
+## [1.2.2] - [1.0.6] - 2025-10-05
 ### Added
 - Now the user can remove health data entries from the health page.
 
 ### Changed
+- The health point evaulator logic has been improved.
 
 ### Fixed
 - Fixed the width size of input type date on mobile browsers.

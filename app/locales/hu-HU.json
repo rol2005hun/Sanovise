@@ -222,7 +222,7 @@
             "activity": {
                 "low": "Kevés aktivitás",
                 "good": "Jó aktivitás",
-                "ok": "Aktivitás"
+                "ok": "Átlagos aktivitás"
             },
             "age": {
                 "highPulse": "Idős korban magas pulzus"
