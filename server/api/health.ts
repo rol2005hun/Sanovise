@@ -56,4 +56,29 @@ router.get('/', authMiddleware, async (req: Request, res: Response, next: NextFu
     }
 });
 
+router.delete('/', authMiddleware, async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const uid = (req as any).user.id;
+        const date = (req.query.date as string) || req.body && req.body.date;
+        if (!date) {
+            res.status(400).json({ success: false, error: 'date is required' });
+            return;
+        }
+
+        const entry = await HealthEntry.findOneAndDelete({ userId: uid, date }).exec();
+        if (!entry) {
+            res.status(404).json({ success: false, error: 'Entry not found' });
+            return;
+        }
+
+        sendDiscordLog(`[Health] Entry deleted for user ${uid} date ${date}`, 'WARNING');
+
+        res.json({ success: true });
+        return;
+    } catch (err: any) {
+        console.error('[Sanovise - Error] /health DELETE error: ', err);
+        next(err);
+    }
+});
+
 export default router;

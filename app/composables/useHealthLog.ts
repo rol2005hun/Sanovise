@@ -44,6 +44,29 @@ export function useHealthLog() {
         return store.allEntries;
     }
 
+    async function del(date: string) {
+        const existing = store.entries.find(e => e.date === date);
+        if (existing) store.removeEntry(existing.id);
+
+        try {
+            if (dataStore.isLoggedIn) {
+                const apiUrl = `http://138.68.77.184:6969/api/health?date=${encodeURIComponent(date)}`;
+                let headers: any = { 'Content-Type': 'application/json' };
+                try {
+                    const tokenCookie = useCookie && typeof useCookie === 'function' ? useCookie('sanovise_token') : null;
+                    const token = tokenCookie ? tokenCookie.value : null;
+                    if (token) headers['Authorization'] = `Bearer ${token}`;
+                } catch (e) {
+                    console.error(e);
+                }
+
+                await fetch(apiUrl, { method: 'DELETE', credentials: 'include', headers });
+            }
+        } catch (err) {
+            console.warn('[useHealthLog] Failed to DELETE health entry on server', err);
+        }
+    }
+
     function summary(days = 30) {
         return store.aggregatedByDay(days);
     }
@@ -73,5 +96,5 @@ export function useHealthLog() {
         return avg;
     }
 
-    return { add, list, summary, evaluateLatest, evaluateForDate, averageScore, store };
+    return { add, list, summary, evaluateLatest, evaluateForDate, averageScore, store, del };
 }

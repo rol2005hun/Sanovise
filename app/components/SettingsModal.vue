@@ -87,13 +87,29 @@ async function handleDeleteAccount() {
     if (!confirm(confirmText)) return;
 
     try {
-        await $fetch('http://138.68.77.184:6969/api/auth/delete', { method: 'DELETE', credentials: 'include' });
-        tokenCookie.value = null;
-        dataStore.setLoggedIn(false);
-        toastStore.show('✅ ' + ((useNuxtApp().$i18n.t('components.settingsModal.deleteSuccess') as string) || 'Account deleted'), 'info');
+        const token = tokenCookie.value;
+        const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+        if (token) headers['Authorization'] = `Bearer ${token}`;
+
+        const res: any = await $fetch('http://138.68.77.184:6969/api/auth/delete', {
+            method: 'DELETE',
+            credentials: 'include',
+            headers
+        });
+
+        if (res && res.success) {
+            tokenCookie.value = null;
+            dataStore.setLoggedIn(false);
+            toastStore.show('✅ ' + ((useNuxtApp().$i18n.t('components.settingsModal.deleteSuccess') as string) || 'Account deleted'), 'info');
+            return;
+        }
+
+        const serverMsg = res && res.error ? String(res.error) : ((useNuxtApp().$i18n.t('components.settingsModal.deleteError') as string) || 'An error occurred while deleting the account');
+        throw new Error(serverMsg);
     } catch (err: any) {
         console.error('[Sanovise - Error] delete account failed', err);
-        toastStore.show('❌ ' + ((useNuxtApp().$i18n.t('components.settingsModal.deleteError') as string) || 'An error occurred while deleting the account'), 'error');
+        const msg = err && err.message ? err.message : ((useNuxtApp().$i18n.t('components.settingsModal.deleteError') as string) || 'An error occurred while deleting the account');
+        toastStore.show('❌ ' + msg, 'error');
     }
 }
 </script>

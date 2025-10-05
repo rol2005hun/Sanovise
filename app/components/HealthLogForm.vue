@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 import { useHealthLog } from '@/composables/useHealthLog';
-const { add, store } = useHealthLog();
+const { add, store, del } = useHealthLog();
 
 const date = ref(new Date().toISOString().slice(0, 10));
 const pulse = ref<number | null>(null);
@@ -90,7 +90,16 @@ function onSubmit() {
   pulse.value = null; systolic.value = null; diastolic.value = null; steps.value = null; notes.value = '';
 }
 
-function clear() {
+async function clear() {
+  const existing = store.entries.find(e => e.date === date.value) ?? null;
+  if (existing) {
+    try {
+      await del(date.value);
+    } catch (err) {
+      console.warn('[HealthLogForm] failed to delete entry', err);
+    }
+  }
+
   pulse.value = null; systolic.value = null; diastolic.value = null; steps.value = null; notes.value = '';
 }
 </script>

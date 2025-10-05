@@ -1,7 +1,8 @@
 # Changelog
 
-## [1.2.2] - [1.0.5] - 2025-09-29
+## [1.2.2] - [1.0.6] - 2025-10-01
 ### Added
+- Now the user can remove health data entries from the health page.
 
 ### Changed
 
