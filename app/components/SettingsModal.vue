@@ -51,7 +51,8 @@ const aiModels = [
     { id: 'deepseek/deepseek-r1-zero:free', name: 'DeepSeek R1 Zero', type: 'advice2' },
     { id: 'microsoft/mai-ds-r1:free', name: 'MAI DS R1', type: 'advice2' },
     { id: 'moonshotai/kimi-k2:free', name: 'Kimi K2', type: 'advice2' },
-    { id: 'qwen/qwen3-coder:free', name: 'Qwen 3 Coder', type: 'advice2' }
+    { id: 'qwen/qwen3-coder:free', name: 'Qwen 3 Coder', type: 'advice2' },
+    { id: 'x-ai/grok-4.1-fast:free', name: 'xAI - Grok 4.1', type: 'advice2' }
 ];
 const appVersion = ref(packageJson.version);
 const selectedModel = ref(aiModels.find(model => model.id === dataStore.userData.selectedModel?.id) || aiModels[1]);
