@@ -1,4 +1,4 @@
-import { createError, setResponseStatus } from 'h3';
+import { createError, deleteCookie, setResponseStatus } from 'h3';
 import User from '../../models/User';
 import { connectDB } from '../../utils/db';
 import { sendDiscordLog } from '../../utils/discordLogger';
@@ -16,6 +16,7 @@ export default defineEventHandler(async (event) => {
     }
 
     await sendDiscordLog(`[Auth] User deleted: ${user.email}`, 'WARNING');
+    deleteCookie(event, 'sanovise_token', { path: '/' });
     return { success: true };
   } catch (err: any) {
     if (err?.statusCode) {
