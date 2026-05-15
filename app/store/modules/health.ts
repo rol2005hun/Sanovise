@@ -79,7 +79,7 @@ export const useHealth = defineStore('health', {
                             console.log(e);
                         }
 
-                        const res = await fetch('http://138.68.77.184:6969/api/health', { credentials: 'include', headers });
+                        const res = await fetch('/api/health', { credentials: 'include', headers });
                         if (res.ok) {
                             const body = await res.json();
                             if (body && body.success && Array.isArray(body.entries)) {
