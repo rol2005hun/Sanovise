@@ -6,6 +6,13 @@ export default defineNuxtConfig({
     strict: true,
   },
 
+  nitro: {
+    preset: 'netlify',
+    options: {
+      external: ['mongoose', 'bcrypt', 'openai']
+    }
+  },
+
   app: {
     head: {
       title: 'Sanovise - App',
