@@ -4,7 +4,7 @@
       <div class="hero-content container">
         <h2>{{ $t('pages.index.heroTitle') }}</h2>
         <p>{{ $t('pages.index.heroDescription') }}</p>
-        <a href="https://app.sanovise.ranzak.site/" class="btn-primary">{{ $t('pages.index.getStarted') }}</a>
+        <a href="https://app.sanovise.ranzak.dev/" class="btn-primary">{{ $t('pages.index.getStarted') }}</a>
       </div>
     </section>
 
