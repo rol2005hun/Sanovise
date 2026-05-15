@@ -13,7 +13,7 @@
       ],
       "howItWorks": "🛠️ How it works",
       "howItWorksSteps": [
-        "Visit the <a href='https://app.sanovise.ranzak.site' target='_blank'>Sanovise App</a>.",
+        "Visit the <a href='https://app.sanovise.ranzak.dev' target='_blank'>Sanovise App</a>.",
         "Enter your health data such as heart rate, blood pressure, height, weight, etc.",
         "The app uses AI to analyze the data.",
         "Receive feedback on your health status and learn about possible conditions."
