@@ -27,13 +27,13 @@ The application processes this information to provide users with an overview of 
 - **📱 Platforms:** Web, Desktop (via Tauri/Electron), Mobile (via Capacitor)
 
 ### **Backend**
-- **🌐 Server:** Node.js + Express.js
+- **🌐 Server:** Nuxt Nitro (built-in server API)
 - **🧠 AI Model:** Integrated with Transformers.js, supporting Hugging Face models
 - **📂 Data Handling:** JSON import/export
 
 ### **🚀 Hosting & Deployment**
 - **Frontend:** Netlify + Cloudflare with a custom domain
-- **Backend:** Google Cloud VM instance
+- **Backend API:** Nuxt Nitro server deployed together with the Nuxt app (no separate backend service)
 
 ---
 
@@ -82,11 +82,8 @@ cd app && npm run dev
 ```
 The frontend will be available at **http://localhost:3000/**.
 
-### **4️⃣ Start the backend**
-```bash
-cd server && npm run start
-```
-The backend will be available at **http://localhost:2999/** (ensure your `.env` file is correctly configured).
+### **4️⃣ Backend API**
+The backend API now runs inside the Nuxt app via Nitro, so no separate backend process is required.
 
 ---
 

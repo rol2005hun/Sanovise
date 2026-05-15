@@ -92,7 +92,7 @@ async function handleDeleteAccount() {
         const headers: Record<string, string> = { 'Content-Type': 'application/json' };
         if (token) headers['Authorization'] = `Bearer ${token}`;
 
-        const res: any = await $fetch('http://138.68.77.184:6969/api/auth/delete', {
+        const res: any = await $fetch('/api/auth/delete', {
             method: 'DELETE',
             credentials: 'include',
             headers

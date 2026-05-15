@@ -10,7 +10,7 @@ export function useHealthLog() {
 
         try {
             if (dataStore.isLoggedIn) {
-                const apiUrl = 'http://138.68.77.184:6969/api/health';
+                const apiUrl = '/api/health';
                 (async () => {
                     try {
                         let headers: any = { 'Content-Type': 'application/json' };
@@ -50,7 +50,7 @@ export function useHealthLog() {
 
         try {
             if (dataStore.isLoggedIn) {
-                const apiUrl = `http://138.68.77.184:6969/api/health?date=${encodeURIComponent(date)}`;
+                const apiUrl = `/api/health?date=${encodeURIComponent(date)}`;
                 let headers: any = { 'Content-Type': 'application/json' };
                 try {
                     const tokenCookie = useCookie && typeof useCookie === 'function' ? useCookie('sanovise_token') : null;

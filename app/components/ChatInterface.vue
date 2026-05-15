@@ -110,12 +110,11 @@ async function sendMessage() {
         const { signal } = controller;
         dataStore.controller = controller;
         
-        const response = await fetch(`http://138.68.77.184:6969/api/${dataStore.userData.selectedModel.type}`, {
+        const response = await fetch(`/api/${dataStore.userData.selectedModel.type}`, {
             method: 'POST',
             signal,
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
             },
             body: (
                 JSON.stringify({
