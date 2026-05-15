@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { pipeline, env, TextStreamer } from '@huggingface/transformers';
+// import { pipeline, env, TextStreamer } from '@huggingface/transformers';
 import OpenAI from 'openai';
 import 'dotenv/config';
 import { sendDiscordLog } from '../utils/discordLogger';
@@ -7,6 +7,7 @@ import * as crypto from 'crypto';
 
 const router = express.Router();
 
+/*
 let pipe: any;
 (async () => {
     try {
@@ -19,6 +20,7 @@ let pipe: any;
         sendDiscordLog(`Error loading Hugging Face model: ${error instanceof Error ? error.message : JSON.stringify(error)}`, 'ERROR');
     }
 })();
+*/
 
 const openai = new OpenAI({
     baseURL: 'https://openrouter.ai/api/v1',
@@ -29,6 +31,7 @@ const openai = new OpenAI({
     }
 });
 
+/*
 const advice = async (req: Request, res: Response, next: NextFunction) => {
     const startTime = Date.now();
     const requestId = crypto.randomUUID();
@@ -92,7 +95,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
             {
                 role: 'system',
                 content: `
-                    You are Dr. Sanovise – a highly experienced, empathetic medical doctor who speaks directly, clearly, and in a human, conversational way. You're not writing a letter; you're having a real-time consultation, as if you're face-to-face with the patient. Your tone adapts based on age:
+                    You are Dr. Sanovise – a highly experienced, empathetic medical doctor who speaks directly, clearly, and in a human, conversational way. You're not writing a letter; you're h[...]
 
                     👵 For older patients (50+): Use respectful and formal speech ("sir/ma’am", avoid slang). Speak gently and reassuringly, like a caring professional.
 
@@ -149,7 +152,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
                     - Reproductive Health: ${reproductiveHealth || 'N/A'}
                     - Vision and Hearing: ${visionAndHearing || 'N/A'}
 
-                    Based on all of this, please give me a clear and direct medical assessment. Speak to me like we’re in a real consultation. Tell me what my data means, point out any risks, and explain how they might affect my health. I want **practical, specific advice** on what I should do to improve things.
+                    Based on all of this, please give me a clear and direct medical assessment. Speak to me like we’re in a real consultation. Tell me what my data means, point out any risks, a[...]
 
                     Please also explain what could happen if I don’t follow these recommendations, and help me understand the long-term consequences — in a way that's easy to grasp.
 
@@ -204,6 +207,7 @@ const advice = async (req: Request, res: Response, next: NextFunction) => {
         res.end();
     }
 }
+*/
 
 const advice2 = async (req: Request, res: Response, next: NextFunction) => {
     const startTime = Date.now();
@@ -271,7 +275,7 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
             {
                 role: 'system',
                 content: `
-                    You are Dr. Sanovise – a highly experienced, empathetic medical doctor who speaks directly, clearly, and in a human, conversational way. You're not writing a letter; you're having a real-time consultation, as if you're face-to-face with the patient. Your tone adapts based on age:
+                    You are Dr. Sanovise – a highly experienced, empathetic medical doctor who speaks directly, clearly, and in a human, conversational way. You're not writing a letter; you're [...]
 
                     👵 For older patients (50+): Use respectful and formal speech ("sir/ma’am", avoid slang). Speak gently and reassuringly, like a caring professional.
 
@@ -328,7 +332,7 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
                     - Reproductive Health: ${reproductiveHealth || 'N/A'}
                     - Vision and Hearing: ${visionAndHearing || 'N/A'}
 
-                    Based on all of this, please give me a clear and direct medical assessment. Speak to me like we’re in a real consultation. Tell me what my data means, point out any risks, and explain how they might affect my health. I want **practical, specific advice** on what I should do to improve things.
+                    Based on all of this, please give me a clear and direct medical assessment. Speak to me like we’re in a real consultation. Tell me what my data means, point out any risks, a[...]
 
                     Please also explain what could happen if I don’t follow these recommendations, and help me understand the long-term consequences — in a way that's easy to grasp.
 
@@ -389,9 +393,11 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
     }
 };
 
+/*
 router.post('/advice', (req, res, next) => {
     advice(req, res, next).catch(next);
 });
+*/
 
 router.post('/advice2', (req, res, next) => {
     advice2(req, res, next).catch(next);
