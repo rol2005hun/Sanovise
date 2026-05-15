@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { createError, readBody, setResponseStatus } from 'h3';
 import User from '../../models/User';
 import { connectDB } from '../../utils/db';
