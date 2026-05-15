@@ -1,8 +1,2 @@
 [functions]
-  [functions.node_bundle]
-  external_node_modules = [
-    "mongoose",
-    "bcrypt",
-    "openai",
-    "jsonwebtoken"
-  ]
+  node_bundler = "esbuild"
