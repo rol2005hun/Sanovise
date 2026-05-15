@@ -33,7 +33,7 @@ The application processes this information to provide users with an overview of 
 
 ### **🚀 Hosting & Deployment**
 - **Frontend:** Netlify + Cloudflare with a custom domain
-- **Backend:** Google Cloud VM instance
+- **Backend API:** Nuxt Nitro server deployed together with the Nuxt app (no separate backend service)
 
 ---
 
