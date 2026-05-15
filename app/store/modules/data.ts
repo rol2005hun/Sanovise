@@ -33,7 +33,7 @@ export const useData = defineStore('data', {
             symptoms: '',
             medicalHistory: '',
             language: '',
-            selectedModel: { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1', type: 'advice2' }
+            selectedModel: { id: 'openai/gpt-oss-120b:free', name: 'DeepSeek R1', type: 'advice2' }
         },
         isLoggedIn: false,
         messages: [] as { role: string, content: string }[],

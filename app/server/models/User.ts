@@ -50,7 +50,7 @@ export interface IUser extends Document {
 
 const SelectedModelSchema = new Schema(
   {
-    id: { type: String, default: 'deepseek/deepseek-r1:free' },
+    id: { type: String, default: 'openai/gpt-oss-120b:free' },
     name: { type: String, default: 'DeepSeek R1' },
     type: { type: String, default: 'advice2' }
   },

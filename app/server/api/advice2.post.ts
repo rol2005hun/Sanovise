@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
       };
     }
 
-    const model = input.selectedModel || 'deepseek/deepseek-r1:free';
+    const model = input.selectedModel || 'openai/gpt-oss-120b:free';
     const encoder = new TextEncoder();
 
     const stream = new ReadableStream({

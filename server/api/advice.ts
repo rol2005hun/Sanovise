@@ -265,11 +265,11 @@ const advice2 = async (req: Request, res: Response, next: NextFunction) => {
 
         sendDiscordLog(
             `[RequestID: ${requestId}] '/advice2' request data received and validated. ` +
-            `Model: ${selectedModel || 'deepseek/deepseek-r1:free'}.`,
+            `Model: ${selectedModel || 'openai/gpt-oss-120b:free'}.`,
             'INFO'
         );
 
-        const model = selectedModel || 'deepseek/deepseek-r1:free';
+        const model = selectedModel || 'openai/gpt-oss-120b:free';
 
         let chatMessages: OpenAI.ChatCompletionMessageParam[] = [
             {

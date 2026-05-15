@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
       email,
       passwordHash,
       language: language || (userData && userData.language) || 'en',
-      favoriteModel: favoriteModel || (userData && userData.selectedModel && userData.selectedModel.id) || 'deepseek/deepseek-r1:free',
+      favoriteModel: favoriteModel || (userData && userData.selectedModel && userData.selectedModel.id) || 'openai/gpt-oss-120b:free',
       userData: userData || {}
     });
 
