@@ -98,6 +98,8 @@ const UserSchema = new Schema<IUser>(
   {
     email: { type: String, required: true, unique: true },
     passwordHash: { type: String, required: true },
+    favoriteModel: { type: String, default: '' },
+    language: { type: String, default: '' },
     userData: { type: UserDataSchema, default: () => ({}) }
   },
   { timestamps: true }
