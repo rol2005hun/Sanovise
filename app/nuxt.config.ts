@@ -8,9 +8,8 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'netlify',
-    rollupConfig: {
-      external: ['mongoose', 'bcrypt', 'openai', 'jsonwebtoken']
-    }
+    minify: true,
+    sourceMap: false
   },
 
   app: {
