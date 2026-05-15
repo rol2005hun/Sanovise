@@ -43,7 +43,7 @@
 
                 <div class="web-app-action">
                     <span class="emoji-large" role="img" aria-label="Rocket emoji">🚀</span>
-                    <a href="https://app.sanovise.ranzak.site/" target="_blank" rel="noopener noreferrer"
+                    <a href="https://app.sanovise.ranzak.dev/" target="_blank" rel="noopener noreferrer"
                         class="btn-primary btn-large launch-button">
                         {{ $t('pages.download.web.launchButton') }}
                     </a>
