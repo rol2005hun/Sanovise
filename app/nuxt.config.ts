@@ -7,9 +7,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'netlify',
-    minify: true,
-    sourceMap: false
+    preset: 'netlify'
   },
 
   app: {
